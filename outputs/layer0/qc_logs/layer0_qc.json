@@ -1,0 +1,1605 @@
+{
+  "step_01": {
+    "id_harmonization": {
+      "n_smc": 18,
+      "n_po": 9,
+      "n_total": 27
+    },
+    "missing_fields": {
+      "SMC024": [
+        "braak_stage"
+      ]
+    },
+    "flags": [
+      "donor SMC024 missing: ['braak_stage']"
+    ]
+  },
+  "step_02": {
+    "unmatched_barcodes": {
+      "n_unmatched": 0,
+      "n_total": 95487,
+      "pct_unmatched": 0.0
+    },
+    "flags": []
+  },
+  "step_03": {
+    "dropout_by_ct_donor": {
+      "Microglia|PO05": {
+        "n_before": 379,
+        "n_after": 379,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|PO23": {
+        "n_before": 128,
+        "n_after": 128,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|PO11": {
+        "n_before": 467,
+        "n_after": 467,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|PO28": {
+        "n_before": 204,
+        "n_after": 204,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|PO20": {
+        "n_before": 38,
+        "n_after": 38,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|PO41": {
+        "n_before": 226,
+        "n_after": 225,
+        "n_dropped": 1,
+        "pct_dropped": 0.4,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|PO15": {
+        "n_before": 147,
+        "n_after": 145,
+        "n_dropped": 2,
+        "pct_dropped": 1.4,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC030": {
+        "n_before": 418,
+        "n_after": 418,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC041": {
+        "n_before": 46,
+        "n_after": 46,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC049": {
+        "n_before": 80,
+        "n_after": 80,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC035": {
+        "n_before": 76,
+        "n_after": 76,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC033": {
+        "n_before": 126,
+        "n_after": 126,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC039": {
+        "n_before": 29,
+        "n_after": 29,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC031": {
+        "n_before": 142,
+        "n_after": 142,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC052": {
+        "n_before": 6,
+        "n_after": 6,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC032": {
+        "n_before": 56,
+        "n_after": 56,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC053": {
+        "n_before": 11,
+        "n_after": 11,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC036": {
+        "n_before": 191,
+        "n_after": 191,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC038": {
+        "n_before": 36,
+        "n_after": 36,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC043": {
+        "n_before": 19,
+        "n_after": 19,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC037": {
+        "n_before": 12,
+        "n_after": 12,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|PO13": {
+        "n_before": 261,
+        "n_after": 261,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|PO42": {
+        "n_before": 325,
+        "n_after": 325,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC027": {
+        "n_before": 87,
+        "n_after": 87,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Microglia|SMC029": {
+        "n_before": 67,
+        "n_after": 67,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|PO05": {
+        "n_before": 1197,
+        "n_after": 1197,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|PO23": {
+        "n_before": 1605,
+        "n_after": 1605,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|PO11": {
+        "n_before": 1165,
+        "n_after": 1165,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|PO28": {
+        "n_before": 1856,
+        "n_after": 1851,
+        "n_dropped": 5,
+        "pct_dropped": 0.3,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|PO20": {
+        "n_before": 1454,
+        "n_after": 1454,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|PO41": {
+        "n_before": 978,
+        "n_after": 973,
+        "n_dropped": 5,
+        "pct_dropped": 0.5,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|PO15": {
+        "n_before": 745,
+        "n_after": 744,
+        "n_dropped": 1,
+        "pct_dropped": 0.1,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC030": {
+        "n_before": 915,
+        "n_after": 915,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC041": {
+        "n_before": 1746,
+        "n_after": 1746,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC049": {
+        "n_before": 4070,
+        "n_after": 4070,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC035": {
+        "n_before": 1589,
+        "n_after": 1589,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC033": {
+        "n_before": 2804,
+        "n_after": 2797,
+        "n_dropped": 7,
+        "pct_dropped": 0.2,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC039": {
+        "n_before": 413,
+        "n_after": 413,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC031": {
+        "n_before": 389,
+        "n_after": 389,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC052": {
+        "n_before": 4785,
+        "n_after": 4785,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC032": {
+        "n_before": 578,
+        "n_after": 578,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC053": {
+        "n_before": 3231,
+        "n_after": 3231,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC036": {
+        "n_before": 206,
+        "n_after": 206,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC038": {
+        "n_before": 1640,
+        "n_after": 1640,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC043": {
+        "n_before": 105,
+        "n_after": 105,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC037": {
+        "n_before": 1120,
+        "n_after": 1120,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|PO13": {
+        "n_before": 777,
+        "n_after": 777,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|PO42": {
+        "n_before": 1304,
+        "n_after": 1303,
+        "n_dropped": 1,
+        "pct_dropped": 0.1,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC027": {
+        "n_before": 129,
+        "n_after": 129,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Excitatory neuron|SMC029": {
+        "n_before": 150,
+        "n_after": 150,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|PO05": {
+        "n_before": 914,
+        "n_after": 914,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|PO23": {
+        "n_before": 300,
+        "n_after": 300,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|PO11": {
+        "n_before": 1484,
+        "n_after": 1484,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|PO28": {
+        "n_before": 593,
+        "n_after": 588,
+        "n_dropped": 5,
+        "pct_dropped": 0.8,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|PO20": {
+        "n_before": 1598,
+        "n_after": 1598,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|PO41": {
+        "n_before": 317,
+        "n_after": 316,
+        "n_dropped": 1,
+        "pct_dropped": 0.3,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|PO15": {
+        "n_before": 293,
+        "n_after": 292,
+        "n_dropped": 1,
+        "pct_dropped": 0.3,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC030": {
+        "n_before": 2149,
+        "n_after": 2149,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC041": {
+        "n_before": 1207,
+        "n_after": 1207,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC049": {
+        "n_before": 213,
+        "n_after": 213,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC035": {
+        "n_before": 1199,
+        "n_after": 1199,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC033": {
+        "n_before": 2407,
+        "n_after": 2407,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC039": {
+        "n_before": 618,
+        "n_after": 618,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC031": {
+        "n_before": 614,
+        "n_after": 614,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC052": {
+        "n_before": 78,
+        "n_after": 78,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC032": {
+        "n_before": 1117,
+        "n_after": 1117,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC053": {
+        "n_before": 87,
+        "n_after": 87,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC036": {
+        "n_before": 200,
+        "n_after": 200,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC038": {
+        "n_before": 45,
+        "n_after": 45,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC043": {
+        "n_before": 142,
+        "n_after": 142,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC037": {
+        "n_before": 694,
+        "n_after": 694,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|PO13": {
+        "n_before": 233,
+        "n_after": 232,
+        "n_dropped": 1,
+        "pct_dropped": 0.4,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|PO42": {
+        "n_before": 888,
+        "n_after": 888,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC027": {
+        "n_before": 406,
+        "n_after": 406,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Oligodendrocyte|SMC029": {
+        "n_before": 1140,
+        "n_after": 1140,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|PO05": {
+        "n_before": 370,
+        "n_after": 370,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|PO23": {
+        "n_before": 321,
+        "n_after": 321,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|PO11": {
+        "n_before": 191,
+        "n_after": 191,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|PO28": {
+        "n_before": 290,
+        "n_after": 287,
+        "n_dropped": 3,
+        "pct_dropped": 1.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|PO20": {
+        "n_before": 299,
+        "n_after": 299,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|PO41": {
+        "n_before": 200,
+        "n_after": 200,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|PO15": {
+        "n_before": 218,
+        "n_after": 217,
+        "n_dropped": 1,
+        "pct_dropped": 0.5,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC030": {
+        "n_before": 557,
+        "n_after": 557,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC041": {
+        "n_before": 235,
+        "n_after": 235,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC049": {
+        "n_before": 212,
+        "n_after": 212,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC035": {
+        "n_before": 258,
+        "n_after": 258,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC033": {
+        "n_before": 577,
+        "n_after": 568,
+        "n_dropped": 9,
+        "pct_dropped": 1.6,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC039": {
+        "n_before": 193,
+        "n_after": 193,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC031": {
+        "n_before": 302,
+        "n_after": 302,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC052": {
+        "n_before": 193,
+        "n_after": 193,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC032": {
+        "n_before": 269,
+        "n_after": 269,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC053": {
+        "n_before": 157,
+        "n_after": 157,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC036": {
+        "n_before": 202,
+        "n_after": 202,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC038": {
+        "n_before": 84,
+        "n_after": 84,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC043": {
+        "n_before": 202,
+        "n_after": 202,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC037": {
+        "n_before": 212,
+        "n_after": 212,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|PO13": {
+        "n_before": 429,
+        "n_after": 429,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|PO42": {
+        "n_before": 480,
+        "n_after": 475,
+        "n_dropped": 5,
+        "pct_dropped": 1.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC027": {
+        "n_before": 273,
+        "n_after": 273,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "OPC|SMC029": {
+        "n_before": 146,
+        "n_after": 146,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|PO05": {
+        "n_before": 294,
+        "n_after": 294,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|PO23": {
+        "n_before": 116,
+        "n_after": 116,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|PO11": {
+        "n_before": 183,
+        "n_after": 183,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|PO28": {
+        "n_before": 152,
+        "n_after": 152,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|PO20": {
+        "n_before": 131,
+        "n_after": 131,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|PO41": {
+        "n_before": 294,
+        "n_after": 294,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|PO15": {
+        "n_before": 151,
+        "n_after": 150,
+        "n_dropped": 1,
+        "pct_dropped": 0.7,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC030": {
+        "n_before": 245,
+        "n_after": 245,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC041": {
+        "n_before": 22,
+        "n_after": 22,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC049": {
+        "n_before": 304,
+        "n_after": 304,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC035": {
+        "n_before": 200,
+        "n_after": 200,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC033": {
+        "n_before": 527,
+        "n_after": 524,
+        "n_dropped": 3,
+        "pct_dropped": 0.6,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC039": {
+        "n_before": 158,
+        "n_after": 158,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC031": {
+        "n_before": 371,
+        "n_after": 371,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC052": {
+        "n_before": 130,
+        "n_after": 130,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC032": {
+        "n_before": 64,
+        "n_after": 64,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC053": {
+        "n_before": 216,
+        "n_after": 216,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC036": {
+        "n_before": 78,
+        "n_after": 78,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC038": {
+        "n_before": 244,
+        "n_after": 244,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC043": {
+        "n_before": 653,
+        "n_after": 653,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC037": {
+        "n_before": 128,
+        "n_after": 128,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|PO13": {
+        "n_before": 55,
+        "n_after": 55,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|PO42": {
+        "n_before": 694,
+        "n_after": 688,
+        "n_dropped": 6,
+        "pct_dropped": 0.9,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC027": {
+        "n_before": 445,
+        "n_after": 445,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Astrocyte|SMC029": {
+        "n_before": 192,
+        "n_after": 192,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|PO05": {
+        "n_before": 730,
+        "n_after": 730,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|PO23": {
+        "n_before": 963,
+        "n_after": 963,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|PO11": {
+        "n_before": 647,
+        "n_after": 647,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|PO28": {
+        "n_before": 560,
+        "n_after": 558,
+        "n_dropped": 2,
+        "pct_dropped": 0.4,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|PO20": {
+        "n_before": 284,
+        "n_after": 284,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|PO41": {
+        "n_before": 497,
+        "n_after": 497,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|PO15": {
+        "n_before": 443,
+        "n_after": 443,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC030": {
+        "n_before": 1937,
+        "n_after": 1937,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC041": {
+        "n_before": 1416,
+        "n_after": 1416,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC049": {
+        "n_before": 1705,
+        "n_after": 1705,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC035": {
+        "n_before": 1475,
+        "n_after": 1475,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC033": {
+        "n_before": 2447,
+        "n_after": 2436,
+        "n_dropped": 11,
+        "pct_dropped": 0.4,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC039": {
+        "n_before": 404,
+        "n_after": 404,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC031": {
+        "n_before": 432,
+        "n_after": 432,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC052": {
+        "n_before": 2673,
+        "n_after": 2673,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC032": {
+        "n_before": 1382,
+        "n_after": 1382,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC053": {
+        "n_before": 1015,
+        "n_after": 1015,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC036": {
+        "n_before": 135,
+        "n_after": 135,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC038": {
+        "n_before": 1549,
+        "n_after": 1549,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC043": {
+        "n_before": 141,
+        "n_after": 141,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC037": {
+        "n_before": 1201,
+        "n_after": 1201,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|PO13": {
+        "n_before": 190,
+        "n_after": 190,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|PO42": {
+        "n_before": 746,
+        "n_after": 744,
+        "n_dropped": 2,
+        "pct_dropped": 0.3,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC027": {
+        "n_before": 304,
+        "n_after": 304,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Inhibitory neuron|SMC029": {
+        "n_before": 152,
+        "n_after": 152,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|PO05": {
+        "n_before": 34,
+        "n_after": 34,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|PO23": {
+        "n_before": 83,
+        "n_after": 83,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|PO11": {
+        "n_before": 171,
+        "n_after": 171,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|PO28": {
+        "n_before": 83,
+        "n_after": 83,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|PO20": {
+        "n_before": 56,
+        "n_after": 56,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|PO41": {
+        "n_before": 115,
+        "n_after": 114,
+        "n_dropped": 1,
+        "pct_dropped": 0.9,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|PO15": {
+        "n_before": 57,
+        "n_after": 57,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC030": {
+        "n_before": 109,
+        "n_after": 109,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC041": {
+        "n_before": 16,
+        "n_after": 16,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC049": {
+        "n_before": 17,
+        "n_after": 17,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC035": {
+        "n_before": 12,
+        "n_after": 12,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC033": {
+        "n_before": 11,
+        "n_after": 11,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC039": {
+        "n_before": 19,
+        "n_after": 19,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC031": {
+        "n_before": 38,
+        "n_after": 38,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC052": {
+        "n_before": 5,
+        "n_after": 5,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC032": {
+        "n_before": 41,
+        "n_after": 41,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC053": {
+        "n_before": 37,
+        "n_after": 37,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC036": {
+        "n_before": 16,
+        "n_after": 16,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC038": {
+        "n_before": 6,
+        "n_after": 6,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC043": {
+        "n_before": 11,
+        "n_after": 11,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC037": {
+        "n_before": 7,
+        "n_after": 7,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|PO13": {
+        "n_before": 64,
+        "n_after": 64,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|PO42": {
+        "n_before": 411,
+        "n_after": 410,
+        "n_dropped": 1,
+        "pct_dropped": 0.2,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC027": {
+        "n_before": 74,
+        "n_after": 74,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Vascular cell|SMC029": {
+        "n_before": 14,
+        "n_after": 14,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|PO05": {
+        "n_before": 1,
+        "n_after": 1,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|PO23": {
+        "n_before": 2,
+        "n_after": 2,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|PO11": {
+        "n_before": 6,
+        "n_after": 6,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|PO28": {
+        "n_before": 1,
+        "n_after": 1,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|PO20": {
+        "n_before": 1,
+        "n_after": 1,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|PO41": {
+        "n_before": 3,
+        "n_after": 3,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|PO15": {
+        "n_before": 2,
+        "n_after": 2,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC030": {
+        "n_before": 79,
+        "n_after": 79,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC041": {
+        "n_before": 5,
+        "n_after": 5,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC049": {
+        "n_before": 2,
+        "n_after": 2,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC033": {
+        "n_before": 7,
+        "n_after": 7,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC039": {
+        "n_before": 2,
+        "n_after": 2,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC031": {
+        "n_before": 9,
+        "n_after": 9,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC032": {
+        "n_before": 6,
+        "n_after": 6,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC036": {
+        "n_before": 24,
+        "n_after": 24,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC043": {
+        "n_before": 1,
+        "n_after": 1,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC037": {
+        "n_before": 1,
+        "n_after": 1,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|PO13": {
+        "n_before": 1,
+        "n_after": 1,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|PO42": {
+        "n_before": 6,
+        "n_after": 6,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC027": {
+        "n_before": 4,
+        "n_after": 4,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      },
+      "Lymphocyte|SMC029": {
+        "n_before": 8,
+        "n_after": 8,
+        "n_dropped": 0,
+        "pct_dropped": 0.0,
+        "reason": "doublet_score>=0.3 or null cell_type/doublet_score"
+      }
+    },
+    "flags": []
+  },
+  "step_04": {
+    "prevalence_filter": {
+      "Microglia": {
+        "n_before": 63994,
+        "n_after": 1314,
+        "n_dropped": 62680,
+        "pct_kept": 2.1
+      },
+      "Excitatory neuron": {
+        "n_before": 63994,
+        "n_after": 18710,
+        "n_dropped": 45284,
+        "pct_kept": 29.2
+      },
+      "Oligodendrocyte": {
+        "n_before": 63994,
+        "n_after": 10024,
+        "n_dropped": 53970,
+        "pct_kept": 15.7
+      },
+      "OPC": {
+        "n_before": 63994,
+        "n_after": 6745,
+        "n_dropped": 57249,
+        "pct_kept": 10.5
+      },
+      "Astrocyte": {
+        "n_before": 63994,
+        "n_after": 4815,
+        "n_dropped": 59179,
+        "pct_kept": 7.5
+      },
+      "Inhibitory neuron": {
+        "n_before": 63994,
+        "n_after": 13221,
+        "n_dropped": 50773,
+        "pct_kept": 20.7
+      },
+      "Vascular cell": {
+        "n_before": 63994,
+        "n_after": 628,
+        "n_dropped": 63366,
+        "pct_kept": 1.0
+      },
+      "Lymphocyte": {
+        "n_before": 63994,
+        "n_after": 6,
+        "n_dropped": 63988,
+        "pct_kept": 0.0
+      }
+    },
+    "flags": []
+  },
+  "step_05": {
+    "missing_covariates": {},
+    "rin_status": "RIN scores absent from all sources (xlsx, pptx, AnnData obs). pct_counts_mt (from adata_sr.obs, transferred in Step 0.2) is used as RNA quality proxy. median_pct_mt per donor×cell_type is computed in Step 0.6 and used as the RNA quality covariate in DRIMSeq.",
+    "flags": [
+      "RIN scores absent from all sources (xlsx, pptx, AnnData obs). pct_counts_mt (from adata_sr.obs, transferred in Step 0.2) is used as RNA quality proxy. median_pct_mt per donor×cell_type is computed in Step 0.6 and used as the RNA quality covariate in DRIMSeq."
+    ]
+  },
+  "step_06": {
+    "excluded_donor_ct": [
+      {
+        "cell_type": "Microglia",
+        "donor": "SMC052",
+        "n_cells": 6,
+        "reason": "below min_cells threshold (6 cells)"
+      },
+      {
+        "cell_type": "Vascular cell",
+        "donor": "SMC038",
+        "n_cells": 6,
+        "reason": "below min_cells threshold (6 cells)"
+      },
+      {
+        "cell_type": "Vascular cell",
+        "donor": "SMC052",
+        "n_cells": 5,
+        "reason": "below min_cells threshold (5 cells)"
+      },
+      {
+        "cell_type": "Vascular cell",
+        "donor": "SMC037",
+        "n_cells": 7,
+        "reason": "below min_cells threshold (7 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC032",
+        "n_cells": 6,
+        "reason": "below min_cells threshold (6 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "PO11",
+        "n_cells": 6,
+        "reason": "below min_cells threshold (6 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "PO23",
+        "n_cells": 2,
+        "reason": "below min_cells threshold (2 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC039",
+        "n_cells": 2,
+        "reason": "below min_cells threshold (2 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "PO15",
+        "n_cells": 2,
+        "reason": "below min_cells threshold (2 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC033",
+        "n_cells": 7,
+        "reason": "below min_cells threshold (7 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC037",
+        "n_cells": 1,
+        "reason": "below min_cells threshold (1 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC031",
+        "n_cells": 9,
+        "reason": "below min_cells threshold (9 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC027",
+        "n_cells": 4,
+        "reason": "below min_cells threshold (4 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC029",
+        "n_cells": 8,
+        "reason": "below min_cells threshold (8 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "PO42",
+        "n_cells": 6,
+        "reason": "below min_cells threshold (6 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC043",
+        "n_cells": 1,
+        "reason": "below min_cells threshold (1 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "PO41",
+        "n_cells": 3,
+        "reason": "below min_cells threshold (3 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC041",
+        "n_cells": 5,
+        "reason": "below min_cells threshold (5 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "SMC049",
+        "n_cells": 2,
+        "reason": "below min_cells threshold (2 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "PO28",
+        "n_cells": 1,
+        "reason": "below min_cells threshold (1 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "PO05",
+        "n_cells": 1,
+        "reason": "below min_cells threshold (1 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "PO13",
+        "n_cells": 1,
+        "reason": "below min_cells threshold (1 cells)"
+      },
+      {
+        "cell_type": "Lymphocyte",
+        "donor": "PO20",
+        "n_cells": 1,
+        "reason": "below min_cells threshold (1 cells)"
+      }
+    ],
+    "flags": []
+  }
+}

@@ -1,0 +1,20 @@
+=== Viscacha Layer 0 QC Report ===
+
+--- STEP_01 ---
+  FLAG: donor SMC024 missing: ['braak_stage']
+
+--- STEP_02 ---
+  No flags.
+
+--- STEP_03 ---
+  No flags.
+
+--- STEP_04 ---
+  No flags.
+
+--- STEP_05 ---
+  FLAG: RIN scores absent from all sources (xlsx, pptx, AnnData obs). pct_counts_mt (from adata_sr.obs, transferred in Step 0.2) is used as RNA quality proxy. median_pct_mt per donor×cell_type is computed in Step 0.6 and used as the RNA quality covariate in DRIMSeq.
+
+--- STEP_06 ---
+  No flags.
+
