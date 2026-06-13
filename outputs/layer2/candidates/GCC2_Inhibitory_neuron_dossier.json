@@ -1,0 +1,76 @@
+{
+  "gene": "GCC2",
+  "cell_type": "Inhibitory_neuron",
+  "significant_transcripts": [
+    {
+      "enst_id": "ENST00000692694",
+      "transcript_name": "GCC2-222",
+      "delta_psi": -0.074629066573242,
+      "role": "control_enriched",
+      "splice_type": "D",
+      "tier": null,
+      "narrative": "Splice event falls in an unannotated / disordered region \u2014 no functional feature in or near the affected residues."
+    }
+  ],
+  "comparator_transcript": {
+    "enst_id": "ENST00000309863",
+    "transcript_name": "GCC2-201",
+    "source": "mane_select"
+  },
+  "candidate_type": "D",
+  "tier": null,
+  "splice_classification": "D",
+  "docking_readiness": "no-go",
+  "docking_readiness_reason": "no docking hypothesis; flag for PPI surface analysis",
+  "uniprot": "Q8IWJ2",
+  "uniprot_reviewed": true,
+  "pdb_structures": [
+    {
+      "pdb_id": "3BBP",
+      "method": "X-ray",
+      "resolution_a": 3.0,
+      "chains": "D/E/F=1547-1612",
+      "resolution_ok": true
+    }
+  ],
+  "drug_target_status": "novel",
+  "ad_relevance": "none",
+  "n_drugs": 0,
+  "n_docking_compounds": 0,
+  "opentargets_score": 0.0054,
+  "opentargets_label": "novel",
+  "ad_specificity_ratio": 6.262,
+  "has_genetic_evidence": false,
+  "brain_specificity_index": 0.72,
+  "brain_specificity_label": "peripherally-enriched",
+  "expression_pattern": "pure_switch",
+  "comparator_in_pseudobulk": false,
+  "robust_to_braak": false,
+  "braak_condition_correlation": 0.9147576778553992,
+  "pathway_ad_flag": false,
+  "interaction_ad_genes": [],
+  "database_versions": {
+    "uniprot": "2006-06-13"
+  },
+  "parameters": {
+    "string_confidence_high": 0.7,
+    "string_confidence_moderate": 0.4,
+    "string_min_partners_for_enrichment": 5,
+    "chembl_potency_uM": 1.0,
+    "pdb_resolution_max_angstrom": 3.5,
+    "splice_domain_proximity_residues": 15,
+    "exon_overlap_min_fraction": 0.8,
+    "gtex_expression_minimum_tpm": 1.0,
+    "brain_specificity_enriched": 2.0,
+    "brain_specificity_specific": 5.0,
+    "cell_type_expression_min_cp10k": 1.0,
+    "gene_de_log2fc_threshold": 0.5,
+    "gene_de_padj_threshold": 0.05
+  },
+  "input_file_checksums": {
+    "dtu_csv_md5": "f241b4a9ead97d5d9554f895a6df64c1",
+    "h5ad_md5": "e1ef63065fd7e7517b21270197385bd0",
+    "gene_de_csv_md5": "2db61db4019eebb09953f7bf0ea5b46f"
+  },
+  "generated": "2026-06-13T01:21:56.483670+00:00"
+}

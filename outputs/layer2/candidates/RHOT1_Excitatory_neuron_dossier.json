@@ -1,0 +1,125 @@
+{
+  "gene": "RHOT1",
+  "cell_type": "Excitatory_neuron",
+  "significant_transcripts": [
+    {
+      "enst_id": "ENST00000545287",
+      "transcript_name": "RHOT1-205",
+      "delta_psi": 0.152762274040883,
+      "role": "ad_enriched",
+      "splice_type": "D",
+      "tier": null,
+      "narrative": "Splice event falls in an unannotated / disordered region \u2014 no functional feature in or near the affected residues."
+    }
+  ],
+  "comparator_transcript": {
+    "enst_id": "ENST00000333942",
+    "transcript_name": "RHOT1-201",
+    "source": "highest_ctrl"
+  },
+  "candidate_type": "D",
+  "tier": null,
+  "splice_classification": "D",
+  "docking_readiness": "no-go",
+  "docking_readiness_reason": "no docking hypothesis; flag for PPI surface analysis",
+  "uniprot": "Q8IXI2",
+  "uniprot_reviewed": true,
+  "pdb_structures": [
+    {
+      "pdb_id": "5KSO",
+      "method": "X-ray",
+      "resolution_a": 2.25,
+      "chains": "A=411-592",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5KSP",
+      "method": "X-ray",
+      "resolution_a": 2.16,
+      "chains": "A/B=411-592",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5KSY",
+      "method": "X-ray",
+      "resolution_a": 2.48,
+      "chains": "A=411-592",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5KSZ",
+      "method": "X-ray",
+      "resolution_a": 2.5,
+      "chains": "A=177-592",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5KTY",
+      "method": "X-ray",
+      "resolution_a": 2.52,
+      "chains": "A=177-592",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5KU1",
+      "method": "X-ray",
+      "resolution_a": 2.5,
+      "chains": "A=177-592",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "6D71",
+      "method": "X-ray",
+      "resolution_a": 1.72,
+      "chains": "A/B=2-180",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9E2P",
+      "method": "EM",
+      "resolution_a": 3.57,
+      "chains": "A/C=1-591",
+      "resolution_ok": false
+    }
+  ],
+  "drug_target_status": "novel",
+  "ad_relevance": "none",
+  "n_drugs": 0,
+  "n_docking_compounds": 0,
+  "opentargets_score": 0.0135,
+  "opentargets_label": "novel",
+  "ad_specificity_ratio": 0.223,
+  "has_genetic_evidence": false,
+  "brain_specificity_index": 0.95,
+  "brain_specificity_label": "peripherally-enriched",
+  "expression_pattern": "de_uncertain",
+  "comparator_in_pseudobulk": true,
+  "robust_to_braak": false,
+  "braak_condition_correlation": 0.9147576778553992,
+  "pathway_ad_flag": false,
+  "interaction_ad_genes": [],
+  "database_versions": {
+    "uniprot": "2006-06-13"
+  },
+  "parameters": {
+    "string_confidence_high": 0.7,
+    "string_confidence_moderate": 0.4,
+    "string_min_partners_for_enrichment": 5,
+    "chembl_potency_uM": 1.0,
+    "pdb_resolution_max_angstrom": 3.5,
+    "splice_domain_proximity_residues": 15,
+    "exon_overlap_min_fraction": 0.8,
+    "gtex_expression_minimum_tpm": 1.0,
+    "brain_specificity_enriched": 2.0,
+    "brain_specificity_specific": 5.0,
+    "cell_type_expression_min_cp10k": 1.0,
+    "gene_de_log2fc_threshold": 0.5,
+    "gene_de_padj_threshold": 0.05
+  },
+  "input_file_checksums": {
+    "dtu_csv_md5": "f241b4a9ead97d5d9554f895a6df64c1",
+    "h5ad_md5": "e1ef63065fd7e7517b21270197385bd0",
+    "gene_de_csv_md5": "2db61db4019eebb09953f7bf0ea5b46f"
+  },
+  "generated": "2026-06-13T01:21:58.651390+00:00"
+}

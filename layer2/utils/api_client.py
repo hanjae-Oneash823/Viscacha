@@ -89,7 +89,8 @@ class APIClient:
     # -- request core ------------------------------------------------------
     def _request(self, db: str, method: str, url: str, *,
                  params: dict | None = None, json_body: Any = None,
-                 headers: dict | None = None, as_text: bool = False) -> Any:
+                 headers: dict | None = None, as_text: bool = False,
+                 timeout: float | None = None, max_retries: int | None = None) -> Any:
         key = self._cache_key(method, url, params, json_body)
         path = self._cache_path(db, key)
 
@@ -98,12 +99,14 @@ class APIClient:
             self.audit.api_call(db, url, "cache", cache_hit=True)
             return cached
 
+        eff_timeout = timeout if timeout is not None else self.timeout
+        eff_retries = max_retries if max_retries is not None else self.max_retries
         last_err: Exception | None = None
-        for attempt in range(1, self.max_retries + 1):
+        for attempt in range(1, eff_retries + 1):
             try:
                 resp = self._session.request(
                     method, url, params=params, json=json_body,
-                    headers=headers, timeout=self.timeout,
+                    headers=headers, timeout=eff_timeout,
                 )
                 if resp.status_code == 200:
                     payload = resp.text if as_text else resp.json()
@@ -115,7 +118,7 @@ class APIClient:
                     last_err = APIError(f"transient HTTP {resp.status_code}",
                                         resp.status_code)
                     self.audit.warning(db, f"HTTP {resp.status_code} on {url} "
-                                           f"(attempt {attempt}/{self.max_retries})")
+                                           f"(attempt {attempt}/{eff_retries})")
                     time.sleep(self.backoff * attempt)
                     continue
                 self.audit.error(db, f"non-retryable response for {url}",
@@ -125,7 +128,7 @@ class APIClient:
             except (requests.RequestException, ValueError) as e:
                 last_err = e
                 self.audit.warning(db, f"{type(e).__name__} on {url} "
-                                       f"(attempt {attempt}/{self.max_retries})")
+                                       f"(attempt {attempt}/{eff_retries})")
                 time.sleep(self.backoff * attempt)
 
         self.audit.error(db, f"exhausted retries for {url}: {last_err}")
@@ -133,9 +136,11 @@ class APIClient:
 
     # -- public ------------------------------------------------------------
     def get_json(self, db: str, url: str, params: dict | None = None,
-                 headers: dict | None = None) -> Any:
+                 headers: dict | None = None, timeout: float | None = None,
+                 max_retries: int | None = None) -> Any:
         h = {"Content-Type": "application/json", **(headers or {})}
-        return self._request(db, "GET", url, params=params, headers=h)
+        return self._request(db, "GET", url, params=params, headers=h,
+                             timeout=timeout, max_retries=max_retries)
 
     def get_text(self, db: str, url: str, params: dict | None = None,
                  headers: dict | None = None) -> str:
