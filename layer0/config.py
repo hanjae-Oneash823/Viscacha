@@ -51,7 +51,7 @@ CELL_TYPES = [
 
 # --- Thresholds ---
 DOUBLET_THRESHOLD   = 0.3
-MIN_PREVALENCE      = 0.40
+MIN_PREVALENCE      = 0.30
 MIN_CELLS_PB        = 10
 DROPOUT_FLAG_PCT    = 0.20   # flag donor×cell_type losing >20% barcodes
 

@@ -138,10 +138,10 @@
       "resolution_ok": true
     }
   ],
-  "drug_target_status": "novel",
-  "ad_relevance": "none",
-  "n_drugs": 0,
-  "n_docking_compounds": 0,
+  "drug_target_status": "known",
+  "ad_relevance": "indirect",
+  "n_drugs": 1,
+  "n_docking_compounds": 26,
   "opentargets_score": 0.1246,
   "opentargets_label": "emerging",
   "ad_specificity_ratio": 0.698,
@@ -177,5 +177,5 @@
     "h5ad_md5": "e1ef63065fd7e7517b21270197385bd0",
     "gene_de_csv_md5": "2db61db4019eebb09953f7bf0ea5b46f"
   },
-  "generated": "2026-06-13T01:21:56.887858+00:00"
+  "generated": "2026-06-13T01:28:25.933331+00:00"
 }

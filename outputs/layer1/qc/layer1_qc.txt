@@ -2,113 +2,113 @@
 
 cell_type:   Excitatory_neuron
 model:       primary
-tx_before:   18710
-tx_after:    3083
-n_genes:     1214
+tx_before:   22531
+tx_after:    4604
+n_genes:     1738
 sig_genes:   8
 sig_tx:      10
 ---
 cell_type:   Excitatory_neuron
 model:       braak_sensitivity
-tx_before:   18710
-tx_after:    3083
-n_genes:     1214
+tx_before:   22531
+tx_after:    4604
+n_genes:     1738
 sig_genes:   0
 sig_tx:      0
 ---
 cell_type:   Inhibitory_neuron
 model:       primary
-tx_before:   13221
-tx_after:    1311
-n_genes:     548
+tx_before:   16513
+tx_after:    2351
+n_genes:     960
+sig_genes:   0
+sig_tx:      0
+---
+cell_type:   Inhibitory_neuron
+model:       braak_sensitivity
+tx_before:   16513
+tx_after:    2351
+n_genes:     960
+sig_genes:   2
+sig_tx:      4
+---
+cell_type:   Oligodendrocyte
+model:       primary
+tx_before:   12678
+tx_after:    2054
+n_genes:     828
+sig_genes:   0
+sig_tx:      0
+---
+cell_type:   Oligodendrocyte
+model:       braak_sensitivity
+tx_before:   12678
+tx_after:    2054
+n_genes:     828
+sig_genes:   0
+sig_tx:      0
+---
+cell_type:   OPC
+model:       primary
+tx_before:   8827
+tx_after:    734
+n_genes:     313
+sig_genes:   0
+sig_tx:      0
+---
+cell_type:   OPC
+model:       braak_sensitivity
+tx_before:   8827
+tx_after:    734
+n_genes:     313
+sig_genes:   0
+sig_tx:      0
+---
+cell_type:   Astrocyte
+model:       primary
+tx_before:   6539
+tx_after:    417
+n_genes:     178
 sig_genes:   2
 sig_tx:      2
 ---
-cell_type:   Inhibitory_neuron
-model:       braak_sensitivity
-tx_before:   13221
-tx_after:    1311
-n_genes:     548
-sig_genes:   3
-sig_tx:      5
----
-cell_type:   Oligodendrocyte
-model:       primary
-tx_before:   10024
-tx_after:    1231
-n_genes:     518
-sig_genes:   0
-sig_tx:      0
----
-cell_type:   Oligodendrocyte
-model:       braak_sensitivity
-tx_before:   10024
-tx_after:    1231
-n_genes:     518
-sig_genes:   0
-sig_tx:      0
----
-cell_type:   OPC
-model:       primary
-tx_before:   6745
-tx_after:    387
-n_genes:     169
-sig_genes:   0
-sig_tx:      0
----
-cell_type:   OPC
-model:       braak_sensitivity
-tx_before:   6745
-tx_after:    387
-n_genes:     169
-sig_genes:   0
-sig_tx:      0
----
-cell_type:   Astrocyte
-model:       primary
-tx_before:   4815
-tx_after:    221
-n_genes:     93
-sig_genes:   0
-sig_tx:      0
----
 cell_type:   Astrocyte
 model:       braak_sensitivity
-tx_before:   4815
-tx_after:    221
-n_genes:     93
+tx_before:   6539
+tx_after:    417
+n_genes:     178
 sig_genes:   0
 sig_tx:      0
 ---
 cell_type:   Microglia
 model:       primary
-tx_before:   1314
-tx_after:    41
-n_genes:     19
+tx_before:   2134
+tx_after:    88
+n_genes:     41
 sig_genes:   0
 sig_tx:      0
 ---
 cell_type:   Microglia
 model:       braak_sensitivity
-tx_before:   1314
-tx_after:    41
-n_genes:     19
+tx_before:   2134
+tx_after:    88
+n_genes:     41
 sig_genes:   0
 sig_tx:      0
 ---
 cell_type:   Vascular_cell
 model:       primary
-tx_before:   628
-tx_after:    14
-n_genes:     7
+tx_before:   1094
+tx_after:    38
+n_genes:     18
 sig_genes:   0
 sig_tx:      0
 ---
 cell_type:   Vascular_cell
 model:       braak_sensitivity
-tx_before:   628
-tx_after:    14
-n_genes:     7
-sig_genes:   2
-sig_tx:      4
+tx_before:   1094
+tx_after:    38
+n_genes:     18
+sig_genes:   0
+sig_tx:      0
 ---

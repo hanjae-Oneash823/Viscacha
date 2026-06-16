@@ -1403,50 +1403,50 @@
     "prevalence_filter": {
       "Microglia": {
         "n_before": 63994,
-        "n_after": 1314,
-        "n_dropped": 62680,
-        "pct_kept": 2.1
+        "n_after": 2134,
+        "n_dropped": 61860,
+        "pct_kept": 3.3
       },
       "Excitatory neuron": {
         "n_before": 63994,
-        "n_after": 18710,
-        "n_dropped": 45284,
-        "pct_kept": 29.2
+        "n_after": 22531,
+        "n_dropped": 41463,
+        "pct_kept": 35.2
       },
       "Oligodendrocyte": {
         "n_before": 63994,
-        "n_after": 10024,
-        "n_dropped": 53970,
-        "pct_kept": 15.7
+        "n_after": 12678,
+        "n_dropped": 51316,
+        "pct_kept": 19.8
       },
       "OPC": {
         "n_before": 63994,
-        "n_after": 6745,
-        "n_dropped": 57249,
-        "pct_kept": 10.5
+        "n_after": 8827,
+        "n_dropped": 55167,
+        "pct_kept": 13.8
       },
       "Astrocyte": {
         "n_before": 63994,
-        "n_after": 4815,
-        "n_dropped": 59179,
-        "pct_kept": 7.5
+        "n_after": 6539,
+        "n_dropped": 57455,
+        "pct_kept": 10.2
       },
       "Inhibitory neuron": {
         "n_before": 63994,
-        "n_after": 13221,
-        "n_dropped": 50773,
-        "pct_kept": 20.7
+        "n_after": 16513,
+        "n_dropped": 47481,
+        "pct_kept": 25.8
       },
       "Vascular cell": {
         "n_before": 63994,
-        "n_after": 628,
-        "n_dropped": 63366,
-        "pct_kept": 1.0
+        "n_after": 1094,
+        "n_dropped": 62900,
+        "pct_kept": 1.7
       },
       "Lymphocyte": {
         "n_before": 63994,
-        "n_after": 6,
-        "n_dropped": 63988,
+        "n_after": 16,
+        "n_dropped": 63978,
         "pct_kept": 0.0
       }
     },

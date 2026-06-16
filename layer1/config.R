@@ -26,7 +26,7 @@ FORMULA_BRAAK   <- ~ condition + age + sex + median_pct_mt + braak_stage
 # --- Count-based filter thresholds (applied per cell type in step11) ---
 MIN_TX_COUNT         <- 5    # transcript must have count >= this in >= MIN_SAMPS_FRAC of samples
 MIN_GENE_COUNT       <- 10   # gene total must be >= this in >= MIN_SAMPS_FRAC of samples
-MIN_SAMPS_FRAC       <- 0.40 # fraction of samples that must pass the count threshold
+MIN_SAMPS_FRAC       <- 0.30 # fraction of samples that must pass the count threshold
 
 # --- DTU test parameters ---
 ALPHA   <- 0.05

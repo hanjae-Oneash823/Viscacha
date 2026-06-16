@@ -1,249 +1,279 @@
-2026-06-13T01:19:05Z [RUN] === Surveyor run started 2026-06-13T01:19:05Z ===
-2026-06-13T01:19:05Z [VALUE] braak_condition_correlation = 0.9148
-2026-06-13T01:19:05Z [INFO] 10 genes, 10 candidates
-2026-06-13T01:19:05Z [INFO] --- gene CAMK2B ---
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000058404
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000395749
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000395749
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000379098
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000350811
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000350811
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000326375
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000440254
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000440254
-2026-06-13T01:19:05Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000397937
-2026-06-13T01:19:05Z [INFO] M01 CAMK2B: 2 significant tx, comparator source(s): ['paired_hit'], canonical UniProt: Q13554
-2026-06-13T01:19:05Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q13554.json
-2026-06-13T01:19:05Z [VERSION] uniprot version: 2011-05-31
-2026-06-13T01:19:05Z [INFO] M02 CAMK2B (Q13554, reviewed): 78 features (3 pocket, 4 struct), 4 PDB (4 usable)
-2026-06-13T01:19:05Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/target/search
-2026-06-13T01:19:05Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/mechanism
-2026-06-13T01:19:21Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/activity (attempt 1/1)
-2026-06-13T01:19:26Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/activity: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:19:26Z [WARN] chembl: CAMK2B: activity query failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/activity: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:19:26Z [INFO] M04 CAMK2B (CHEMBL4121): 0 drugs (0 AD-direct), 0 docking candidates, status=novel
-2026-06-13T01:19:26Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:19:26Z [INFO] M05 CAMK2B: AD=0.054 (novel), specificity=3.804, genetic=n
-2026-06-13T01:19:26Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:19:26Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q13554/pathways
-2026-06-13T01:19:26Z [INFO] M06 CAMK2B: 20 STRING partners (1 AD-genes), 22 Reactome pathways (1 AD-relevant)
-2026-06-13T01:19:26Z [INFO] --- gene CSRNP3 ---
-2026-06-13T01:19:26Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000178662
-2026-06-13T01:19:26Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000651982
-2026-06-13T01:19:26Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000651982
-2026-06-13T01:19:26Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000498841
-2026-06-13T01:19:26Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000342316
-2026-06-13T01:19:26Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000342316
-2026-06-13T01:19:26Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000344042
-2026-06-13T01:19:26Z [INFO] M01 CSRNP3: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: Q8WYN3
-2026-06-13T01:19:26Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q8WYN3.json
-2026-06-13T01:19:26Z [VERSION] uniprot version: 2002-03-01
-2026-06-13T01:19:26Z [INFO] M02 CSRNP3 (Q8WYN3, reviewed): 11 features (0 pocket, 2 struct), 0 PDB (0 usable)
-2026-06-13T01:19:42Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/target/search (attempt 1/1)
-2026-06-13T01:19:47Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:19:47Z [WARN] chembl: CSRNP3: target resolution failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:19:47Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:19:47Z [INFO] M05 CSRNP3: AD=0.002 (novel), specificity=None, genetic=n
-2026-06-13T01:19:47Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:19:49Z [ERROR] reactome: non-retryable response for https://reactome.org/ContentService/data/mapping/UniProt/Q8WYN3/pathways (HTTP 404)
-2026-06-13T01:19:49Z [WARN] reactome: Q8WYN3: HTTP 404 for https://reactome.org/ContentService/data/mapping/UniProt/Q8WYN3/pathways
-2026-06-13T01:19:49Z [INFO] M06 CSRNP3: 0 STRING partners (0 AD-genes), 0 Reactome pathways (0 AD-relevant)
-2026-06-13T01:19:49Z [INFO] --- gene DDX17 ---
-2026-06-13T01:19:49Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000100201
-2026-06-13T01:19:49Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000403230
-2026-06-13T01:19:49Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000403230
-2026-06-13T01:19:49Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000385536
-2026-06-13T01:19:49Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000396821
-2026-06-13T01:19:49Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000396821
-2026-06-13T01:19:49Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000380033
-2026-06-13T01:19:49Z [INFO] M01 DDX17: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: Q92841
-2026-06-13T01:19:49Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q92841.json
-2026-06-13T01:19:49Z [VERSION] uniprot version: 2012-03-21
-2026-06-13T01:19:49Z [INFO] M02 DDX17 (Q92841, reviewed): 88 features (1 pocket, 9 struct), 5 PDB (5 usable)
-2026-06-13T01:19:51Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/target/search
-2026-06-13T01:19:56Z [WARN] chembl: HTTP 500 on https://www.ebi.ac.uk/chembl/api/data/mechanism (attempt 1/1)
-2026-06-13T01:20:01Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/mechanism: transient HTTP 500
-2026-06-13T01:20:01Z [WARN] chembl: DDX17: mechanism query failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/mechanism: transient HTTP 500
-2026-06-13T01:20:04Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/activity
-2026-06-13T01:20:04Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL3752910
-2026-06-13T01:20:13Z [INFO] M04 DDX17 (CHEMBL4105760): 0 drugs (0 AD-direct), 1 docking candidates, status=known
-2026-06-13T01:20:13Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:20:13Z [INFO] M05 DDX17: AD=0.048 (novel), specificity=7.561, genetic=n
-2026-06-13T01:20:14Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:20:14Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q92841/pathways
-2026-06-13T01:20:14Z [INFO] M06 DDX17: 20 STRING partners (0 AD-genes), 1 Reactome pathways (0 AD-relevant)
-2026-06-13T01:20:14Z [INFO] --- gene EIF4G2 ---
-2026-06-13T01:20:14Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000110321
-2026-06-13T01:20:14Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000339995
-2026-06-13T01:20:14Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000339995
-2026-06-13T01:20:14Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000340281
-2026-06-13T01:20:14Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000526148
-2026-06-13T01:20:14Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000526148
-2026-06-13T01:20:14Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000433664
-2026-06-13T01:20:14Z [INFO] M01 EIF4G2: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: P78344
-2026-06-13T01:20:14Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/P78344.json
-2026-06-13T01:20:14Z [VERSION] uniprot version: 1997-05-01
-2026-06-13T01:20:14Z [INFO] M02 EIF4G2 (P78344, reviewed): 78 features (0 pocket, 5 struct), 4 PDB (4 usable)
-2026-06-13T01:20:14Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/target/search
-2026-06-13T01:20:15Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/mechanism
-2026-06-13T01:20:20Z [WARN] chembl: HTTP 500 on https://www.ebi.ac.uk/chembl/api/data/activity (attempt 1/1)
-2026-06-13T01:20:25Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/activity: transient HTTP 500
-2026-06-13T01:20:25Z [WARN] chembl: EIF4G2: activity query failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/activity: transient HTTP 500
-2026-06-13T01:20:25Z [INFO] M04 EIF4G2 (CHEMBL6067400): 0 drugs (0 AD-direct), 0 docking candidates, status=novel
-2026-06-13T01:20:25Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:20:25Z [INFO] M05 EIF4G2: AD=0.033 (novel), specificity=1.074, genetic=n
-2026-06-13T01:20:25Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:20:25Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/P78344/pathways
-2026-06-13T01:20:25Z [INFO] M06 EIF4G2: 20 STRING partners (0 AD-genes), 2 Reactome pathways (0 AD-relevant)
-2026-06-13T01:20:25Z [INFO] --- gene GCC2 ---
-2026-06-13T01:20:25Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000135968
-2026-06-13T01:20:25Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000309863
-2026-06-13T01:20:25Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000309863
-2026-06-13T01:20:25Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000307939
-2026-06-13T01:20:25Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000692694
-2026-06-13T01:20:25Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000692694
-2026-06-13T01:20:25Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000509242
-2026-06-13T01:20:25Z [INFO] M01 GCC2: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: Q8IWJ2
-2026-06-13T01:20:25Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q8IWJ2.json
-2026-06-13T01:20:25Z [VERSION] uniprot version: 2010-11-30
-2026-06-13T01:20:25Z [INFO] M02 GCC2 (Q8IWJ2, reviewed): 22 features (0 pocket, 6 struct), 1 PDB (1 usable)
-2026-06-13T01:20:42Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/target/search (attempt 1/1)
-2026-06-13T01:20:47Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:20:47Z [WARN] chembl: GCC2: target resolution failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:20:47Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:20:47Z [INFO] M05 GCC2: AD=0.005 (novel), specificity=6.262, genetic=n
-2026-06-13T01:20:47Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:20:47Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q8IWJ2/pathways
-2026-06-13T01:20:47Z [INFO] M06 GCC2: 20 STRING partners (0 AD-genes), 2 Reactome pathways (0 AD-relevant)
-2026-06-13T01:20:47Z [INFO] --- gene GRIA2 ---
-2026-06-13T01:20:47Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000120251
-2026-06-13T01:20:47Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000264426
-2026-06-13T01:20:47Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000264426
-2026-06-13T01:20:47Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000264426
-2026-06-13T01:20:47Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000703762
-2026-06-13T01:20:47Z [INFO] M01 GRIA2: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: P42262
-2026-06-13T01:20:47Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/P42262.json
-2026-06-13T01:20:47Z [VERSION] uniprot version: 2002-10-10
-2026-06-13T01:20:47Z [INFO] M02 GRIA2 (P42262, reviewed): 123 features (6 pocket, 1 struct), 16 PDB (15 usable)
-2026-06-13T01:21:04Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/target/search (attempt 1/1)
-2026-06-13T01:21:09Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:21:09Z [WARN] chembl: GRIA2: target resolution failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:21:09Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:21:09Z [INFO] M05 GRIA2: AD=0.125 (emerging), specificity=0.698, genetic=n
-2026-06-13T01:21:09Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:21:09Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/P42262/pathways
-2026-06-13T01:21:09Z [INFO] M06 GRIA2: 20 STRING partners (0 AD-genes), 5 Reactome pathways (1 AD-relevant)
-2026-06-13T01:21:09Z [INFO] --- gene KLC1 ---
-2026-06-13T01:21:09Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000126214
-2026-06-13T01:21:09Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000334553
-2026-06-13T01:21:09Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000334553
-2026-06-13T01:21:09Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000334523
-2026-06-13T01:21:09Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000445352
-2026-06-13T01:21:09Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000445352
-2026-06-13T01:21:09Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000412693
-2026-06-13T01:21:09Z [INFO] M01 KLC1: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: Q07866
-2026-06-13T01:21:09Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q07866.json
-2026-06-13T01:21:09Z [VERSION] uniprot version: 2009-02-10
-2026-06-13T01:21:09Z [INFO] M02 KLC1 (Q07866, reviewed): 54 features (0 pocket, 9 struct), 4 PDB (4 usable)
-2026-06-13T01:21:15Z [WARN] chembl: HTTP 500 on https://www.ebi.ac.uk/chembl/api/data/target/search (attempt 1/1)
-2026-06-13T01:21:20Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: transient HTTP 500
-2026-06-13T01:21:20Z [WARN] chembl: KLC1: target resolution failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: transient HTTP 500
-2026-06-13T01:21:20Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:21:20Z [INFO] M05 KLC1: AD=0.215 (emerging), specificity=11.848, genetic=Y
-2026-06-13T01:21:20Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:21:20Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q07866/pathways
-2026-06-13T01:21:20Z [INFO] M06 KLC1: 20 STRING partners (3 AD-genes), 5 Reactome pathways (0 AD-relevant)
-2026-06-13T01:21:20Z [INFO] --- gene MGRN1 ---
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000102858
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000262370
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000262370
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000262370
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000399577
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000399577
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000382487
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000415496
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000415496
-2026-06-13T01:21:20Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000393311
-2026-06-13T01:21:20Z [INFO] M01 MGRN1: 2 significant tx, comparator source(s): ['paired_hit'], canonical UniProt: O60291
-2026-06-13T01:21:20Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/O60291.json
-2026-06-13T01:21:20Z [VERSION] uniprot version: 2006-07-25
-2026-06-13T01:21:20Z [INFO] M02 MGRN1 (O60291, reviewed): 18 features (0 pocket, 4 struct), 0 PDB (0 usable)
-2026-06-13T01:21:26Z [WARN] chembl: HTTP 500 on https://www.ebi.ac.uk/chembl/api/data/target/search (attempt 1/1)
-2026-06-13T01:21:31Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: transient HTTP 500
-2026-06-13T01:21:31Z [WARN] chembl: MGRN1: target resolution failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: transient HTTP 500
-2026-06-13T01:21:31Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:21:31Z [INFO] M05 MGRN1: AD=0.009 (novel), specificity=1.279, genetic=n
-2026-06-13T01:21:31Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:21:31Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/O60291/pathways
-2026-06-13T01:21:31Z [INFO] M06 MGRN1: 8 STRING partners (0 AD-genes), 1 Reactome pathways (0 AD-relevant)
-2026-06-13T01:21:31Z [INFO] --- gene RGS7 ---
-2026-06-13T01:21:31Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000182901
-2026-06-13T01:21:31Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000440928
-2026-06-13T01:21:31Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000440928
-2026-06-13T01:21:31Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000404399
-2026-06-13T01:21:31Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000366564
-2026-06-13T01:21:31Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000366564
-2026-06-13T01:21:31Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000355522
-2026-06-13T01:21:31Z [INFO] M01 RGS7: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: P49802
-2026-06-13T01:21:31Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/P49802.json
-2026-06-13T01:21:31Z [VERSION] uniprot version: 2001-10-18
-2026-06-13T01:21:31Z [INFO] M02 RGS7 (P49802, reviewed): 54 features (0 pocket, 4 struct), 5 PDB (2 usable)
-2026-06-13T01:21:47Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/target/search (attempt 1/1)
-2026-06-13T01:21:52Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:21:52Z [WARN] chembl: RGS7: target resolution failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/target/search: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
-2026-06-13T01:21:52Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:21:52Z [INFO] M05 RGS7: AD=0.020 (novel), specificity=12.861, genetic=n
-2026-06-13T01:21:52Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:21:52Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/P49802/pathways
-2026-06-13T01:21:52Z [INFO] M06 RGS7: 20 STRING partners (0 AD-genes), 2 Reactome pathways (0 AD-relevant)
-2026-06-13T01:21:52Z [INFO] --- gene RHOT1 ---
-2026-06-13T01:21:52Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000126858
-2026-06-13T01:21:52Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000545287
-2026-06-13T01:21:52Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000545287
-2026-06-13T01:21:52Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000439737
-2026-06-13T01:21:52Z [WARN] RHOT1: significant transcript is itself the MANE Select — using highest-expressed control transcript RHOT1-201 as comparator
-2026-06-13T01:21:52Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000333942
-2026-06-13T01:21:52Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000333942
-2026-06-13T01:21:52Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000334724
-2026-06-13T01:21:52Z [INFO] M01 RHOT1: 1 significant tx, comparator source(s): ['highest_ctrl'], canonical UniProt: Q8IXI2
-2026-06-13T01:21:52Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q8IXI2.json
-2026-06-13T01:21:52Z [VERSION] uniprot version: 2006-06-13
-2026-06-13T01:21:52Z [INFO] M02 RHOT1 (Q8IXI2, reviewed): 145 features (51 pocket, 4 struct), 8 PDB (7 usable)
-2026-06-13T01:21:54Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/target/search
-2026-06-13T01:21:54Z [INFO] M04 RHOT1: no human ChEMBL target — novel
-2026-06-13T01:21:54Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
-2026-06-13T01:21:54Z [INFO] M05 RHOT1: AD=0.013 (novel), specificity=0.223, genetic=n
-2026-06-13T01:21:54Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
-2026-06-13T01:21:54Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q8IXI2/pathways
-2026-06-13T01:21:54Z [INFO] M06 RHOT1: 20 STRING partners (0 AD-genes), 2 Reactome pathways (0 AD-relevant)
-2026-06-13T01:21:54Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:54Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:54Z [INFO] M07 CAMK2B/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=pure_switch, BSI=3.55
-2026-06-13T01:21:55Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:55Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:55Z [INFO] M07 CSRNP3/Excitatory_neuron: 1 tx profiled, comparator_in_pb=False, pattern=pure_switch, BSI=2.28
-2026-06-13T01:21:55Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:55Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:55Z [INFO] M07 DDX17/Inhibitory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=pure_switch, BSI=0.57
-2026-06-13T01:21:56Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:56Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:56Z [INFO] M07 EIF4G2/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=de_uncertain, BSI=0.64
-2026-06-13T01:21:56Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:56Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:56Z [INFO] M07 GCC2/Inhibitory_neuron: 1 tx profiled, comparator_in_pb=False, pattern=pure_switch, BSI=0.72
-2026-06-13T01:21:56Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:56Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:56Z [INFO] M07 GRIA2/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=de_uncertain, BSI=3.48
-2026-06-13T01:21:57Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:57Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:57Z [INFO] M07 KLC1/Excitatory_neuron: 1 tx profiled, comparator_in_pb=False, pattern=de_uncertain, BSI=1.88
-2026-06-13T01:21:57Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:57Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:57Z [INFO] M07 MGRN1/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=pure_switch, BSI=1.03
-2026-06-13T01:21:58Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:58Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:58Z [INFO] M07 RGS7/Excitatory_neuron: 1 tx profiled, comparator_in_pb=False, pattern=de_uncertain, BSI=3.91
-2026-06-13T01:21:58Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
-2026-06-13T01:21:58Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
-2026-06-13T01:21:58Z [INFO] M07 RHOT1/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=de_uncertain, BSI=0.95
-2026-06-13T01:21:58Z [RUN] === Surveyor run finished 2026-06-13T01:21:58Z ===
+2026-06-13T01:23:08Z [RUN] === Surveyor run started 2026-06-13T01:23:08Z ===
+2026-06-13T01:23:08Z [VALUE] braak_condition_correlation = 0.9148
+2026-06-13T01:23:08Z [INFO] 10 genes, 10 candidates
+2026-06-13T01:23:08Z [INFO] --- gene CAMK2B ---
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000058404
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000395749
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000395749
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000379098
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000350811
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000350811
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000326375
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000440254
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000440254
+2026-06-13T01:23:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000397937
+2026-06-13T01:23:08Z [INFO] M01 CAMK2B: 2 significant tx, comparator source(s): ['paired_hit'], canonical UniProt: Q13554
+2026-06-13T01:23:08Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q13554.json
+2026-06-13T01:23:08Z [VERSION] uniprot version: 2011-05-31
+2026-06-13T01:23:08Z [INFO] M02 CAMK2B (Q13554, reviewed): 78 features (3 pocket, 4 struct), 4 PDB (4 usable)
+2026-06-13T01:23:08Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:23:08Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/mechanism
+2026-06-13T01:23:14Z [WARN] chembl: HTTP 500 on https://www.ebi.ac.uk/chembl/api/data/activity (attempt 1/1)
+2026-06-13T01:23:19Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/activity: transient HTTP 500
+2026-06-13T01:23:19Z [WARN] chembl: CAMK2B: activity query failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/activity: transient HTTP 500
+2026-06-13T01:23:19Z [INFO] M04 CAMK2B (CHEMBL4121): 0 drugs (0 AD-direct), 0 docking candidates, status=novel
+2026-06-13T01:23:19Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:23:19Z [INFO] M05 CAMK2B: AD=0.054 (novel), specificity=3.804, genetic=n
+2026-06-13T01:23:19Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:23:19Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q13554/pathways
+2026-06-13T01:23:19Z [INFO] M06 CAMK2B: 20 STRING partners (1 AD-genes), 22 Reactome pathways (1 AD-relevant)
+2026-06-13T01:23:19Z [INFO] --- gene CSRNP3 ---
+2026-06-13T01:23:19Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000178662
+2026-06-13T01:23:19Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000651982
+2026-06-13T01:23:19Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000651982
+2026-06-13T01:23:19Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000498841
+2026-06-13T01:23:19Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000342316
+2026-06-13T01:23:19Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000342316
+2026-06-13T01:23:19Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000344042
+2026-06-13T01:23:19Z [INFO] M01 CSRNP3: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: Q8WYN3
+2026-06-13T01:23:19Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q8WYN3.json
+2026-06-13T01:23:19Z [VERSION] uniprot version: 2002-03-01
+2026-06-13T01:23:19Z [INFO] M02 CSRNP3 (Q8WYN3, reviewed): 11 features (0 pocket, 2 struct), 0 PDB (0 usable)
+2026-06-13T01:23:20Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:23:20Z [INFO] M04 CSRNP3: no human ChEMBL target — novel
+2026-06-13T01:23:20Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:23:20Z [INFO] M05 CSRNP3: AD=0.002 (novel), specificity=None, genetic=n
+2026-06-13T01:23:20Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:23:22Z [ERROR] reactome: non-retryable response for https://reactome.org/ContentService/data/mapping/UniProt/Q8WYN3/pathways (HTTP 404)
+2026-06-13T01:23:22Z [WARN] reactome: Q8WYN3: HTTP 404 for https://reactome.org/ContentService/data/mapping/UniProt/Q8WYN3/pathways
+2026-06-13T01:23:22Z [INFO] M06 CSRNP3: 0 STRING partners (0 AD-genes), 0 Reactome pathways (0 AD-relevant)
+2026-06-13T01:23:22Z [INFO] --- gene DDX17 ---
+2026-06-13T01:23:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000100201
+2026-06-13T01:23:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000403230
+2026-06-13T01:23:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000403230
+2026-06-13T01:23:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000385536
+2026-06-13T01:23:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000396821
+2026-06-13T01:23:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000396821
+2026-06-13T01:23:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000380033
+2026-06-13T01:23:22Z [INFO] M01 DDX17: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: Q92841
+2026-06-13T01:23:22Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q92841.json
+2026-06-13T01:23:22Z [VERSION] uniprot version: 2012-03-21
+2026-06-13T01:23:22Z [INFO] M02 DDX17 (Q92841, reviewed): 88 features (1 pocket, 9 struct), 5 PDB (5 usable)
+2026-06-13T01:23:22Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:23:37Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/mechanism (attempt 1/1)
+2026-06-13T01:23:42Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/mechanism: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:23:42Z [WARN] chembl: DDX17: mechanism query failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/mechanism: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:23:42Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/activity
+2026-06-13T01:23:42Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL3752910
+2026-06-13T01:23:50Z [INFO] M04 DDX17 (CHEMBL4105760): 0 drugs (0 AD-direct), 1 docking candidates, status=known
+2026-06-13T01:23:50Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:23:50Z [INFO] M05 DDX17: AD=0.048 (novel), specificity=7.561, genetic=n
+2026-06-13T01:23:50Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:23:50Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q92841/pathways
+2026-06-13T01:23:50Z [INFO] M06 DDX17: 20 STRING partners (0 AD-genes), 1 Reactome pathways (0 AD-relevant)
+2026-06-13T01:23:50Z [INFO] --- gene EIF4G2 ---
+2026-06-13T01:23:50Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000110321
+2026-06-13T01:23:50Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000339995
+2026-06-13T01:23:50Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000339995
+2026-06-13T01:23:50Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000340281
+2026-06-13T01:23:50Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000526148
+2026-06-13T01:23:50Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000526148
+2026-06-13T01:23:50Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000433664
+2026-06-13T01:23:50Z [INFO] M01 EIF4G2: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: P78344
+2026-06-13T01:23:50Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/P78344.json
+2026-06-13T01:23:50Z [VERSION] uniprot version: 1997-05-01
+2026-06-13T01:23:50Z [INFO] M02 EIF4G2 (P78344, reviewed): 78 features (0 pocket, 5 struct), 4 PDB (4 usable)
+2026-06-13T01:23:50Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:23:50Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/mechanism
+2026-06-13T01:24:06Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/activity (attempt 1/1)
+2026-06-13T01:24:11Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/activity: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:24:11Z [WARN] chembl: EIF4G2: activity query failed: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/activity: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:24:11Z [INFO] M04 EIF4G2 (CHEMBL6067400): 0 drugs (0 AD-direct), 0 docking candidates, status=novel
+2026-06-13T01:24:11Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:24:11Z [INFO] M05 EIF4G2: AD=0.033 (novel), specificity=1.074, genetic=n
+2026-06-13T01:24:11Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:24:11Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/P78344/pathways
+2026-06-13T01:24:11Z [INFO] M06 EIF4G2: 20 STRING partners (0 AD-genes), 2 Reactome pathways (0 AD-relevant)
+2026-06-13T01:24:11Z [INFO] --- gene GCC2 ---
+2026-06-13T01:24:11Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000135968
+2026-06-13T01:24:11Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000309863
+2026-06-13T01:24:11Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000309863
+2026-06-13T01:24:11Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000307939
+2026-06-13T01:24:11Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000692694
+2026-06-13T01:24:11Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000692694
+2026-06-13T01:24:11Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000509242
+2026-06-13T01:24:11Z [INFO] M01 GCC2: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: Q8IWJ2
+2026-06-13T01:24:11Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q8IWJ2.json
+2026-06-13T01:24:11Z [VERSION] uniprot version: 2010-11-30
+2026-06-13T01:24:11Z [INFO] M02 GCC2 (Q8IWJ2, reviewed): 22 features (0 pocket, 6 struct), 1 PDB (1 usable)
+2026-06-13T01:24:13Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:24:13Z [INFO] M04 GCC2: no human ChEMBL target — novel
+2026-06-13T01:24:13Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:24:13Z [INFO] M05 GCC2: AD=0.005 (novel), specificity=6.262, genetic=n
+2026-06-13T01:24:13Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:24:13Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q8IWJ2/pathways
+2026-06-13T01:24:13Z [INFO] M06 GCC2: 20 STRING partners (0 AD-genes), 2 Reactome pathways (0 AD-relevant)
+2026-06-13T01:24:13Z [INFO] --- gene GRIA2 ---
+2026-06-13T01:24:13Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000120251
+2026-06-13T01:24:13Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000264426
+2026-06-13T01:24:13Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000264426
+2026-06-13T01:24:13Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000264426
+2026-06-13T01:24:13Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000703762
+2026-06-13T01:24:13Z [INFO] M01 GRIA2: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: P42262
+2026-06-13T01:24:13Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/P42262.json
+2026-06-13T01:24:13Z [VERSION] uniprot version: 2002-10-10
+2026-06-13T01:24:13Z [INFO] M02 GRIA2 (P42262, reviewed): 123 features (6 pocket, 1 struct), 16 PDB (15 usable)
+2026-06-13T01:24:15Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:24:25Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/mechanism
+2026-06-13T01:24:25Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL61872
+2026-06-13T01:24:25Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/drug_indication
+2026-06-13T01:24:27Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/activity
+2026-06-13T01:24:28Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL222519
+2026-06-13T01:24:30Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL575060
+2026-06-13T01:24:30Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL121553
+2026-06-13T01:24:37Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL122005
+2026-06-13T01:24:38Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL122656
+2026-06-13T01:24:39Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL120808
+2026-06-13T01:24:52Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL331696
+2026-06-13T01:24:57Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL123132
+2026-06-13T01:25:08Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL121915
+2026-06-13T01:25:18Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL331644
+2026-06-13T01:25:19Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL333964
+2026-06-13T01:25:20Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL121191
+2026-06-13T01:25:36Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL276815
+2026-06-13T01:25:45Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL121388
+2026-06-13T01:26:01Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL72366 (attempt 1/1)
+2026-06-13T01:26:06Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL72366: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:26:22Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL13378 (attempt 1/1)
+2026-06-13T01:26:27Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL13378: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:26:43Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL73698 (attempt 1/1)
+2026-06-13T01:26:48Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL73698: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:27:04Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL370038 (attempt 1/1)
+2026-06-13T01:27:09Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL370038: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:27:11Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL370941
+2026-06-13T01:27:27Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL402444 (attempt 1/1)
+2026-06-13T01:27:32Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL402444: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:27:34Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL429594
+2026-06-13T01:27:35Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL154535
+2026-06-13T01:27:35Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL2092841
+2026-06-13T01:27:36Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL3088070
+2026-06-13T01:27:43Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL3088060
+2026-06-13T01:28:02Z [WARN] chembl: ReadTimeout on https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL2441067 (attempt 1/1)
+2026-06-13T01:28:07Z [ERROR] chembl: exhausted retries for https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL2441067: HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=15)
+2026-06-13T01:28:07Z [INFO] M04 GRIA2 (CHEMBL4016): 1 drugs (0 AD-direct), 26 docking candidates, status=known
+2026-06-13T01:28:07Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:28:07Z [INFO] M05 GRIA2: AD=0.125 (emerging), specificity=0.698, genetic=n
+2026-06-13T01:28:07Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:28:07Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/P42262/pathways
+2026-06-13T01:28:07Z [INFO] M06 GRIA2: 20 STRING partners (0 AD-genes), 5 Reactome pathways (1 AD-relevant)
+2026-06-13T01:28:07Z [INFO] --- gene KLC1 ---
+2026-06-13T01:28:07Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000126214
+2026-06-13T01:28:07Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000334553
+2026-06-13T01:28:07Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000334553
+2026-06-13T01:28:07Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000334523
+2026-06-13T01:28:07Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000445352
+2026-06-13T01:28:07Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000445352
+2026-06-13T01:28:07Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000412693
+2026-06-13T01:28:07Z [INFO] M01 KLC1: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: Q07866
+2026-06-13T01:28:07Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q07866.json
+2026-06-13T01:28:07Z [VERSION] uniprot version: 2009-02-10
+2026-06-13T01:28:07Z [INFO] M02 KLC1 (Q07866, reviewed): 54 features (0 pocket, 9 struct), 4 PDB (4 usable)
+2026-06-13T01:28:08Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:28:08Z [INFO] M04 KLC1: no human ChEMBL target — novel
+2026-06-13T01:28:08Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:28:08Z [INFO] M05 KLC1: AD=0.215 (emerging), specificity=11.848, genetic=Y
+2026-06-13T01:28:08Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:28:08Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q07866/pathways
+2026-06-13T01:28:08Z [INFO] M06 KLC1: 20 STRING partners (3 AD-genes), 5 Reactome pathways (0 AD-relevant)
+2026-06-13T01:28:08Z [INFO] --- gene MGRN1 ---
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000102858
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000262370
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000262370
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000262370
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000399577
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000399577
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000382487
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000415496
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000415496
+2026-06-13T01:28:08Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000393311
+2026-06-13T01:28:08Z [INFO] M01 MGRN1: 2 significant tx, comparator source(s): ['paired_hit'], canonical UniProt: O60291
+2026-06-13T01:28:08Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/O60291.json
+2026-06-13T01:28:08Z [VERSION] uniprot version: 2006-07-25
+2026-06-13T01:28:08Z [INFO] M02 MGRN1 (O60291, reviewed): 18 features (0 pocket, 4 struct), 0 PDB (0 usable)
+2026-06-13T01:28:21Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:28:21Z [INFO] M04 MGRN1: no human ChEMBL target — novel
+2026-06-13T01:28:21Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:28:21Z [INFO] M05 MGRN1: AD=0.009 (novel), specificity=1.279, genetic=n
+2026-06-13T01:28:21Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:28:21Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/O60291/pathways
+2026-06-13T01:28:21Z [INFO] M06 MGRN1: 8 STRING partners (0 AD-genes), 1 Reactome pathways (0 AD-relevant)
+2026-06-13T01:28:21Z [INFO] --- gene RGS7 ---
+2026-06-13T01:28:21Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000182901
+2026-06-13T01:28:21Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000440928
+2026-06-13T01:28:21Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000440928
+2026-06-13T01:28:21Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000404399
+2026-06-13T01:28:21Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000366564
+2026-06-13T01:28:21Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000366564
+2026-06-13T01:28:21Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000355522
+2026-06-13T01:28:21Z [INFO] M01 RGS7: 1 significant tx, comparator source(s): ['mane_select'], canonical UniProt: P49802
+2026-06-13T01:28:21Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/P49802.json
+2026-06-13T01:28:21Z [VERSION] uniprot version: 2001-10-18
+2026-06-13T01:28:21Z [INFO] M02 RGS7 (P49802, reviewed): 54 features (0 pocket, 4 struct), 5 PDB (2 usable)
+2026-06-13T01:28:22Z [API] chembl: HTTP 200 https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:28:22Z [INFO] M04 RGS7: no human ChEMBL target — novel
+2026-06-13T01:28:22Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:28:22Z [INFO] M05 RGS7: AD=0.020 (novel), specificity=12.861, genetic=n
+2026-06-13T01:28:22Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:28:22Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/P49802/pathways
+2026-06-13T01:28:22Z [INFO] M06 RGS7: 20 STRING partners (0 AD-genes), 2 Reactome pathways (0 AD-relevant)
+2026-06-13T01:28:22Z [INFO] --- gene RHOT1 ---
+2026-06-13T01:28:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENSG00000126858
+2026-06-13T01:28:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000545287
+2026-06-13T01:28:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000545287
+2026-06-13T01:28:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000439737
+2026-06-13T01:28:22Z [WARN] RHOT1: significant transcript is itself the MANE Select — using highest-expressed control transcript RHOT1-201 as comparator
+2026-06-13T01:28:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/lookup/id/ENST00000333942
+2026-06-13T01:28:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/sequence/id/ENST00000333942
+2026-06-13T01:28:22Z [CACHE] ensembl: HTTP cache https://rest.ensembl.org/xrefs/id/ENSP00000334724
+2026-06-13T01:28:22Z [INFO] M01 RHOT1: 1 significant tx, comparator source(s): ['highest_ctrl'], canonical UniProt: Q8IXI2
+2026-06-13T01:28:22Z [CACHE] uniprot: HTTP cache https://rest.uniprot.org/uniprotkb/Q8IXI2.json
+2026-06-13T01:28:22Z [VERSION] uniprot version: 2006-06-13
+2026-06-13T01:28:22Z [INFO] M02 RHOT1 (Q8IXI2, reviewed): 145 features (51 pocket, 4 struct), 8 PDB (7 usable)
+2026-06-13T01:28:22Z [CACHE] chembl: HTTP cache https://www.ebi.ac.uk/chembl/api/data/target/search
+2026-06-13T01:28:22Z [INFO] M04 RHOT1: no human ChEMBL target — novel
+2026-06-13T01:28:22Z [CACHE] opentargets: HTTP cache https://api.platform.opentargets.org/api/v4/graphql
+2026-06-13T01:28:22Z [INFO] M05 RHOT1: AD=0.013 (novel), specificity=0.223, genetic=n
+2026-06-13T01:28:22Z [CACHE] string: HTTP cache https://string-db.org/api/json/interaction_partners
+2026-06-13T01:28:22Z [CACHE] reactome: HTTP cache https://reactome.org/ContentService/data/mapping/UniProt/Q8IXI2/pathways
+2026-06-13T01:28:22Z [INFO] M06 RHOT1: 20 STRING partners (0 AD-genes), 2 Reactome pathways (0 AD-relevant)
+2026-06-13T01:28:23Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:23Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:23Z [INFO] M07 CAMK2B/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=pure_switch, BSI=3.55
+2026-06-13T01:28:23Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:23Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:23Z [INFO] M07 CSRNP3/Excitatory_neuron: 1 tx profiled, comparator_in_pb=False, pattern=pure_switch, BSI=2.28
+2026-06-13T01:28:24Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:24Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:24Z [INFO] M07 DDX17/Inhibitory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=pure_switch, BSI=0.57
+2026-06-13T01:28:24Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:24Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:24Z [INFO] M07 EIF4G2/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=de_uncertain, BSI=0.64
+2026-06-13T01:28:25Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:25Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:25Z [INFO] M07 GCC2/Inhibitory_neuron: 1 tx profiled, comparator_in_pb=False, pattern=pure_switch, BSI=0.72
+2026-06-13T01:28:25Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:25Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:25Z [INFO] M07 GRIA2/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=de_uncertain, BSI=3.48
+2026-06-13T01:28:26Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:26Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:26Z [INFO] M07 KLC1/Excitatory_neuron: 1 tx profiled, comparator_in_pb=False, pattern=de_uncertain, BSI=1.88
+2026-06-13T01:28:26Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:26Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:26Z [INFO] M07 MGRN1/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=pure_switch, BSI=1.03
+2026-06-13T01:28:27Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:27Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:27Z [INFO] M07 RGS7/Excitatory_neuron: 1 tx profiled, comparator_in_pb=False, pattern=de_uncertain, BSI=3.91
+2026-06-13T01:28:28Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/reference/gene
+2026-06-13T01:28:28Z [CACHE] gtex: HTTP cache https://gtexportal.org/api/v2/expression/medianGeneExpression
+2026-06-13T01:28:28Z [INFO] M07 RHOT1/Excitatory_neuron: 2 tx profiled, comparator_in_pb=True, pattern=de_uncertain, BSI=0.95
+2026-06-13T01:28:28Z [RUN] === Surveyor run finished 2026-06-13T01:28:28Z ===
