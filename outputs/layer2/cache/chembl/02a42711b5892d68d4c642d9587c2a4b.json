@@ -1,0 +1,1 @@
+{"_meta": {"fetched_at": "2026-06-16T15:31:09.146509+00:00", "url": "https://www.ebi.ac.uk/chembl/api/data/activity", "method": "GET", "status": 200}, "_payload": {"activities": [], "page_meta": {"limit": 200, "next": null, "offset": 0, "previous": null, "total_count": 0}}}

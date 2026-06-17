@@ -1,0 +1,1333 @@
+{
+  "gene": "PIN1",
+  "cell_type": "Excitatory_neuron",
+  "significant_transcripts": [
+    {
+      "enst_id": "ENST00000247970",
+      "transcript_name": "PIN1-201",
+      "delta_psi": -0.0894079151621051,
+      "role": "control_enriched",
+      "splice_type": "D",
+      "tier": null,
+      "narrative": "Splice event falls in an unannotated / disordered region \u2014 no functional feature in or near the affected residues."
+    },
+    {
+      "enst_id": "ENST00000586025",
+      "transcript_name": "PIN1-204",
+      "delta_psi": 0.0894079151621051,
+      "role": "ad_enriched",
+      "splice_type": "N",
+      "tier": null,
+      "narrative": "No protein-level change vs comparator (non-coding transcript \u2014 no protein product) \u2014 regulatory candidate, no docking hypothesis."
+    }
+  ],
+  "comparator_transcript": {
+    "enst_id": "ENST00000586025",
+    "transcript_name": "PIN1-204",
+    "source": "paired_hit"
+  },
+  "candidate_type": "D",
+  "tier": null,
+  "splice_classification": "D",
+  "docking_readiness": "conditional",
+  "docking_readiness_reason": "splice in disordered/unannotated region \u2014 PPI surface analysis recommended",
+  "uniprot": "Q13526",
+  "uniprot_reviewed": true,
+  "pdb_structures": [
+    {
+      "pdb_id": "1F8A",
+      "method": "X-ray",
+      "resolution_a": 1.84,
+      "chains": "B=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "1I6C",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-44",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "1I8G",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "B=6-44",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "1I8H",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "B=6-44",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "1NMV",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=1-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "1NMW",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=50-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "1PIN",
+      "method": "X-ray",
+      "resolution_a": 1.35,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "1ZCN",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-161",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2F21",
+      "method": "X-ray",
+      "resolution_a": 1.5,
+      "chains": "A=1-162",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2ITK",
+      "method": "X-ray",
+      "resolution_a": 1.45,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2KBU",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2KCF",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2LB3",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-41",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2M8I",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=1-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2M8J",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=1-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2M9E",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-15, A=22-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2M9F",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-15, A=22-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2M9I",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2M9J",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2N1O",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=7-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2Q5A",
+      "method": "X-ray",
+      "resolution_a": 1.5,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2RUC",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=51-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2RUD",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=51-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2RUQ",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=51-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2RUR",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=51-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "2XP3",
+      "method": "X-ray",
+      "resolution_a": 2.0,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2XP4",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2XP5",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2XP6",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2XP7",
+      "method": "X-ray",
+      "resolution_a": 2.0,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2XP8",
+      "method": "X-ray",
+      "resolution_a": 2.1,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2XP9",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2XPA",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2XPB",
+      "method": "X-ray",
+      "resolution_a": 2.0,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2ZQS",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2ZQT",
+      "method": "X-ray",
+      "resolution_a": 1.46,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2ZQU",
+      "method": "X-ray",
+      "resolution_a": 2.5,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2ZQV",
+      "method": "X-ray",
+      "resolution_a": 2.5,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2ZR4",
+      "method": "X-ray",
+      "resolution_a": 2.0,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2ZR5",
+      "method": "X-ray",
+      "resolution_a": 2.6,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "2ZR6",
+      "method": "X-ray",
+      "resolution_a": 3.2,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3I6C",
+      "method": "X-ray",
+      "resolution_a": 1.3,
+      "chains": "A/B=45-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3IK8",
+      "method": "X-ray",
+      "resolution_a": 1.85,
+      "chains": "A/B=45-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3IKD",
+      "method": "X-ray",
+      "resolution_a": 2.0,
+      "chains": "A/B=45-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3IKG",
+      "method": "X-ray",
+      "resolution_a": 1.86,
+      "chains": "A/B=45-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3JYJ",
+      "method": "X-ray",
+      "resolution_a": 1.87,
+      "chains": "A/B=45-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3KAB",
+      "method": "X-ray",
+      "resolution_a": 2.19,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3KAC",
+      "method": "X-ray",
+      "resolution_a": 2.0,
+      "chains": "A/B=45-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3KAD",
+      "method": "X-ray",
+      "resolution_a": 1.95,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3KAF",
+      "method": "X-ray",
+      "resolution_a": 2.3,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3KAG",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3KAH",
+      "method": "X-ray",
+      "resolution_a": 2.3,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3KAI",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3KCE",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3NTP",
+      "method": "X-ray",
+      "resolution_a": 1.76,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3ODK",
+      "method": "X-ray",
+      "resolution_a": 2.3,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3OOB",
+      "method": "X-ray",
+      "resolution_a": 1.89,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3TC5",
+      "method": "X-ray",
+      "resolution_a": 1.4,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3TCZ",
+      "method": "X-ray",
+      "resolution_a": 2.1,
+      "chains": "A=6-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3TDB",
+      "method": "X-ray",
+      "resolution_a": 2.27,
+      "chains": "A=6-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "3WH0",
+      "method": "X-ray",
+      "resolution_a": 1.6,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "4GWT",
+      "method": "X-ray",
+      "resolution_a": 2.25,
+      "chains": "A=6-39",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "4GWV",
+      "method": "X-ray",
+      "resolution_a": 3.05,
+      "chains": "A=6-39",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "4QIB",
+      "method": "X-ray",
+      "resolution_a": 1.86,
+      "chains": "A=7-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "4TNS",
+      "method": "X-ray",
+      "resolution_a": 1.33,
+      "chains": "A/B=43-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "4TYO",
+      "method": "X-ray",
+      "resolution_a": 1.75,
+      "chains": "A/B=45-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "4U84",
+      "method": "X-ray",
+      "resolution_a": 1.78,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "4U85",
+      "method": "X-ray",
+      "resolution_a": 1.7,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "4U86",
+      "method": "X-ray",
+      "resolution_a": 1.6,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5B3W",
+      "method": "X-ray",
+      "resolution_a": 2.4,
+      "chains": "A/B=5-15",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5B3X",
+      "method": "X-ray",
+      "resolution_a": 2.4,
+      "chains": "A=5-15",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5B3Y",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=5-23",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5B3Z",
+      "method": "X-ray",
+      "resolution_a": 2.3,
+      "chains": "A/B/C/D=5-39",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5BMY",
+      "method": "X-ray",
+      "resolution_a": 2.0,
+      "chains": "A=5-29",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5GPH",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=51-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "5UY9",
+      "method": "X-ray",
+      "resolution_a": 1.85,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5VTI",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "A=6-39",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5VTJ",
+      "method": "X-ray",
+      "resolution_a": 1.5,
+      "chains": "A=6-39",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "5VTK",
+      "method": "X-ray",
+      "resolution_a": 1.99,
+      "chains": "A=6-39",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "6DUN",
+      "method": "X-ray",
+      "resolution_a": 1.59,
+      "chains": "A/B=46-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "6O33",
+      "method": "X-ray",
+      "resolution_a": 1.74,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "6O34",
+      "method": "X-ray",
+      "resolution_a": 1.57,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "6SVC",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "6SVE",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "6SVH",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=6-39",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "6VAJ",
+      "method": "X-ray",
+      "resolution_a": 1.42,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7AOG",
+      "method": "X-ray",
+      "resolution_a": 1.5,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7AXN",
+      "method": "X-ray",
+      "resolution_a": 1.4,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7AYF",
+      "method": "X-ray",
+      "resolution_a": 1.75,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7AZ1",
+      "method": "X-ray",
+      "resolution_a": 1.15,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7AZ2",
+      "method": "X-ray",
+      "resolution_a": 1.08,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7BDP",
+      "method": "X-ray",
+      "resolution_a": 1.75,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7BDT",
+      "method": "X-ray",
+      "resolution_a": 1.75,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7BDY",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7BFW",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7BG3",
+      "method": "X-ray",
+      "resolution_a": 1.4,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7BGQ",
+      "method": "X-ray",
+      "resolution_a": 1.75,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7BGR",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7BGV",
+      "method": "X-ray",
+      "resolution_a": 1.68,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7BGW",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7EFJ",
+      "method": "X-ray",
+      "resolution_a": 1.99,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7EFX",
+      "method": "X-ray",
+      "resolution_a": 2.41,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7EKV",
+      "method": "X-ray",
+      "resolution_a": 1.95,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7F0M",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A/B/C/D=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7NIF",
+      "method": "X-ray",
+      "resolution_a": 1.71,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7NIG",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7NJ6",
+      "method": "X-ray",
+      "resolution_a": 1.59,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7NJ8",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7NJA",
+      "method": "X-ray",
+      "resolution_a": 1.75,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7NRK",
+      "method": "X-ray",
+      "resolution_a": 1.75,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7NRL",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7OQ9",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7OQA",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "7SA5",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=1-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "7SUQ",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=1-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "7SUR",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=1-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "8C2G",
+      "method": "X-ray",
+      "resolution_a": 1.6,
+      "chains": "P=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "8C3C",
+      "method": "X-ray",
+      "resolution_a": 1.6,
+      "chains": "B=61-77",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "8SG2",
+      "method": "NMR",
+      "resolution_a": null,
+      "chains": "A=1-163",
+      "resolution_ok": false
+    },
+    {
+      "pdb_id": "8VJD",
+      "method": "X-ray",
+      "resolution_a": 1.57,
+      "chains": "A/B=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "8VJE",
+      "method": "X-ray",
+      "resolution_a": 1.7,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "8VJF",
+      "method": "X-ray",
+      "resolution_a": 1.7,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "8VJG",
+      "method": "X-ray",
+      "resolution_a": 1.58,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "8VZ3",
+      "method": "X-ray",
+      "resolution_a": 1.65,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "8VZ5",
+      "method": "X-ray",
+      "resolution_a": 1.95,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "8W11",
+      "method": "X-ray",
+      "resolution_a": 2.2,
+      "chains": "A/B=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9INP",
+      "method": "X-ray",
+      "resolution_a": 2.57,
+      "chains": "A/B=45-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9INR",
+      "method": "X-ray",
+      "resolution_a": 1.93,
+      "chains": "A/B=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9IT1",
+      "method": "X-ray",
+      "resolution_a": 2.0,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JYO",
+      "method": "X-ray",
+      "resolution_a": 1.6,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JYP",
+      "method": "X-ray",
+      "resolution_a": 1.6,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JYR",
+      "method": "X-ray",
+      "resolution_a": 1.65,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JYS",
+      "method": "X-ray",
+      "resolution_a": 1.75,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JYT",
+      "method": "X-ray",
+      "resolution_a": 1.85,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JYV",
+      "method": "X-ray",
+      "resolution_a": 1.8,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JZ2",
+      "method": "X-ray",
+      "resolution_a": 1.55,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JZ3",
+      "method": "X-ray",
+      "resolution_a": 1.98,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JZ4",
+      "method": "X-ray",
+      "resolution_a": 1.82,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JZ6",
+      "method": "X-ray",
+      "resolution_a": 1.65,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JZG",
+      "method": "X-ray",
+      "resolution_a": 1.76,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JZS",
+      "method": "X-ray",
+      "resolution_a": 1.91,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JZU",
+      "method": "X-ray",
+      "resolution_a": 1.68,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9JZV",
+      "method": "X-ray",
+      "resolution_a": 1.9,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KE5",
+      "method": "X-ray",
+      "resolution_a": 2.05,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KE7",
+      "method": "X-ray",
+      "resolution_a": 1.68,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KE9",
+      "method": "X-ray",
+      "resolution_a": 2.25,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KEB",
+      "method": "X-ray",
+      "resolution_a": 1.65,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KEC",
+      "method": "X-ray",
+      "resolution_a": 1.68,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KEL",
+      "method": "X-ray",
+      "resolution_a": 1.96,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KEQ",
+      "method": "X-ray",
+      "resolution_a": 1.53,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KES",
+      "method": "X-ray",
+      "resolution_a": 1.62,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KEW",
+      "method": "X-ray",
+      "resolution_a": 1.6,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KEY",
+      "method": "X-ray",
+      "resolution_a": 2.49,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KEZ",
+      "method": "X-ray",
+      "resolution_a": 1.95,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KF0",
+      "method": "X-ray",
+      "resolution_a": 1.82,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KFC",
+      "method": "X-ray",
+      "resolution_a": 1.56,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KFH",
+      "method": "X-ray",
+      "resolution_a": 1.59,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KFZ",
+      "method": "X-ray",
+      "resolution_a": 1.43,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KG9",
+      "method": "X-ray",
+      "resolution_a": 1.55,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KGO",
+      "method": "X-ray",
+      "resolution_a": 1.62,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KX1",
+      "method": "X-ray",
+      "resolution_a": 1.7,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KX7",
+      "method": "X-ray",
+      "resolution_a": 1.53,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KX9",
+      "method": "X-ray",
+      "resolution_a": 1.62,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXC",
+      "method": "X-ray",
+      "resolution_a": 1.53,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXD",
+      "method": "X-ray",
+      "resolution_a": 1.6,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXE",
+      "method": "X-ray",
+      "resolution_a": 1.61,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXF",
+      "method": "X-ray",
+      "resolution_a": 1.71,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXG",
+      "method": "X-ray",
+      "resolution_a": 1.58,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXH",
+      "method": "X-ray",
+      "resolution_a": 1.68,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXI",
+      "method": "X-ray",
+      "resolution_a": 1.77,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXJ",
+      "method": "X-ray",
+      "resolution_a": 1.57,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXK",
+      "method": "X-ray",
+      "resolution_a": 1.96,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXL",
+      "method": "X-ray",
+      "resolution_a": 1.7,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXM",
+      "method": "X-ray",
+      "resolution_a": 1.64,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXN",
+      "method": "X-ray",
+      "resolution_a": 1.67,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXO",
+      "method": "X-ray",
+      "resolution_a": 1.75,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXP",
+      "method": "X-ray",
+      "resolution_a": 1.81,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9KXQ",
+      "method": "X-ray",
+      "resolution_a": 1.69,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    },
+    {
+      "pdb_id": "9V92",
+      "method": "X-ray",
+      "resolution_a": 1.97,
+      "chains": "A=1-163",
+      "resolution_ok": true
+    }
+  ],
+  "drug_target_status": "known",
+  "ad_relevance": "none",
+  "n_drugs": 0,
+  "n_docking_compounds": 74,
+  "opentargets_score": 0.111,
+  "opentargets_label": "emerging",
+  "ad_specificity_ratio": 4.399,
+  "has_genetic_evidence": false,
+  "brain_specificity_index": 1.57,
+  "brain_specificity_label": "ubiquitous",
+  "expression_pattern": "de_uncertain",
+  "comparator_in_pseudobulk": true,
+  "robust_to_braak": false,
+  "braak_condition_correlation": 0.9147576778553992,
+  "pathway_ad_flag": false,
+  "interaction_ad_genes": [
+    "MAPT"
+  ],
+  "database_versions": {
+    "uniprot": "2011-01-11"
+  },
+  "parameters": {
+    "string_confidence_high": 0.7,
+    "string_confidence_moderate": 0.4,
+    "string_min_partners_for_enrichment": 5,
+    "chembl_potency_uM": 1.0,
+    "pdb_resolution_max_angstrom": 3.5,
+    "splice_domain_proximity_residues": 15,
+    "exon_overlap_min_fraction": 0.8,
+    "gtex_expression_minimum_tpm": 1.0,
+    "brain_specificity_enriched": 2.0,
+    "brain_specificity_specific": 5.0,
+    "cell_type_expression_min_cp10k": 1.0,
+    "gene_de_log2fc_threshold": 0.5,
+    "gene_de_padj_threshold": 0.05
+  },
+  "input_file_checksums": {
+    "dtu_csv_md5": "658c6e541d80204001f3537505f8e2fa",
+    "h5ad_md5": "e1ef63065fd7e7517b21270197385bd0",
+    "gene_de_csv_md5": "2db61db4019eebb09953f7bf0ea5b46f"
+  },
+  "generated": "2026-06-17T01:25:20.825063+00:00"
+}

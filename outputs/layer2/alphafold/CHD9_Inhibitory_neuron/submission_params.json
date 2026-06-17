@@ -1,0 +1,6 @@
+{
+  "recommended_model": "alphafold2_ptm",
+  "msa_mode": "mmseqs2_uniref_env",
+  "use_templates": false,
+  "note": ""
+}

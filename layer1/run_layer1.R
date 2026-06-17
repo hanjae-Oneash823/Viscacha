@@ -17,6 +17,8 @@ suppressPackageStartupMessages({
   library(BiocParallel)
 })
 
+options(mc.cores = 8)
+
 # Source layer1 modules using the script's own directory
 script_arg <- grep("--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
 script_path <- sub("^--file=", "", script_arg)

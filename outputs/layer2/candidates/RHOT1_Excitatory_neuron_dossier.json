@@ -5,7 +5,7 @@
     {
       "enst_id": "ENST00000545287",
       "transcript_name": "RHOT1-205",
-      "delta_psi": 0.152762274040883,
+      "delta_psi": 0.145641316108345,
       "role": "ad_enriched",
       "splice_type": "D",
       "tier": null,
@@ -99,7 +99,7 @@
   "pathway_ad_flag": false,
   "interaction_ad_genes": [],
   "database_versions": {
-    "uniprot": "2006-06-13"
+    "uniprot": "2011-01-11"
   },
   "parameters": {
     "string_confidence_high": 0.7,
@@ -117,9 +117,9 @@
     "gene_de_padj_threshold": 0.05
   },
   "input_file_checksums": {
-    "dtu_csv_md5": "f241b4a9ead97d5d9554f895a6df64c1",
+    "dtu_csv_md5": "658c6e541d80204001f3537505f8e2fa",
     "h5ad_md5": "e1ef63065fd7e7517b21270197385bd0",
     "gene_de_csv_md5": "2db61db4019eebb09953f7bf0ea5b46f"
   },
-  "generated": "2026-06-13T01:28:28.205345+00:00"
+  "generated": "2026-06-17T01:25:30.123076+00:00"
 }

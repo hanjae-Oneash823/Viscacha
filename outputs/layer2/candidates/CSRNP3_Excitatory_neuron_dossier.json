@@ -3,9 +3,18 @@
   "cell_type": "Excitatory_neuron",
   "significant_transcripts": [
     {
+      "enst_id": "ENST00000314499",
+      "transcript_name": "CSRNP3-201",
+      "delta_psi": 0.0204030396619893,
+      "role": "ad_enriched",
+      "splice_type": "N",
+      "tier": null,
+      "narrative": "No protein-level change vs comparator (protein identical to comparator) \u2014 regulatory candidate, no docking hypothesis."
+    },
+    {
       "enst_id": "ENST00000342316",
       "transcript_name": "CSRNP3-202",
-      "delta_psi": -0.0663177008083813,
+      "delta_psi": -0.0447271614141159,
       "role": "control_enriched",
       "splice_type": "N",
       "tier": null,
@@ -13,9 +22,9 @@
     }
   ],
   "comparator_transcript": {
-    "enst_id": "ENST00000651982",
-    "transcript_name": "CSRNP3-207",
-    "source": "mane_select"
+    "enst_id": "ENST00000342316",
+    "transcript_name": "CSRNP3-202",
+    "source": "paired_hit"
   },
   "candidate_type": "N",
   "tier": null,
@@ -36,13 +45,13 @@
   "brain_specificity_index": 2.28,
   "brain_specificity_label": "brain-enriched",
   "expression_pattern": "pure_switch",
-  "comparator_in_pseudobulk": false,
+  "comparator_in_pseudobulk": true,
   "robust_to_braak": false,
   "braak_condition_correlation": 0.9147576778553992,
   "pathway_ad_flag": false,
   "interaction_ad_genes": [],
   "database_versions": {
-    "uniprot": "2006-06-13"
+    "uniprot": "2011-01-11"
   },
   "parameters": {
     "string_confidence_high": 0.7,
@@ -60,9 +69,9 @@
     "gene_de_padj_threshold": 0.05
   },
   "input_file_checksums": {
-    "dtu_csv_md5": "f241b4a9ead97d5d9554f895a6df64c1",
+    "dtu_csv_md5": "658c6e541d80204001f3537505f8e2fa",
     "h5ad_md5": "e1ef63065fd7e7517b21270197385bd0",
     "gene_de_csv_md5": "2db61db4019eebb09953f7bf0ea5b46f"
   },
-  "generated": "2026-06-13T01:28:23.907086+00:00"
+  "generated": "2026-06-17T01:25:02.958888+00:00"
 }

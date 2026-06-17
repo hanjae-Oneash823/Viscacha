@@ -63,10 +63,10 @@
       "resolution_ok": true
     }
   ],
-  "drug_target_status": "novel",
+  "drug_target_status": "known",
   "ad_relevance": "none",
   "n_drugs": 0,
-  "n_docking_compounds": 0,
+  "n_docking_compounds": 11,
   "opentargets_score": 0.054,
   "opentargets_label": "novel",
   "ad_specificity_ratio": 3.804,
@@ -82,7 +82,7 @@
     "MAPT"
   ],
   "database_versions": {
-    "uniprot": "2006-06-13"
+    "uniprot": "2011-01-11"
   },
   "parameters": {
     "string_confidence_high": 0.7,
@@ -100,9 +100,9 @@
     "gene_de_padj_threshold": 0.05
   },
   "input_file_checksums": {
-    "dtu_csv_md5": "f241b4a9ead97d5d9554f895a6df64c1",
+    "dtu_csv_md5": "658c6e541d80204001f3537505f8e2fa",
     "h5ad_md5": "e1ef63065fd7e7517b21270197385bd0",
     "gene_de_csv_md5": "2db61db4019eebb09953f7bf0ea5b46f"
   },
-  "generated": "2026-06-13T01:28:23.333666+00:00"
+  "generated": "2026-06-17T01:25:00.048048+00:00"
 }

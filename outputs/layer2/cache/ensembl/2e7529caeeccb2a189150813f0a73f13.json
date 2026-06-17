@@ -1,0 +1,1 @@
+{"_meta": {"fetched_at": "2026-06-17T01:21:46.880506+00:00", "url": "https://rest.ensembl.org/sequence/id/ENST00000611151", "method": "GET", "status": 200}, "_payload": {"molecule": "protein", "id": "ENSP00000483927", "desc": null, "seq": "MDEDVLTTLKILIIGESGVGKSSLLLRFTDDTFDPELAATIGYCWSREV", "version": 2, "query": "ENST00000611151"}}

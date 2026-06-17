@@ -3,6 +3,15 @@
   "cell_type": "Inhibitory_neuron",
   "significant_transcripts": [
     {
+      "enst_id": "ENST00000216019",
+      "transcript_name": "DDX17-201",
+      "delta_psi": 0.0975977285410118,
+      "role": "ad_enriched",
+      "splice_type": "N",
+      "tier": null,
+      "narrative": "No protein-level change vs comparator (non-coding transcript \u2014 no protein product) \u2014 regulatory candidate, no docking hypothesis."
+    },
+    {
       "enst_id": "ENST00000396821",
       "transcript_name": "DDX17-202",
       "delta_psi": -0.176834372978988,
@@ -13,9 +22,9 @@
     }
   ],
   "comparator_transcript": {
-    "enst_id": "ENST00000403230",
-    "transcript_name": "DDX17-203",
-    "source": "mane_select"
+    "enst_id": "ENST00000216019",
+    "transcript_name": "DDX17-201",
+    "source": "paired_hit"
   },
   "candidate_type": "C",
   "tier": 2,
@@ -78,7 +87,7 @@
   "pathway_ad_flag": false,
   "interaction_ad_genes": [],
   "database_versions": {
-    "uniprot": "2006-06-13"
+    "uniprot": "2011-01-11"
   },
   "parameters": {
     "string_confidence_high": 0.7,
@@ -96,9 +105,9 @@
     "gene_de_padj_threshold": 0.05
   },
   "input_file_checksums": {
-    "dtu_csv_md5": "f241b4a9ead97d5d9554f895a6df64c1",
+    "dtu_csv_md5": "658c6e541d80204001f3537505f8e2fa",
     "h5ad_md5": "e1ef63065fd7e7517b21270197385bd0",
     "gene_de_csv_md5": "2db61db4019eebb09953f7bf0ea5b46f"
   },
-  "generated": "2026-06-13T01:28:24.338299+00:00"
+  "generated": "2026-06-17T01:25:04.079470+00:00"
 }

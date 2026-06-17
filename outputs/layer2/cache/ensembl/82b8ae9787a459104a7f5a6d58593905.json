@@ -1,0 +1,1 @@
+{"_meta": {"fetched_at": "2026-06-17T01:22:31.069175+00:00", "url": "https://rest.ensembl.org/sequence/id/ENST00000518174", "method": "GET", "status": 200}, "_payload": {"version": 1, "seq": "MAAACGPGAAGYCLLLGLHLFLLTAGPALGWNDPECCCGM", "molecule": "protein", "desc": null, "query": "ENST00000518174", "id": "ENSP00000431005"}}

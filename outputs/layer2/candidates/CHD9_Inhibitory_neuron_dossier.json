@@ -1,0 +1,68 @@
+{
+  "gene": "CHD9",
+  "cell_type": "Inhibitory_neuron",
+  "significant_transcripts": [
+    {
+      "enst_id": "ENST00000447540",
+      "transcript_name": "CHD9-203",
+      "delta_psi": -0.0869727156399409,
+      "role": "control_enriched",
+      "splice_type": "C",
+      "tier": 2,
+      "narrative": "Splice event alters the Region 'Binds A/T-rich DNA' (2332-2481); nearest pocket 1444 residues away \u2014 pocket residues conserved."
+    }
+  ],
+  "comparator_transcript": {
+    "enst_id": "ENST00000564845",
+    "transcript_name": "CHD9-213",
+    "source": "highest_ctrl"
+  },
+  "candidate_type": "C",
+  "tier": 2,
+  "splice_classification": "C",
+  "docking_readiness": "conditional",
+  "docking_readiness_reason": "domain-level structural change \u2014 indirect/allosteric docking signal",
+  "uniprot": "Q3L8U1",
+  "uniprot_reviewed": true,
+  "pdb_structures": [],
+  "drug_target_status": "known",
+  "ad_relevance": "none",
+  "n_drugs": 0,
+  "n_docking_compounds": 1,
+  "opentargets_score": 0.0,
+  "opentargets_label": "novel",
+  "ad_specificity_ratio": null,
+  "has_genetic_evidence": false,
+  "brain_specificity_index": 0.61,
+  "brain_specificity_label": "peripherally-enriched",
+  "expression_pattern": "de_uncertain",
+  "comparator_in_pseudobulk": true,
+  "robust_to_braak": false,
+  "braak_condition_correlation": 0.9147576778553992,
+  "pathway_ad_flag": false,
+  "interaction_ad_genes": [],
+  "database_versions": {
+    "uniprot": "2011-01-11"
+  },
+  "parameters": {
+    "string_confidence_high": 0.7,
+    "string_confidence_moderate": 0.4,
+    "string_min_partners_for_enrichment": 5,
+    "chembl_potency_uM": 1.0,
+    "pdb_resolution_max_angstrom": 3.5,
+    "splice_domain_proximity_residues": 15,
+    "exon_overlap_min_fraction": 0.8,
+    "gtex_expression_minimum_tpm": 1.0,
+    "brain_specificity_enriched": 2.0,
+    "brain_specificity_specific": 5.0,
+    "cell_type_expression_min_cp10k": 1.0,
+    "gene_de_log2fc_threshold": 0.5,
+    "gene_de_padj_threshold": 0.05
+  },
+  "input_file_checksums": {
+    "dtu_csv_md5": "658c6e541d80204001f3537505f8e2fa",
+    "h5ad_md5": "e1ef63065fd7e7517b21270197385bd0",
+    "gene_de_csv_md5": "2db61db4019eebb09953f7bf0ea5b46f"
+  },
+  "generated": "2026-06-17T01:25:01.141920+00:00"
+}
