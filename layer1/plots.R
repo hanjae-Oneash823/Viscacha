@@ -1033,6 +1033,249 @@ plot_viz_per_isoform <- function(sig_results) {
   }
 }
 
+# ============================================================
+# Raw count export + plots for significant hits
+# ============================================================
+# Unlike PSI (a normalized proportion), raw counts expose whether a hit's
+# signal is broadly distributed across donors or driven by one or two
+# donors with unusually large total counts for that gene.
+
+# Long-format raw counts for every isoform of every significant gene,
+# one row per (transcript, donor). Includes sibling (non-hit) isoforms
+# of each hit gene so the full stacked composition can be reconstructed.
+export_dtu_raw_counts <- function(sig_results) {
+  if (nrow(sig_results) == 0) return(invisible(NULL))
+
+  # Gene-level expressing-cell counts, produced by
+  # extract_gene_expressing_cells.py (run automatically after the
+  # significant-hits CSV is written). Optional: NULL if not yet generated.
+  expr_path <- file.path(OUT_DIR, "gene_expressing_cells.csv")
+  expr_df   <- if (file.exists(expr_path)) {
+    read.csv(expr_path, check.names = FALSE, stringsAsFactors = FALSE)
+  } else {
+    message("  Note: ", basename(expr_path), " not found — raw count export ",
+            "will omit n_cells_expressing_gene")
+    NULL
+  }
+
+  out_rows <- list()
+
+  for (ct in unique(sig_results$cell_type)) {
+    sig_ct <- sig_results[sig_results$cell_type == ct, ]
+
+    counts_raw <- tryCatch(
+      read.csv(file.path(IN_DIR, paste0("counts_", ct, ".csv")),
+               row.names = 1, check.names = FALSE),
+      error = function(e) NULL)
+    if (is.null(counts_raw)) next
+    meta_raw   <- read.csv(file.path(IN_DIR, paste0("metadata_", ct, ".csv")),
+                            row.names = 1, check.names = FALSE)
+    counts_mat <- t(as.matrix(counts_raw))
+
+    for (gn in unique(sig_ct$gene_id)) {
+      tx_in <- rownames(counts_mat)[grepl(paste0("^", gn, "-"), rownames(counts_mat))]
+      if (length(tx_in) == 0) next
+
+      donors   <- colnames(counts_mat)
+      gene_tot <- colSums(counts_mat[tx_in, , drop = FALSE])
+      hit_tx   <- sig_ct$transcript_id[sig_ct$gene_id == gn]
+
+      gene_rows <- do.call(rbind, lapply(tx_in, function(tx) {
+        rc <- as.numeric(counts_mat[tx, donors])
+        gt <- as.numeric(gene_tot[donors])
+        data.frame(
+          cell_type           = ct,
+          gene_id             = gn,
+          transcript_id       = tx,
+          is_significant_hit  = tx %in% hit_tx,
+          donor               = donors,
+          condition           = meta_raw[donors, "condition"],
+          n_cells_donor       = meta_raw[donors, "n_cells"],
+          raw_count           = rc,
+          gene_total_count    = gt,
+          psi                 = ifelse(gt > 0, rc / gt, NA_real_),
+          stringsAsFactors    = FALSE
+        )
+      }))
+
+      hit_stats <- sig_ct[sig_ct$gene_id == gn,
+                           c("transcript_id", "padj_gene", "padj_tx", "delta_psi")]
+      gene_rows <- merge(gene_rows, hit_stats, by = "transcript_id", all.x = TRUE)
+
+      if (!is.null(expr_df)) {
+        expr_gene <- expr_df[expr_df$cell_type == ct & expr_df$gene_id == gn,
+                             c("donor", "n_cells_expressing_gene")]
+        gene_rows <- merge(gene_rows, expr_gene, by = "donor", all.x = TRUE)
+      }
+
+      out_rows[[paste(ct, gn)]] <- gene_rows
+    }
+  }
+
+  combined <- do.call(rbind, out_rows)
+  combined <- combined[combined$condition %in% c("Control", "AD"), ]
+  combined <- combined[order(combined$cell_type, combined$gene_id,
+                              combined$transcript_id, combined$condition, combined$donor), ]
+
+  out_path <- file.path(OUT_DIR, "dtu_significant_raw_counts.csv")
+  write.csv(combined, out_path, row.names = FALSE)
+  message("  Raw count export: ", basename(out_path), " (", nrow(combined), " rows)")
+  invisible(combined)
+}
+
+# Per-hit figure: (1) a per-donor stacked bar of raw counts, donors grouped
+# by condition with a visual gap between groups, and (2) a per-condition
+# stacked bar of raw counts summed across donors. Mirrors plot_viz_per_isoform's
+# loop 1:1 (same focal transcript per figure) so the two figures pair up.
+plot_viz_per_isoform_rawcounts <- function(sig_results) {
+  if (nrow(sig_results) == 0) return(invisible(NULL))
+
+  ISO_PALETTE <- c(
+    "#1b7837", "#762a83", "#e08214", "#4575b4",
+    "#d73027", "#01665e", "#8073ac", "#bf812d",
+    "#de77ae", "#4d4d4d", "#35978f", "#c51b7d"
+  )
+
+  expr_path <- file.path(OUT_DIR, "gene_expressing_cells.csv")
+  expr_df   <- if (file.exists(expr_path)) {
+    read.csv(expr_path, check.names = FALSE, stringsAsFactors = FALSE)
+  } else {
+    message("  Note: ", basename(expr_path), " not found — donor panel will ",
+            "omit the expressing-cells overlay")
+    NULL
+  }
+
+  for (ct in unique(sig_results$cell_type)) {
+    sig_ct <- sig_results[sig_results$cell_type == ct, ]
+
+    counts_raw <- tryCatch(
+      read.csv(file.path(IN_DIR, paste0("counts_", ct, ".csv")),
+               row.names = 1, check.names = FALSE),
+      error = function(e) NULL)
+    if (is.null(counts_raw)) next
+    meta_raw   <- read.csv(file.path(IN_DIR, paste0("metadata_", ct, ".csv")),
+                            row.names = 1, check.names = FALSE)
+    counts_mat <- t(as.matrix(counts_raw))
+
+    for (i in seq_len(nrow(sig_ct))) {
+      tx_id <- sig_ct$transcript_id[i]
+      gn    <- sig_ct$gene_id[i]
+      if (!tx_id %in% rownames(counts_mat)) next
+
+      tx_short  <- sub(paste0("^", gn, "-"), "", tx_id)
+      dpsi_val  <- sig_ct$delta_psi[i]
+      padj_gene <- sig_ct$padj_gene[i]
+      padj_tx   <- sig_ct$padj_tx[i]
+
+      tx_in <- rownames(counts_mat)[grepl(paste0("^", gn, "-"), rownames(counts_mat))]
+      if (length(tx_in) < 2) next
+
+      iso_levels <- c(tx_id, setdiff(tx_in, tx_id))
+      n_iso      <- length(iso_levels)
+      iso_colors <- setNames(ISO_PALETTE[seq_len(n_iso)], iso_levels)
+
+      raw_long <- do.call(rbind, lapply(tx_in, function(tx) {
+        data.frame(transcript = tx, donor = colnames(counts_mat),
+                   condition = meta_raw[colnames(counts_mat), "condition"],
+                   raw_count = as.numeric(counts_mat[tx, ]),
+                   stringsAsFactors = FALSE)
+      }))
+      raw_long <- raw_long[raw_long$condition %in% c("Control", "AD"), ]
+      raw_long$condition  <- factor(raw_long$condition, levels = c("Control", "AD"))
+      raw_long$transcript <- factor(raw_long$transcript, levels = iso_levels)
+      raw_long$is_focal   <- as.character(raw_long$transcript) == tx_id
+
+      # Order donors within each condition by total gene count, descending
+      donor_tot  <- aggregate(raw_count ~ donor, data = raw_long, FUN = sum)
+      donor_cond <- unique(raw_long[, c("donor", "condition")])
+      donor_ord  <- merge(donor_tot, donor_cond, by = "donor")
+      donor_ord  <- donor_ord[order(donor_ord$condition, -donor_ord$raw_count), ]
+      raw_long$donor <- factor(raw_long$donor, levels = donor_ord$donor)
+
+      # ── Panel 1: per-donor stacked raw counts, gap between conditions ──
+      p_donor <- ggplot(raw_long, aes(x = donor, y = raw_count,
+                                       fill = transcript, color = is_focal)) +
+        geom_col(position = "stack", linewidth = 0.6, width = 0.8) +
+        scale_fill_manual(values = iso_colors, guide = "none") +
+        scale_color_manual(values = c("TRUE" = "black", "FALSE" = "white"), guide = "none") +
+        facet_grid(. ~ condition, scales = "free_x", space = "free_x") +
+        labs(title = "Raw counts per donor",
+             subtitle = paste0("black border = ", tx_short),
+             x = NULL, y = "Raw read count") +
+        THEME_VIS +
+        theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 6),
+              panel.spacing.x = grid::unit(1.2, "lines"),
+              strip.background = element_rect(fill = "#f0f0f0", color = NA))
+
+      # Overlay: # cells expressing this gene per donor, on a secondary axis.
+      # Distinct from n_cells_donor (cell-type total) -- this is gene-specific.
+      donor_expr <- if (!is.null(expr_df)) {
+        expr_df[expr_df$cell_type == ct & expr_df$gene_id == gn, ]
+      } else NULL
+
+      if (!is.null(donor_expr) && nrow(donor_expr) > 0) {
+        donor_expr <- donor_expr[donor_expr$donor %in% levels(raw_long$donor), ]
+        donor_expr$donor     <- factor(donor_expr$donor, levels = levels(raw_long$donor))
+        donor_expr$condition <- factor(meta_raw[as.character(donor_expr$donor), "condition"],
+                                        levels = c("Control", "AD"))
+        donor_expr <- donor_expr[!is.na(donor_expr$donor), ]
+
+        donor_raw_tot <- aggregate(raw_count ~ donor, data = raw_long, FUN = sum)
+        scale_factor  <- max(donor_raw_tot$raw_count, na.rm = TRUE) /
+                          max(donor_expr$n_cells_expressing_gene, na.rm = TRUE)
+        if (!is.finite(scale_factor) || scale_factor <= 0) scale_factor <- 1
+        donor_expr$line_y <- donor_expr$n_cells_expressing_gene * scale_factor
+
+        p_donor <- p_donor +
+          geom_line(data = donor_expr, aes(x = donor, y = line_y, group = condition),
+                     inherit.aes = FALSE, color = "black", linewidth = 0.6,
+                     linetype = "dashed", alpha = 0.8) +
+          geom_point(data = donor_expr, aes(x = donor, y = line_y),
+                     inherit.aes = FALSE, color = "black", fill = "white",
+                     shape = 21, size = 1.8, stroke = 0.7) +
+          scale_y_continuous(
+            sec.axis = sec_axis(~ . / scale_factor, name = "# cells expressing gene")
+          ) +
+          labs(subtitle = paste0("black border = ", tx_short,
+                                  "  |  dashed line = cells expressing gene (right axis)"))
+      }
+
+      # ── Panel 2: per-condition summed raw counts (simple version) ──
+      cond_sum <- aggregate(raw_count ~ transcript + condition, data = raw_long, FUN = sum)
+      cond_sum$transcript <- factor(cond_sum$transcript, levels = iso_levels)
+      cond_sum$is_focal   <- as.character(cond_sum$transcript) == tx_id
+
+      p_cond <- ggplot(cond_sum, aes(x = condition, y = raw_count,
+                                      fill = transcript, color = is_focal)) +
+        geom_col(position = "stack", linewidth = 0.8, width = 0.55) +
+        scale_fill_manual(values = iso_colors, guide = "none") +
+        scale_color_manual(values = c("TRUE" = "black", "FALSE" = "white"), guide = "none") +
+        labs(title = "Raw counts per condition",
+             subtitle = "summed across donors",
+             x = NULL, y = "Total raw read count") +
+        THEME_VIS +
+        theme(panel.grid.major.x = element_blank())
+
+      combined <- (p_donor | p_cond) +
+        plot_layout(widths = c(2, 1)) +
+        plot_annotation(
+          title    = sprintf("%s  ·  %s  (%s)  — raw counts", gn, tx_short, gsub("_", " ", ct)),
+          subtitle = sprintf("ΔPSI = %+.3f  |  padj_gene = %.2e  |  padj_tx = %.2e",
+                             dpsi_val, padj_gene, padj_tx),
+          theme = theme(
+            plot.title    = element_text(face = "bold", size = 13),
+            plot.subtitle = element_text(size = 9, color = "#444444")
+          )
+        )
+
+      tx_safe <- gsub("[^A-Za-z0-9_-]", "_", tx_id)
+      save_plot(combined,
+                paste0("per_isoform_rawcounts_", ct, "_", tx_safe),
+                width = 11, height = 4.5)
+    }
+  }
+}
+
 generate_all_plots <- function(results_all_list, filter_stats_all, sig_results) {
   message("\n", strrep("=", 60))
   message("Generating Layer 1 plots...")
@@ -1062,6 +1305,12 @@ generate_all_plots <- function(results_all_list, filter_stats_all, sig_results) 
 
     tryCatch(plot_viz_per_isoform(sig_results),
              error = function(e) message("  viz per-isoform failed: ", conditionMessage(e)))
+
+    tryCatch(plot_viz_per_isoform_rawcounts(sig_results),
+             error = function(e) message("  viz per-isoform rawcounts failed: ", conditionMessage(e)))
+
+    tryCatch(export_dtu_raw_counts(sig_results),
+             error = function(e) message("  raw count export failed: ", conditionMessage(e)))
 
     tryCatch(plot_viz_braak_comparison(results_all_list),
              error = function(e) message("  viz braak comparison failed: ", conditionMessage(e)))

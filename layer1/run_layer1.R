@@ -10,6 +10,11 @@
 # Significant in both  → robust_to_braak = TRUE
 # ============================================================
 
+# BLAS/OMP must be capped to 1 thread per worker via shell env vars
+# (OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 GOTO_NUM_THREADS=1) before
+# invoking Rscript — setting them here via Sys.setenv() is too late,
+# since OpenBLAS reads them at library load time, not at script run time.
+
 suppressPackageStartupMessages({
   library(satuRn)
   library(stageR)
@@ -17,7 +22,7 @@ suppressPackageStartupMessages({
   library(BiocParallel)
 })
 
-options(mc.cores = 8)
+options(mc.cores = 4)
 
 # Source layer1 modules using the script's own directory
 script_arg <- grep("--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
@@ -238,6 +243,21 @@ if (length(all_results) > 0) {
                   nrow(sig_combined),
                   length(unique(sig_combined$gene_id))))
   message("Saved: ", basename(sig_path))
+
+  # ---- Gene-level expressing-cell counts (overlay for raw-count plots) ----
+  # Depends on sig_path above, so must run after it's written. Re-derives,
+  # for each significant gene, how many cells of that donor/cell-type
+  # actually express that gene (vs. n_cells, the cell-type total).
+  if (nrow(sig_combined) > 0) {
+    message("\nExtracting gene-level expressing-cell counts...")
+    py_bin     <- "/home/welcome3/anaconda3/envs/oneash_dtu/bin/python"
+    py_script  <- file.path(script_dir, "extract_gene_expressing_cells.py")
+    py_out     <- tryCatch(
+      system2(py_bin, shQuote(py_script), stdout = TRUE, stderr = TRUE),
+      error = function(e) { message("  ERROR: ", conditionMessage(e)); NULL }
+    )
+    if (!is.null(py_out)) message(paste(py_out, collapse = "\n"))
+  }
 }
 
 # ============================================================

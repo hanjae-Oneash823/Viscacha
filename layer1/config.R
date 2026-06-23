@@ -29,8 +29,8 @@ MIN_GENE_COUNT       <- 10   # gene total must be >= this in >= MIN_SAMPS_FRAC o
 MIN_SAMPS_FRAC       <- 0.30 # fraction of samples that must pass the count threshold
 
 # --- DTU test parameters ---
-ALPHA   <- 0.10
-N_CORES <- 8
+ALPHA   <- 0.05
+N_CORES <- 4
 
 # --- Condition levels (Control is reference so conditionAD is the tested coefficient) ---
 COND_LEVELS <- c("Control", "AD")
