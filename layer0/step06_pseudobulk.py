@@ -26,21 +26,16 @@ def _ct_stem(cell_type: str) -> str:
 def _aggregate_cell_type(
     adata: ad.AnnData,
     cell_type: str,
-    prevalence_mask: list,
     qc_log: QCLogger,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     Returns (count_df, meta_df) for all donors in this cell type.
-    count_df: donors × filtered_transcripts (raw int counts)
+    count_df: donors × all_transcripts (raw int counts, no prevalence subsetting —
+              downstream gene totals and satuRn fits need the full transcript set)
     meta_df:  donors × covariates
     """
     sub = adata[adata.obs['cell_type'] == cell_type]
-
-    # Build column index for prevalence-filtered transcripts (applied once)
-    keep_set = set(prevalence_mask)
-    keep_idx = np.array([i for i, v in enumerate(adata.var_names) if v in keep_set],
-                        dtype=np.int64)
-    keep_names = adata.var_names[keep_idx]
+    keep_names = adata.var_names
 
     pb_counts = {}
     pb_meta   = {}
@@ -54,7 +49,7 @@ def _aggregate_cell_type(
             continue
 
         rows  = np.where(d_mask)[0]
-        chunk = sub.X[rows, :][:, keep_idx]   # slice rows then cols (adata_tx loaded fully)
+        chunk = sub.X[rows, :]
         pb_counts[donor] = sparse_sum_rows(chunk)
 
         obs_slice = sub.obs[d_mask]
@@ -79,16 +74,11 @@ def _aggregate_cell_type(
     return count_df, meta_df
 
 
-def run(adata_tx: ad.AnnData, prevalence_masks: dict, qc_log: QCLogger) -> None:
+def run(adata_tx: ad.AnnData, qc_log: QCLogger) -> None:
     OUT_PB.mkdir(parents=True, exist_ok=True)
 
     for ct in CELL_TYPES:
-        if ct not in prevalence_masks:
-            qc_log.flag("step_06", f"No prevalence mask for cell type '{ct}' — skipping")
-            continue
-
-        mask = prevalence_masks[ct]
-        count_df, meta_df = _aggregate_cell_type(adata_tx, ct, mask, qc_log)
+        count_df, meta_df = _aggregate_cell_type(adata_tx, ct, qc_log)
 
         if count_df.empty:
             qc_log.flag("step_06", f"No donors met min_cells threshold for '{ct}'")

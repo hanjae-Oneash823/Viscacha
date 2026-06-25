@@ -51,8 +51,11 @@ def main():
     # Free unfiltered copy
     del adata_tx
 
-    # 0.4 — Prevalence filter (returns mask dict, no AnnData modification)
-    print("\n[Layer 0] Step 0.4: Transcript prevalence filter")
+    # 0.4 — Prevalence filter (diagnostic only — no longer applied to the pseudobulk
+    # output; gene/transcript-count filtering moved entirely to satuRn's "use all
+    # transcripts" model, so this is kept just to report what a prevalence cut would
+    # have dropped)
+    print("\n[Layer 0] Step 0.4: Transcript prevalence filter (diagnostic)")
     prevalence_masks = step04.run(adata_filtered, qc_log)
     plots.plot_step04(prevalence_masks, n_total=adata_filtered.n_vars)
 
@@ -60,9 +63,9 @@ def main():
     print("\n[Layer 0] Step 0.5: Covariate completeness audit")
     step05.run(adata_filtered, qc_log)
 
-    # 0.6 — Pseudo-bulk aggregation
+    # 0.6 — Pseudo-bulk aggregation (all transcripts, no prevalence subsetting)
     print("\n[Layer 0] Step 0.6: Pseudo-bulk aggregation")
-    step06.run(adata_filtered, prevalence_masks, qc_log)
+    step06.run(adata_filtered, qc_log)
     plots.plot_step06(adata_filtered)
 
     # Write QC log

@@ -1,96 +1,103 @@
 # ============================================================
-# Step 11: Count-based transcript filter (dmFilter equivalent)
+# Step 11: Structural transcript cleanup (no count thresholds)
 # ============================================================
 # Input:  counts matrix (samples × transcripts) + metadata
-# Output: filtered counts matrix + log summary
+# Output: cleaned counts matrix + log summary
 #
-# Filters applied in order:
-#   1. Transcript-level: count >= MIN_TX_COUNT in >= floor(n * MIN_SAMPS_FRAC) samples
-#   2. Gene-level:       gene total >= MIN_GENE_COUNT in >= floor(n * MIN_SAMPS_FRAC) samples
-#   3. Multi-transcript: keep only genes with >= 2 passing transcripts
+# This is the set used for gene-level PSI denominators — no minimum-count/
+# prevalence filtering here, so totals reflect true total transcript
+# expression. Only two structurally-required removals are applied, in order:
+#   1. Transcripts with zero counts in every sample (no information to fit;
+#      contribute nothing to any gene's total either way).
+#   2. Genes left with < 2 transcripts (DTU is undefined for a single isoform).
+#
+# A separate, lighter expression filter (filter_counts_for_fit, below) is
+# applied downstream to pick the subset that's actually fit/tested by
+# satuRn+stageR — fitting on every structurally-valid transcript balloons the
+# multiple-testing universe with near-zero-count transcripts and crushes
+# power, without affecting the denominators computed here.
 # ============================================================
 
-filter_counts <- function(counts_mat, min_tx_count, min_gene_count, min_samps_frac, verbose = TRUE) {
+filter_counts <- function(counts_mat, verbose = TRUE) {
   # counts_mat: transcripts × samples (rows = features, cols = samples)
-  n_samples <- ncol(counts_mat)
-  min_samps <- max(2L, floor(n_samples * min_samps_frac))
-
   n_tx_before <- nrow(counts_mat)
 
-  # 1. Transcript-level count filter
-  tx_pass <- rowSums(counts_mat >= min_tx_count) >= min_samps
+  # 1. Drop transcripts never detected in any sample
+  tx_pass    <- rowSums(counts_mat) > 0
   counts_mat <- counts_mat[tx_pass, , drop = FALSE]
 
-  # 2. Gene totals per sample
-  tx_names   <- rownames(counts_mat)
-  gene_names <- sub("-[^-]+$", "", tx_names)  # GENE-NNN -> GENE (remove last -NNN)
+  # 2. Drop genes left with < 2 transcripts
+  tx_names    <- rownames(counts_mat)
+  gene_names  <- sub("-[^-]+$", "", tx_names)  # GENE-NNN -> GENE (remove last -NNN)
+  tx_per_gene <- table(gene_names)
+  multi_genes <- names(tx_per_gene)[tx_per_gene >= 2]
+  counts_mat  <- counts_mat[gene_names %in% multi_genes, , drop = FALSE]
 
-  gene_totals <- rowsum(counts_mat, gene_names)  # genes × samples
-
-  gene_pass_mask <- rowSums(gene_totals >= min_gene_count) >= min_samps
-  passing_genes  <- rownames(gene_totals)[gene_pass_mask]
-  counts_mat     <- counts_mat[gene_names %in% passing_genes, , drop = FALSE]
-  gene_names     <- sub("-[^-]+$", "", rownames(counts_mat))
-
-  # 3. Multi-transcript gene filter
-  tx_per_gene  <- table(gene_names)
-  multi_genes  <- names(tx_per_gene)[tx_per_gene >= 2]
-  counts_mat   <- counts_mat[gene_names %in% multi_genes, , drop = FALSE]
-
-  n_tx_after   <- nrow(counts_mat)
+  n_tx_after    <- nrow(counts_mat)
   n_genes_after <- length(unique(sub("-[^-]+$", "", rownames(counts_mat))))
 
   if (verbose) {
-    message(sprintf("  Transcripts: %d -> %d  |  Genes: %d  |  min_samps=%d/%d",
-                    n_tx_before, n_tx_after, n_genes_after, min_samps, n_samples))
+    message(sprintf("  Transcripts: %d -> %d  |  Genes: %d  (structural cleanup only)",
+                    n_tx_before, n_tx_after, n_genes_after))
   }
 
   list(
-    counts      = counts_mat,
-    n_tx        = n_tx_after,
-    n_tx_before = n_tx_before,
-    n_genes     = n_genes_after,
-    min_samps   = min_samps
+    counts  = counts_mat,
+    n_tx    = n_tx_after,
+    n_genes = n_genes_after
   )
 }
 
-# Returns per-stage exclusion counts for the step 11 retention plot.
-# Runs the same three stages as filter_counts but records how many transcripts
-# each stage removes, so plots can show WHY transcripts were excluded.
-filter_counts_breakdown <- function(counts_mat, min_tx_count, min_gene_count, min_samps_frac) {
-  n_samples <- ncol(counts_mat)
-  min_samps <- max(2L, floor(n_samples * min_samps_frac))
-  n_start   <- nrow(counts_mat)
+# Lighter expression filter, applied on top of filter_counts() output, that
+# restricts the set passed into satuRn fitting/testing. Keeps the
+# multiple-testing universe (and stageR's gene-level FDR correction) sized to
+# transcripts with enough signal to be testable, while filter_counts()'s full
+# structural set is still what PSI denominators are computed from.
+filter_counts_for_fit <- function(counts_mat, min_count = MIN_TX_COUNT,
+                                   min_samps_frac = MIN_SAMPS_FRAC, verbose = TRUE) {
+  n_tx_before <- nrow(counts_mat)
 
-  # Stage 1: transcript count threshold
-  tx_pass1 <- rowSums(counts_mat >= min_tx_count) >= min_samps
-  n_failed_tx_count <- sum(!tx_pass1)
-  mat1 <- counts_mat[tx_pass1, , drop = FALSE]
+  pass_frac  <- rowMeans(counts_mat >= min_count)
+  tx_pass    <- pass_frac >= min_samps_frac
+  counts_mat <- counts_mat[tx_pass, , drop = FALSE]
 
-  # Stage 2: gene total threshold
-  gene_ids1   <- sub("-[^-]+$", "", rownames(mat1))
-  gene_totals <- rowsum(mat1, gene_ids1)
-  gene_pass   <- rowSums(gene_totals >= min_gene_count) >= min_samps
-  ok_genes    <- rownames(gene_totals)[gene_pass]
-  tx_pass2    <- gene_ids1 %in% ok_genes
-  n_failed_gene_count <- sum(!tx_pass2)
-  mat2 <- mat1[tx_pass2, , drop = FALSE]
-
-  # Stage 3: multi-transcript gene filter
-  gene_ids2   <- sub("-[^-]+$", "", rownames(mat2))
-  tx_per_gene <- table(gene_ids2)
+  # Re-apply multi-isoform requirement: a gene can drop to 1 isoform here
+  # even though it had >= 2 in the structural set.
+  tx_names    <- rownames(counts_mat)
+  gene_names  <- sub("-[^-]+$", "", tx_names)
+  tx_per_gene <- table(gene_names)
   multi_genes <- names(tx_per_gene)[tx_per_gene >= 2]
-  tx_pass3    <- gene_ids2 %in% multi_genes
-  n_single_isoform <- sum(!tx_pass3)
-  n_passed <- sum(tx_pass3)
+  counts_mat  <- counts_mat[gene_names %in% multi_genes, , drop = FALSE]
+
+  if (verbose) {
+    message(sprintf("  Fit-set filter: %d -> %d transcripts (>=%d counts in >=%.0f%% of samples)",
+                    n_tx_before, nrow(counts_mat), min_count, 100 * min_samps_frac))
+  }
+
+  counts_mat
+}
+
+# Returns per-stage exclusion counts for the step 11 retention plot.
+filter_counts_breakdown <- function(counts_mat) {
+  n_start <- nrow(counts_mat)
+
+  # Stage 1: never detected
+  tx_pass1  <- rowSums(counts_mat) > 0
+  n_zero    <- sum(!tx_pass1)
+  mat1      <- counts_mat[tx_pass1, , drop = FALSE]
+
+  # Stage 2: single-isoform genes
+  gene_ids1        <- sub("-[^-]+$", "", rownames(mat1))
+  tx_per_gene      <- table(gene_ids1)
+  multi_genes      <- names(tx_per_gene)[tx_per_gene >= 2]
+  tx_pass2         <- gene_ids1 %in% multi_genes
+  n_single_isoform <- sum(!tx_pass2)
+  n_passed         <- sum(tx_pass2)
 
   list(
-    n_start             = n_start,
-    n_failed_tx_count   = n_failed_tx_count,
-    n_failed_gene_count = n_failed_gene_count,
-    n_single_isoform    = n_single_isoform,
-    n_passed            = n_passed,
-    min_samps           = min_samps,
-    n_samples           = n_samples
+    n_start          = n_start,
+    n_zero           = n_zero,
+    n_single_isoform = n_single_isoform,
+    n_passed         = n_passed
   )
 }

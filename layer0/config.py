@@ -16,6 +16,7 @@ OUT_DIR   = Path("/home/welcome3/Viscacha_pipeline/outputs/layer0")
 # --- Input files ---
 SR_PATH   = DATA_DIR / "adata_sr.h5ad"
 TX_PATH   = DATA_DIR / "adata_transcript_loose_filtering_for_bulk_analysis.h5ad"
+GX_PATH   = DATA_DIR / "adata_gene_loose_filtering_for_bulk_analysis.h5ad"
 # Korean filenames resolved via glob to avoid NFC/NFD encoding mismatch
 SMC_XLSX  = _glob_one(str(META_DIR / "*.xlsx"))
 PO_PPTX   = _glob_one(str(META_DIR / "*.pptx"))

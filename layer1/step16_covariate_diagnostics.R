@@ -118,7 +118,7 @@ load_data <- function(cell_type) {
 # computed exactly the way the main pipeline computes them for
 # conditionAD.
 test_covariate_significance <- function(counts_mat, meta, cell_type) {
-  filter_result <- filter_counts(counts_mat, MIN_TX_COUNT, MIN_GENE_COUNT, MIN_SAMPS_FRAC, verbose = FALSE)
+  filter_result <- filter_counts(counts_mat, verbose = FALSE)
   counts_filt <- filter_result$counts
   if (nrow(counts_filt) < 2) return(NULL)
 

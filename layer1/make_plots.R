@@ -45,13 +45,11 @@ for (ct in names(all_results)) {
   counts_raw <- read.csv(f, row.names = 1, check.names = FALSE)
   counts_mat <- t(as.matrix(counts_raw))
   storage.mode(counts_mat) <- "integer"
-  filter_stats_all[[ct]] <- filter_counts_breakdown(
-    counts_mat, MIN_TX_COUNT, MIN_GENE_COUNT, MIN_SAMPS_FRAC
-  )
+  filter_stats_all[[ct]] <- filter_counts_breakdown(counts_mat)
   s <- filter_stats_all[[ct]]
-  message(sprintf("  %-22s  before=%6d  passed=%6d  (low-tx=%d  low-gene=%d  single=%d)",
+  message(sprintf("  %-22s  before=%6d  passed=%6d  (zero=%d  single=%d)",
                   ct, s$n_start, s$n_passed,
-                  s$n_failed_tx_count, s$n_failed_gene_count, s$n_single_isoform))
+                  s$n_zero, s$n_single_isoform))
 }
 
 # ---- Build significant results table ----

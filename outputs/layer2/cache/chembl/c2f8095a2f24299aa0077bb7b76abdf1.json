@@ -1,1 +1,0 @@
-{"_meta": {"fetched_at": "2026-06-16T15:44:37.832862+00:00", "url": "https://www.ebi.ac.uk/chembl/api/data/target/search", "method": "GET", "status": 200}, "_payload": {"page_meta": {"limit": 10, "next": null, "offset": 0, "previous": null, "total_count": 0}, "targets": []}}

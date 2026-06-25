@@ -39,23 +39,28 @@ build_se <- function(counts_mat, meta, formula) {
 
 fit_and_test <- function(counts_mat, meta, formula, contrast_name = "AD_vs_Control",
                          diagplots = FALSE, verbose = TRUE) {
-  filter_result <- filter_counts(counts_mat, MIN_TX_COUNT, MIN_GENE_COUNT, MIN_SAMPS_FRAC,
-                                 verbose = verbose)
-  counts_filt <- filter_result$counts
+  filter_result     <- filter_counts(counts_mat, verbose = verbose)
+  counts_structural <- filter_result$counts
+
+  # Drop samples with NA in any covariate used by formula (applied here so
+  # counts_structural and the fit set stay column-aligned)
+  formula_vars <- all.vars(formula)
+  keep_samps   <- complete.cases(meta[, formula_vars, drop = FALSE])
+  if (sum(keep_samps) < ncol(counts_structural)) {
+    message(sprintf("  Dropping %d sample(s) with NA covariates",
+                    ncol(counts_structural) - sum(keep_samps)))
+    counts_structural <- counts_structural[, keep_samps, drop = FALSE]
+    meta              <- meta[keep_samps, , drop = FALSE]
+  }
+
+  # Lighter expression filter restricts which transcripts are actually
+  # fit/tested (see step11's filter_counts_for_fit) — counts_structural is
+  # returned below for PSI denominators, which stay unbiased by this filter.
+  counts_filt <- filter_counts_for_fit(counts_structural, verbose = verbose)
 
   if (nrow(counts_filt) < 2) {
     warning("  Too few transcripts after filtering — skipping fit")
     return(NULL)
-  }
-
-  # Drop samples with NA in any covariate used by formula
-  formula_vars <- all.vars(formula)
-  keep_samps   <- complete.cases(meta[, formula_vars, drop = FALSE])
-  if (sum(keep_samps) < ncol(counts_filt)) {
-    message(sprintf("  Dropping %d sample(s) with NA covariates",
-                    ncol(counts_filt) - sum(keep_samps)))
-    counts_filt <- counts_filt[, keep_samps, drop = FALSE]
-    meta        <- meta[keep_samps, , drop = FALSE]
   }
 
   se <- build_se(counts_filt, meta, formula)
@@ -93,5 +98,11 @@ fit_and_test <- function(counts_mat, meta, formula, contrast_name = "AD_vs_Contr
   res$transcript_id <- rownames(res)
   res$gene_id       <- sub("-[^-]+$", "", res$transcript_id)
 
-  list(se = se, results = res, design = design, filter_stats = filter_result)
+  fit_stats <- list(
+    n_tx    = nrow(counts_filt),
+    n_genes = length(unique(sub("-[^-]+$", "", rownames(counts_filt))))
+  )
+
+  list(se = se, results = res, design = design, filter_stats = filter_result,
+       fit_stats = fit_stats, counts_structural = counts_structural)
 }

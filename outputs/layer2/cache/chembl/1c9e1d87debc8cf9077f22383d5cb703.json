@@ -1,1 +1,1 @@
-{"_meta": {"fetched_at": "2026-06-13T01:14:07.316409+00:00", "url": "https://www.ebi.ac.uk/chembl/api/data/mechanism", "method": "GET", "status": 200}, "_payload": {"mechanisms": [], "page_meta": {"limit": 100, "next": null, "offset": 0, "previous": null, "total_count": 0}}}
+{"_meta": {"fetched_at": "2026-06-25T02:02:27.156569+00:00", "url": "https://www.ebi.ac.uk/chembl/api/data/mechanism", "method": "GET", "status": 200}, "_payload": {"mechanisms": [], "page_meta": {"limit": 100, "next": null, "offset": 0, "previous": null, "total_count": 0}}}

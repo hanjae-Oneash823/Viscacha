@@ -49,12 +49,11 @@ save_plot <- function(p, name, width = 8, height = 6) {
 # filter_stats_all: named list, each element from filter_counts_breakdown()
 # ============================================================
 plot_step11_filter <- function(filter_stats_all) {
-  EXCL_LEVELS <- c("Passed", "Low isoform count", "Low gene total", "Single isoform")
+  EXCL_LEVELS <- c("Passed", "Never detected", "Single isoform")
   EXCL_COLORS <- c(
-    "Passed"            = "#2171b5",
-    "Low isoform count" = "#fd8d3c",
-    "Low gene total"    = "#e6550d",
-    "Single isoform"    = "#bdbdbd"
+    "Passed"         = "#2171b5",
+    "Never detected" = "#fd8d3c",
+    "Single isoform" = "#bdbdbd"
   )
 
   df <- do.call(rbind, lapply(names(filter_stats_all), function(ct) {
@@ -63,8 +62,7 @@ plot_step11_filter <- function(filter_stats_all) {
       cell_type = ct,
       category  = factor(EXCL_LEVELS, levels = EXCL_LEVELS),
       n         = c(s$n_passed,
-                    s$n_failed_tx_count,
-                    s$n_failed_gene_count,
+                    s$n_zero,
                     s$n_single_isoform),
       stringsAsFactors = FALSE
     )
@@ -93,21 +91,16 @@ plot_step11_filter <- function(filter_stats_all) {
       values = EXCL_COLORS,
       breaks = EXCL_LEVELS,   # legend in natural top-to-bottom order
       labels = c(
-        "Passed"            = "Passed (kept)",
-        "Low isoform count" = sprintf("Excluded: isoform count < %d in ≥ %.0f%% donors",
-                                       MIN_TX_COUNT, MIN_SAMPS_FRAC * 100),
-        "Low gene total"    = sprintf("Excluded: gene total < %d in ≥ %.0f%% donors",
-                                       MIN_GENE_COUNT, MIN_SAMPS_FRAC * 100),
-        "Single isoform"    = "Excluded: only 1 isoform left (DTU untestable)"
+        "Passed"         = "Passed (kept — all transcripts, no count threshold)",
+        "Never detected" = "Excluded: zero counts in every sample",
+        "Single isoform" = "Excluded: only 1 isoform left (DTU untestable)"
       ),
       name = NULL
     ) +
     scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.18))) +
     labs(
       title    = "Step 11 — Why transcripts were excluded from DTU testing",
-      subtitle = sprintf(
-        "Count filter: isoform ≥ %d counts AND gene total ≥ %d counts, both in ≥ %.0f%% of donors",
-        MIN_TX_COUNT, MIN_GENE_COUNT, MIN_SAMPS_FRAC * 100),
+      subtitle = "No count/prevalence thresholds — only structurally unusable transcripts removed",
       x = NULL, y = "Transcripts (n)"
     ) +
     THEME_VIS +

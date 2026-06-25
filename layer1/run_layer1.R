@@ -110,8 +110,9 @@ run_one_model <- function(counts_mat, meta, formula, cell_type, model_label) {
     return(NULL)
   }
 
-  res_df  <- fit_result$results
-  fstats  <- fit_result$filter_stats
+  res_df    <- fit_result$results
+  fstats    <- fit_result$filter_stats
+  fit_stats <- fit_result$fit_stats
 
   # stageR FDR
   stageR_df <- tryCatch(
@@ -120,15 +121,16 @@ run_one_model <- function(counts_mat, meta, formula, cell_type, model_label) {
   )
 
   if (is.null(stageR_df)) {
-    log_qc(cell_type, model_label, n_tx_before, fstats$n_tx, fstats$n_genes, 0, 0,
+    log_qc(cell_type, model_label, n_tx_before, fit_stats$n_tx, fit_stats$n_genes, 0, 0,
            "stageR failed")
     return(NULL)
   }
 
-  # ΔPSI (from filtered counts in the SE)
-  counts_filt <- assay(fit_result$se, "counts")
-  meta_filt   <- as.data.frame(colData(fit_result$se))
-  dpsi_df     <- compute_delta_psi(counts_filt, meta_filt)
+  # ΔPSI — from the full structurally-cleaned set (filter_counts), not the
+  # lighter fit-only filter, so gene-total denominators aren't biased by
+  # transcripts excluded from testing
+  meta_filt <- as.data.frame(colData(fit_result$se))
+  dpsi_df   <- compute_delta_psi(fit_result$counts_structural, meta_filt)
 
   # Merge all result components
   final_df <- merge_results(stageR_df, dpsi_df, res_df)
@@ -139,7 +141,7 @@ run_one_model <- function(counts_mat, meta, formula, cell_type, model_label) {
   n_sig_tx    <- sum(sig_mask, na.rm = TRUE)
   n_sig_genes <- length(unique(final_df$gene_id[sig_mask]))
 
-  log_qc(cell_type, model_label, n_tx_before, fstats$n_tx, fstats$n_genes,
+  log_qc(cell_type, model_label, n_tx_before, fit_stats$n_tx, fit_stats$n_genes,
          n_sig_genes, n_sig_tx)
   message(sprintf("  Significant: %d genes, %d transcripts", n_sig_genes, n_sig_tx))
 
@@ -172,9 +174,7 @@ for (ct in CELL_TYPES) {
   primary_result <- run_one_model(counts_mat, meta, FORMULA_PRIMARY, ct, "primary")
   primary_df     <- if (!is.null(primary_result)) primary_result$results else NULL
   if (!is.null(primary_result))
-    filter_stats_all[[ct]] <- filter_counts_breakdown(
-      counts_mat, MIN_TX_COUNT, MIN_GENE_COUNT, MIN_SAMPS_FRAC
-    )
+    filter_stats_all[[ct]] <- filter_counts_breakdown(counts_mat)
 
   # ---- Braak sensitivity model ----
   # Drop donors missing braak_stage
