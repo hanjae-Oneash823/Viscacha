@@ -1,0 +1,12 @@
+# Large reference data, caches, and model artifacts — regenerable/downloadable,
+# too big for git (genome FASTA, Pfam HMM DB, ColabFold structures, etc.)
+outputs/reference/
+outputs/annotation/
+outputs/junior_surveyor/cache/
+outputs/junior_surveyor/ref/
+outputs/master_surveyor/cache/
+outputs/00_PreAggregation_QC/filtered_adata/
+
+# Python
+__pycache__/
+*.pyc

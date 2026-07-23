@@ -1,0 +1,3 @@
+,condition,age,sex,braak_stage,median_pct_mt,n_cells
+SMC030,Control,60.92054794520548,F,2.0,0.0,79
+SMC036,AD,61.8054794520548,F,6.0,0.46445322036743164,26

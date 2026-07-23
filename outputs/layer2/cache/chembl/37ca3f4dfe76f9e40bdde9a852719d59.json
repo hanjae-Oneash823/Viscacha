@@ -1,1 +1,0 @@
-{"_meta": {"fetched_at": "2026-06-25T02:04:53.375390+00:00", "url": "https://www.ebi.ac.uk/chembl/api/data/mechanism", "method": "GET", "status": 200}, "_payload": {"mechanisms": [], "page_meta": {"limit": 100, "next": null, "offset": 0, "previous": null, "total_count": 0}}}
