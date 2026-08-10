@@ -9,11 +9,12 @@ reproducible from this module and should not be treated as a regression.
 Structural changes
 ------------------
 1. Substrate is the UNCOLLAPSED set of distinct
-   (canonical_protein_seq, alt_protein_seq) pairs -- 149, not 55.
+   (canonical_protein_seq, alt_protein_seq) pairs -- 94, not 55.
    m0_select.representative_row() keeps one alt per hit, which is correct for
    the export path but hides genuine docking candidates when several alts of
    the same canonical differ. Cell type is still not a docking unit, so rows
-   sharing a protein pair are collapsed carrying the MAX alt_usage_delta.
+   sharing a protein pair are collapsed carrying the MAX alt_usage_delta, and
+   the canonical's own row is dropped (see build_gate_matrix).
 2. The old gate E ("touched domain still detected in the alt") is dropped and
    structures-ready is renumbered F -> E. Domain retention is still reported
    as domains_touched_kept / domain_disruption -- context for reading the
@@ -89,10 +90,17 @@ MECHANISM_GATES = "ABDE"
 _CIGAR_RE = re.compile(r"(\d+)([=XID])")
 
 DETAIL_COLUMNS = [
-    "gene_name", "cell_type", "n_cell_types", "alt_transcript_name", "alt_rank",
-    "alt_usage_delta", "alt_biotype_class", "alt_cds_source", "protein_change_type",
+    "gene_name", "cell_type", "n_cell_types", "transcript_name",
+    "alt_transcript_name", "alt_rank",
+    # usage: `delta_usage` / AD / Control describe the CANONICAL transcript,
+    # `alt_usage_*` the alt. Every trial_failure hit is CT_enriched, so the
+    # canonical's delta_usage is negative by construction.
+    "delta_usage", "AD", "Control",
+    "alt_usage_pct_AD", "alt_usage_pct_control", "alt_usage_delta",
+    "alt_biotype_class", "alt_cds_source", "protein_change_type",
+    "can_aa_len", "alt_aa_len", "pct_identity", "protein_length_diff",
     "changed_aa_start", "changed_aa_end", "changed_aa_fraction",
-    "true_changed_frac", "top_domain", "domain_disruption",
+    "n_changed", "true_changed_frac", "top_domain", "domain_disruption",
     "domains_touched", "domains_touched_kept", "n_touched", "n_touched_kept",
     "affected_domain", "chembl_bioactive_compounds", "chembl_best_pchembl",
     "dgidb_interactions", "chembl_max_phase", "ot_max_phase", "uniprot_acc",
@@ -183,6 +191,16 @@ def build_gate_matrix() -> pd.DataFrame:
     tf["alt_protein_seq"] = tf["alt_protein_seq"].fillna("")
     tf = tf[(tf.canonical_protein_seq != "") & (tf.alt_protein_seq != "")]
 
+    # The canonical appears in its own alt-ranking table (is_canonical, with
+    # alt_ENST_ID == canonical_enst and protein_change_type "identical"). A
+    # protein compared against itself is not a docking pair: 60 such rows
+    # collapse to exactly one self-pair per gene and would inflate the
+    # denominator by 55. They never survive -- they fail gate D (nothing
+    # changed) and gate A (the canonical is CT_enriched by construction, so
+    # its own delta is negative) -- so dropping them leaves the funnel
+    # identical while correcting the per-gate totals for B, C and E.
+    tf = tf[~(tf["is_canonical"] == True)]  # noqa: E712 -- NaN-safe
+
     # One row per protein pair, carrying the MAX usage delta over cell types.
     key = ["canonical_protein_seq", "alt_protein_seq"]
     tf = tf.sort_values("alt_usage_delta", ascending=False)
@@ -192,6 +210,8 @@ def build_gate_matrix() -> pd.DataFrame:
 
     overlap = pd.DataFrame([_domain_overlap(r, pfam) for _, r in pairs.iterrows()])
     pairs = pd.concat([pairs.reset_index(drop=True), overlap], axis=1)
+    pairs["can_aa_len"] = pairs["canonical_protein_seq"].str.len()
+    pairs["alt_aa_len"] = pairs["alt_protein_seq"].str.len()
 
     def num(col: str) -> pd.Series:
         return pd.to_numeric(pairs[col], errors="coerce").fillna(0)
@@ -202,7 +222,7 @@ def build_gate_matrix() -> pd.DataFrame:
     gates = pd.DataFrame({
         "A": pairs["alt_usage_delta"] >= MIN_USAGE_DELTA,
         "B": ((kept_frac >= MIN_KEPT_FRAC)
-              & (~pairs["premature_stop"].fillna(False).astype(bool))
+              & (~(pairs["premature_stop"] == True))  # noqa: E712 -- NaN-safe
               & (pairs["alt_biotype_class"] == "PC_CDS")),
         "C": (num("chembl_max_phase") >= 1) | (num("ot_max_phase") >= 1),
         "D": pairs["n_touched"] > 0,
