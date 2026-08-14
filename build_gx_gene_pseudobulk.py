@@ -9,23 +9,29 @@ step15_gene_de_sr.R.
 
 adata_gene_loose.h5ad already has sample/condition/cell_type/pct_counts_mt
 natively ('sample' plays the role of 'donor'); only age/sex/braak_stage are
-joined from outputs/layer0/metadata/unified_metadata.csv.
+joined from outputs/00_PreAggregation_QC/metadata/unified_metadata.csv.
 
-Output: outputs/layer0/pseudobulk_gx/{counts,metadata}_{cell_type}.csv
-        (+ _sensitivity variants), same schema as outputs/layer0/pseudobulk/.
+Output: outputs/00_PreAggregation_QC/pseudobulk_gx/{counts,metadata}_{cell_type}.csv
+        (+ _sensitivity variants), same schema as outputs/00_PreAggregation_QC/pseudobulk/.
 
 Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python build_gx_gene_pseudobulk.py
 """
 
+import importlib
 import numpy as np
 import pandas as pd
 import anndata as ad
 from pathlib import Path
 
-from layer0.config import GX_PATH, OUT_META, CELL_TYPES, MIN_CELLS_PB, COND_ACTIVE
-from layer0.utils.sparse_utils import sparse_sum_rows
+_config_mod = importlib.import_module("00_PreAggregation_QC.config")
+_sparse_mod = importlib.import_module("00_PreAggregation_QC.utils.sparse_utils")
+GX_PATH, OUT_META, CELL_TYPES, MIN_CELLS_PB, COND_ACTIVE = (
+    _config_mod.GX_PATH, _config_mod.OUT_META, _config_mod.CELL_TYPES,
+    _config_mod.MIN_CELLS_PB, _config_mod.COND_ACTIVE,
+)
+sparse_sum_rows = _sparse_mod.sparse_sum_rows
 
-OUT_PB_GX = Path("/home/welcome3/Viscacha_pipeline/outputs/layer0/pseudobulk_gx")
+OUT_PB_GX = Path("/home/welcome3/Viscacha_pipeline/outputs/00_PreAggregation_QC/pseudobulk_gx")
 
 
 def _ct_stem(cell_type: str) -> str:

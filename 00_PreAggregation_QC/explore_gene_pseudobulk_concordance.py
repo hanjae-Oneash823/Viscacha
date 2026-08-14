@@ -18,9 +18,9 @@ row-chunked, boolean-masked per chunk) so SR.X is only read once.
 
 Standalone exploratory script, not part of the run_layer0 pipeline.
 
-Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python layer0/explore_gene_pseudobulk_concordance.py
+Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python -m 00_PreAggregation_QC.explore_gene_pseudobulk_concordance
      (from /home/welcome3/Viscacha_pipeline)
-Output: outputs/layer0/plots/gene_pseudobulk/*.png
+Output: outputs/00_PreAggregation_QC/plots/gene_pseudobulk/*.png
 """
 
 import numpy as np
@@ -33,7 +33,7 @@ import anndata as ad
 from pathlib import Path
 from scipy.stats import pearsonr, spearmanr
 
-from layer0.config import OUT_DIR, SR_PATH, TX_PATH, GX_PATH
+from .config import OUT_DIR, SR_PATH, TX_PATH, GX_PATH
 
 OUT_PLOTS = OUT_DIR / "plots" / "gene_pseudobulk"
 SR_CHUNK_SIZE = 20000

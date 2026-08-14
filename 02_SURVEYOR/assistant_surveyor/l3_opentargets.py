@@ -12,6 +12,7 @@ Responses are cached per-batch to outputs/assistant_surveyor/cache/.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import sys
@@ -123,7 +124,12 @@ def run(hits: pd.DataFrame) -> pd.DataFrame:
 
     for i in range(n_batches):
         batch = ensg_ids[i * OT_BATCH_SIZE : (i + 1) * OT_BATCH_SIZE]
-        cache_path = CACHE_DIR / f"ot_batch_{i:03d}.json"
+        # Keyed by a hash of the batch's actual ENSG content, not its index --
+        # the input gene list changes across pipeline reruns, so an
+        # index-keyed cache would silently serve a stale, unrelated batch's
+        # scores once the batch composition shifts (same bug as l4_uniprot).
+        batch_hash = hashlib.md5("|".join(batch).encode()).hexdigest()[:16]
+        cache_path = CACHE_DIR / f"ot_batch_{batch_hash}.json"
 
         print(f"  [L3] batch {i+1}/{n_batches} ({len(batch)} genes) ...",
               end=" ", flush=True)

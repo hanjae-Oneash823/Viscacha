@@ -1,0 +1,38 @@
+%%{init: {"flowchart": {"nodeSpacing": 25, "rankSpacing": 40, "curve": "linear", "padding": 8}}}%%
+flowchart TD
+    G["← STAGE 1<br/>initial_filter.py output<br/>1,201 / 2,599 kept"] --> H1{"tx_role_mane<br/>== Canonical?"}
+
+    H1 -->|"Canonical (448)"| H2["biotype_class = PC_CDS directly<br/>(no diff needed — already<br/>guaranteed MANE canonical)"]
+
+    H1 -->|"Alternate (753)"| H3{transcript_type}
+    H3 -->|"retained_intron (192)"| RI["RI"]
+    H3 -->|"NMD (82)"| NMD["NMD"]
+    H3 -->|"CDS not defined (15)"| PCND["PC_CDS_ND"]
+    H3 -->|"NaN (133)"| NOV["novel<br/>(no GENCODE curation —<br/>IsoQuant-only transcript)"]
+    H3 -->|"other (1)"| OTH["other<br/>(e.g. non_stop_decay)"]
+    H3 -->|"protein_coding (330)"| H4{"cds_diff_bp vs<br/>MANE canonical"}
+
+    H4 -->|"diff_bp > 0 (235)"| PCCDS["PC_CDS"]
+    H4 -->|"diff_bp == 0 (95)"| PCUTR["PC_UTR<br/>(same CDS → same protein,<br/>only UTR structure differs)"]
+
+    H2 --> J{"junior_pass gate<br/>biotype_class ∈<br/>{PC_CDS, PC_UTR, PC_CDS_ND, novel, TEC}"}
+    PCCDS --> J
+    PCUTR --> J
+    PCND --> J
+    NOV --> J
+    RI -.-> X2[("dead end")]
+    NMD -.-> X2
+    OTH -.-> X2
+
+    J -->|"pass (926)"| K["→ STAGE 3<br/>junior_surveyor<br/>478 new_target + 448 trial_failure"]
+    J -.->|"drop (275)"| X2
+
+    classDef mainFlow fill:#2e9e44,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef dropped fill:#999999,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef decision fill:#fff3cd,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+    classDef result fill:#e6e6fa,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+
+    class G,K mainFlow
+    class RI,NMD,OTH,X2 dropped
+    class H1,H3,H4,J decision
+    class H2,PCND,NOV,PCCDS,PCUTR result

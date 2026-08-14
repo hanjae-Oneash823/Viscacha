@@ -3,8 +3,8 @@
 # ============================================================
 
 # --- Directories ---
-IN_DIR  <- "/home/welcome3/Viscacha_pipeline/outputs/layer0/pseudobulk"
-OUT_DIR <- "/home/welcome3/Viscacha_pipeline/outputs/layer1"
+IN_DIR  <- "/home/welcome3/Viscacha_pipeline/outputs/00_PreAggregation_QC/pseudobulk"
+OUT_DIR <- "/home/welcome3/Viscacha_pipeline/outputs/01_ViscachaDTU_Analysis"
 
 # --- Cell types to analyze (Lymphocyte skipped: only 2 donors pass MIN_CELLS_PB) ---
 CELL_TYPES <- c(

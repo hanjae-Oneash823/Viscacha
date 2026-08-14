@@ -2,7 +2,7 @@
 # ============================================================
 # Viscacha Layer 1 — standalone plot regeneration
 # Loads existing per-cell-type result CSVs and regenerates all plots.
-# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/Rscript layer1/make_plots.R
+# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/Rscript 01_ViscachaDTU_Analysis/make_plots.R
 # (from /home/welcome3/Viscacha_pipeline)
 # ============================================================
 
@@ -11,7 +11,7 @@ script_path <- sub("^--file=", "", script_arg)
 script_dir  <- if (length(script_path) > 0 && nchar(script_path) > 0) {
   dirname(normalizePath(script_path, mustWork = FALSE))
 } else {
-  "layer1"
+  "01_ViscachaDTU_Analysis"
 }
 
 source(file.path(script_dir, "config.R"))

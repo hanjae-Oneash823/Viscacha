@@ -12,11 +12,11 @@ import numpy as np
 import pandas as pd
 import anndata as ad
 
-from layer0.config import (
+from .config import (
     CELL_TYPES, MIN_CELLS_PB, COND_ACTIVE, OUT_PB,
 )
-from layer0.utils.qc_log import QCLogger
-from layer0.utils.sparse_utils import sparse_sum_rows
+from .utils.qc_log import QCLogger
+from .utils.sparse_utils import sparse_sum_rows
 
 
 def _ct_stem(cell_type: str) -> str:

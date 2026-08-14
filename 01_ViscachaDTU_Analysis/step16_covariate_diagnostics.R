@@ -31,11 +31,11 @@
 #      says it doesn't cost hits.
 #
 # Standalone diagnostic script — not wired into run_layer1.R, does
-# not modify any layer1 results. Mirrors step15_gene_de.R's pattern.
+# not modify any 01_ViscachaDTU_Analysis results. Mirrors step15_gene_de.R's pattern.
 #
-# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/Rscript layer1/step16_covariate_diagnostics.R
+# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/Rscript 01_ViscachaDTU_Analysis/step16_covariate_diagnostics.R
 #      (from /home/welcome3/Viscacha_pipeline)
-# Output: outputs/layer1/covariate_diagnostics/
+# Output: outputs/01_ViscachaDTU_Analysis/covariate_diagnostics/
 #   covariate_pvalues_all_celltypes.csv
 #   reduced_model_hit_counts.csv
 #   covariate_balance.csv
@@ -57,13 +57,13 @@ suppressPackageStartupMessages({
 
 options(mc.cores = 4)
 
-# Source layer1 modules using the script's own directory
+# Source 01_ViscachaDTU_Analysis modules using the script's own directory
 script_arg  <- grep("--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
 script_path <- sub("^--file=", "", script_arg)
 script_dir  <- if (length(script_path) > 0 && nchar(script_path) > 0) {
   dirname(normalizePath(script_path, mustWork = FALSE))
 } else {
-  "layer1"
+  "01_ViscachaDTU_Analysis"
 }
 
 source(file.path(script_dir, "config.R"))

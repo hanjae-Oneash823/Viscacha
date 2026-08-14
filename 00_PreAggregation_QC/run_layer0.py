@@ -1,24 +1,18 @@
 """
-Viscacha Layer 0 — orchestrator
-Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python -m layer0.run_layer0
+Viscacha 00_PreAggregation_QC — orchestrator
+Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python -m 00_PreAggregation_QC.run_layer0
 (from /home/welcome3/Viscacha_pipeline)
 """
 
-import sys
-from pathlib import Path
-
-# Ensure the project root is on sys.path when run directly
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-from layer0.config import OUT_META, OUT_ADATA, OUT_QC
-from layer0.utils.qc_log import QCLogger
-import layer0.step01_metadata         as step01
-import layer0.step02_barcode_merge    as step02
-import layer0.step03_barcode_filter   as step03
-import layer0.step04_prevalence_filter as step04
-import layer0.step05_covariate_audit  as step05
-import layer0.step06_pseudobulk       as step06
-import layer0.plots                   as plots
+from .config import OUT_META, OUT_ADATA, OUT_QC
+from .utils.qc_log import QCLogger
+from . import step01_metadata         as step01
+from . import step02_barcode_merge    as step02
+from . import step03_barcode_filter   as step03
+from . import step04_prevalence_filter as step04
+from . import step05_covariate_audit  as step05
+from . import step06_pseudobulk       as step06
+from . import plots                   as plots
 
 
 def main():

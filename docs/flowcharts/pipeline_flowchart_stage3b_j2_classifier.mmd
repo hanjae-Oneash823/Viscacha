@@ -1,0 +1,38 @@
+%%{init: {"flowchart": {"nodeSpacing": 30, "rankSpacing": 45, "curve": "linear", "padding": 8}}}%%
+flowchart LR
+    K2["← STAGE 3A<br/>1,468 rows<br/>478 new_target +<br/>448 trial_failure is_canonical +<br/>542 trial_failure alt"] --> M0{"canonical & alt<br/>protein_seq resolved?"}
+    M0 -->|"no (13)<br/>10 NT + 3 TF"| NOSEQ["no_sequence"]
+    M0 -->|"yes"| M1{canonical == alt?}
+    M1 -->|"yes (644)<br/>83 NT + 561 TF<br/>(includes all 448<br/>is_canonical rows)"| IDENT["identical"]
+    M1 -->|"no"| M2{"premature<br/>stop in alt?"}
+    M2 -->|"yes (1)<br/>0 NT + 1 TF"| FS["frameshift_stop"]
+    M2 -->|"no (810)"| CLS["classify by length_diff +<br/>divergence location<br/>(full logic: reference table in doc)<br/>267 C_truncation + 236 N_truncation<br/>+ 198 internal_indel + 55 internal_insertion<br/>+ 33 N_extension + 20 C_extension<br/>+ 1 substitution"]
+
+    CLS --> PFAM
+    FS --> PFAM
+    NOSEQ --> Q0["alt_is_gate_driver = False (pre-filter)<br/>13 no_sequence + 644 identical = 657<br/>(93 NT + 564 TF)"]
+    IDENT --> Q0
+    PFAM["Pfam domain scan (pyhmmer, GA cutoffs)<br/>canonical vs alt protein, all resolved seqs<br/>→ affected_domain, domains_lost/gained,<br/>pfam_domains, pfam_n_domains<br/>(annotation only — does not affect gating)"]
+    PFAM --> Q1
+    Q1["alt_is_gate_driver = True<br/>267 C_trunc + 236 N_trunc + 198 indel<br/>+ 55 ins + 33 N_ext + 20 C_ext<br/>+ 1 sub + 1 fs = 811"]
+
+    Q0 --> R0{"trial_failure only:<br/>non-canonical row AND<br/>identical/no_sequence?<br/>(protein-level decoy —<br/>transcript differs, protein doesn't)"}
+    R0 -->|"yes — drop row (116)<br/>113 identical + 3 no_sequence,<br/>all non-canonical"| RD1[("dead end")]
+    R0 -->|"no — NT row, or<br/>TF is_canonical row<br/>(541 = 93 NT + 448 TF canonical)"| R1{"trial_failure hit:<br/>any non-canonical alt<br/>row still remaining?"}
+    R1 -->|"no — drop whole hit (179)<br/>127 already alt-less after J1c<br/>+ 52 newly all-decoy here<br/>(drops their is_canonical row too)"| RD2[("dead end")]
+    R1 -->|"yes, or NT row<br/>(362 = 93 NT + 269 TF canonical)"| K3
+    Q1 --> K3
+
+    K3["→ STAGE 3C<br/>1,173 rows<br/>362 non-drivers + 811 drivers<br/>(478 NT + 269 TF canonical + 426 TF alt)"]
+
+    classDef mainFlow fill:#2e9e44,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef dropped fill:#999999,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef tfBranch fill:#2a78d6,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef decision fill:#fff3cd,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+    classDef process fill:#e6e6fa,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+
+    class K2,K3 mainFlow
+    class Q1 tfBranch
+    class NOSEQ,IDENT,Q0,RD1,RD2 dropped
+    class M0,M1,M2,R0,R1 decision
+    class CLS,PFAM process

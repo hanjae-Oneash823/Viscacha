@@ -8,12 +8,12 @@ import pandas as pd
 from pathlib import Path
 from pptx import Presentation
 
-from layer0.config import (
+from .config import (
     SMC_XLSX, PO_PPTX, UNIFIED_META_COLS,
     COND_AD, COND_CTRL, COND_ACTIVE,
     B_TO_BRAAK, ROMAN_TO_INT, CERAD_TEXT_TO_INT,
 )
-from layer0.utils.qc_log import QCLogger
+from .utils.qc_log import QCLogger
 
 
 # ---------------------------------------------------------------------------

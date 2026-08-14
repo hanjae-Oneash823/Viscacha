@@ -10,10 +10,10 @@
 # (~ condition + age + sex + median_pct_mt), Control as reference, primary
 # donors only (AD + Control).
 #
-# Standalone: reads the Layer 0 pseudobulk CSVs and writes one combined CSV.
-# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/Rscript layer1/step15_gene_de.R
+# Standalone: reads the 00_PreAggregation_QC pseudobulk CSVs and writes one combined CSV.
+# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/Rscript 01_ViscachaDTU_Analysis/step15_gene_de.R
 #      (from /home/welcome3/Viscacha_pipeline)
-# Output: outputs/layer1/gene_level_de_results.csv
+# Output: outputs/01_ViscachaDTU_Analysis/gene_level_de_results.csv
 #   columns: gene_id, cell_type, log2FC, lfcSE, pval, padj, baseMean
 # ============================================================
 
@@ -26,7 +26,7 @@ script_arg  <- grep("--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
 script_path <- sub("^--file=", "", script_arg)
 script_dir  <- if (length(script_path) > 0 && nchar(script_path) > 0) {
   dirname(normalizePath(script_path, mustWork = FALSE))
-} else { "layer1" }
+} else { "01_ViscachaDTU_Analysis" }
 source(file.path(script_dir, "config.R"))
 
 MIN_GENE_TOTAL <- 10   # pre-filter: drop genes with < this many counts overall

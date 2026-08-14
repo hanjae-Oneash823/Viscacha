@@ -13,10 +13,10 @@
 # dtu_significant_all_celltypes.csv), since that's a short, known list and
 # the source AnnData is otherwise too large to scan gene-by-gene.
 #
-# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python layer1/extract_gene_expressing_cells.py
+# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python 01_ViscachaDTU_Analysis/extract_gene_expressing_cells.py
 #      (from anywhere -- paths below are absolute)
 #      Must run AFTER run_layer1.R has written dtu_significant_all_celltypes.csv
-# Output: outputs/layer1/gene_expressing_cells.csv
+# Output: outputs/01_ViscachaDTU_Analysis/gene_expressing_cells.csv
 #   columns: cell_type, gene_id, donor, n_cells_expressing_gene, n_cells_total_donor
 # ============================================================
 
@@ -24,9 +24,9 @@ import anndata as ad
 import numpy as np
 import pandas as pd
 
-ADATA_PATH    = "/home/welcome3/Viscacha_pipeline/outputs/layer0/filtered_adata/adata_tx_step03.h5ad"
-SIG_HITS_PATH = "/home/welcome3/Viscacha_pipeline/outputs/layer1/dtu_significant_all_celltypes.csv"
-OUT_PATH      = "/home/welcome3/Viscacha_pipeline/outputs/layer1/gene_expressing_cells.csv"
+ADATA_PATH    = "/home/welcome3/Viscacha_pipeline/outputs/00_PreAggregation_QC/filtered_adata/adata_tx_step03.h5ad"
+SIG_HITS_PATH = "/home/welcome3/Viscacha_pipeline/outputs/01_ViscachaDTU_Analysis/dtu_significant_all_celltypes.csv"
+OUT_PATH      = "/home/welcome3/Viscacha_pipeline/outputs/01_ViscachaDTU_Analysis/gene_expressing_cells.csv"
 
 
 def main():

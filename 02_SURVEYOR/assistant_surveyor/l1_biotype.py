@@ -1,8 +1,15 @@
 """L1 — Biotype & CDS Classification.
 
 Reads the annotation TSV once (filtered to transcript/CDS/UTR rows for genes
-in the hit set), determines the canonical transcript per gene, computes CDS
-interval diffs between hit and canonical, and assigns biotype_class.
+in the hit set), resolves each gene's canonical transcript via MANE Select
+(the same source used everywhere else in the pipeline -- classify_hit_scenarios_mane.py,
+junior_surveyor's j1_canonical.py), computes CDS interval diffs between hit
+and canonical, and assigns biotype_class.
+
+Every hit reaching this file already has MANE coverage guaranteed --
+initial_filter.py only keeps trial_failure_candidate / new_target_candidate,
+both of which require tx_role_mane in {Canonical, Alternate}, never
+no_MANE_coverage -- so the MANE lookup below never needs a fallback.
 
 No external I/O — all annotation is local.
 """
@@ -13,6 +20,8 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+from classify_hit_scenarios_mane import load_mane_select
 
 from assistant_surveyor.config import ANNOT_TSV, HITS_CSV, JUNIOR_PASS_BIOTYPES, TX_ID_MAP
 
@@ -29,41 +38,6 @@ _BIOTYPE_CLASS_MAP: dict[str, str] = {
     "protein_coding_CDS_not_defined": "PC_CDS_ND",
     "TEC":                            "TEC",
 }
-
-
-# ---------------------------------------------------------------------------
-# Canonical transcript selection (same hierarchy as plot_tx_structure.py)
-# ---------------------------------------------------------------------------
-"""
-Takes all transcript rows for one gene and returns the name of the most authoritative isoform.
-Three-level fallback:
-
-1. If any transcript has Ensembl_canonical in its tag field → that's the one. Done.
-2. Otherwise, filter to transcripts with basic tag and a CCDS ID (i.e., confirmed coding sequence),
-then pick the one with the lowest Transcript Support Level number (TSL 1 = most evidence, TSL 5 = least).
-3. If no CCDS, fall back to any basic-tagged transcript with the lowest TSL.
-"""
-
-def _get_canonical(tx_rows: pd.DataFrame) -> str | None:
-    tag = tx_rows["tag"].fillna("")
-    has_canonical = tag.str.contains("Ensembl_canonical", regex=False)
-    if has_canonical.any():
-        return tx_rows[has_canonical].iloc[0]["transcript_name"]
-
-    has_basic = tag.str.contains("basic", regex=False)
-    has_ccds  = tx_rows["ccdsid"].notna()
-
-    cands = tx_rows[has_basic & has_ccds].copy()
-    if not cands.empty:
-        cands = cands.sort_values("transcript_support_level", na_position="last")
-        return cands.iloc[0]["transcript_name"]
-
-    basic_only = tx_rows[has_basic].copy()
-    if not basic_only.empty:
-        basic_only = basic_only.sort_values("transcript_support_level", na_position="last")
-        return basic_only.iloc[0]["transcript_name"]
-
-    return None
 
 
 # ---------------------------------------------------------------------------
@@ -102,7 +76,7 @@ def _cds_diff_bp(hit_intervals: list[tuple[int, int]],
 def run(hits: pd.DataFrame) -> pd.DataFrame:
     """Enrich *hits* with L1 columns. Returns a new DataFrame."""
     print("[L1] Loading tx_id_map ...", flush=True)
-    id_map = pd.read_csv(TX_ID_MAP)[["transcript_name", "ENST_ID", "ENSG_ID"]]
+    id_map = pd.read_csv(TX_ID_MAP)[["transcript_name", "ENST_ID", "ENSG_ID", "gene_name"]]
 
     hit_genes = set(hits["gene_name"].unique())
     hit_txs   = set(hits["transcript_name"].unique())
@@ -122,11 +96,19 @@ def run(hits: pd.DataFrame) -> pd.DataFrame:
 
     tx_rows = ann[ann["feature"] == "transcript"]
 
-    # -- canonical per gene --------------------------------------------------
-    print("[L1] Identifying canonical transcripts per gene ...", flush=True)
+    # -- canonical per gene, via MANE Select ---------------------------------
+    print("[L1] Resolving canonical transcripts via MANE Select ...", flush=True)
+    mane = load_mane_select()
+    ensg_to_mane_enst = dict(zip(mane["ENSG_ID"], mane["mane_ENST_ID"]))
+    enst_to_name = dict(zip(
+        id_map["ENST_ID"].astype(str).str.split(".").str[0], id_map["transcript_name"]
+    ))
+    gene_to_ensg = dict(zip(id_map["gene_name"], id_map["ENSG_ID"]))
+
     canonical: dict[str, str | None] = {}
-    for gene, grp in tx_rows.groupby("gene_name"):
-        canonical[gene] = _get_canonical(grp)
+    for gene in hit_genes:
+        mane_enst = ensg_to_mane_enst.get(gene_to_ensg.get(gene))
+        canonical[gene] = enst_to_name.get(mane_enst)
 
     # -- transcript_type per tx ---------------------------------------------
     tx_type: dict[str, str] = (
@@ -146,28 +128,43 @@ def run(hits: pd.DataFrame) -> pd.DataFrame:
     for _, hit in hits.iterrows():
         tx_name  = hit["transcript_name"]
         gene     = hit["gene_name"]
-        canon    = canonical.get(gene)
         tx_type_ = tx_type.get(tx_name, "unknown")
 
-        # CDS intervals for this transcript and its canonical counterpart
-        hit_cds   = _cds_intervals(ann, tx_name)
-        canon_cds = _cds_intervals(ann, canon) if canon else []
-        has_cds   = len(hit_cds) > 0
-        diff_bp   = _cds_diff_bp(hit_cds, canon_cds)
-
-        # biotype_class assignment
-        # NaN transcript_type = no GENCODE curation at all -> IsoQuant-sourced
-        # novel transcript. Any other unmapped GENCODE biotype (lncRNA,
-        # non_stop_decay, IG/TR genes, ...) is a real reference transcript
-        # and must not be conflated with "novel" -> falls to "other".
-        if tx_type_ in _BIOTYPE_CLASS_MAP:
-            bc = _BIOTYPE_CLASS_MAP[tx_type_]
-        elif tx_type_ == "protein_coding":
-            bc = "PC_CDS" if diff_bp > 0 else "PC_UTR"
-        elif pd.isna(tx_type_):
-            bc = "novel"
+        # tx_role_mane == "Canonical" means this hit transcript IS the MANE
+        # canonical itself (trial_failure_candidate hits are Canonical x
+        # CT_enriched by construction) -- diffing it against canonical would
+        # just trivially return 0 (comparing a transcript to itself), so skip
+        # the interval diff and assign directly. PC_CDS is used here (rather
+        # than falling through to the general diff_bp==0 -> PC_UTR rule)
+        # since "same CDS as itself" isn't a meaningful UTR-only-variant
+        # claim -- it's the reference transcript, not a variant of it.
+        if hit.get("tx_role_mane") == "Canonical":
+            canon     = tx_name
+            has_cds   = True
+            diff_bp   = 0
+            bc        = "PC_CDS"
         else:
-            bc = "other"
+            canon = canonical.get(gene)
+
+            # CDS intervals for this transcript and its canonical counterpart
+            hit_cds   = _cds_intervals(ann, tx_name)
+            canon_cds = _cds_intervals(ann, canon) if canon else []
+            has_cds   = len(hit_cds) > 0
+            diff_bp   = _cds_diff_bp(hit_cds, canon_cds)
+
+            # biotype_class assignment
+            # NaN transcript_type = no GENCODE curation at all -> IsoQuant-sourced
+            # novel transcript. Any other unmapped GENCODE biotype (lncRNA,
+            # non_stop_decay, IG/TR genes, ...) is a real reference transcript
+            # and must not be conflated with "novel" -> falls to "other".
+            if tx_type_ in _BIOTYPE_CLASS_MAP:
+                bc = _BIOTYPE_CLASS_MAP[tx_type_]
+            elif tx_type_ == "protein_coding":
+                bc = "PC_CDS" if diff_bp > 0 else "PC_UTR"
+            elif pd.isna(tx_type_):
+                bc = "novel"
+            else:
+                bc = "other"
 
         n_ct = ct_count_map.get(tx_name, 1)
         rows_out.append({
@@ -185,7 +182,7 @@ def run(hits: pd.DataFrame) -> pd.DataFrame:
 
     # merge ENSG_ID / ENST_ID
     hits_with_ids = hits.merge(
-        id_map, on="transcript_name", how="left"
+        id_map, on=["transcript_name", "gene_name"], how="left"
     )
 
     result = pd.concat([hits_with_ids.reset_index(drop=True),

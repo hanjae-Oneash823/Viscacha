@@ -24,21 +24,30 @@ where the excluded hits went.
 ~1,200 of the 2,599 hits pass. ASSISTANT_SURVEYOR reads OUT_CSV, not the
 full DIU_significant_hits_combined.csv -- see assistant_surveyor/config.py:HITS_CSV.
 
-Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python initial_filter.py
+HITS_CSV is produced by 02_SURVEYOR/export_significant_hits.py, which pulls
+permutation_significant=True rows straight from
+/node212data/welcome3/Grad_proj_2026/DATA/DIU_result_with_permutation/
+DIU_result_with_Permutation_10000_donor_umi_cutoff_{cell_type}.csv.
+
+Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python 02_SURVEYOR/initial_filter.py
 """
 
+import sys
 from pathlib import Path
 
 import pandas as pd
 
+# classify_hit_scenarios(_mane).py live at repo root, one level up from here.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from classify_hit_scenarios import load_dominance
 from classify_hit_scenarios_mane import load_mane_select
 
-REPO_ROOT         = Path(__file__).resolve().parent
-HITS_CSV          = REPO_ROOT / "outputs/layer1_1/DIU_significant_hits_combined.csv"
-TX_ID_MAP         = REPO_ROOT / "outputs/layer1_1/annotation/tx_id_map.csv"
-OUT_CSV           = REPO_ROOT / "outputs/layer1_1/DIU_significant_hits_initial_filter.csv"
-ALL_GROUPS_OUT_CSV = REPO_ROOT / "outputs/layer1_1/DIU_significant_hits_all_candidate_groups.csv"
+REPO_ROOT         = Path(__file__).resolve().parent.parent
+HITS_CSV          = REPO_ROOT / "outputs/DIU_significant_hits/DIU_significant_hits_combined.csv"
+TX_ID_MAP         = REPO_ROOT / "outputs/annotation/tx_id_map.csv"
+OUT_CSV           = REPO_ROOT / "outputs/DIU_significant_hits/DIU_significant_hits_initial_filter.csv"
+ALL_GROUPS_OUT_CSV = REPO_ROOT / "outputs/DIU_significant_hits/DIU_significant_hits_all_candidate_groups.csv"
 
 
 def _tx_role(row) -> str:

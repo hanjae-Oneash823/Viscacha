@@ -11,7 +11,7 @@ def _glob_one(pattern: str) -> Path:
 # --- Directories ---
 DATA_DIR  = Path("/node212data/welcome3/Grad_proj_2026/DATA")
 META_DIR  = Path("/node212data/welcome3/Grad_proj_2026/sample_patient_metadata")
-OUT_DIR   = Path("/home/welcome3/Viscacha_pipeline/outputs/layer0")
+OUT_DIR   = Path("/home/welcome3/Viscacha_pipeline/outputs/00_PreAggregation_QC")
 
 # --- Input files ---
 SR_PATH   = DATA_DIR / "adata_sr.h5ad"

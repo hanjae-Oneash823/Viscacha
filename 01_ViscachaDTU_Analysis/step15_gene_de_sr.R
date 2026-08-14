@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 # ============================================================
 # Step 15 (SR variant): Gene-level differential expression (DESeq2)
-# using the SHORT-READ pseudobulk (outputs/layer0/pseudobulk_sr/),
+# using the SHORT-READ pseudobulk (outputs/00_PreAggregation_QC/pseudobulk_sr/),
 # for comparison against step15_gene_de.R (long-read transcript
 # counts collapsed to gene level).
 #
@@ -10,9 +10,9 @@
 # primary donors only (AD + Control). No transcript->gene collapsing
 # needed here — adata_sr is already gene-level.
 #
-# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/Rscript layer1/step15_gene_de_sr.R
+# Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/Rscript 01_ViscachaDTU_Analysis/step15_gene_de_sr.R
 #      (from /home/welcome3/Viscacha_pipeline)
-# Output: outputs/layer1/gene_level_de_results_SR.csv
+# Output: outputs/01_ViscachaDTU_Analysis/gene_level_de_results_SR.csv
 #   columns: gene_id, cell_type, log2FC, lfcSE, pval, padj, baseMean
 # ============================================================
 
@@ -24,10 +24,10 @@ script_arg  <- grep("--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
 script_path <- sub("^--file=", "", script_arg)
 script_dir  <- if (length(script_path) > 0 && nchar(script_path) > 0) {
   dirname(normalizePath(script_path, mustWork = FALSE))
-} else { "layer1" }
+} else { "01_ViscachaDTU_Analysis" }
 source(file.path(script_dir, "config.R"))
 
-IN_DIR_SR <- "/home/welcome3/Viscacha_pipeline/outputs/layer0/pseudobulk_sr"
+IN_DIR_SR <- "/home/welcome3/Viscacha_pipeline/outputs/00_PreAggregation_QC/pseudobulk_sr"
 MIN_GENE_TOTAL <- 10
 
 run_gene_de_one <- function(cell_type) {

@@ -38,7 +38,7 @@ import pandas as pd
 from matplotlib.lines import Line2D
 
 from master_surveyor.gate_matrix import (
-    MECHANISM_GATES, MIN_USAGE_DELTA, build_gate_matrix,
+    MECHANISM_GATES, MIN_ALT_LEVEL_AD, MIN_USAGE_DELTA, build_gate_matrix,
 )
 from master_surveyor.plot_results import BG, FG, GRID, _neon, _style, save
 
@@ -48,12 +48,22 @@ NEUTRAL = "#cccccc"
 MUTED = "#6b6b6b"
 
 THRESHOLD_PP = MIN_USAGE_DELTA * 100
+THRESHOLD_LEVEL_PCT = MIN_ALT_LEVEL_AD * 100
 
 # Draw each pair's control level as a small dot joined to its AD level by a
 # stem. The y axis is the AD LEVEL either way; the stem is what makes gate A
 # legible, since two dots at the same height can differ on it. Set False for
 # plain level-only markers.
 SHOW_CONTROL_STEMS = True
+
+# Labelling all 13 mechanism-only pairs crowds the low-can_drop/low-alt_ad
+# corner (several sit within a few pp of each other) and their leaders cross.
+# Rank by prominence -- distance from the origin in normalized (can_drop,
+# alt_ad) space, i.e. how far a point stands out on EITHER axis -- and label
+# only the top MAX_LABELS. The rest keep their red dot (still visually
+# flagged as mechanism-only) but no text; full identities are in
+# 07_gate_pairs.csv.
+MAX_LABELS = 8
 
 
 def _declutter(ys: np.ndarray, min_gap: float) -> np.ndarray:
@@ -105,14 +115,25 @@ def plot(pairs: pd.DataFrame) -> None:
         ax.scatter(sub["can_drop"], sub["alt_ad"], s=size, color=color,
                    alpha=alpha, linewidth=0.6, edgecolor=BG, zorder=4)
 
-    # Label only the mechanism-only set -- labelling 94 points is unreadable.
-    # Two label columns, split on the x midpoint: labels always run outward
-    # toward the sparse edges, so leaders stay short and never cross the dense
-    # centre. Declutter each column independently.
-    lab = d[d["mech"]]
+    # Label only the most prominent of the mechanism-only set -- labelling
+    # all of them crowds the low-corner cluster. Two label columns, split on
+    # the x midpoint: labels always run outward toward the sparse edges, so
+    # leaders stay short and never cross the dense centre. Declutter each
+    # column independently.
+    mech_all = d[d["mech"]]
+    prom_x = (mech_all["can_drop"] - mech_all["can_drop"].min()) / \
+        (mech_all["can_drop"].max() - mech_all["can_drop"].min())
+    prom_y = (mech_all["alt_ad"] - mech_all["alt_ad"].min()) / \
+        (mech_all["alt_ad"].max() - mech_all["alt_ad"].min())
+    prominence = np.hypot(prom_x, prom_y)
+    lab = mech_all.loc[prominence.nlargest(min(MAX_LABELS, len(mech_all))).index]
+    n_unlabeled = len(mech_all) - len(lab)
+
     mid = (lab["can_drop"].min() + lab["can_drop"].max()) / 2
     columns = [(lab[lab["can_drop"] <= mid], -1, "right"),
                (lab[lab["can_drop"] > mid], +1, "left")]
+    label_box = dict(boxstyle="round,pad=0.28,rounding_size=0.35",
+                      facecolor=BG, edgecolor=HILITE, linewidth=0.9, alpha=0.95)
     for grp, direction, ha in columns:
         if grp.empty:
             continue
@@ -124,10 +145,15 @@ def plot(pairs: pd.DataFrame) -> None:
                 xy=(r["can_drop"], r["alt_ad"]),
                 xytext=(r["can_drop"] + direction * xmax * 0.042, yl),
                 fontsize=8.5, color=HILITE, va="center", ha=ha,
-                fontweight="bold", zorder=5,
+                fontweight="bold", zorder=5, bbox=label_box,
                 arrowprops=dict(arrowstyle="-", color=HILITE, linewidth=0.7,
-                                alpha=0.55, shrinkA=0, shrinkB=2),
+                                alpha=0.55, shrinkA=0, shrinkB=6),
             )
+    if n_unlabeled:
+        ax.text(xmax * 0.995, ymax * 0.985,
+                f"+{n_unlabeled} more mechanism-only pair{'s' if n_unlabeled != 1 else ''} "
+                f"unlabeled (see 07_gate_pairs.csv)",
+                fontsize=8, color=MUTED, ha="right", va="top", style="italic", zorder=5)
 
     ax.set_xlim(0, xmax)
     ax.set_ylim(ymin, ymax)
@@ -151,8 +177,8 @@ def plot(pairs: pd.DataFrame) -> None:
              fontsize=15.5, color=FG, fontweight="bold", ha="left", va="top")
     fig.text(0.012, 0.947,
              f"dot = usage level in AD, stem = shift from the control level; "
-             f"{n_pass} of {len(d)} alts clear gate A (stem ≥ +{THRESHOLD_PP:.0f} pp) "
-             f"and {n_absent} are absent from controls entirely",
+             f"{n_pass} of {len(d)} alts clear gate A (stem ≥ +{THRESHOLD_PP:.0f} pp OR "
+             f"level > {THRESHOLD_LEVEL_PCT:.0f}%) and {n_absent} are absent from controls entirely",
              fontsize=10, color=MUTED, ha="left", va="top")
 
     handles = [
@@ -180,12 +206,18 @@ def main() -> None:
     print(f"\npairs={len(d)}  canonical drop {d.can_drop.min():.1f}–"
           f"{d.can_drop.max():.1f} pp  |  alt usage in AD {d.alt_ad.min():.1f}–"
           f"{d.alt_ad.max():.1f}%")
-    print(f"clear gate A (≥ +{THRESHOLD_PP:.0f} pp): {int(d['A'].sum())}")
+    via_rise = d["alt_usage_delta"] >= MIN_USAGE_DELTA
+    via_level = d["alt_usage_pct_AD_max"] > MIN_ALT_LEVEL_AD
+    print(f"clear gate A (≥ +{THRESHOLD_PP:.0f} pp rise OR level > "
+          f"{THRESHOLD_LEVEL_PCT:.0f}%): {int(d['A'].sum())}  "
+          f"[{int((via_rise & ~via_level).sum())} rise-only, "
+          f"{int((via_level & ~via_rise).sum())} level-only, "
+          f"{int((via_rise & via_level).sum())} both]")
     print(f"alt is the majority isoform in AD (> 50%): {int((d.alt_ad > 50).sum())}")
     print(f"alt absent from controls (0%): {int((d.alt_ct == 0).sum())}")
     print(f"alt usage in AD, gate A passers {d[d.A].alt_ad.min():.1f}–"
           f"{d[d.A].alt_ad.max():.1f}% vs failures {d[~d.A].alt_ad.min():.1f}–"
-          f"{d[~d.A].alt_ad.max():.1f}% (overlapping — level is not the gate)")
+          f"{d[~d.A].alt_ad.max():.1f}%")
 
 
 if __name__ == "__main__":

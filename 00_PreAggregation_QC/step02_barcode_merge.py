@@ -7,8 +7,8 @@ then joins unified metadata onto adata_tx.obs via donor column.
 import anndata as ad
 import pandas as pd
 
-from layer0.config import SR_PATH, TX_PATH, TRANSFER_COLS
-from layer0.utils.qc_log import QCLogger
+from .config import SR_PATH, TX_PATH, TRANSFER_COLS
+from .utils.qc_log import QCLogger
 
 
 def run(unified_meta: pd.DataFrame, qc_log: QCLogger) -> ad.AnnData:

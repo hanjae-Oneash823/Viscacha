@@ -1,0 +1,38 @@
+%%{init: {"flowchart": {"nodeSpacing": 80, "rankSpacing": 12, "curve": "linear", "padding": 8}}}%%
+flowchart TD
+    K["← STAGE 2<br/>junior_surveyor<br/>478 NT + 448 TF"] -->|"new_target (478)"| L1["J1: DTU transcript vs MANE canonical<br/>alt_rank = 0, 1 row/hit → 478 rows"]
+    K -->|"trial_failure (448)"| L2["J1b: rank ALL isoforms of gene by AD-donor usage<br/>alt_rank = 1..N<br/>→ 2,848 rows"]
+
+    L1 --> K2
+
+    L2 --> L3{is_canonical?}
+    L3 -->|"yes (448)<br/>alt IS canonical itself"| L4["biotype is PC_CDS trivially"]
+    L4 --> K1B
+
+    L3 -->|"no (2,400)"| JC1
+    JC1["J1c: alt_biotype_class<br/>applied per-row to ALT tx"]
+
+    JC1 --> JC2{"alt_biotype_class ∈<br/>{PC_CDS, PC_UTR, PC_CDS_ND, novel, TEC}?"}
+    JC2 -->|"no (1,219)<br/>RI 686 + NMD 461 + other 72"| JCD1[("dead end")]
+    JC2 -->|"yes (1,181)"| JC3{"alt_usage_pct_AD < 3%?"}
+    JC3 -->|"yes (639) — dropped"| JCD2[("dead end")]
+    JC3 -->|"no (542) — kept"| K1B
+
+    K1B["≥1 non-canonical alt survived?)<br/>127 hits = False"]
+    K1B --> K2
+
+    K2["→ STAGE 3B<br/>1,468 rows<br/>478 NT + 448 TF<br/>+ 542 trial_failure alt"]
+
+    classDef mainFlow fill:#2e9e44,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef dropped fill:#999999,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef tfBranch fill:#2a78d6,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef ntBranch fill:#e34948,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef decision fill:#fff3cd,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+    classDef process fill:#e6e6fa,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+
+    class K,K2 mainFlow
+    class L2,L4 tfBranch
+    class L1 ntBranch
+    class JCD1,JCD2 dropped
+    class L3,JC2,JC3 decision
+    class JC1,K1B process

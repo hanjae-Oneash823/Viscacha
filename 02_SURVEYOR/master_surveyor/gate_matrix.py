@@ -1,4 +1,4 @@
-"""Audited five-gate selection matrix for trial_failure_candidate docking pairs.
+"""Audited four-gate selection matrix for trial_failure_candidate docking pairs.
 
 This supersedes the earlier six-gate framework (recorded in the
 project_ds_docking_selection memory). Two structural changes and four bug
@@ -15,22 +15,21 @@ Structural changes
    the same canonical differ. Cell type is still not a docking unit, so rows
    sharing a protein pair are collapsed carrying the MAX alt_usage_delta, and
    the canonical's own row is dropped (see build_gate_matrix).
-2. The old gate E ("touched domain still detected in the alt") is dropped and
-   structures-ready is renumbered F -> E. Domain retention is still reported
-   as domains_touched_kept / domain_disruption -- context for reading the
-   shortlist, not a filter.
+2. Domain disruption is reported as context (domains_touched_kept /
+   domain_disruption), not used as a gate.  Structure availability is Gate D.
 
 Bug fixes vs the six-gate version
 ---------------------------------
-* Gate D used changed_aa_start/end, an ENVELOPE that marks every domain as
-  affected on any N-truncation. It now re-runs the edlib alignment to recover
-  the true changed-residue set and intersects that with real Pfam coordinates.
-  14 of 56 D-passers under the old test spanned >0.8 of the protein.
-* Gate B now requires an Ensembl-annotated coding CDS (PC_CDS). This retires
-  three separate defects at once: premature_stop fires on 1/163 rows and is
-  effectively inert; PC_CDS_ND carries SQANTI-PREDICTED ORFs (IFNAR1-216,
-  POMT2-240); and PC_UTR conflates "no CDS difference" with "no CDS data"
-  (ZDHHC3-202).
+* Domain context uses the true changed-residue set rather than the broad
+  changed_aa_start/end envelope, which can mark every domain as affected on
+  an N-truncation.
+* Gate B briefly required an Ensembl-annotated coding CDS (PC_CDS). That has
+  since been dropped again -- all trial_failure alts are protein-coding
+  (PC_CDS/PC_CDS_ND/PC_UTR are all coding, just differing in CDS-annotation
+  provenance), so the biotype clause was excluding real candidates rather
+  than filtering noise. Gate B is now length-retention + no-premature-stop
+  only; premature_stop still fires on only 1/163 rows and is effectively
+  inert on its own.
 * Gate C tested for drug NAME strings, which is exactly equivalent to
   phase >= 1 across all 149 pairs -- and is applied to a universe J4 already
   filtered on DGIdb (j4_gate._has_drug_evidence ORs it in; 106/149 pairs enter
@@ -40,13 +39,9 @@ Bug fixes vs the six-gate version
   order-dependent -- CHD1-205 straddled the gate A threshold on row order
   alone. It now takes the max.
 
-Deliberately NOT changed: gate D stays "any true changed residue lands in a
-Pfam domain" rather than a fraction-of-domain threshold. That metric is
-bimodal -- a domain is either obliterated by a truncation (~0.95) or nicked by
-a local indel (~0.03), nothing between -- so any cutoff silently becomes the
-real selector. It is also the wrong proxy for pocket relevance: PRKG2's
-29-residue indel is 7% of its kinase domain and could still reshape the ATP
-site. Pocket overlap is the right test and needs m2c_pocket, not this table.
+Domain disruption is not a selection criterion: the fraction affected is
+bimodal, and any cutoff would silently become the real selector. Pocket
+overlap is the right test and needs m2c_pocket, not this table.
 
 Requires edlib (present in the oneash_dtu env, same as j2_protein_diff).
 """
@@ -69,34 +64,40 @@ from master_surveyor.config import HITS_CSV, REPO_ROOT, STRUCTURE_CACHE_DIR
 
 PFAM_JSON = REPO_ROOT / "outputs/junior_surveyor/cache/j2_pfam_hits.json"
 
-GATES = list("ABCDE")
-MIN_USAGE_DELTA = 0.10        # gate A
+# Pfam overlap is descriptive context only; Gate D is structure availability.
+GATES = list("ABCD")
+MIN_USAGE_DELTA = 0.10        # gate A -- rise
+MIN_ALT_LEVEL_AD = 0.25       # gate A -- OR absolute AD level
 MIN_KEPT_FRAC = 0.50          # gate B
 
 # (letter, short name, one-line definition) -- shared with plot_gate_overlap
 GATE_LABEL = {
-    "A": ("A", "coherent switch", "alt rises ≥ 0.10 usage (max over cell types)"),
-    "B": ("B", "intact protein", "≥ 50% kept, Ensembl-annotated CDS"),
+    "A": ("A", "coherent switch",
+          "alt rises ≥ 0.10 usage\nor is > 0.25 of AD usage"),
+    "B": ("B", "intact protein", "≥ 50% kept, no premature stop"),
     "C": ("C", "curated drug", "ChEMBL or OpenTargets phase ≥ 1"),
-    "D": ("D", "domain hit", "changed residues land in a Pfam domain"),
-    "E": ("E", "structures ready", "canonical + alt folded (was gate F)"),
+    "D": ("D", "structures ready", "canonical + alt folded"),
 }
 
 # Mechanism-only working set: every gate except the drug-evidence one. Gate C
 # is a literature-coverage filter, not a property of the protein, so this is
 # the set worth carrying into pocket analysis.
-MECHANISM_GATES = "ABDE"
+MECHANISM_GATES = "ABD"
 
 _CIGAR_RE = re.compile(r"(\d+)([=XID])")
 
 DETAIL_COLUMNS = [
     "gene_name", "cell_type", "n_cell_types", "transcript_name",
     "alt_transcript_name", "alt_rank",
+    # Retained for downstream, non-gating structural analyses.  Gate-matrix
+    # plots do not display these long sequences, but cached model lookup is
+    # sequence-hash based so an audit table must be able to recover them.
+    "canonical_protein_seq", "alt_protein_seq",
     # usage: `delta_usage` / AD / Control describe the CANONICAL transcript,
     # `alt_usage_*` the alt. Every trial_failure hit is CT_enriched, so the
     # canonical's delta_usage is negative by construction.
     "delta_usage", "AD", "Control",
-    "alt_usage_pct_AD", "alt_usage_pct_control", "alt_usage_delta",
+    "alt_usage_pct_AD", "alt_usage_pct_AD_max", "alt_usage_pct_control", "alt_usage_delta",
     "alt_biotype_class", "alt_cds_source", "protein_change_type",
     "can_aa_len", "alt_aa_len", "pct_identity", "protein_length_diff",
     "changed_aa_start", "changed_aa_end", "changed_aa_fraction",
@@ -179,9 +180,9 @@ def _domain_overlap(row: pd.Series, pfam: dict) -> dict:
 
 
 def build_gate_matrix() -> pd.DataFrame:
-    """One row per distinct protein pair, with the five gates as bool columns.
+    """One row per distinct protein pair, with the four active gates as bool columns.
 
-    Gate E re-scans STRUCTURE_CACHE_DIR on every call, so it tracks whatever
+    Gate D re-scans STRUCTURE_CACHE_DIR on every call, so it tracks whatever
     ColabFold has finished at the moment of the run.
     """
     pfam = json.loads(PFAM_JSON.read_text())
@@ -195,10 +196,9 @@ def build_gate_matrix() -> pd.DataFrame:
     # alt_ENST_ID == canonical_enst and protein_change_type "identical"). A
     # protein compared against itself is not a docking pair: 60 such rows
     # collapse to exactly one self-pair per gene and would inflate the
-    # denominator by 55. They never survive -- they fail gate D (nothing
-    # changed) and gate A (the canonical is CT_enriched by construction, so
-    # its own delta is negative) -- so dropping them leaves the funnel
-    # identical while correcting the per-gate totals for B, C and E.
+    # denominator by 55. They are not alternative-protein candidates and the
+    # canonical is CT-enriched by construction, so dropping them corrects the
+    # per-gate totals without discarding a meaningful comparison.
     tf = tf[~(tf["is_canonical"] == True)]  # noqa: E712 -- NaN-safe
 
     # One row per protein pair, carrying the MAX usage delta over cell types.
@@ -207,6 +207,12 @@ def build_gate_matrix() -> pd.DataFrame:
     pairs = tf.drop_duplicates(key).copy()
     n_ct = tf.groupby(key)["cell_type"].nunique()
     pairs["n_cell_types"] = pairs.set_index(key).index.map(n_ct)
+    # Gate A's OR clause needs the max AD level over cell types too, not just
+    # whichever cell type happened to carry the max delta (the row `pairs`
+    # already collapsed to) -- a pair can peak on level in one cell type and
+    # on delta in another.
+    max_level_ad = tf.groupby(key)["alt_usage_pct_AD"].max()
+    pairs["alt_usage_pct_AD_max"] = pairs.set_index(key).index.map(max_level_ad)
 
     overlap = pd.DataFrame([_domain_overlap(r, pfam) for _, r in pairs.iterrows()])
     pairs = pd.concat([pairs.reset_index(drop=True), overlap], axis=1)
@@ -220,13 +226,12 @@ def build_gate_matrix() -> pd.DataFrame:
                  / pairs["canonical_protein_seq"].str.len().replace(0, np.nan))
 
     gates = pd.DataFrame({
-        "A": pairs["alt_usage_delta"] >= MIN_USAGE_DELTA,
+        "A": (pairs["alt_usage_delta"] >= MIN_USAGE_DELTA)
+             | (pairs["alt_usage_pct_AD_max"] > MIN_ALT_LEVEL_AD),
         "B": ((kept_frac >= MIN_KEPT_FRAC)
-              & (~(pairs["premature_stop"] == True))  # noqa: E712 -- NaN-safe
-              & (pairs["alt_biotype_class"] == "PC_CDS")),
+              & (~(pairs["premature_stop"] == True))),  # noqa: E712 -- NaN-safe
         "C": (num("chembl_max_phase") >= 1) | (num("ot_max_phase") >= 1),
-        "D": pairs["n_touched"] > 0,
-        "E": (pairs["canonical_protein_seq"].map(_canonical_folded)
+        "D": (pairs["canonical_protein_seq"].map(_canonical_folded)
               & pairs["alt_protein_seq"].map(_alt_folded)),
     }).fillna(False).astype(bool)
 
@@ -250,9 +255,9 @@ if __name__ == "__main__":
     print("per-gate:", {g: int(m[g].sum()) for g in GATES})
     labels, counts = funnel(m)
     print("funnel:", " → ".join(str(c) for c in counts))
-    print("all five:", sorted(set(m.loc[m[GATES].all(axis=1), "gene_name"])) or "(none)")
+    print("all active gates:", sorted(set(m.loc[m[GATES].all(axis=1), "gene_name"])) or "(none)")
     mech = m[m[list(MECHANISM_GATES)].all(axis=1)]
     print(f"mechanism-only ({'+'.join(MECHANISM_GATES)}):",
           sorted(set(mech.gene_name)) or "(none)")
-    waiting = m[m[["A", "B", "D"]].all(axis=1) & ~m["E"]]
+    waiting = m[m[["A", "B"]].all(axis=1) & ~m["D"]]
     print("waiting only on folding:", sorted(set(waiting.gene_name)) or "(none)")

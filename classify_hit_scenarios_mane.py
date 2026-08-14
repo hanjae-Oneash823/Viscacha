@@ -25,9 +25,9 @@ from pathlib import Path
 import pandas as pd
 
 REPO_ROOT   = Path(__file__).resolve().parent
-HITS_CSV    = REPO_ROOT / "outputs/layer1_1/DIU_significant_hits_combined.csv"
-TX_ID_MAP   = REPO_ROOT / "outputs/layer1_1/annotation/tx_id_map.csv"
-MANE_FILE   = REPO_ROOT / "outputs/layer1_1/reference/mane/MANE.GRCh38.v1.5.summary.txt.gz"
+HITS_CSV    = REPO_ROOT / "outputs/DIU_significant_hits/DIU_significant_hits_combined.csv"
+TX_ID_MAP   = REPO_ROOT / "outputs/annotation/tx_id_map.csv"
+MANE_FILE   = REPO_ROOT / "outputs/reference/mane/MANE.GRCh38.v1.5.summary.txt.gz"
 OUT_DIR     = REPO_ROOT / "outputs/scenario_analysis"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

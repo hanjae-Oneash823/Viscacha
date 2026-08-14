@@ -1,31 +1,37 @@
 #!/usr/bin/env python3
 """
 Build gene-level pseudobulk (donors x genes) from the SHORT-READ h5ad
-(adata_sr.h5ad), mirroring layer0/step06_pseudobulk.py's donor-aggregation
-logic exactly (same MIN_CELLS_PB, same primary/sensitivity donor split),
-so its output is a drop-in gene-level counterpart to the long-read
-transcript pseudobulk used by step15_gene_de.R.
+(adata_sr.h5ad), mirroring 00_PreAggregation_QC/step06_pseudobulk.py's
+donor-aggregation logic exactly (same MIN_CELLS_PB, same primary/sensitivity
+donor split), so its output is a drop-in gene-level counterpart to the
+long-read transcript pseudobulk used by step15_gene_de.R.
 
 adata_sr.h5ad already has donor/condition/cell_type/pct_counts_mt natively
 (these are the source that gets transferred INTO the long-read object in
 step02_barcode_merge.py) — it is just missing age/sex/braak_stage, which
-are joined from outputs/layer0/metadata/unified_metadata.csv.
+are joined from outputs/00_PreAggregation_QC/metadata/unified_metadata.csv.
 
-Output: outputs/layer0/pseudobulk_sr/{counts,metadata}_{cell_type}.csv
-        (+ _sensitivity variants), same schema as outputs/layer0/pseudobulk/.
+Output: outputs/00_PreAggregation_QC/pseudobulk_sr/{counts,metadata}_{cell_type}.csv
+        (+ _sensitivity variants), same schema as outputs/00_PreAggregation_QC/pseudobulk/.
 
 Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python build_sr_gene_pseudobulk.py
 """
 
+import importlib
 import numpy as np
 import pandas as pd
 import anndata as ad
 from pathlib import Path
 
-from layer0.config import SR_PATH, OUT_META, CELL_TYPES, MIN_CELLS_PB, COND_ACTIVE
-from layer0.utils.sparse_utils import sparse_sum_rows
+_config_mod = importlib.import_module("00_PreAggregation_QC.config")
+_sparse_mod = importlib.import_module("00_PreAggregation_QC.utils.sparse_utils")
+SR_PATH, OUT_META, CELL_TYPES, MIN_CELLS_PB, COND_ACTIVE = (
+    _config_mod.SR_PATH, _config_mod.OUT_META, _config_mod.CELL_TYPES,
+    _config_mod.MIN_CELLS_PB, _config_mod.COND_ACTIVE,
+)
+sparse_sum_rows = _sparse_mod.sparse_sum_rows
 
-OUT_PB_SR = Path("/home/welcome3/Viscacha_pipeline/outputs/layer0/pseudobulk_sr")
+OUT_PB_SR = Path("/home/welcome3/Viscacha_pipeline/outputs/00_PreAggregation_QC/pseudobulk_sr")
 
 
 def _ct_stem(cell_type: str) -> str:

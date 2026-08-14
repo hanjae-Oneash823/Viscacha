@@ -1,0 +1,147 @@
+%%{init: {"flowchart": {"nodeSpacing": 18, "rankSpacing": 28, "curve": "linear", "padding": 6}}}%%
+flowchart TD
+    %% ===================== STAGE 1 =====================
+    subgraph S1["STAGE 1 — classify_hit_scenarios_mane.py + initial_filter.py"]
+        A["DTU-significant hit<br/>(transcript × cell_type)<br/>n = 2,599"] --> B{"isoform_role<br/>(Control-PSI rank)"}
+
+        B -->|"Dominant (1,272)"| C{tx_role_mane}
+        B -->|"Minor (1,327)"| D{tx_role_mane}
+
+        C -->|"Canonical (550)"| E{usage_direction}
+        C -->|"Alternate (681)"| O1(("681<br/>other"))
+        C -->|"no MANE (41)"| N1(("41<br/>no_MANE_coverage"))
+
+        D -->|"Alternate (997)"| F{usage_direction}
+        D -->|"Canonical (286)"| O2(("286<br/>other"))
+        D -->|"no MANE (44)"| N2(("44<br/>no_MANE_coverage"))
+
+        E -->|"CT_enriched (448)"| TF["trial_failure_candidate<br/>448 hits<br/>(canonical usage drops in AD)"]
+        E -->|"AD_enriched (102)"| O3(("102<br/>other"))
+
+        F -->|"AD_enriched (753)"| NT["new_target_candidate<br/>753 hits<br/>(alternate usage rises in AD)"]
+        F -->|"CT_enriched (244)"| O4(("244<br/>other"))
+    end
+
+    O1 & O2 & O3 & O4 & N1 & N2 -.->|"1,398 dropped"| X1[("dead end")]
+
+    TF --> G["initial_filter.py output<br/>1,201 / 2,599 kept<br/>753 new_target + 448 trial_failure"]
+    NT --> G
+
+    %% ===================== STAGE 2 =====================
+    subgraph S2["STAGE 2 — assistant_surveyor L1: biotype_class"]
+        G --> H1{"tx_role_mane<br/>== Canonical?"}
+
+        H1 -->|"Canonical (448)"| H2["biotype_class = PC_CDS directly<br/>(no diff needed — already<br/>guaranteed MANE canonical)"]
+
+        H1 -->|"Alternate (753)"| H3{transcript_type}
+        H3 -->|"retained_intron (192)"| RI["RI"]
+        H3 -->|"NMD (82)"| NMD["NMD"]
+        H3 -->|"CDS not defined (15)"| PCND["PC_CDS_ND"]
+        H3 -->|"NaN (133)"| NOV["novel<br/>(no GENCODE curation —<br/>IsoQuant-only transcript)"]
+        H3 -->|"other (1)"| OTH["other<br/>(e.g. non_stop_decay)"]
+        H3 -->|"protein_coding (330)"| H4{"cds_diff_bp vs<br/>MANE canonical"}
+
+        H4 -->|"diff_bp > 0 (235)"| PCCDS["PC_CDS"]
+        H4 -->|"diff_bp == 0 (95)"| PCUTR["PC_UTR<br/>(same CDS → same protein,<br/>only UTR structure differs)"]
+    end
+
+    H2 --> J{"junior_pass gate<br/>biotype_class ∈<br/>{PC_CDS, PC_UTR, PC_CDS_ND, novel, TEC}"}
+    PCCDS --> J
+    PCUTR --> J
+    PCND --> J
+    NOV --> J
+    RI -.-> X2[("dead end")]
+    NMD -.-> X2
+    OTH -.-> X2
+
+    J -->|"pass (926)"| K["junior_surveyor<br/>478 new_target + 448 trial_failure"]
+    J -.->|"drop (275)"| X2
+
+    %% ===================== STAGE 3A =====================
+    subgraph S3A["STAGE 3A — junior_surveyor: J1 / J1b / J1c (candidate rows + quality filter)"]
+        K -->|"new_target (478)"| L1["J1: DTU transcript vs MANE canonical<br/>alt_rank = 0, 1 row/hit → 478 rows"]
+        K -->|"trial_failure (448)"| L2["J1b: rank ALL isoforms of gene<br/>by AD-donor usage, no cutoff<br/>alt_rank = 1..N → 2,848 rows"]
+
+        L1 -->|"alt_biotype_class copied<br/>from biotype_class —<br/>no filter applies —<br/>has_viable_alt = True always,<br/>not computed for this branch"| K2
+
+        L2 --> L3{is_canonical?}
+        L3 -->|"yes (448)<br/>alt IS canonical itself"| L4["alt_biotype_class = PC_CDS trivially —<br/>no filter applies<br/>(always identical downstream,<br/>never a gate driver either way)"]
+        L4 --> K1B
+
+        L3 -->|"no (2,400)"| JC1
+        JC1["J1c: classify alt_biotype_class<br/>(same MANE-based logic as Stage 2,<br/>applied per-row to the ALT transcript,<br/>not the hit's own transcript)"]
+
+        JC1 --> JC2{"alt_biotype_class ∈<br/>{PC_CDS, PC_UTR, PC_CDS_ND, novel, TEC}?"}
+        JC2 -->|"no (1,219)<br/>RI 686 + NMD 461 + other 72"| JCD1[("dead end")]
+        JC2 -->|"yes (1,181)"| JC3{"alt_usage_pct_AD < 3%?"}
+        JC3 -->|"yes (639) — dropped"| JCD2[("dead end")]
+        JC3 -->|"no (542) — kept"| K1B
+
+        K1B["trial_failure only:<br/>compute has_viable_alt per hit<br/>(≥1 non-canonical alt survived<br/>biotype + usage filter?)<br/>127 hits = False<br/>(is_canonical row only — can<br/>never pass J4)"]
+    end
+
+    K1B --> K2
+
+    K2["1,468 rows<br/>478 new_target +<br/>448 trial_failure is_canonical +<br/>542 trial_failure alt"]
+
+    %% ===================== STAGE 3B =====================
+    subgraph S3B["STAGE 3B — junior_surveyor: J2 protein-change classifier + protein-identical-decoy filter"]
+        direction LR
+        K2 --> M0{"canonical & alt<br/>protein_seq resolved?"}
+        M0 -->|"no (13)<br/>10 NT + 3 TF"| NOSEQ["no_sequence"]
+        M0 -->|"yes"| M1{canonical == alt?}
+        M1 -->|"yes (644)<br/>83 NT + 561 TF<br/>(includes all 448<br/>is_canonical rows)"| IDENT["identical"]
+        M1 -->|"no"| M2{"premature<br/>stop in alt?"}
+        M2 -->|"yes (1)<br/>0 NT + 1 TF"| FS["frameshift_stop"]
+        M2 -->|"no (810)"| CLS["classify by length_diff +<br/>divergence location<br/>(full logic: reference table in doc)<br/>267 C_truncation + 236 N_truncation<br/>+ 198 internal_indel + 55 internal_insertion<br/>+ 33 N_extension + 20 C_extension<br/>+ 1 substitution"]
+
+        CLS --> PFAM
+        FS --> PFAM
+        PFAM["Pfam domain scan (pyhmmer, GA cutoffs)<br/>canonical vs alt protein, all resolved seqs<br/>→ affected_domain, domains_lost/gained,<br/>pfam_domains, pfam_n_domains<br/>(annotation only — does not affect gating)"]
+
+        NOSEQ --> Q0["alt_is_gate_driver = False (pre-filter)<br/>13 no_sequence + 644 identical = 657<br/>(93 NT + 564 TF)"]
+        IDENT --> Q0
+        Q0 --> R0{"trial_failure only:<br/>non-canonical row AND<br/>identical/no_sequence?<br/>(protein-level decoy — transcript<br/>differs, protein doesn't)"}
+        R0 -->|"yes — drop row (116)<br/>113 identical + 3 no_sequence,<br/>all non-canonical"| RD1[("dead end")]
+        R0 -->|"no — NT row, or TF<br/>is_canonical row<br/>(541 = 93 NT + 448 TF canonical)"| R1{"trial_failure hit: any<br/>non-canonical alt row<br/>still remaining?"}
+        R1 -->|"no — drop whole hit (179)<br/>127 already alt-less after J1c<br/>+ 52 newly all-decoy here<br/>(drops is_canonical row too)"| RD2[("dead end")]
+    end
+
+    PFAM --> Q1
+    Q1["alt_is_gate_driver = True<br/>267 C_trunc + 236 N_trunc + 198 indel<br/>+ 55 ins + 33 N_ext + 20 C_ext<br/>+ 1 sub + 1 fs = 811"]
+
+    %% ===================== STAGE 3C =====================
+    subgraph S3C["STAGE 3C — junior_surveyor: J3 drug/binding evidence → J4 gate"]
+        N3["J3: drug/binding evidence — 590 genes<br/>ChEMBL 282 target + 22 max_phase≥1<br/>DGIdb 212 · Open Targets 49<br/>+ evidence-only: ChEMBL bioactivity 218,<br/>Pharos Tclin/Tchem 90<br/>(evidence counts against the persistent<br/>cross-run cache, not just this run's 590)"]
+        R1 -->|"yes, or NT row<br/>(362 = 93 NT + 269 TF canonical)"| N3
+        Q1 --> N3
+
+        N3 --> P{"J4 gate: passes_to_master<br/>(branch-specific)"}
+        P -->|"new_target:<br/>gate_driver(alt_rank=0)"| P1["384 / 476 hits pass<br/>92 dropped"]
+        P -->|"trial_failure:<br/>ANY alt is gate_driver<br/>(trivially true post-S3B filter)<br/>AND drug_evidence(gene)<br/>(ChEMBL phase / DGIdb / OT phase only)"| P2["43 / 269 hits pass<br/>226 hits dropped"]
+
+        P1 --> P1G{"master_group split:<br/>any chemical-tractability evidence?<br/>(ChEMBL target entry / DGIdb /<br/>OT phase / Pharos ligand)"}
+        P1G -->|"yes"| P1A["drug_repurposing_candidate<br/>175 hits"]
+        P1G -->|"no"| P1B["novel_target_candidate<br/>209 hits"]
+
+        P1A --> R
+        P1B --> R
+        P2 --> R["hits_deep.csv<br/>selected_for_next_stage = True<br/>master_group ∈ {trial_failure_candidate,<br/>drug_repurposing_candidate, novel_target_candidate}<br/>427 hits → master_surveyor<br/>(43 TF + 175 repurposing + 209 novel)"]
+    end
+
+    %% ===================== STYLES =====================
+    classDef mainFlow fill:#2e9e44,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef dropped fill:#999999,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef tfBranch fill:#2a78d6,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef ntBranch fill:#e34948,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef novelBranch fill:#e8a628,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+    classDef decision fill:#fff3cd,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+    classDef process fill:#e6e6fa,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+
+    class A,G,K,K2,N3,R mainFlow
+    class TF,L2,L4,P2,Q1 tfBranch
+    class NT,L1,P1,P1A ntBranch
+    class P1B novelBranch
+    class O1,O2,O3,O4,N1,N2,X1,X2,RI,NMD,OTH,NOSEQ,IDENT,Q0,JCD1,JCD2,RD1,RD2 dropped
+    class B,C,D,E,F,H1,H3,H4,J,L3,JC2,JC3,M0,M1,M2,P,P1G,R0,R1 decision
+    class JC1,K1B,CLS,PFAM process

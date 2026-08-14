@@ -1,4 +1,4 @@
-"""07 -- five-gate overlap (UpSet-style) for trial_failure_candidate docking pairs.
+"""07 -- active-gate overlap (UpSet-style) for trial_failure_candidate docking pairs.
 
 Gate definitions, the uncollapsed pair substrate, and the rationale for every
 audit fix live in gate_matrix.py -- read that first. This module only renders.
@@ -24,7 +24,6 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import numpy as np
 import pandas as pd
-from matplotlib.lines import Line2D
 
 from master_surveyor.config import OUT_DIR
 from master_surveyor.gate_matrix import (
@@ -74,10 +73,10 @@ def plot_upset(gates: pd.DataFrame, combos: pd.DataFrame) -> None:
     all_key = "1" * len(GATES)
     mech_key = "".join("1" if g in MECHANISM_GATES else "0" for g in GATES)
 
-    fig = plt.figure(figsize=(15.4, 9.2), facecolor=BG)
+    fig = plt.figure(figsize=(12.4, 9.2), facecolor=BG)
     gs = fig.add_gridspec(
         3, 2, width_ratios=[0.95, 4.5], height_ratios=[3.0, 2.5, 1.7],
-        left=0.145, right=0.99, top=0.885, bottom=0.075, wspace=0.02, hspace=0.10,
+        left=0.165, right=0.99, top=0.885, bottom=0.075, wspace=0.02, hspace=0.10,
     )
     ax_bar = fig.add_subplot(gs[0, 1])
     ax_mat = fig.add_subplot(gs[1, 1], sharex=ax_bar)
@@ -111,13 +110,12 @@ def plot_upset(gates: pd.DataFrame, combos: pd.DataFrame) -> None:
     ai = list(combos.index).index(all_key)
     n_all = int(combos.loc[all_key, "n"])
     ax_bar.annotate(
-        f"all five gates — {n_all} pair{'s' if n_all != 1 else ''}\n"
-        + (", ".join(combos.loc[all_key, "genes"]) or "(none)"),
-        xy=(ai, n_all + top * 0.03), xytext=(ai - 2.5, top * 0.30),
-        fontsize=9.5, color=HILITE, fontweight="bold", ha="right", va="center",
-        linespacing=1.45,
+        f"all active gates\n{n_all} pairs · {len(combos.loc[all_key, 'genes'])} genes",
+        xy=(ai, n_all + top * 0.02), xytext=(k - 0.45, top * 1.20),
+        fontsize=9, color=HILITE, fontweight="bold", ha="right", va="top",
+        linespacing=1.25,
         arrowprops=dict(arrowstyle="-", color=HILITE, linewidth=1.2,
-                        shrinkA=0, shrinkB=3, connectionstyle="arc3,rad=0.2"),
+                        shrinkA=2, shrinkB=3, connectionstyle="arc3,rad=-0.15"),
     )
 
     # Outline the mechanism-only bar: neighbours share its height, so a leader
@@ -127,12 +125,11 @@ def plot_upset(gates: pd.DataFrame, combos: pd.DataFrame) -> None:
     ax_bar.bar(mi, n_mech, width=0.52, facecolor="none", edgecolor=FG,
                linewidth=1.3, zorder=5)
     ax_bar.annotate(
-        f"mechanism-only working set (no drug gate)\n"
-        f"{'+'.join(MECHANISM_GATES)} — {n_mech} pairs",
-        xy=(mi, n_mech + top * 0.02), xytext=(mi - 2.5, top * 0.55),
-        fontsize=9.5, color=FG, ha="right", va="center", linespacing=1.45,
+        f"mechanism-only\n{'+'.join(MECHANISM_GATES)} · {n_mech} pairs",
+        xy=(mi, n_mech + top * 0.02), xytext=(mi - 1.0, top * 1.19),
+        fontsize=9, color=FG, ha="center", va="top", linespacing=1.25,
         arrowprops=dict(arrowstyle="-", color=FG, linewidth=1.1,
-                        shrinkA=0, shrinkB=3, connectionstyle="arc3,rad=0.2"),
+                        shrinkA=2, shrinkB=3, connectionstyle="arc3,rad=0.12"),
     )
 
     # ---- panel 2: membership matrix ---------------------------------------
@@ -229,28 +226,9 @@ def plot_upset(gates: pd.DataFrame, combos: pd.DataFrame) -> None:
 
     # ---- titles & legend ---------------------------------------------------
     fig.text(0.023, 0.962,
-             f"Five selection gates over the {n_pairs} trial-failure protein "
+             f"Four selection gates over the {n_pairs} trial-failure protein "
              f"pairs ({n_genes} genes)",
              fontsize=16, color=FG, fontweight="bold", ha="left", va="top")
-    fig.text(0.023, 0.928,
-             f"bars = pairs passing AT LEAST the marked gates "
-             f"({k} combinations, overlapping)",
-             fontsize=10, color=MUTED, ha="left", va="top")
-
-    handles = [
-        Line2D([], [], marker="s", linestyle="", markersize=8, color=BAR,
-               label="gate combination"),
-        Line2D([], [], marker="s", linestyle="", markersize=8, color=HILITE,
-               label="all five gates"),
-        Line2D([], [], marker="s", linestyle="", markersize=8, color=SET_BAR,
-               label="single-gate total (left panel)"),
-    ]
-    # Legend rides in the header band, top right. Inside the funnel panel it
-    # lands on top of the full-width ungated bar.
-    fig.legend(handles=handles, loc="upper right", bbox_to_anchor=(0.995, 0.995),
-               ncol=3, frameon=False, fontsize=9.5, handletextpad=0.5,
-               columnspacing=1.6)
-
     save(fig, "07_gate_overlap_upset.png")
 
 

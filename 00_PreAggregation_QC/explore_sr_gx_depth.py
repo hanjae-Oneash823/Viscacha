@@ -11,9 +11,9 @@ The GX file has no `donor` column, only `sample`; for matched barcodes
 Standalone exploratory script, not part of the run_layer0 pipeline and does
 not write anything the pipeline consumes downstream.
 
-Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python layer0/explore_sr_gx_depth.py
+Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python -m 00_PreAggregation_QC.explore_sr_gx_depth
      (from /home/welcome3/Viscacha_pipeline)
-Output: outputs/layer0/plots/sr_gx_depth/*.png
+Output: outputs/00_PreAggregation_QC/plots/sr_gx_depth/*.png
 """
 
 import numpy as np
@@ -26,7 +26,7 @@ import anndata as ad
 from pathlib import Path
 from scipy.stats import pearsonr, spearmanr
 
-from layer0.config import OUT_DIR, SR_PATH, GX_PATH
+from .config import OUT_DIR, SR_PATH, GX_PATH
 
 OUT_PLOTS_DEPTH = OUT_DIR / "plots" / "sr_gx_depth"
 

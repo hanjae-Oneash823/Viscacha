@@ -4,15 +4,15 @@ explore_sr_tx_depth.py, and check whether donor-to-donor variability lines
 up with library_kit (a real batch confound -- PO donors = 3'v4, SMC donors
 = 3'v3) or with condition (AD / Control / Active control). If it tracks
 library_kit, that's a normalization/batch issue. If it tracks condition,
-that's a confound that would undermine layer1's AD-vs-Control comparison.
+that's a confound that would undermine 01_ViscachaDTU_Analysis's AD-vs-Control comparison.
 
 Standalone exploratory script. Reuses load_obs/build_merged from
 explore_sr_tx_depth.py so the underlying data and definitions match exactly.
 
-Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python layer0/explore_donor_comparison.py
+Run: /home/welcome3/anaconda3/envs/oneash_dtu/bin/python -m 00_PreAggregation_QC.explore_donor_comparison
      (from /home/welcome3/Viscacha_pipeline)
-Output: outputs/layer0/plots/donor_comparison/*.png
-        outputs/layer0/plots/donor_comparison/donor_summary.csv
+Output: outputs/00_PreAggregation_QC/plots/donor_comparison/*.png
+        outputs/00_PreAggregation_QC/plots/donor_comparison/donor_summary.csv
 """
 
 import numpy as np
@@ -27,8 +27,8 @@ from matplotlib.lines import Line2D
 from scipy.stats import pearsonr, mannwhitneyu, kruskal, ks_2samp
 from statsmodels.nonparametric.smoothers_lowess import lowess as sm_lowess
 
-from layer0.config import OUT_DIR
-from layer0.explore_sr_tx_depth import load_obs, build_merged
+from .config import OUT_DIR
+from .explore_sr_tx_depth import load_obs, build_merged
 
 OUT_PLOTS_DONOR = OUT_DIR / "plots" / "donor_comparison"
 

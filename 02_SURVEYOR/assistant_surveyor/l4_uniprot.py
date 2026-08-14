@@ -9,6 +9,7 @@ Results cached per batch to outputs/assistant_surveyor/cache/.
 
 from __future__ import annotations
 
+import hashlib
 import io
 import math
 import sys
@@ -103,7 +104,12 @@ def run(hits: pd.DataFrame) -> pd.DataFrame:
         print(f"  [L4] batch {i+1}/{n_batches} ({len(batch)} genes) ...",
               end=" ", flush=True)
 
-        cache_path = CACHE_DIR / f"uniprot_batch_{i:03d}.tsv"
+        # Keyed by a hash of the batch's actual gene content, not its index --
+        # the input gene list changes across pipeline reruns (filter tuning
+        # etc.), so an index-keyed cache silently serves a stale, unrelated
+        # set of genes' UniProt rows once the batch composition shifts.
+        batch_hash = hashlib.md5("|".join(batch).encode()).hexdigest()[:16]
+        cache_path = CACHE_DIR / f"uniprot_batch_{batch_hash}.tsv"
         if cache_path.exists():
             try:
                 df_batch = pd.read_csv(cache_path, sep="\t")

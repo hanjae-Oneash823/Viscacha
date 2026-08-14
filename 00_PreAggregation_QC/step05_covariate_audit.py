@@ -7,7 +7,7 @@ No AnnData modification — audit only.
 import pandas as pd
 import anndata as ad
 
-from layer0.utils.qc_log import QCLogger
+from .utils.qc_log import QCLogger
 
 REQUIRED_COVARIATES = ['age', 'sex', 'braak_stage', 'pct_counts_mt']
 

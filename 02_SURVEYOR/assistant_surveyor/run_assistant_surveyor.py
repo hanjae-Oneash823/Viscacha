@@ -1,6 +1,6 @@
 """ASSISTANT_SURVEYOR — orchestrator.
 
-Run from the repo root:
+Run from 02_SURVEYOR/:
     /home/welcome3/anaconda3/envs/oneash_dtu/bin/python -m assistant_surveyor.run_assistant_surveyor
 
 Options:
@@ -17,6 +17,12 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
+
+# Ensure 02_SURVEYOR (this package's parent) and repo root (for
+# classify_hit_scenarios_mane, imported by l1_biotype) are on path regardless
+# of invocation cwd.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from assistant_surveyor.config import CACHE_DIR, HITS_CSV, OUT_DIR
 from assistant_surveyor import l1_biotype, l2_ad_prior, l3_opentargets, l4_uniprot, l5_consequences

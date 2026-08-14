@@ -4,17 +4,24 @@ One point per docking pair from gate_matrix.build_gate_matrix() (94 distinct
 canonical/alt protein pairs over 55 trial_failure genes; the canonical's own
 row is excluded, so every pair here is a real comparison).
 
-Left panel  -- fraction of canonical residues altered, by change class. This
-is `true_changed_frac` (n_changed / canonical length) from the edlib CIGAR
-walk, NOT the changed_aa_start..end envelope.
+Left panel  -- RAW COUNT of canonical residues altered, by change class. This
+is `n_changed` from the edlib CIGAR walk, NOT the changed_aa_start..end
+envelope, and NOT normalized by canonical length (that normalized version --
+true_changed_frac -- is what this panel used to plot; see git history).
 
-The classes separate almost perfectly, and that is the finding: the 55
-truncation-like pairs change a median 44% of the sequence, while all 39
-others (indels, insertions, extensions) top out at 15.8% and sit at a median
-of 1.3%. So `protein_change_type` already tells you the magnitude -- reading
-the percentage adds little once you know the class. Truncations themselves
-span the full 1.6-97% range, so the class is the informative variable and the
-percentage is not a usable one-dimensional ranking.
+Swapping fraction for count breaks the clean class separation that the
+fraction gave you: the two ranges now overlap substantially (truncation-like
+pairs span 1-1369 residues changed, everything else spans 1-236, and 22 of
+the 55 truncation-like pairs fall inside that overlap). That's not a bug --
+it's the reason the fraction was used originally. A 14-residue N-truncation
+of a small protein and a 236-residue internal indel in a big one land at
+opposite ends of "how disruptive is this" despite the count comparison
+suggesting otherwise; raw count conflates "how much changed" with "how big
+was the protein to begin with," which is exactly what the fraction was
+built to factor out. Read this panel for absolute scale (e.g. "will this
+change register on a docking pocket sized in residues"), not for a clean
+per-class ranking -- use the fraction (or protein_change_type directly) for
+that.
 
 Right panel -- the same thing in absolute terms, canonical vs alt length. The
 0.5x line is gate B: below it more than half the protein is gone and the
@@ -35,6 +42,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
+from matplotlib.transforms import blended_transform_factory
 
 from master_surveyor.gate_matrix import (
     MECHANISM_GATES, MIN_KEPT_FRAC, build_gate_matrix,
@@ -62,31 +70,51 @@ LENGTH_CALLOUTS = {
 
 
 def _strip_panel(ax, d: pd.DataFrame) -> list[str]:
-    """Jittered per-pair strip of changed fraction, one row per change class."""
-    order = (d.groupby("protein_change_type")["true_changed_frac"]
+    """Jittered per-pair strip of changed-residue COUNT, one row per change class."""
+    order = (d.groupby("protein_change_type")["n_changed"]
              .median().sort_values(ascending=False).index.tolist())
     rng = np.random.default_rng(0)
+    # x is in axes fraction, y in data coords -- keeps the "n=" labels pinned
+    # just past the right edge regardless of the log-scale data range.
+    row_label = blended_transform_factory(ax.transAxes, ax.transData)
 
     for i, kind in enumerate(order):
         if i % 2 == 0:
             ax.axhspan(i - 0.5, i + 0.5, color=BAND, zorder=0, linewidth=0)
         sub = d[d["protein_change_type"] == kind]
-        vals = sub["true_changed_frac"].to_numpy() * 100
+        vals = sub["n_changed"].to_numpy()
+        names = sub["alt_transcript_name"].to_numpy()
         jitter = rng.uniform(-0.26, 0.26, len(vals))
         ax.scatter(vals, i + jitter, s=52, color=CHANGE_COLORS.get(kind, MUTED),
                    alpha=0.85, linewidth=0.6, edgecolor=BG, zorder=3)
         med = float(np.median(vals))
         ax.plot([med, med], [i - 0.36, i + 0.36], color=FG, linewidth=2.0,
                 zorder=4, solid_capstyle="butt")
-        ax.text(101.5, i, f"n={len(sub)}", fontsize=8.5, color=MUTED,
-                va="center", ha="left")
+        ax.text(1.015, i, f"n={len(sub)}", fontsize=8.5, color=MUTED,
+                va="center", ha="left", transform=row_label)
+
+        # Name the extreme-end gene at each end of the row -- these are
+        # exactly the points that create (or shrink) the cross-class overlap
+        # called out below, so they're the ones worth identifying by name.
+        if len(vals) > 1:
+            lo_pos, hi_pos = int(np.argmin(vals)), int(np.argmax(vals))
+            for pos, dx, dy in ((lo_pos, -8, -11), (hi_pos, 8, 11)):
+                ax.annotate(
+                    names[pos], xy=(vals[pos], i + jitter[pos]),
+                    xytext=(dx, dy), textcoords="offset points",
+                    fontsize=7.3, color=FG, va="center",
+                    ha="right" if dx < 0 else "left", zorder=5,
+                    arrowprops=dict(arrowstyle="-", color=MUTED, linewidth=0.6,
+                                    alpha=0.7, shrinkA=0, shrinkB=3),
+                )
 
     ax.set_yticks(range(len(order)))
     ax.set_yticklabels([k.replace("_", " ") for k in order], fontsize=10,
                        color=FG)
     ax.set_ylim(len(order) - 0.5, -0.5)
-    ax.set_xlim(-2, 100)
-    ax.set_xlabel("canonical residues altered in the alt  (%)", fontsize=10.5,
+    ax.set_xscale("log")
+    ax.set_xlim(0.7, d["n_changed"].max() * 1.5)
+    ax.set_xlabel("canonical residues altered in the alt  (count)", fontsize=10.5,
                   color=FG)
     ax.set_title("A   how much of the sequence changes", fontsize=11.5,
                  color=FG, fontweight="bold", loc="left", pad=12)
@@ -97,17 +125,18 @@ def _strip_panel(ax, d: pd.DataFrame) -> list[str]:
         ax.spines[side].set_visible(False)
     ax.spines["bottom"].set_color(GRID)
 
-    # Where the classes stop overlapping. Data-derived, not a chosen cutoff.
-    split = d.loc[~d["protein_change_type"].isin(TRUNCATION_LIKE),
-                  "true_changed_frac"].max() * 100
-    ax.axvline(split, color=MUTED, linestyle=(0, (4, 4)), linewidth=1.1, zorder=2)
-    # Sits in the block that is empty by construction: no non-truncation class
-    # reaches this far right, which is exactly what the caption says.
-    ax.text((split + 100) / 2, (len(order) - 1) * 0.72,
-            f"no indel, insertion or extension pair changes\n"
-            f"more than {split:.0f}% — class alone predicts the magnitude",
-            fontsize=8.5, color=MUTED, ha="center", va="center", linespacing=1.6,
-            style="italic", zorder=5)
+    # Unlike the fraction, raw count does NOT cleanly separate the classes --
+    # say so instead of drawing a split line that would misrepresent the data.
+    other = d.loc[~d["protein_change_type"].isin(TRUNCATION_LIKE), "n_changed"]
+    trunc = d.loc[d["protein_change_type"].isin(TRUNCATION_LIKE), "n_changed"]
+    n_overlap = int((trunc <= other.max()).sum())
+    ax.text(0.97, 0.03,
+            f"counts overlap between classes: {n_overlap} of {len(trunc)} "
+            f"truncation-like pairs change fewer residues than the largest\n"
+            f"indel/insertion/extension pair ({int(other.max())}) — count "
+            f"conflates magnitude with protein size, fraction does not",
+            fontsize=8, color=MUTED, ha="right", va="bottom", linespacing=1.6,
+            style="italic", zorder=5, transform=ax.transAxes)
     return order
 
 
@@ -186,10 +215,11 @@ def plot(pairs: pd.DataFrame) -> None:
              fontsize=15.5, color=FG, fontweight="bold", ha="left", va="top")
     fig.text(0.012, 0.947,
              f"{int(trunc.sum())} truncation-like pairs change a median "
-             f"{d.loc[trunc, 'true_changed_frac'].median() * 100:.0f}% of the "
-             f"sequence; the other {int((~trunc).sum())} change a median "
-             f"{d.loc[~trunc, 'true_changed_frac'].median() * 100:.1f}% and never "
-             f"exceed {d.loc[~trunc, 'true_changed_frac'].max() * 100:.0f}%",
+             f"{int(d.loc[trunc, 'n_changed'].median())} residues (as a fraction "
+             f"of protein length, a median {d.loc[trunc, 'true_changed_frac'].median() * 100:.0f}%); "
+             f"the other {int((~trunc).sum())} change a median "
+             f"{int(d.loc[~trunc, 'n_changed'].median())} residues "
+             f"({d.loc[~trunc, 'true_changed_frac'].median() * 100:.1f}% of length)",
              fontsize=10, color=MUTED, ha="left", va="top")
 
     handles = [

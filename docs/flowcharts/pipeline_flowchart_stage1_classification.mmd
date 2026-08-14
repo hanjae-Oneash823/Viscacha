@@ -1,0 +1,37 @@
+%%{init: {"flowchart": {"nodeSpacing": 25, "rankSpacing": 40, "curve": "linear", "padding": 8}}}%%
+flowchart TD
+    A["DTU-significant hit<br/>(transcript × cell_type)<br/>n = 2,599"] --> B{"isoform_role<br/>(Control-PSI rank)"}
+
+    B -->|"Dominant (1,272)"| C{tx_role_mane}
+    B -->|"Minor (1,327)"| D{tx_role_mane}
+
+    C -->|"Canonical (550)"| E{usage_direction}
+    C -->|"Alternate (681)"| O1(("681<br/>other"))
+    C -->|"no MANE (41)"| N1(("41<br/>no_MANE_coverage"))
+
+    D -->|"Alternate (997)"| F{usage_direction}
+    D -->|"Canonical (286)"| O2(("286<br/>other"))
+    D -->|"no MANE (44)"| N2(("44<br/>no_MANE_coverage"))
+
+    E -->|"CT_enriched (448)"| TF["trial_failure_candidate<br/>448 hits<br/>(canonical usage drops in AD)"]
+    E -->|"AD_enriched (102)"| O3(("102<br/>other"))
+
+    F -->|"AD_enriched (753)"| NT["new_target_candidate<br/>753 hits<br/>(alternate usage rises in AD)"]
+    F -->|"CT_enriched (244)"| O4(("244<br/>other"))
+
+    O1 & O2 & O3 & O4 & N1 & N2 -.->|"1,398 dropped"| X1[("dead end")]
+
+    TF --> G["→ STAGE 2<br/>initial_filter.py output<br/>1,201 / 2,599 kept<br/>753 new_target + 448 trial_failure"]
+    NT --> G
+
+    classDef mainFlow fill:#2e9e44,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef dropped fill:#999999,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef tfBranch fill:#2a78d6,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef ntBranch fill:#e34948,stroke:#1a1a1a,color:#ffffff,stroke-width:1px
+    classDef decision fill:#fff3cd,stroke:#1a1a1a,color:#1a1a1a,stroke-width:1px
+
+    class A,G mainFlow
+    class TF tfBranch
+    class NT ntBranch
+    class O1,O2,O3,O4,N1,N2,X1 dropped
+    class B,C,D,E,F decision

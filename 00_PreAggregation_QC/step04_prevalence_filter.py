@@ -8,9 +8,9 @@ import json
 import numpy as np
 import anndata as ad
 
-from layer0.config import MIN_PREVALENCE, OUT_META
-from layer0.utils.qc_log import QCLogger
-from layer0.utils.sparse_utils import donor_detection_vector
+from .config import MIN_PREVALENCE, OUT_META
+from .utils.qc_log import QCLogger
+from .utils.sparse_utils import donor_detection_vector
 
 
 def run(adata_tx: ad.AnnData, qc_log: QCLogger) -> dict:

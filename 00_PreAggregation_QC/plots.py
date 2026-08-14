@@ -1,6 +1,6 @@
 """
-Layer 0 visualizations — styled to match project notebook conventions.
-All figures saved to outputs/layer0/plots/.
+00_PreAggregation_QC visualizations — styled to match project notebook conventions.
+All figures saved to outputs/00_PreAggregation_QC/plots/.
 """
 
 import numpy as np
@@ -14,7 +14,7 @@ import seaborn as sns
 import anndata as ad
 from pathlib import Path
 
-from layer0.config import OUT_PLOTS, COND_AD, COND_CTRL, COND_ACTIVE
+from .config import OUT_PLOTS, COND_AD, COND_CTRL, COND_ACTIVE
 
 # --- Project-standard style ---
 COND_ORDER  = [COND_CTRL, COND_ACTIVE, COND_AD]
@@ -228,7 +228,7 @@ def plot_step06(adata: ad.AnnData) -> None:
     06b_median_pct_mt.png     — median_pct_mt violin per cell type by condition
     06c_library_size.png      — library size violin per cell type by condition
     """
-    from layer0.config import OUT_PB, CELL_TYPES
+    from .config import OUT_PB, CELL_TYPES
 
     obs = adata.obs.copy()
     cell_types = [ct for ct in CELL_TYPES if ct in obs['cell_type'].values]

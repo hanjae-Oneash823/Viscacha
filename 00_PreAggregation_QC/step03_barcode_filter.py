@@ -6,8 +6,8 @@ Logs dropout per cell_type × donor and flags combinations losing >20%.
 
 import anndata as ad
 
-from layer0.config import DOUBLET_THRESHOLD, CELL_TYPES, DROPOUT_FLAG_PCT
-from layer0.utils.qc_log import QCLogger
+from .config import DOUBLET_THRESHOLD, CELL_TYPES, DROPOUT_FLAG_PCT
+from .utils.qc_log import QCLogger
 
 
 def run(adata_tx: ad.AnnData, qc_log: QCLogger) -> ad.AnnData:

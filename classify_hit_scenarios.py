@@ -29,10 +29,10 @@ from pathlib import Path
 from scipy.stats import pearsonr, spearmanr
 
 REPO_ROOT   = Path(__file__).resolve().parent
-HITS_CSV    = REPO_ROOT / "outputs/layer1_1/DIU_significant_hits_combined.csv"
+HITS_CSV    = REPO_ROOT / "outputs/DIU_significant_hits/DIU_significant_hits_combined.csv"
 DIU_DIR     = Path("/node212data/welcome3/Grad_proj_2026/DATA/DIU_result_with_permutation")
-GENE_DE_LR  = REPO_ROOT / "outputs/layer1/gene_level_de_results.csv"
-GENE_DE_SR  = REPO_ROOT / "outputs/layer1/gene_level_de_results_SR.csv"
+GENE_DE_LR  = REPO_ROOT / "outputs/01_ViscachaDTU_Analysis/gene_level_de_results.csv"
+GENE_DE_SR  = REPO_ROOT / "outputs/01_ViscachaDTU_Analysis/gene_level_de_results_SR.csv"
 OUT_DIR     = REPO_ROOT / "outputs/scenario_analysis"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

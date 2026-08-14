@@ -5,10 +5,10 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
-HITS_CSV   = REPO_ROOT / "outputs/layer1_1/DIU_significant_hits_initial_filter.csv"
-TX_ID_MAP  = REPO_ROOT / "outputs/layer1_1/annotation/tx_id_map.csv"
+HITS_CSV   = REPO_ROOT / "outputs/DIU_significant_hits/DIU_significant_hits_initial_filter.csv"
+TX_ID_MAP  = REPO_ROOT / "outputs/annotation/tx_id_map.csv"
 ANNOT_TSV  = Path(
     "/node212data/welcome3/Grad_proj_2026/DATA/"
     "extended_annotation_including_refTSS_umi10_donor3_supported_"
