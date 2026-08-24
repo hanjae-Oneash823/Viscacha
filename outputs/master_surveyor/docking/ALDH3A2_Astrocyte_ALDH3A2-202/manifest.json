@@ -1,0 +1,123 @@
+{
+  "gene_name": "ALDH3A2",
+  "cell_type": "Astrocyte",
+  "transcript": "ALDH3A2-202",
+  "hit_ENST_ID": "ENST00000339618",
+  "master_group": "drug_repurposing_candidate",
+  "protein_change_type": "C_extension",
+  "affected_domain": "none",
+  "delta_usage": null,
+  "chi_padj": 7.852114890416204e-11,
+  "uniprot_acc": "P51648",
+  "chembl_target_id": "CHEMBL4295779",
+  "canonical_structure_source": "afdb",
+  "structure_confidence": {
+    "verdict": "high",
+    "region_confidence": {
+      "region_mean_plddt": 76.85,
+      "whole_protein_mean_plddt": 93.37,
+      "region_length": 8,
+      "region_vs_rest_mean_pae": 24.62
+    },
+    "ensemble_spread_rmsd": 0.031,
+    "n_ensemble_models": 5,
+    "colabfold_vs_esmfold_rmsd": 0.134,
+    "esmfold_error": null,
+    "superposition": {
+      "n_anchor_residues": 482,
+      "anchor_fit_rmsd": 2.329,
+      "changed_region_mean_local_dist": 11.57,
+      "changed_region_max_local_dist": 15.82,
+      "outside_span_mean_local_dist": 1.38,
+      "outside_span_max_local_dist": 12.27
+    },
+    "alt_local_span": [
+      481,
+      488
+    ]
+  },
+  "ligands": [
+    {
+      "name": "DISULFIRAM",
+      "ok": true,
+      "chembl_id": "CHEMBL964",
+      "max_phase": 4,
+      "smiles": "CCN(CC)C(=S)SSC(=S)N(CC)CC"
+    }
+  ],
+  "binding_pockets": {
+    "DISULFIRAM": {
+      "canonical": {
+        "tier": "predicted",
+        "dock_score_kcal_mol": -4.67,
+        "pocket_rank": 1,
+        "druggability_score": 0.922,
+        "pocket_volume": 533.863,
+        "pocket_residues": [
+          {
+            "chain": "A",
+            "resnum": 58,
+            "resname": "SER"
+          },
+          {
+            "chain": "A",
+            "resnum": 59,
+            "resname": "GLN"
+          },
+          {
+            "chain": "A",
+            "resnum": 63,
+            "resname": "THR"
+          },
+          {
+            "chain": "A",
+            "resnum": 392,
+            "resname": "PHE"
+          },
+          {
+            "chain": "A",
+            "resnum": 393,
+            "resname": "THR"
+          }
+        ],
+        "docked_pose_pdb": "/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/fa99d144dccbaae6/pocket/dock_5ef5fef234fae98d_pocket1/docked_best.pdb"
+      },
+      "alt": {
+        "tier": "predicted",
+        "dock_score_kcal_mol": -4.751,
+        "pocket_rank": 1,
+        "druggability_score": 0.743,
+        "pocket_volume": 540.918,
+        "pocket_residues": [
+          {
+            "chain": "A",
+            "resnum": 59,
+            "resname": "GLN"
+          },
+          {
+            "chain": "A",
+            "resnum": 113,
+            "resname": "TYR"
+          },
+          {
+            "chain": "A",
+            "resnum": 235,
+            "resname": "MET"
+          },
+          {
+            "chain": "A",
+            "resnum": 389,
+            "resname": "ILE"
+          },
+          {
+            "chain": "A",
+            "resnum": 392,
+            "resname": "PHE"
+          }
+        ],
+        "docked_pose_pdb": "/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/8a82f583716dcced/pocket/dock_5ef5fef234fae98d_pocket1/docked_best.pdb"
+      }
+    }
+  },
+  "thresholds_used": {}
+}

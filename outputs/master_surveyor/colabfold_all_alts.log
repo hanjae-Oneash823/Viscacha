@@ -1,0 +1,397 @@
+[run_colabfold_all_alts] 114 raw alt_rank rows across 43 trial_failure hits
+[run_colabfold_all_alts] 104 unique alt sequences to fold (deduped from 114 rows)
+  [m2] 93cfe8189194eba3: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_93cfe8189194eba3.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/93cfe8189194eba3/alt_colabfold
+[run_colabfold_all_alts]   [1/104] ARID4A rank2 (1257 aa) FAILED after 3602s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_93cfe8189194eba3.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/93cfe8189194eba3/alt_colabfold']' timed out after 3600 seconds
+  [m2] 7fbae7ace9dab4eb: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_7fbae7ace9dab4eb.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/7fbae7ace9dab4eb/alt_colabfold
+[run_colabfold_all_alts]   [2/104] CRAT rank1 (626 aa) ok in 2207s -- 5 seed models, esmfold_error=None
+  [m2] 53fa4ae6a6178006: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_53fa4ae6a6178006.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/53fa4ae6a6178006/alt_colabfold
+[run_colabfold_all_alts]   [3/104] GABRA2 rank1 (451 aa) ok in 1511s -- 5 seed models, esmfold_error=None
+  [m2] bb6479b4723c23e7: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_bb6479b4723c23e7.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/bb6479b4723c23e7/alt_colabfold
+[run_colabfold_all_alts]   [4/104] IFNAR1 rank8 (557 aa) ok in 1437s -- 5 seed models, esmfold_error=None
+  [m2] ff0d7d76e9bb110d: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_ff0d7d76e9bb110d.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/ff0d7d76e9bb110d/alt_colabfold
+[run_colabfold_all_alts]   [5/104] SPG7 rank1 (795 aa) ok in 1907s -- 5 seed models, esmfold_error=None
+  [m2] 1a3cc0cd6074af25: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_1a3cc0cd6074af25.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/1a3cc0cd6074af25/alt_colabfold
+[run_colabfold_all_alts]   [6/104] SRSF10 rank5 (262 aa) ok in 391s -- 5 seed models, esmfold_error=None
+  [m2] 333835f403a04d99: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_333835f403a04d99.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/333835f403a04d99/alt_colabfold
+[run_colabfold_all_alts]   [7/104] STAT3 rank7 (770 aa) ok in 1644s -- 5 seed models, esmfold_error=None
+  [m2] c86266cbe482b3e1: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_c86266cbe482b3e1.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/c86266cbe482b3e1/alt_colabfold
+[run_colabfold_all_alts]   [8/104] TUT7 rank2 (1495 aa) FAILED after 3602s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_c86266cbe482b3e1.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/c86266cbe482b3e1/alt_colabfold']' timed out after 3600 seconds
+  [m2] c04c2215c32a67ad: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_c04c2215c32a67ad.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/c04c2215c32a67ad/alt_colabfold
+[run_colabfold_all_alts]   [9/104] CHD1 rank3 (1710 aa) FAILED after 3602s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_c04c2215c32a67ad.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/c04c2215c32a67ad/alt_colabfold']' timed out after 3600 seconds
+  [m2] 4bd95673fe43f7b9: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_4bd95673fe43f7b9.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/4bd95673fe43f7b9/alt_colabfold
+[run_colabfold_all_alts]   [10/104] GPNMB rank1 (560 aa) ok in 673s -- 5 seed models, esmfold_error=None
+  [m2] 5d78401928f71270: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_5d78401928f71270.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/5d78401928f71270/alt_colabfold
+[run_colabfold_all_alts]   [11/104] PRKG2 rank1 (762 aa) ok in 1195s -- 5 seed models, esmfold_error=None
+  [m2] 2fe8fde1e727b0ff: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_2fe8fde1e727b0ff.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/2fe8fde1e727b0ff/alt_colabfold
+[run_colabfold_all_alts]   [12/104] RARB rank1 (448 aa) ok in 551s -- 5 seed models, esmfold_error=None
+  [m2] 4d073109f91d5334: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_4d073109f91d5334.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/4d073109f91d5334/alt_colabfold
+[run_colabfold_all_alts]   [13/104] SLC11A2 rank1 (561 aa) ok in 793s -- 5 seed models, esmfold_error=None
+  [m2] 71c75d29add39385: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_71c75d29add39385.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/71c75d29add39385/alt_colabfold
+[run_colabfold_all_alts]   [14/104] SORT1 rank2 (831 aa) ok in 1912s -- 5 seed models, esmfold_error=None
+  [m2] 7b95e3678367f3bf: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_7b95e3678367f3bf.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/7b95e3678367f3bf/alt_colabfold
+[run_colabfold_all_alts]   [15/104] SPP1 rank1 (314 aa) ok in 348s -- 5 seed models, esmfold_error=None
+  [m2] c8a6cfb8494fce42: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_c8a6cfb8494fce42.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/c8a6cfb8494fce42/alt_colabfold
+[run_colabfold_all_alts]   [16/104] TLK2 rank5 (750 aa) ok in 1680s -- 5 seed models, esmfold_error=None
+  [m2] b7628d6de8c66aae: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b7628d6de8c66aae.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b7628d6de8c66aae/alt_colabfold
+[run_colabfold_all_alts]   [17/104] ACACA rank1 (2383 aa) FAILED after 3603s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b7628d6de8c66aae.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b7628d6de8c66aae/alt_colabfold']' timed out after 3600 seconds
+  [m2] 28886d316e014e26: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_28886d316e014e26.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/28886d316e014e26/alt_colabfold
+[run_colabfold_all_alts]   [18/104] ATP1A3 rank1 (1013 aa) ok in 2181s -- 5 seed models, esmfold_error=None
+  [m2] 8cd938d461fa1a30: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_8cd938d461fa1a30.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/8cd938d461fa1a30/alt_colabfold
+[run_colabfold_all_alts]   [19/104] DCLK1 rank5 (740 aa) ok in 1008s -- 5 seed models, esmfold_error=None
+  [m2] 5828f460e2f36cc5: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_5828f460e2f36cc5.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/5828f460e2f36cc5/alt_colabfold
+[run_colabfold_all_alts]   [20/104] DNPEP rank1 (485 aa) ok in 598s -- 5 seed models, esmfold_error=None
+  [m2] 6b792f9f0f9499b4: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_6b792f9f0f9499b4.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/6b792f9f0f9499b4/alt_colabfold
+[run_colabfold_all_alts]   [21/104] HGF rank2 (728 aa) ok in 975s -- 5 seed models, esmfold_error=None
+  [m2] eb258fddfe1532a8: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_eb258fddfe1532a8.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/eb258fddfe1532a8/alt_colabfold
+[run_colabfold_all_alts]   [22/104] IFNAR2 rank5 (515 aa) ok in 508s -- 5 seed models, esmfold_error=None
+  [m2] 0c5eb9505558859e: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_0c5eb9505558859e.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/0c5eb9505558859e/alt_colabfold
+[run_colabfold_all_alts]   [23/104] MLST8 rank3 (326 aa) ok in 401s -- 5 seed models, esmfold_error=None
+  [m2] d5bc8979e1db083c: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_d5bc8979e1db083c.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/d5bc8979e1db083c/alt_colabfold
+[run_colabfold_all_alts]   [24/104] PHF8 rank1 (1024 aa) ok in 2027s -- 5 seed models, esmfold_error=None
+  [m2] d3e28ff8f2168f27: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_d3e28ff8f2168f27.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/d3e28ff8f2168f27/alt_colabfold
+[run_colabfold_all_alts]   [25/104] PIK3CA rank1 (1068 aa) ok in 2294s -- 5 seed models, esmfold_error=None
+  [m2] 477a2267d854ab9f: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_477a2267d854ab9f.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/477a2267d854ab9f/alt_colabfold
+[run_colabfold_all_alts]   [26/104] PRKD1 rank4 (912 aa) ok in 1427s -- 5 seed models, esmfold_error=None
+  [m2] d66c1912bd251688: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_d66c1912bd251688.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/d66c1912bd251688/alt_colabfold
+[run_colabfold_all_alts]   [27/104] IL6ST rank1 (918 aa) ok in 1436s -- 5 seed models, esmfold_error=None
+  [m2] fb1c78adff4cb9c0: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_fb1c78adff4cb9c0.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/fb1c78adff4cb9c0/alt_colabfold
+[run_colabfold_all_alts]   [28/104] CLK4 rank3 (481 aa) ok in 579s -- 5 seed models, esmfold_error=None
+  [m2] 3897523e1e43471e: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_3897523e1e43471e.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/3897523e1e43471e/alt_colabfold
+[run_colabfold_all_alts]   [29/104] GAPVD1 rank4 (1460 aa) FAILED after 3601s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_3897523e1e43471e.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/3897523e1e43471e/alt_colabfold']' timed out after 3600 seconds
+  [m2] a9d4299fa086ab7b: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_a9d4299fa086ab7b.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/a9d4299fa086ab7b/alt_colabfold
+[run_colabfold_all_alts]   [30/104] POR rank1 (677 aa) ok in 965s -- 5 seed models, esmfold_error=None
+  [m2] 12d4559fd8bd506b: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_12d4559fd8bd506b.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/12d4559fd8bd506b/alt_colabfold
+[run_colabfold_all_alts]   [31/104] SACM1L rank3 (587 aa) ok in 855s -- 5 seed models, esmfold_error=None
+  [m2] 69d3c72ad0146285: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_69d3c72ad0146285.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/69d3c72ad0146285/alt_colabfold
+[run_colabfold_all_alts]   [32/104] TNIK rank1 (1360 aa) FAILED after 3601s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_69d3c72ad0146285.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/69d3c72ad0146285/alt_colabfold']' timed out after 3600 seconds
+  [m2] 8291a143ffe4bca7: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_8291a143ffe4bca7.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/8291a143ffe4bca7/alt_colabfold
+[run_colabfold_all_alts]   [33/104] ALDH1L1 rank1 (902 aa) ok in 1644s -- 5 seed models, esmfold_error=None
+  [m2] d727a7a6901e4f27: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_d727a7a6901e4f27.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/d727a7a6901e4f27/alt_colabfold
+[run_colabfold_all_alts]   [34/104] HTRA1 rank1 (480 aa) ok in 553s -- 5 seed models, esmfold_error=None
+  [m2] 748e6e336c8e4547: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_748e6e336c8e4547.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/748e6e336c8e4547/alt_colabfold
+[run_colabfold_all_alts]   [35/104] MTHFD1 rank6 (935 aa) ok in 1786s -- 5 seed models, esmfold_error=None
+  [m2] f7d87c1359e1aa74: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_f7d87c1359e1aa74.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/f7d87c1359e1aa74/alt_colabfold
+[run_colabfold_all_alts]   [36/104] PAPOLA rank2 (745 aa) ok in 1192s -- 5 seed models, esmfold_error=None
+  [m2] 9219352a22bae9a3: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_9219352a22bae9a3.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/9219352a22bae9a3/alt_colabfold
+[run_colabfold_all_alts]   [37/104] SGMS1 rank1 (413 aa) ok in 604s -- 5 seed models, esmfold_error=None
+  [m2] ddc247f561a1eb32: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_ddc247f561a1eb32.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/ddc247f561a1eb32/alt_colabfold
+[run_colabfold_all_alts]   [38/104] SOD2 rank1 (222 aa) ok in 269s -- 5 seed models, esmfold_error=None
+  [m2] 1e713d035af00ae7: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_1e713d035af00ae7.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/1e713d035af00ae7/alt_colabfold
+[run_colabfold_all_alts]   [39/104] CTNNB1 rank1 (781 aa) ok in 1155s -- 5 seed models, esmfold_error=None
+  [m2] 93fe6d502a34e31a: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_93fe6d502a34e31a.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/93fe6d502a34e31a/alt_colabfold
+[run_colabfold_all_alts]   [40/104] ARID4A rank1 (748 aa) ok in 1088s -- 5 seed models, esmfold_error=None
+  [m2] 8bec80e111c823fa: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_8bec80e111c823fa.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/8bec80e111c823fa/alt_colabfold
+[run_colabfold_all_alts]   [41/104] ARID4A rank3 (1188 aa) ok in 3456s -- 5 seed models, esmfold_error=None
+  [m2] 0ac42e0343250c4b: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_0ac42e0343250c4b.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/0ac42e0343250c4b/alt_colabfold
+[run_colabfold_all_alts]   [42/104] CRAT rank4 (602 aa) ok in 877s -- 5 seed models, esmfold_error=None
+  [m2] 82fd5a9e03535463: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_82fd5a9e03535463.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/82fd5a9e03535463/alt_colabfold
+[run_colabfold_all_alts]   [43/104] GABRA2 rank3 (427 aa) ok in 601s -- 5 seed models, esmfold_error=None
+  [m2] ad5fbc2232afaa96: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_ad5fbc2232afaa96.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/ad5fbc2232afaa96/alt_colabfold
+[run_colabfold_all_alts]   [44/104] GABRA2 rank5 (73 aa) ok in 166s -- 5 seed models, esmfold_error=None
+  [m2] 2c8f3c79abaa7e74: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_2c8f3c79abaa7e74.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/2c8f3c79abaa7e74/alt_colabfold
+[run_colabfold_all_alts]   [45/104] IFNAR1 rank3 (390 aa) ok in 688s -- 5 seed models, esmfold_error=None
+  [m2] 9d052d90e7f07f7b: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_9d052d90e7f07f7b.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/9d052d90e7f07f7b/alt_colabfold
+[run_colabfold_all_alts]   [46/104] IFNAR1 rank4 (270 aa) ok in 365s -- 5 seed models, esmfold_error=None
+  [m2] 089d9503b3d63d3f: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_089d9503b3d63d3f.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/089d9503b3d63d3f/alt_colabfold
+[run_colabfold_all_alts]   [47/104] SPG7 rank2 (102 aa) ok in 212s -- 5 seed models, esmfold_error=None
+  [m2] 90bb4bdb64d81218: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_90bb4bdb64d81218.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/90bb4bdb64d81218/alt_colabfold
+[run_colabfold_all_alts]   [48/104] SPG7 rank5 (489 aa) ok in 1174s -- 5 seed models, esmfold_error=None
+  [m2] f20ee71a0b34e8fc: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_f20ee71a0b34e8fc.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/f20ee71a0b34e8fc/alt_colabfold
+[run_colabfold_all_alts]   [49/104] SRSF10 rank1 (114 aa) ok in 201s -- 5 seed models, esmfold_error=None
+  [m2] 1c0d5fa0459be227: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_1c0d5fa0459be227.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/1c0d5fa0459be227/alt_colabfold
+[run_colabfold_all_alts]   [50/104] SRSF10 rank2 (183 aa) ok in 572s -- 5 seed models, esmfold_error=None
+  [m2] c559d715421b0b21: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_c559d715421b0b21.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/c559d715421b0b21/alt_colabfold
+[run_colabfold_all_alts]   [51/104] SRSF10 rank4 (261 aa) ok in 586s -- 5 seed models, esmfold_error=None
+  [m2] 7c366b0b6d0fcf13: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_7c366b0b6d0fcf13.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/7c366b0b6d0fcf13/alt_colabfold
+[run_colabfold_all_alts]   [52/104] STAT3 rank1 (95 aa) ok in 126s -- 5 seed models, esmfold_error=None
+  [m2] cd70612ff26d70a1: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_cd70612ff26d70a1.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/cd70612ff26d70a1/alt_colabfold
+[run_colabfold_all_alts]   [53/104] STAT3 rank3 (769 aa) ok in 1489s -- 5 seed models, esmfold_error=None
+  [m2] 922f6f49eb3ca4fe: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_922f6f49eb3ca4fe.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/922f6f49eb3ca4fe/alt_colabfold
+[run_colabfold_all_alts]   [54/104] STAT3 rank8 (760 aa) ok in 1319s -- 5 seed models, esmfold_error=None
+  [m2] f85aadb4df4347f2: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_f85aadb4df4347f2.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/f85aadb4df4347f2/alt_colabfold
+[run_colabfold_all_alts]   [55/104] STAT3 rank10 (802 aa) ok in 1452s -- 5 seed models, esmfold_error=None
+  [m2] ea3c269929297535: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_ea3c269929297535.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/ea3c269929297535/alt_colabfold
+[run_colabfold_all_alts]   [56/104] TUT7 rank1 (784 aa) ok in 1282s -- 5 seed models, esmfold_error=None
+  [m2] 2c1a8c5f1398bb51: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_2c1a8c5f1398bb51.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/2c1a8c5f1398bb51/alt_colabfold
+[run_colabfold_all_alts]   [57/104] TUT7 rank3 (1259 aa) FAILED after 3601s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_2c1a8c5f1398bb51.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/2c1a8c5f1398bb51/alt_colabfold']' timed out after 3600 seconds
+  [m2] a5ed87f7cd4a3089: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_a5ed87f7cd4a3089.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/a5ed87f7cd4a3089/alt_colabfold
+[run_colabfold_all_alts]   [58/104] CHD1 rank2 (1798 aa) FAILED after 1877s: colabfold_batch failed (exit -11) for alt a5ed87f7cd4a3089:
+ining: 00:00]
+                                                             
+
+RUNNING: |          | 462/? [elapsed: 08:23 remaining: 00:00]
+RUNNING: |          | 462/? [elapsed: 08:34 remaining: 00:00]
+RUNNING: |          | 472/? [elapsed: 08:34 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 472/? [elapsed: 08:34 remaining: 00:00]
+RUNNING: |          | 472/? [elapsed: 08:41 remaining: 00:00]
+RUNNING: |          | 478/? [elapsed: 08:41 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 478/? [elapsed: 08:41 remaining: 00:00]
+RUNNING: |          | 478/? [elapsed: 08:49 remaining: 00:00]
+RUNNING: |          | 486/? [elapsed: 08:49 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 486/? [elapsed: 08:49 remaining: 00:00]
+RUNNING: |          | 486/? [elapsed: 08:56 remaining: 00:00]
+RUNNING: |          | 492/? [elapsed: 08:56 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 492/? [elapsed: 08:56 remaining: 00:00]
+RUNNING: |          | 492/? [elapsed: 09:02 remaining: 00:00]
+RUNNING: |          | 498/? [elapsed: 09:02 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 498/? [elapsed: 09:02 remaining: 00:00]
+RUNNING: |          | 498/? [elapsed: 09:10 remaining: 00:00]
+RUNNING: |          | 505/? [elapsed: 09:10 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 505/? [elapsed: 09:10 remaining: 00:00]
+RUNNING: |          | 505/? [elapsed: 09:20 remaining: 00:00]
+RUNNING: |          | 514/? [elapsed: 09:20 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 514/? [elapsed: 09:20 remaining: 00:00]
+RUNNING: |          | 514/? [elapsed: 09:27 remaining: 00:00]
+RUNNING: |          | 521/? [elapsed: 09:27 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 521/? [elapsed: 09:27 remaining: 00:00]
+RUNNING: |          | 521/? [elapsed: 09:33 remaining: 00:00]
+RUNNING: |          | 526/? [elapsed: 09:33 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 526/? [elapsed: 09:33 remaining: 00:00]
+RUNNING: |          | 526/? [elapsed: 09:42 remaining: 00:00]
+RUNNING: |          | 534/? [elapsed: 09:42 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 534/? [elapsed: 09:42 remaining: 00:00]
+RUNNING: |          | 534/? [elapsed: 09:50 remaining: 00:00]
+RUNNING: |          | 542/? [elapsed: 09:50 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 542/? [elapsed: 09:50 remaining: 00:00]
+RUNNING: |          | 542/? [elapsed: 09:57 remaining: 00:00]
+RUNNING: |          | 548/? [elapsed: 09:57 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 548/? [elapsed: 09:57 remaining: 00:00]
+RUNNING: |          | 548/? [elapsed: 10:03 remaining: 00:00]
+RUNNING: |          | 553/? [elapsed: 10:03 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 553/? [elapsed: 10:03 remaining: 00:00]
+RUNNING: |          | 553/? [elapsed: 10:11 remaining: 00:00]
+RUNNING: |          | 561/? [elapsed: 10:11 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 561/? [elapsed: 10:11 remaining: 00:00]
+RUNNING: |          | 561/? [elapsed: 10:19 remaining: 00:00]
+RUNNING: |          | 568/? [elapsed: 10:19 remaining: 00:00]
+                                                             
+
+RUNNING: |          | 568/? [elapsed: 10:19 remaining: 00:00]
+COMPLETE: |          | 568/? [elapsed: 10:30 remaining: 00:00]
+COMPLETE: |          | 568/? [elapsed: 10:43 remaining: 00:00]
+
+  [m2] cfd3e0e603ce30fe: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_cfd3e0e603ce30fe.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/cfd3e0e603ce30fe/alt_colabfold
+[run_colabfold_all_alts]   [59/104] GPNMB rank2 (572 aa) ok in 732s -- 5 seed models, esmfold_error=None
+  [m2] 81636abfb1321881: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_81636abfb1321881.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/81636abfb1321881/alt_colabfold
+[run_colabfold_all_alts]   [60/104] GPNMB rank3 (206 aa) ok in 291s -- 5 seed models, esmfold_error=None
+  [m2] 6823be66035c79f0: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_6823be66035c79f0.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/6823be66035c79f0/alt_colabfold
+[run_colabfold_all_alts]   [61/104] GPNMB rank4 (588 aa) ok in 905s -- 5 seed models, esmfold_error=None
+  [m2] 277af46f63ea6d63: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_277af46f63ea6d63.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/277af46f63ea6d63/alt_colabfold
+[run_colabfold_all_alts]   [62/104] PRKG2 rank2 (733 aa) ok in 2080s -- 5 seed models, esmfold_error=None
+  [m2] 73c83ae388f8feb7: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_73c83ae388f8feb7.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/73c83ae388f8feb7/alt_colabfold
+[run_colabfold_all_alts]   [63/104] RARB rank3 (455 aa) ok in 570s -- 5 seed models, esmfold_error=None
+  [m2] d83ee7aee0805e3f: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_d83ee7aee0805e3f.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/d83ee7aee0805e3f/alt_colabfold
+[run_colabfold_all_alts]   [64/104] SLC11A2 rank4 (568 aa) ok in 654s -- 5 seed models, esmfold_error=None
+  [m2] 5c0b1b2b37b5e647: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_5c0b1b2b37b5e647.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/5c0b1b2b37b5e647/alt_colabfold
+[run_colabfold_all_alts]   [65/104] SORT1 rank1 (694 aa) ok in 1079s -- 5 seed models, esmfold_error=None
+  [m2] 1592fa928868b065: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_1592fa928868b065.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/1592fa928868b065/alt_colabfold
+[run_colabfold_all_alts]   [66/104] SPP1 rank2 (300 aa) ok in 298s -- 5 seed models, esmfold_error=None
+  [m2] 935a8242c9e2ad12: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_935a8242c9e2ad12.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/935a8242c9e2ad12/alt_colabfold
+[run_colabfold_all_alts]   [67/104] SPP1 rank4 (327 aa) ok in 345s -- 5 seed models, esmfold_error=None
+  [m2] 6a01553ead799ae6: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_6a01553ead799ae6.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/6a01553ead799ae6/alt_colabfold
+[run_colabfold_all_alts]   [68/104] TLK2 rank3 (718 aa) ok in 1564s -- 5 seed models, esmfold_error=None
+  [m2] 4823d960eb49f13e: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_4823d960eb49f13e.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/4823d960eb49f13e/alt_colabfold
+[run_colabfold_all_alts]   [69/104] TLK2 rank4 (772 aa) ok in 1169s -- 5 seed models, esmfold_error=None
+  [m2] 6ba40f0df65a354c: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_6ba40f0df65a354c.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/6ba40f0df65a354c/alt_colabfold
+[run_colabfold_all_alts]   [70/104] ACACA rank3 (2288 aa) FAILED after 3602s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_6ba40f0df65a354c.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/6ba40f0df65a354c/alt_colabfold']' timed out after 3600 seconds
+  [m2] 82d6a51f48b3bec1: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_82d6a51f48b3bec1.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/82d6a51f48b3bec1/alt_colabfold
+[run_colabfold_all_alts]   [71/104] ATP1A3 rank2 (1026 aa) ok in 2307s -- 5 seed models, esmfold_error=None
+  [m2] ef84b1e6b2a4098d: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_ef84b1e6b2a4098d.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/ef84b1e6b2a4098d/alt_colabfold
+[run_colabfold_all_alts]   [72/104] DCLK1 rank1 (422 aa) ok in 789s -- 5 seed models, esmfold_error=None
+  [m2] fb973d608868031c: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_fb973d608868031c.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/fb973d608868031c/alt_colabfold
+[run_colabfold_all_alts]   [73/104] DCLK1 rank2 (729 aa) ok in 1718s -- 5 seed models, esmfold_error=None
+  [m2] 92ee5428fec637fc: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_92ee5428fec637fc.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/92ee5428fec637fc/alt_colabfold
+[run_colabfold_all_alts]   [74/104] DCLK1 rank3 (433 aa) ok in 849s -- 5 seed models, esmfold_error=None
+  [m2] 1c3c2a0b8d91115d: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_1c3c2a0b8d91115d.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/1c3c2a0b8d91115d/alt_colabfold
+[run_colabfold_all_alts]   [75/104] DCLK1 rank4 (56 aa) ok in 95s -- 5 seed models, esmfold_error=None
+  [m2] e141b354392f4d32: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_e141b354392f4d32.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/e141b354392f4d32/alt_colabfold
+[run_colabfold_all_alts]   [76/104] DNPEP rank2 (471 aa) ok in 677s -- 5 seed models, esmfold_error=None
+  [m2] b2e4ef4fc66be427: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b2e4ef4fc66be427.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b2e4ef4fc66be427/alt_colabfold
+[run_colabfold_all_alts]   [77/104] HGF rank1 (161 aa) ok in 307s -- 5 seed models, esmfold_error=None
+  [m2] 3d329d3dec52ceb5: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_3d329d3dec52ceb5.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/3d329d3dec52ceb5/alt_colabfold
+[run_colabfold_all_alts]   [78/104] HGF rank3 (210 aa) ok in 380s -- 5 seed models, esmfold_error=None
+  [m2] e07cc58d017acabd: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_e07cc58d017acabd.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/e07cc58d017acabd/alt_colabfold
+[run_colabfold_all_alts]   [79/104] HGF rank4 (723 aa) ok in 1559s -- 5 seed models, esmfold_error=None
+  [m2] 004b494c2a3d1b05: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_004b494c2a3d1b05.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/004b494c2a3d1b05/alt_colabfold
+[run_colabfold_all_alts]   [80/104] IFNAR2 rank1 (331 aa) ok in 409s -- 5 seed models, esmfold_error=None
+  [m2] 91d9b6cd29b32b32: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_91d9b6cd29b32b32.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/91d9b6cd29b32b32/alt_colabfold
+[run_colabfold_all_alts]   [81/104] MLST8 rank1 (325 aa) ok in 565s -- 5 seed models, esmfold_error=None
+  [m2] ab6dfeaf73643ab6: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_ab6dfeaf73643ab6.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/ab6dfeaf73643ab6/alt_colabfold
+[run_colabfold_all_alts]   [82/104] PHF8 rank3 (923 aa) ok in 1944s -- 5 seed models, esmfold_error=None
+  [m2] 3780bc09e013dbc1: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_3780bc09e013dbc1.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/3780bc09e013dbc1/alt_colabfold
+[run_colabfold_all_alts]   [83/104] PIK3CA rank8 (1000 aa) ok in 2055s -- 5 seed models, esmfold_error=None
+  [m2] adf3dd888aa0e017: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_adf3dd888aa0e017.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/adf3dd888aa0e017/alt_colabfold
+[run_colabfold_all_alts]   [84/104] PRKD1 rank1 (920 aa) ok in 1859s -- 5 seed models, esmfold_error=None
+  [m2] 970a6ee04f0671f2: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_970a6ee04f0671f2.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/970a6ee04f0671f2/alt_colabfold
+[run_colabfold_all_alts]   [85/104] IL6ST rank4 (857 aa) ok in 1366s -- 5 seed models, esmfold_error=None
+  [m2] b9850e0e7f80ade7: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b9850e0e7f80ade7.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b9850e0e7f80ade7/alt_colabfold
+[run_colabfold_all_alts]   [86/104] CLK4 rank2 (54 aa) ok in 122s -- 5 seed models, esmfold_error=None
+  [m2] 081b3d3250ae903f: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_081b3d3250ae903f.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/081b3d3250ae903f/alt_colabfold
+[run_colabfold_all_alts]   [87/104] GAPVD1 rank2 (1433 aa) FAILED after 3601s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_081b3d3250ae903f.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/081b3d3250ae903f/alt_colabfold']' timed out after 3600 seconds
+  [m2] 3f79c1b66d961479: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_3f79c1b66d961479.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/3f79c1b66d961479/alt_colabfold
+[run_colabfold_all_alts]   [88/104] GAPVD1 rank3 (1487 aa) FAILED after 3601s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_3f79c1b66d961479.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/3f79c1b66d961479/alt_colabfold']' timed out after 3600 seconds
+  [m2] ead96aa172d1b132: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_ead96aa172d1b132.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/ead96aa172d1b132/alt_colabfold
+[run_colabfold_all_alts]   [89/104] GAPVD1 rank5 (1439 aa) FAILED after 3601s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_ead96aa172d1b132.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/ead96aa172d1b132/alt_colabfold']' timed out after 3600 seconds
+  [m2] 730f489576b1836a: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_730f489576b1836a.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/730f489576b1836a/alt_colabfold
+[run_colabfold_all_alts]   [90/104] GAPVD1 rank7 (497 aa) ok in 643s -- 5 seed models, esmfold_error=None
+  [m2] e7c7ed4a6abadc77: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_e7c7ed4a6abadc77.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/e7c7ed4a6abadc77/alt_colabfold
+[run_colabfold_all_alts]   [91/104] POR rank2 (630 aa) ok in 1007s -- 5 seed models, esmfold_error=None
+  [m2] ab8927845805dee3: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_ab8927845805dee3.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/ab8927845805dee3/alt_colabfold
+[run_colabfold_all_alts]   [92/104] SACM1L rank2 (571 aa) ok in 800s -- 5 seed models, esmfold_error=None
+  [m2] 576a786dfce5983e: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_576a786dfce5983e.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/576a786dfce5983e/alt_colabfold
+[run_colabfold_all_alts]   [93/104] SACM1L rank4 (609 aa) FAILED after 125s: ColabFold produced no rank_* models in /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/576a786dfce5983e/alt_colabfold
+  [m2] 89b28998ae31b2c8: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_89b28998ae31b2c8.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/89b28998ae31b2c8/alt_colabfold
+[run_colabfold_all_alts]   [94/104] TNIK rank2 (1352 aa) FAILED after 3601s: Command '['/home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch', '--num-recycle', '20', '--num-seeds', '5', '--num-models', '1', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_89b28998ae31b2c8.fasta', '/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/89b28998ae31b2c8/alt_colabfold']' timed out after 3600 seconds
+  [m2] 6e69e69af723126a: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_6e69e69af723126a.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/6e69e69af723126a/alt_colabfold
+[run_colabfold_all_alts]   [95/104] ALDH1L1 rank3 (801 aa) ok in 1305s -- 5 seed models, esmfold_error=None
+  [m2] e2c304696e911afe: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_e2c304696e911afe.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/e2c304696e911afe/alt_colabfold
+[run_colabfold_all_alts]   [96/104] ALDH1L1 rank6 (505 aa) ok in 831s -- 5 seed models, esmfold_error=None
+  [m2] eecfc5b8b64e4a1e: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_eecfc5b8b64e4a1e.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/eecfc5b8b64e4a1e/alt_colabfold
+[run_colabfold_all_alts]   [97/104] HTRA1 rank2 (221 aa) ok in 416s -- 5 seed models, esmfold_error=None
+  [m2] f2e36dba0186c95b: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_f2e36dba0186c95b.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/f2e36dba0186c95b/alt_colabfold
+[run_colabfold_all_alts]   [98/104] MTHFD1 rank3 (644 aa) ok in 999s -- 5 seed models, esmfold_error=None
+  [m2] a891961f683de3ba: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_a891961f683de3ba.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/a891961f683de3ba/alt_colabfold
+[run_colabfold_all_alts]   [99/104] PAPOLA rank1 (285 aa) ok in 431s -- 5 seed models, esmfold_error=None
+  [m2] cf238be6f49c1796: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_cf238be6f49c1796.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/cf238be6f49c1796/alt_colabfold
+[run_colabfold_all_alts]   [100/104] PAPOLA rank3 (238 aa) ok in 348s -- 5 seed models, esmfold_error=None
+  [m2] b7290921bf4e9f42: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b7290921bf4e9f42.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b7290921bf4e9f42/alt_colabfold
+[run_colabfold_all_alts]   [101/104] SGMS1 rank3 (12 aa) ok in 61s -- 5 seed models, esmfold_error=None
+  [m2] 0af40bcecea5e590: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_0af40bcecea5e590.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/0af40bcecea5e590/alt_colabfold
+[run_colabfold_all_alts]   [102/104] SOD2 rank2 (140 aa) ok in 310s -- 5 seed models, esmfold_error=None
+  [m2] f5d467cae238d15d: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_f5d467cae238d15d.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/f5d467cae238d15d/alt_colabfold
+[run_colabfold_all_alts]   [103/104] CTNNB1 rank4 (783 aa) ok in 1288s -- 5 seed models, esmfold_error=None
+  [m2] e82857edd7d5fd71: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_e82857edd7d5fd71.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/e82857edd7d5fd71/alt_colabfold
+[run_colabfold_all_alts]   [104/104] CTNNB1 rank6 (702 aa) ok in 1022s -- 5 seed models, esmfold_error=None
+[run_colabfold_all_alts] done: 90 ok, 14 failed

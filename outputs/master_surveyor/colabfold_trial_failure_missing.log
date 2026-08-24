@@ -1,0 +1,529 @@
+[run_colabfold_trial_failure_missing] 14 missing canonical sequences (1 giant), 46 missing alt sequences (7 giant)
+  [m2] Q9Y2J8: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [1/14] PADI2 (Q9Y2J8) ok in 1s -- source=afdb
+  [m2] Q08999: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [2/14] RBL2 (Q08999) ok in 1s -- source=afdb
+  [m2] P18074: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [3/14] ERCC2 (P18074) ok in 1s -- source=afdb
+  [m2] P18858: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [4/14] LIG1 (P18858) ok in 1s -- source=afdb
+  [m2] Q96BY6: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [5/14] DOCK10 (Q96BY6) ok in 1s -- source=afdb
+  [m2] P55072: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [6/14] VCP (P55072) ok in 1s -- source=afdb
+  [m2] P50440: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [7/14] GATM (P50440) ok in 1s -- source=afdb
+  [m2] O15056: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [8/14] SYNJ2 (O15056) ok in 1s -- source=afdb
+  [m2] P49326: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [9/14] FMO5 (P49326) ok in 1s -- source=afdb
+  [m2] Q4FZB7: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [10/14] KMT5B (Q4FZB7) ok in 1s -- source=afdb
+  [m2] Q9UKY4: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [11/14] POMT2 (Q9UKY4) ok in 1s -- source=afdb
+  [m2] O15091: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [12/14] PRORP (O15091) ok in 1s -- source=afdb
+  [m2] O14924: canonical structure from AFDB
+[run_colabfold_trial_failure_missing]   [13/14] RGS12 (O14924) ok in 1s -- source=afdb
+  [m2] Q9NR09: AFDB miss, folding canonical via ColabFold
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/canonical_a053c6ca9211abf9.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/a053c6ca9211abf9/canonical_colabfold
+[run_colabfold_trial_failure_missing]   [14/14] BIRC6 (Q9NR09) ok in 17184s -- source=colabfold [giant]
+[run_colabfold_trial_failure_missing] canonical done: 14 ok, 0 failed
+  [m2] fa99d144dccbaae6: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_fa99d144dccbaae6.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/fa99d144dccbaae6/alt_colabfold
+[run_colabfold_trial_failure_missing]   [1/46] ALDH3A2 rank1 (fa99d144dccbaae6, 485 aa) ok in 750s -- 5 seed models, esmfold_error=None
+  [m2] 1476dbddab81a461: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_1476dbddab81a461.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/1476dbddab81a461/alt_colabfold
+[run_colabfold_trial_failure_missing]   [2/46] LIG1 rank2 (1476dbddab81a461, 918 aa) ok in 1740s -- 5 seed models, esmfold_error=None
+  [m2] bfb6dd485784e6c6: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_bfb6dd485784e6c6.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/bfb6dd485784e6c6/alt_colabfold
+[run_colabfold_trial_failure_missing]   [3/46] LIG1 rank5 (bfb6dd485784e6c6, 888 aa) ok in 1587s -- 5 seed models, esmfold_error=None
+  [m2] e0170d48348b9d8b: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_e0170d48348b9d8b.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/e0170d48348b9d8b/alt_colabfold
+[run_colabfold_trial_failure_missing]   [4/46] VCP rank2 (e0170d48348b9d8b, 733 aa) ok in 1468s -- 5 seed models, esmfold_error=None
+  [m2] 5649815cd6ce5227: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_5649815cd6ce5227.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/5649815cd6ce5227/alt_colabfold
+[run_colabfold_trial_failure_missing]   [5/46] VCP rank5 (5649815cd6ce5227, 761 aa) ok in 1600s -- 5 seed models, esmfold_error=None
+  [m2] 357a96552007c31a: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_357a96552007c31a.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/357a96552007c31a/alt_colabfold
+[run_colabfold_trial_failure_missing]   [6/46] GATM rank2 (357a96552007c31a, 391 aa) ok in 552s -- 5 seed models, esmfold_error=None
+  [m2] 4c3d9b4324ac3f1b: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_4c3d9b4324ac3f1b.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/4c3d9b4324ac3f1b/alt_colabfold
+[run_colabfold_trial_failure_missing]   [7/46] LIG1 rank6 (4c3d9b4324ac3f1b, 918 aa) ok in 1715s -- 5 seed models, esmfold_error=None
+  [m2] 576a786dfce5983e: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_576a786dfce5983e.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/576a786dfce5983e/alt_colabfold
+[run_colabfold_trial_failure_missing]   [8/46] SACM1L rank4 (576a786dfce5983e, 609 aa) FAILED after 16s: ColabFold produced no rank_* models in /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/576a786dfce5983e/alt_colabfold
+  [m2] 916390a93a6051f0: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_916390a93a6051f0.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/916390a93a6051f0/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<01:05, 68.09it/s]
+Loading weights:  14%|█▎        | 617/4498 [00:00<00:01, 2144.60it/s]
+Loading weights:  66%|██████▌   | 2960/4498 [00:00<00:00, 9248.13it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 8734.70it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 1259: CUDA out of memory. Tried to allocate 3.02 GiB. GPU 0 has a total capacity of 23.52 GiB of which 2.86 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 20.20 GiB memory in use. Of the allocated memory 17.02 GiB is allocated by PyTorch, and 2.72 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [9/46] SYNJ2 rank2 (916390a93a6051f0, 1259 aa) ok in 3551s -- 5 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<01:05, 68.09it/s]
+Loading weights:  14%|█▎        | 617/4498 [00:00<00:01, 2144.60it/s]
+Loading weights:  66%|██████▌   | 2960/4498 [00:00<00:00, 9248.13it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 8734.70it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 1259: CUDA out of memory. Tried to allocate 3.02 GiB. GPU 0 has a total capacity of 23.52 GiB of which 2.86 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 20.20 GiB memory in use. Of the allocated memory 17.02 GiB is allocated by PyTorch, and 2.72 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+  [m2] 9f1264febbc62915: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_9f1264febbc62915.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/9f1264febbc62915/alt_colabfold
+[run_colabfold_trial_failure_missing]   [10/46] ERCC2 rank5 (9f1264febbc62915, 719 aa) ok in 1120s -- 5 seed models, esmfold_error=None
+  [m2] addb9cb7813d56af: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_addb9cb7813d56af.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/addb9cb7813d56af/alt_colabfold
+[run_colabfold_trial_failure_missing]   [11/46] SYNJ2 rank3 (addb9cb7813d56af, 136 aa) ok in 231s -- 5 seed models, esmfold_error=None
+  [m2] 2f66d61931b5c7f4: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_2f66d61931b5c7f4.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/2f66d61931b5c7f4/alt_colabfold
+[run_colabfold_trial_failure_missing]   [12/46] FMO5 rank2 (2f66d61931b5c7f4, 126 aa) ok in 452s -- 5 seed models, esmfold_error=None
+  [m2] 69a57908fa23c437: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_69a57908fa23c437.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/69a57908fa23c437/alt_colabfold
+[run_colabfold_trial_failure_missing]   [13/46] FMO5 rank3 (69a57908fa23c437, 285 aa) ok in 573s -- 5 seed models, esmfold_error=None
+  [m2] abb1d10629138e70: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_abb1d10629138e70.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/abb1d10629138e70/alt_colabfold
+[run_colabfold_trial_failure_missing]   [14/46] KMT5B rank3 (abb1d10629138e70, 393 aa) ok in 532s -- 5 seed models, esmfold_error=None
+  [m2] 1987705ffe495e01: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_1987705ffe495e01.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/1987705ffe495e01/alt_colabfold
+[run_colabfold_trial_failure_missing]   [15/46] KMT5B rank4 (1987705ffe495e01, 713 aa) ok in 1082s -- 5 seed models, esmfold_error=None
+  [m2] de539fd1ae85bdf9: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_de539fd1ae85bdf9.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/de539fd1ae85bdf9/alt_colabfold
+[run_colabfold_trial_failure_missing]   [16/46] POMT2 rank3 (de539fd1ae85bdf9, 774 aa) ok in 1298s -- 5 seed models, esmfold_error=None
+  [m2] b7b7ef01c9a16003: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b7b7ef01c9a16003.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b7b7ef01c9a16003/alt_colabfold
+[run_colabfold_trial_failure_missing]   [17/46] POMT2 rank4 (b7b7ef01c9a16003, 419 aa) ok in 595s -- 5 seed models, esmfold_error=None
+  [m2] c5ce4e4550264021: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_c5ce4e4550264021.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/c5ce4e4550264021/alt_colabfold
+[run_colabfold_trial_failure_missing]   [18/46] PRORP rank2 (c5ce4e4550264021, 567 aa) ok in 775s -- 5 seed models, esmfold_error=None
+  [m2] eb4fdf3a431db851: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_eb4fdf3a431db851.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/eb4fdf3a431db851/alt_colabfold
+[run_colabfold_trial_failure_missing]   [19/46] PRORP rank3 (eb4fdf3a431db851, 211 aa) ok in 289s -- 5 seed models, esmfold_error=None
+  [m2] 63b85c1663014f40: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_63b85c1663014f40.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/63b85c1663014f40/alt_colabfold
+[run_colabfold_trial_failure_missing]   [20/46] SYNJ2 rank5 (63b85c1663014f40, 581 aa) ok in 721s -- 5 seed models, esmfold_error=None
+  [m2] f7eebb83b93b6925: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_f7eebb83b93b6925.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/f7eebb83b93b6925/alt_colabfold
+[run_colabfold_trial_failure_missing]   [21/46] RGS12 rank4 (f7eebb83b93b6925, 799 aa) ok in 1298s -- 5 seed models, esmfold_error=None
+  [m2] eb1a1a014cf4ba27: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_eb1a1a014cf4ba27.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/eb1a1a014cf4ba27/alt_colabfold
+[run_colabfold_trial_failure_missing]   [22/46] ERCC2 rank2 (eb1a1a014cf4ba27, 829 aa) ok in 1474s -- 5 seed models, esmfold_error=None
+  [m2] e72faea10863b9e5: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_e72faea10863b9e5.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/e72faea10863b9e5/alt_colabfold
+[run_colabfold_trial_failure_missing]   [23/46] RBL2 rank3 (e72faea10863b9e5, 639 aa) ok in 893s -- 5 seed models, esmfold_error=None
+  [m2] a058df6612aa42c4: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_a058df6612aa42c4.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/a058df6612aa42c4/alt_colabfold
+[run_colabfold_trial_failure_missing]   [24/46] PADI2 rank1 (a058df6612aa42c4, 665 aa) ok in 894s -- 5 seed models, esmfold_error=None
+  [m2] b0446cd59b6b28d5: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b0446cd59b6b28d5.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b0446cd59b6b28d5/alt_colabfold
+[run_colabfold_trial_failure_missing]   [25/46] RBL2 rank2 (b0446cd59b6b28d5, 1139 aa) ok in 2668s -- 5 seed models, esmfold_error=None
+  [m2] 4f521c7c4176925d: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_4f521c7c4176925d.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/4f521c7c4176925d/alt_colabfold
+[run_colabfold_trial_failure_missing]   [26/46] ZDHHC3 rank1 (4f521c7c4176925d, 299 aa) ok in 350s -- 5 seed models, esmfold_error=None
+  [m2] fad52b92475fd3fc: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_fad52b92475fd3fc.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/fad52b92475fd3fc/alt_colabfold
+[run_colabfold_trial_failure_missing]   [27/46] ERCC2 rank6 (fad52b92475fd3fc, 760 aa) ok in 1031s -- 5 seed models, esmfold_error=None
+  [m2] 7d3e76461244c07b: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_7d3e76461244c07b.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/7d3e76461244c07b/alt_colabfold
+[run_colabfold_trial_failure_missing]   [28/46] LIG1 rank4 (7d3e76461244c07b, 919 aa) ok in 1666s -- 5 seed models, esmfold_error=None
+  [m2] 7762b7e6637bdd56: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_7762b7e6637bdd56.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/7762b7e6637bdd56/alt_colabfold
+[run_colabfold_trial_failure_missing]   [29/46] VCP rank1 (7762b7e6637bdd56, 806 aa) ok in 1241s -- 5 seed models, esmfold_error=None
+  [m2] 6d128a2a109e3774: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_6d128a2a109e3774.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/6d128a2a109e3774/alt_colabfold
+[run_colabfold_trial_failure_missing]   [30/46] GATM rank1 (6d128a2a109e3774, 423 aa) ok in 513s -- 5 seed models, esmfold_error=None
+  [m2] b25034270f119d34: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b25034270f119d34.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b25034270f119d34/alt_colabfold
+[run_colabfold_trial_failure_missing]   [31/46] ZDHHC3 rank3 (b25034270f119d34, 327 aa) ok in 453s -- 5 seed models, esmfold_error=None
+  [m2] c7cafff1048426ec: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_c7cafff1048426ec.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/c7cafff1048426ec/alt_colabfold
+[run_colabfold_trial_failure_missing]   [32/46] FMO5 rank4 (c7cafff1048426ec, 533 aa) ok in 673s -- 5 seed models, esmfold_error=None
+  [m2] b503fdafadc0dbaf: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b503fdafadc0dbaf.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b503fdafadc0dbaf/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:55, 80.44it/s]
+Loading weights:  13%|█▎        | 568/4498 [00:00<00:01, 2182.85it/s]
+Loading weights:  64%|██████▍   | 2901/4498 [00:00<00:00, 9723.14it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9457.70it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.weight | MISSING | 
+esm.contact_head.regression.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 1496: CUDA out of memory. Tried to allocate 4.27 GiB. GPU 0 has a total capacity of 23.52 GiB of which 2.21 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 20.83 GiB memory in use. Of the allocated memory 19.53 GiB is allocated by PyTorch, and 867.69 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [33/46] SYNJ2 rank1 (b503fdafadc0dbaf, 1496 aa) ok in 5458s -- 5 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:55, 80.44it/s]
+Loading weights:  13%|█▎        | 568/4498 [00:00<00:01, 2182.85it/s]
+Loading weights:  64%|██████▍   | 2901/4498 [00:00<00:00, 9723.14it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9457.70it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.weight | MISSING | 
+esm.contact_head.regression.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 1496: CUDA out of memory. Tried to allocate 4.27 GiB. GPU 0 has a total capacity of 23.52 GiB of which 2.21 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 20.83 GiB memory in use. Of the allocated memory 19.53 GiB is allocated by PyTorch, and 867.69 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+  [m2] d206513b2ca4d5ec: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_d206513b2ca4d5ec.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/d206513b2ca4d5ec/alt_colabfold
+[run_colabfold_trial_failure_missing]   [34/46] POMT2 rank2 (d206513b2ca4d5ec, 750 aa) ok in 1059s -- 5 seed models, esmfold_error=None
+  [m2] b6082fa4536f61d5: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b6082fa4536f61d5.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b6082fa4536f61d5/alt_colabfold
+[run_colabfold_trial_failure_missing]   [35/46] PRORP rank1 (b6082fa4536f61d5, 583 aa) ok in 689s -- 5 seed models, esmfold_error=None
+  [m2] b87dfc22fa6b9648: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b87dfc22fa6b9648.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b87dfc22fa6b9648/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:48, 92.48it/s]
+Loading weights:  13%|█▎        | 583/4498 [00:00<00:01, 2325.65it/s]
+Loading weights:  63%|██████▎   | 2815/4498 [00:00<00:00, 9626.42it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9776.77it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 1447: CUDA out of memory. Tried to allocate 3.99 GiB. GPU 0 has a total capacity of 23.52 GiB of which 2.74 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 20.29 GiB memory in use. Of the allocated memory 18.79 GiB is allocated by PyTorch, and 1.04 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [36/46] RGS12 rank2 (b87dfc22fa6b9648, 1447 aa) ok in 4911s -- 5 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:48, 92.48it/s]
+Loading weights:  13%|█▎        | 583/4498 [00:00<00:01, 2325.65it/s]
+Loading weights:  63%|██████▎   | 2815/4498 [00:00<00:00, 9626.42it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9776.77it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 1447: CUDA out of memory. Tried to allocate 3.99 GiB. GPU 0 has a total capacity of 23.52 GiB of which 2.74 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 20.29 GiB memory in use. Of the allocated memory 18.79 GiB is allocated by PyTorch, and 1.04 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+  [m2] 062fe3271b881a27: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_062fe3271b881a27.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/062fe3271b881a27/alt_colabfold
+[run_colabfold_trial_failure_missing]   [37/46] PADI2 rank2 (062fe3271b881a27, 213 aa) ok in 318s -- 5 seed models, esmfold_error=None
+  [m2] 747f652e7ecc545c: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_747f652e7ecc545c.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/747f652e7ecc545c/alt_colabfold
+[run_colabfold_trial_failure_missing]   [38/46] KMT5B rank1 (747f652e7ecc545c, 885 aa) ok in 1497s -- 5 seed models, esmfold_error=None
+  [m2] 4a269d780244f531: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 20 --num-seeds 5 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_4a269d780244f531.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/4a269d780244f531/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:48, 91.92it/s]
+Loading weights:  33%|███▎      | 1479/4498 [00:00<00:00, 6215.09it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 11504.35it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.weight | MISSING | 
+esm.contact_head.regression.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 1376: CUDA out of memory. Tried to allocate 3.61 GiB. GPU 0 has a total capacity of 23.52 GiB of which 250.38 MiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 22.81 GiB memory in use. Of the allocated memory 18.76 GiB is allocated by PyTorch, and 3.60 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [39/46] RGS12 rank5 (4a269d780244f531, 1376 aa) ok in 4381s -- 5 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:48, 91.92it/s]
+Loading weights:  33%|███▎      | 1479/4498 [00:00<00:00, 6215.09it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 11504.35it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.weight | MISSING | 
+esm.contact_head.regression.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 1376: CUDA out of memory. Tried to allocate 3.61 GiB. GPU 0 has a total capacity of 23.52 GiB of which 250.38 MiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 22.81 GiB memory in use. Of the allocated memory 18.76 GiB is allocated by PyTorch, and 3.60 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+  [m2] 0f7dc781c18e2692: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 3 --num-seeds 1 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_0f7dc781c18e2692.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/0f7dc781c18e2692/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:43, 102.15it/s]
+Loading weights:  16%|█▋        | 739/4498 [00:00<00:01, 3283.05it/s]
+Loading weights:  77%|███████▋  | 3455/4498 [00:00<00:00, 12594.37it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 10953.38it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 2186: CUDA out of memory. Tried to allocate 2.28 GiB. GPU 0 has a total capacity of 23.52 GiB of which 1.41 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 21.71 GiB memory in use. Of the allocated memory 20.57 GiB is allocated by PyTorch, and 702.59 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [40/46] DOCK10 rank2 (0f7dc781c18e2692, 2186 aa) ok in 707s -- 1 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:43, 102.15it/s]
+Loading weights:  16%|█▋        | 739/4498 [00:00<00:01, 3283.05it/s]
+Loading weights:  77%|███████▋  | 3455/4498 [00:00<00:00, 12594.37it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 10953.38it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 2186: CUDA out of memory. Tried to allocate 2.28 GiB. GPU 0 has a total capacity of 23.52 GiB of which 1.41 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 21.71 GiB memory in use. Of the allocated memory 20.57 GiB is allocated by PyTorch, and 702.59 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ [giant]
+  [m2] b7628d6de8c66aae: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 3 --num-seeds 1 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_b7628d6de8c66aae.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/b7628d6de8c66aae/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:54, 82.04it/s]
+Loading weights:  13%|█▎        | 596/4498 [00:00<00:01, 2328.50it/s]
+Loading weights:  64%|██████▍   | 2880/4498 [00:00<00:00, 9718.16it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9555.78it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 2383: CUDA out of memory. Tried to allocate 1.36 GiB. GPU 0 has a total capacity of 23.52 GiB of which 240.38 MiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 22.79 GiB memory in use. Of the allocated memory 21.58 GiB is allocated by PyTorch, and 775.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [41/46] ACACA rank1 (b7628d6de8c66aae, 2383 aa) ok in 893s -- 1 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:54, 82.04it/s]
+Loading weights:  13%|█▎        | 596/4498 [00:00<00:01, 2328.50it/s]
+Loading weights:  64%|██████▍   | 2880/4498 [00:00<00:00, 9718.16it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9555.78it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 2383: CUDA out of memory. Tried to allocate 1.36 GiB. GPU 0 has a total capacity of 23.52 GiB of which 240.38 MiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 22.79 GiB memory in use. Of the allocated memory 21.58 GiB is allocated by PyTorch, and 775.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ [giant]
+  [m2] c6de8d1ebd09efd4: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 3 --num-seeds 1 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_c6de8d1ebd09efd4.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/c6de8d1ebd09efd4/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:47, 94.27it/s]
+Loading weights:  19%|█▉        | 848/4498 [00:00<00:01, 3605.78it/s]
+Loading weights:  89%|████████▉ | 4016/4498 [00:00<00:00, 14256.58it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 11078.89it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 2180: CUDA out of memory. Tried to allocate 2.27 GiB. GPU 0 has a total capacity of 23.52 GiB of which 1.39 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 21.64 GiB memory in use. Of the allocated memory 20.50 GiB is allocated by PyTorch, and 709.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [42/46] DOCK10 rank1 (c6de8d1ebd09efd4, 2180 aa) ok in 971s -- 1 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:47, 94.27it/s]
+Loading weights:  19%|█▉        | 848/4498 [00:00<00:01, 3605.78it/s]
+Loading weights:  89%|████████▉ | 4016/4498 [00:00<00:00, 14256.58it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 11078.89it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 2180: CUDA out of memory. Tried to allocate 2.27 GiB. GPU 0 has a total capacity of 23.52 GiB of which 1.39 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 21.64 GiB memory in use. Of the allocated memory 20.50 GiB is allocated by PyTorch, and 709.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ [giant]
+  [m2] 6ba40f0df65a354c: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 3 --num-seeds 1 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_6ba40f0df65a354c.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/6ba40f0df65a354c/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<01:09, 64.46it/s]
+Loading weights:  49%|████▉     | 2206/4498 [00:00<00:00, 7447.82it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9883.35it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.weight | MISSING | 
+esm.contact_head.regression.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 2288: CUDA out of memory. Tried to allocate 2.50 GiB. GPU 0 has a total capacity of 23.52 GiB of which 212.38 MiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 22.91 GiB memory in use. Of the allocated memory 21.77 GiB is allocated by PyTorch, and 702.54 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [43/46] ACACA rank3 (6ba40f0df65a354c, 2288 aa) ok in 798s -- 1 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<01:09, 64.46it/s]
+Loading weights:  49%|████▉     | 2206/4498 [00:00<00:00, 7447.82it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9883.35it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.weight | MISSING | 
+esm.contact_head.regression.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 2288: CUDA out of memory. Tried to allocate 2.50 GiB. GPU 0 has a total capacity of 23.52 GiB of which 212.38 MiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 22.91 GiB memory in use. Of the allocated memory 21.77 GiB is allocated by PyTorch, and 702.54 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ [giant]
+  [m2] 2361d391862d3d92: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 3 --num-seeds 1 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_2361d391862d3d92.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/2361d391862d3d92/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:54, 81.75it/s]
+Loading weights:  14%|█▍        | 631/4498 [00:00<00:01, 2460.77it/s]
+Loading weights:  69%|██████▉   | 3111/4498 [00:00<00:00, 10497.46it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9697.17it/s] 
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.weight | MISSING | 
+esm.contact_head.regression.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 4837: CUDA out of memory. Tried to allocate 11.16 GiB. GPU 0 has a total capacity of 23.52 GiB of which 3.47 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 19.66 GiB memory in use. Of the allocated memory 19.17 GiB is allocated by PyTorch, and 31.08 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [44/46] BIRC6 rank3 (2361d391862d3d92, 4837 aa) ok in 18006s -- 1 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:54, 81.75it/s]
+Loading weights:  14%|█▍        | 631/4498 [00:00<00:01, 2460.77it/s]
+Loading weights:  69%|██████▉   | 3111/4498 [00:00<00:00, 10497.46it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9697.17it/s] 
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.weight | MISSING | 
+esm.contact_head.regression.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 4837: CUDA out of memory. Tried to allocate 11.16 GiB. GPU 0 has a total capacity of 23.52 GiB of which 3.47 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 19.66 GiB memory in use. Of the allocated memory 19.17 GiB is allocated by PyTorch, and 31.08 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ [giant]
+  [m2] 949415188aebd631: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 3 --num-seeds 1 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_949415188aebd631.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/949415188aebd631/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<01:00, 74.32it/s]
+Loading weights:  13%|█▎        | 582/4498 [00:00<00:01, 2087.18it/s]
+Loading weights:  63%|██████▎   | 2853/4498 [00:00<00:00, 9116.06it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 8921.59it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 3842: CUDA out of memory. Tried to allocate 7.04 GiB. GPU 0 has a total capacity of 23.52 GiB of which 452.38 MiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 22.68 GiB memory in use. Of the allocated memory 22.19 GiB is allocated by PyTorch, and 43.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [45/46] BIRC6 rank4 (949415188aebd631, 3842 aa) ok in 6921s -- 1 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<01:00, 74.32it/s]
+Loading weights:  13%|█▎        | 582/4498 [00:00<00:01, 2087.18it/s]
+Loading weights:  63%|██████▎   | 2853/4498 [00:00<00:00, 9116.06it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 8921.59it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 3842: CUDA out of memory. Tried to allocate 7.04 GiB. GPU 0 has a total capacity of 23.52 GiB of which 452.38 MiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 22.68 GiB memory in use. Of the allocated memory 22.19 GiB is allocated by PyTorch, and 43.10 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ [giant]
+  [m2] a053c6ca9211abf9: folding alt/isoform sequence (no templates, elevated recycles, multi-seed ensemble)
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-recycle 3 --num-seeds 1 --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/alt_a053c6ca9211abf9.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/a053c6ca9211abf9/alt_colabfold
+  [m2] ESMFold cross-check failed: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:41, 106.77it/s]
+Loading weights:  13%|█▎        | 582/4498 [00:00<00:01, 2470.90it/s]
+Loading weights:  53%|█████▎    | 2398/4498 [00:00<00:00, 8428.23it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9980.48it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 4857: CUDA out of memory. Tried to allocate 11.25 GiB. GPU 0 has a total capacity of 23.52 GiB of which 3.38 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 19.75 GiB memory in use. Of the allocated memory 19.27 GiB is allocated by PyTorch, and 30.06 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[run_colabfold_trial_failure_missing]   [46/46] BIRC6 rank1 (a053c6ca9211abf9, 4857 aa) ok in 17238s -- 1 seed models, esmfold_error=Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/4498 [00:00<?, ?it/s]
+Loading weights:   0%|          | 18/4498 [00:00<00:41, 106.77it/s]
+Loading weights:  13%|█▎        | 582/4498 [00:00<00:01, 2470.90it/s]
+Loading weights:  53%|█████▎    | 2398/4498 [00:00<00:00, 8428.23it/s]
+Loading weights: 100%|██████████| 4498/4498 [00:00<00:00, 9980.48it/s]
+[transformers] [1mEsmForProteinFolding LOAD REPORT[0m from: facebook/esmfold_v1
+Key                                | Status  | 
+-----------------------------------+---------+-
+esm.contact_head.regression.bias   | MISSING | 
+esm.contact_head.regression.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+CUDA OOM predicting sequence of length 4857: CUDA out of memory. Tried to allocate 11.25 GiB. GPU 0 has a total capacity of 23.52 GiB of which 3.38 GiB is free. Process 5591 has 386.00 MiB memory in use. Including non-PyTorch memory, this process has 19.75 GiB memory in use. Of the allocated memory 19.27 GiB is allocated by PyTorch, and 30.06 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ [giant]
+[run_colabfold_trial_failure_missing] alt done: 45 ok, 1 failed

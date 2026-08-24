@@ -1,0 +1,7 @@
+[run_colabfold_giant_retry] COLABFOLD_TIMEOUT_S raised to 28800s (8h) for this retry
+[run_colabfold_giant_retry] retrying 3/3 previously failed canonical sequences
+  [m2] Q15149: AFDB miss, folding canonical via ColabFold
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/canonical_11b0a96f2495dbd6.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/11b0a96f2495dbd6/canonical_colabfold
+[run_colabfold_giant_retry]   [1/3] PLEC (Q15149) ok in 16831s -- source=colabfold
+  [m2] Q92736: AFDB miss, folding canonical via ColabFold
+  [m2] running: /home/welcome3/tools/localcolabfold/colabfold-conda/bin/colabfold_batch --num-models 1 /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/fasta/canonical_79a2f70258ec5968.fasta /home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/79a2f70258ec5968/canonical_colabfold

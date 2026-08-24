@@ -1,0 +1,21 @@
+{
+  "job_id": "f7fb87fc2d41",
+  "status": "done",
+  "created_at": 1784167761.6141896,
+  "thresholds_used": {},
+  "items": [
+    {
+      "gene": "ATP5MG",
+      "cell_type": "Inhibitory_neuron",
+      "hit_enst": "ENST00000689460",
+      "stage": "done",
+      "item_status": "done",
+      "result": {
+        "folder": "/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/docking/ATP5MG_Inhibitory_neuron_ATP5MG-212",
+        "structure_confidence": "medium"
+      }
+    }
+  ],
+  "updated_at": 1784167761.806879,
+  "finished_at": 1784167761.8107903
+}

@@ -1,0 +1,14 @@
+{
+  "job_id": "e76c1d5b8330",
+  "type": "pocket_preview",
+  "status": "done",
+  "created_at": 1785462148.472196,
+  "gene": "GAPVD1",
+  "cell_type": "Oligodendrocyte",
+  "hit_enst": "ENST00000297933",
+  "drug_names": [
+    "INTERFERON BETA-1A"
+  ],
+  "result": {},
+  "finished_at": 1785462148.5212731
+}

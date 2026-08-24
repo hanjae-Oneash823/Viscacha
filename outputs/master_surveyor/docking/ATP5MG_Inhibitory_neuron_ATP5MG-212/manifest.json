@@ -1,0 +1,41 @@
+{
+  "gene_name": "ATP5MG",
+  "cell_type": "Inhibitory_neuron",
+  "transcript": "ATP5MG-212",
+  "hit_ENST_ID": "ENST00000689460",
+  "master_group": "drug_repurposing_candidate",
+  "protein_change_type": "C_truncation",
+  "affected_domain": "ATP-synt_G",
+  "delta_usage": null,
+  "chi_padj": 0.0006241204825791,
+  "uniprot_acc": "O75964",
+  "chembl_target_id": "CHEMBL6066998",
+  "canonical_structure_source": "afdb",
+  "structure_confidence": {
+    "verdict": "medium",
+    "region_confidence": {
+      "region_mean_plddt": 57.45,
+      "whole_protein_mean_plddt": 84.85,
+      "region_length": 4,
+      "region_vs_rest_mean_pae": 21.52
+    },
+    "ensemble_spread_rmsd": 0.04,
+    "n_ensemble_models": 5,
+    "colabfold_vs_esmfold_rmsd": 0.461,
+    "esmfold_error": null,
+    "superposition": {
+      "n_anchor_residues": 74,
+      "anchor_fit_rmsd": 15.026,
+      "changed_region_mean_local_dist": 20.52,
+      "changed_region_max_local_dist": 38.65,
+      "outside_span_mean_local_dist": 12.66,
+      "outside_span_max_local_dist": 30.41
+    },
+    "alt_local_span": [
+      72,
+      75
+    ]
+  },
+  "ligands": [],
+  "thresholds_used": {}
+}

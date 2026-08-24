@@ -1,0 +1,27 @@
+{
+  "job_id": "bce5bb54bc69",
+  "type": "pocket_preview",
+  "status": "done",
+  "created_at": 1785477564.6060555,
+  "gene": "CACNA1D",
+  "cell_type": "Inhibitory_neuron",
+  "hit_enst": "ENST00000636627",
+  "drug_names": [
+    "DRONEDARONE HYDROCHLORIDE"
+  ],
+  "result": {
+    "DRONEDARONE HYDROCHLORIDE": {
+      "canonical": {
+        "tier": null,
+        "error": "docking failed for every candidate pocket",
+        "n_pockets_tried": 3
+      },
+      "alt": {
+        "tier": null,
+        "error": "docking failed for every candidate pocket",
+        "n_pockets_tried": 3
+      }
+    }
+  },
+  "finished_at": 1785477659.2761502
+}

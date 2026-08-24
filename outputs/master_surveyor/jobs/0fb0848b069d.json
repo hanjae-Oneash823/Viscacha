@@ -1,0 +1,102 @@
+{
+  "job_id": "0fb0848b069d",
+  "type": "pocket_preview",
+  "status": "done",
+  "created_at": 1785477725.0849807,
+  "gene": "CACNA1D",
+  "cell_type": "Inhibitory_neuron",
+  "hit_enst": "ENST00000636627",
+  "drug_names": [
+    "AMLODIPINE"
+  ],
+  "result": {
+    "AMLODIPINE": {
+      "canonical": {
+        "tier": "predicted",
+        "dock_score_kcal_mol": -6.962,
+        "pocket_rank": 1,
+        "druggability_score": 0.994,
+        "pocket_volume": 2349.746,
+        "pocket_residues": [
+          {
+            "chain": "A",
+            "resnum": 275,
+            "resname": "ALA"
+          },
+          {
+            "chain": "A",
+            "resnum": 278,
+            "resname": "VAL"
+          },
+          {
+            "chain": "A",
+            "resnum": 736,
+            "resname": "PHE"
+          },
+          {
+            "chain": "A",
+            "resnum": 737,
+            "resname": "ILE"
+          },
+          {
+            "chain": "A",
+            "resnum": 741,
+            "resname": "TYR"
+          }
+        ],
+        "docked_pose_pdb": "/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/d96a034227d14cdd/pocket/dock_ce853521df945af8_pocket1/docked_best.pdb"
+      },
+      "alt": {
+        "tier": "predicted",
+        "dock_score_kcal_mol": -6.815,
+        "pocket_rank": 1,
+        "druggability_score": 0.996,
+        "pocket_volume": 1043.422,
+        "pocket_residues": [
+          {
+            "chain": "A",
+            "resnum": 363,
+            "resname": "MET"
+          },
+          {
+            "chain": "A",
+            "resnum": 722,
+            "resname": "LEU"
+          },
+          {
+            "chain": "A",
+            "resnum": 723,
+            "resname": "THR"
+          },
+          {
+            "chain": "A",
+            "resnum": 724,
+            "resname": "GLY"
+          },
+          {
+            "chain": "A",
+            "resnum": 760,
+            "resname": "ASN"
+          },
+          {
+            "chain": "A",
+            "resnum": 765,
+            "resname": "ASN"
+          },
+          {
+            "chain": "A",
+            "resnum": 768,
+            "resname": "LEU"
+          },
+          {
+            "chain": "A",
+            "resnum": 1120,
+            "resname": "PHE"
+          }
+        ],
+        "docked_pose_pdb": "/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/cache/structures/a90d14f0a0086f3f/pocket/dock_ce853521df945af8_pocket1/docked_best.pdb"
+      }
+    }
+  },
+  "finished_at": 1785477805.9607878
+}
