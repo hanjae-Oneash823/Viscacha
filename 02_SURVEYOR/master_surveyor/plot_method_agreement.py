@@ -9,6 +9,7 @@ it does not measure canonical-versus-alternate structural change.
 
 from __future__ import annotations
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -130,9 +131,23 @@ def _summaries(table: pd.DataFrame) -> None:
 
 
 def main() -> None:
+    global OUT_SUBDIR, SUMMARY_CSV
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--min-changed", type=int, default=0,
+                        help="only plot alternate proteins with at least this many changed residues")
+    parser.add_argument("--top-n", type=int, default=0,
+                        help="after filtering, retain the largest spans (0 means all)")
+    parser.add_argument("--output-dir", type=Path, default=OUT_SUBDIR)
+    args = parser.parse_args()
+    OUT_SUBDIR = args.output_dir
+    SUMMARY_CSV = OUT_SUBDIR / "method_agreement_summary.csv"
     OUT_SUBDIR.mkdir(parents=True, exist_ok=True)
     pairs = pd.read_csv(GATE_PAIRS, low_memory=False)
-    pairs = pairs[pairs[GATES].all(axis=1)].copy()
+    pairs = pairs[pairs["D"]].copy()
+    pairs = pairs[pairs["n_changed"] >= args.min_changed].copy()
+    pairs = pairs.sort_values("n_changed", ascending=False)
+    if args.top_n:
+        pairs = pairs.head(args.top_n)
     records = []
     for _, row in pairs.iterrows():
         cf, esm = _models(row.alt_protein_seq)
