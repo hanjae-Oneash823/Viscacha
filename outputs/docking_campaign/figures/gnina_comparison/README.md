@@ -1,9 +1,11 @@
 # GNINA comparison figures
 
-Each figure is available as a 360-dpi PNG plus vector PDF and SVG.
+These figures were rebuilt with R 4.5.2, ggplot2, patchwork, ragg, and svglite. Each is exported as a 3408-pixel-wide PNG for slides and as vector PDF and SVG files for lossless scaling.
 
-- `gnina_pose_selection_validation.*`: paired Vina-versus-GNINA pose selection for the three exact canonical controls. This is the clearest figure for showing BACE1/CHRNA7 preservation and the FYN disagreement.
-- `gnina_matched_comparison.*`: primary Vina-rank-1 CNNaffinity rescoring and secondary CNN-selected geometry for BACE1 and CHRNA7/CHRFAM7A.
-- `vina_gnina_rank_agreement.*`: original Vina ranks selected by CNNscore and mean within-run rank correlation.
+- `gnina_matched_comparison.*`: the main findings figure. The left estimation plot shows seed-paired alternate-minus-canonical CNNaffinity shifts with means and 95% t intervals. The right plot shows the RMSD of each CNN-selected pose and the 2 Å pose-valid region.
+- `gnina_pose_selection_validation.*`: a single paired canonical-validation chart. Thin lines retain the link between Vina and GNINA selections from each search; large symbols show group means and direct labels report the number of GNINA selections below 2 Å.
+- `vina_gnina_rank_agreement.*`: a horizontal agreement dashboard. The left plot reports which original Vina rank GNINA selected; the right plot shows the complete run-level distribution of within-ensemble Spearman correlations.
+
+The source is `02_SURVEYOR/master_surveyor/plot_gnina_comparison.R`. It reads the audited `analysis/gnina/run_summary.csv` table and does not recompute or alter docking results. The design uses direct labeling, restrained color, confidence intervals, and shaded decision/reference regions. Vina energy and CNNaffinity are never placed on a shared numerical axis.
 
 GNINA used `--score_only`; the plotted pose changes are selection changes within the retained Vina ensemble, not coordinate optimization.

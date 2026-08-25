@@ -48,6 +48,7 @@ The central validation criterion was a top-ranked heavy-atom pose RMSD below 2.0
 | Biopython | 1.87 | PDB/mmCIF parsing, sequence mapping, and structural superposition |
 | NumPy | 2.2.6 | Coordinate calculations and RMSD |
 | Matplotlib | 3.10.9 | Quantitative figures |
+| R / ggplot2 / patchwork | 4.5.2 / 3.4.4 / 1.2.0 | Publication-style GNINA comparison figures |
 | ColabFold | 1.6.2 | BACE1 deletion-isoform structure prediction |
 | PyMOL open source | project `docking_viz` environment | Ray-traced structural figures |
 | GNINA | 1.3.3, commit `6fe1ce2` | CNN rescoring of retained Vina pose ensembles |
@@ -257,6 +258,7 @@ PyMOL rendered molecular views from the actual prepared proteins and stored dock
 - `02_SURVEYOR/master_surveyor/analyze_expanded_docking_campaign.py`
 - `02_SURVEYOR/master_surveyor/run_gnina_pose_rescoring.py`
 - `02_SURVEYOR/master_surveyor/analyze_gnina_pose_rescoring.py`
+- `02_SURVEYOR/master_surveyor/plot_gnina_comparison.R`
 - `02_SURVEYOR/master_surveyor/render_expanded_docking_3d.pml`
 
 ## 15. Orthogonal GNINA pose rescoring

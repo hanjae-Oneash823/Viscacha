@@ -11,6 +11,7 @@ This directory contains the complete AutoDock Vina candidate campaign. All CPU-b
 - GNINA aggregate: [`analysis/gnina/summary.json`](analysis/gnina/summary.json)
 - Candidate disposition table: [`analysis/aggregate/candidate_status.csv`](analysis/aggregate/candidate_status.csv)
 - Presentation figures: [`figures/expanded_campaign/README.md`](figures/expanded_campaign/README.md)
+- GNINA presentation figures: [`figures/gnina_comparison/README.md`](figures/gnina_comparison/README.md)
 
 ## Directory layout
 

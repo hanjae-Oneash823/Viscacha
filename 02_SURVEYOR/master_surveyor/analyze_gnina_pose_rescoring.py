@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Aggregate GNINA pose-rescoring outputs and generate consensus figures."""
+"""Aggregate GNINA rescoring outputs and render the ggplot2 figure suite."""
 
 from __future__ import annotations
 
 import csv
 import json
 import math
+import os
 import statistics
+import subprocess
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -420,6 +422,28 @@ def rank_agreement_figure(grouped_runs: dict[str, list[dict[str, Any]]], summari
     save_figure(fig, "vina_gnina_rank_agreement")
 
 
+def render_publication_figures() -> None:
+    """Render the presentation suite with the repository's ggplot2 backend."""
+    plotting_script = ROOT / "02_SURVEYOR" / "master_surveyor" / "plot_gnina_comparison.R"
+    if not plotting_script.is_file():
+        raise FileNotFoundError(plotting_script)
+    environment = os.environ.copy()
+    environment.update(
+        {
+            "OMP_NUM_THREADS": "16",
+            "OPENBLAS_NUM_THREADS": "1",
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": "1",
+        }
+    )
+    subprocess.run(
+        ["taskset", "-c", "0-15", "Rscript", str(plotting_script)],
+        check=True,
+        cwd=ROOT,
+        env=environment,
+    )
+
+
 def main() -> None:
     ANALYSIS.mkdir(parents=True, exist_ok=True)
     FIGURES.mkdir(parents=True, exist_ok=True)
@@ -468,9 +492,7 @@ def main() -> None:
     write_csv(ANALYSIS / "pose_scores.csv", pose_rows)
     write_csv(ANALYSIS / "run_summary.csv", run_rows)
     (ANALYSIS / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
-    paired_validation_figure(grouped_runs)
-    comparative_figure(grouped_runs)
-    rank_agreement_figure(grouped_runs, summaries)
+    render_publication_figures()
     print(json.dumps(summary, indent=2))
 
 

@@ -159,4 +159,6 @@ Recommended figures are:
 - `../figures/gnina_comparison/gnina_matched_comparison.png`
 - `../figures/gnina_comparison/vina_gnina_rank_agreement.png`
 
+The final figure suite was rendered from `../analysis/gnina/run_summary.csv` with R 4.5.2, ggplot2 3.4.4, patchwork 1.2.0, ragg, and svglite. PNG exports are 3408 pixels wide for widescreen presentations; PDF and SVG exports preserve vector text and geometry. The main comparison is an estimation plot of seed-paired alternate-minus-canonical effects rather than an unstructured score cloud. Canonical pose validation retains the pairing of selections from each Vina search, and the agreement dashboard displays the full run-level rank and correlation distributions.
+
 Machine-readable results are available in `../analysis/gnina/summary.json`, `../analysis/gnina/run_summary.csv`, and `../analysis/gnina/pose_scores.csv`. Per-run scored poses and execution logs are retained under `../systems/*/gnina_rescoring/`.
