@@ -1,7 +1,8 @@
-# AutoDock Vina all-candidate campaign: detailed technical findings
+# Protein–drug docking campaign: detailed AutoDock Vina and GNINA findings
 
 **Scope:** all eight candidate rows
 **Accepted expanded replicate records:** 54
+**GNINA rescored run ensembles / poses:** 45 / 738
 **Maximum CPU allocation:** 16 cores
 **Document status:** current authoritative findings report
 
@@ -12,6 +13,8 @@ All eight proposed rows were attempted, but the scientifically appropriate endpo
 The strongest new comparative finding is that both modeled BACE1 deletion isoforms reproducibly displaced verubecestat from the canonical crystallographic binding mode. BACE1-457 also showed a paired Vina score penalty of +1.225 ± 0.023 kcal/mol relative to canonical BACE1. This supports a structural hypothesis that the BACE1-457 deletion perturbs verubecestat recognition, but it remains model-derived and is not an experimental affinity measurement.
 
 The strongest canonical validation remains FYN–saracatinib: all nine independent top-ranked poses were below 2.0 Å RMSD. The most precise new control is CHRNA7–encenicline, with a mean top-pose RMSD of 0.297 Å across six runs.
+
+GNINA 1.3.3 rescoring added an orthogonal scoring view over 738 retained Vina poses from 45 run ensembles. It strongly reinforced both BACE1 deletion hypotheses and the severe CHRFAM7A B-face effect. It preserved acceptable canonical pose recovery for BACE1 (6/6) and CHRNA7 (6/6), but not for FYN (0/9 after CNN reranking). The FYN disagreement is reported explicitly and prevents describing the three canonical controls as uniformly supported by both scoring methods.
 
 ## 2. Confidence framework
 
@@ -57,6 +60,8 @@ FYN was validated by redocking crystallographic saracatinib from PDB 10DJ into t
 | Best-geometry pose score | −9.182 kcal/mol |
 
 This validates the specific canonical receptor preparation, saracatinib preparation, ligand-centered grid, and Vina search protocol for pose recovery. It does not validate a thermodynamic affinity, cellular response, or disease effect.
+
+GNINA did not reproduce the FYN pose ranking. The Vina rank-1 poses had mean CNNscore 0.599 ± 0.027 and mean CNNaffinity 7.570 ± 0.027, but GNINA selected poses with mean original Vina rank 8.11 and mean RMSD 2.884 ± 0.248 Å. None of the nine CNN-selected poses remained below 2 Å. The selected poses are still in the same general pocket, but the ranking fails the predefined cognate threshold. This is a genuine method disagreement: FYN remains a successful Vina redocking example, not a Vina/GNINA consensus example.
 
 The proposed alternate ends at residue 115. It lacks the entire SH2 and kinase domains and does not contain a complete SH3 domain. Because saracatinib binds the kinase ATP site, the alternate does not possess the molecular object being docked against. The correct result is **kinase pocket absent**, not a weak Vina score. This conclusion is structurally strong but biologically conditional on the novel transcript producing a stable protein.
 
@@ -115,6 +120,8 @@ Positive alternate-minus-canonical deltas indicate less favorable Vina scores un
 
 The BACE1-476 score change is small relative to the intrinsic limitations of docking scores, even though its pose displacement is reproducible. BACE1-457 shows both a reproducible pose shift and a larger score penalty. The appropriate conclusion is that BACE1-457 is the stronger mechanistic hypothesis, not that its experimental affinity is exactly 1.225 kcal/mol weaker.
 
+GNINA independently reinforced the direction and ordering of the BACE1 result when the same Vina rank-1 pose was rescored for each paired seed. Relative to canonical BACE1, the mean alternate-minus-canonical CNNaffinity change was −1.674 ± 0.012 for BACE1-476 and −3.290 ± 0.023 for BACE1-457. The corresponding CNNscore changes were −0.804 ± 0.007 and −0.879 ± 0.007. GNINA selected the canonical near-crystal pose in 6/6 runs (0.955 ± 0.006 Å), while neither alternate produced a CNN-selected pose below 2 Å. These model outputs are not kcal/mol and are not experimental pKd values; their value is the concordant within-system ordering **canonical > BACE1-476 > BACE1-457**.
+
 ## 6. CHRNA7/CHRFAM7A topology hypotheses
 
 ### 6.1 Structural construction
@@ -132,6 +139,8 @@ The 9QTO fusion extracellular domain was aligned to each side of the 7EKP A/B bi
 The A-face hypothesis generally retained a near-canonical pose, although one seed generated a larger displacement and increased the RMSD SD. The B-face hypothesis consistently displaced encenicline by approximately 8.45 Å and showed greater score variability. Therefore, the modeled effect depends strongly on which face of the binding site contains the fusion domain.
 
 This topology dependence is itself the key finding: an unspecified mixed-pentamer model cannot support a unique affinity prediction. Sample-specific CHRFAM7A genotype, transcript/protein expression, subunit stoichiometry, orientation, assembly, and surface localization are required before either numerical hypothesis can be assigned biological meaning.
+
+GNINA also preserved the topology ordering. Rescoring the matched Vina rank-1 pose gave alternate-minus-canonical CNNaffinity changes of −0.433 ± 0.266 for the A-face model and −2.686 ± 0.295 for the B-face model. CNNscore changed by −0.195 ± 0.109 and −0.859 ± 0.043, respectively. GNINA selected a sub-2 Å pose for canonical CHRNA7 in 6/6 runs (mean 1.847 Å), but in 0/6 runs for either hybrid. The B-face perturbation is therefore supported by both Vina and GNINA; the A-face effect remains smaller and more variable.
 
 ## 7. KIT–masitinib: reproducible canonical baseline, rejected alternate
 
@@ -204,6 +213,8 @@ Likewise, score SD and RMSD answer different questions:
 - an alternate-to-canonical RMSD indicates pose displacement in a shared frame, not validation of the alternate;
 - neither metric is an experimental dissociation constant or free energy.
 
+GNINA adds two more non-equivalent quantities. `CNNscore` ranks pose plausibility, whereas `CNNaffinity` is a machine-learning affinity prediction. Higher values are more favorable within the GNINA model, but neither is on the Vina kcal/mol scale. The primary consensus comparison rescored the same Vina rank-1 pose for each seed; the secondary analysis allowed GNINA to rerank the retained Vina ensemble. Because GNINA did not generate an independent pose ensemble, agreement constitutes scoring consensus rather than independent conformational validation.
+
 ## 12. Supported and unsupported claims
 
 ### 12.1 Supported
@@ -216,6 +227,8 @@ Likewise, score SD and RMSD answer different questions:
 6. The proposed 73-aa GABRA2 alternate cannot form the AZD7325 receptor site.
 7. The resolved CaV1.3/isradipine pocket is identical for canonical and CACNA1D-214 in the selected template.
 8. PDE9A alternate docking remains undefined without a specific coding-altered sequence.
+9. GNINA supports the direction and severity ordering of the BACE1 deletion effects and the CHRFAM7A topology dependence.
+10. GNINA and Vina disagree on the preferred FYN pose; only the Vina protocol passes the FYN top-pose RMSD criterion.
 
 ### 12.2 Unsupported
 
@@ -259,6 +272,7 @@ The most defensible presentation sequence is:
 3. The all-candidate status figure showing why numerical results were not forced for every alternate.
 4. CHRNA7/CHRFAM7A as a clearly labeled topology-sensitivity hypothesis.
 5. GABRA2 and CACNA1D as structural exclusion/negative-control examples.
+6. GNINA consensus as supporting evidence for BACE1 and the CHRFAM7A B-face hypothesis, with FYN disagreement shown rather than hidden.
 
 Recommended figures:
 
@@ -269,5 +283,8 @@ Recommended figures:
 - `../figures/expanded_campaign/3D_CHRNA7_canonical_encenicline.png`
 - `../figures/expanded_campaign/3D_CHRFAM7A_B_face_encenicline.png`
 - `../figures/expanded_campaign/3D_CHRNA7_topology_site_overlay.png`
+- `../figures/gnina_comparison/gnina_pose_selection_validation.png`
+- `../figures/gnina_comparison/gnina_matched_comparison.png`
+- `../figures/gnina_comparison/vina_gnina_rank_agreement.png`
 
-Machine-readable values and per-run provenance are available in `../analysis/aggregate/` and `../systems/`.
+Machine-readable values and per-run provenance are available in `../analysis/aggregate/`, `../analysis/gnina/`, and `../systems/`.

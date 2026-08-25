@@ -1,0 +1,170 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.8.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+              _
+             (_)
+   __ _ _ __  _ _ __   __ _
+  / _` | '_ \| | '_ \ / _` |
+ | (_| | | | | | | | | (_| |
+  \__, |_| |_|_|_| |_|\__,_|
+   __/ |
+  |___/
+
+gnina v1.3.3 master:6fe1ce2   Built Jun 30 2026.
+gnina is based on smina and AutoDock Vina.
+Please cite appropriately.
+
+Commandline: /opt/gnina --receptor /work/outputs/docking_campaign/systems/BACE1_verubecestat/prepared/bace1_5HU1_chain_A.pdbqt --ligand /out/input_poses.sdf --score_only --cnn_scoring rescore --cpu 16 --device 0 --out /out/scored_poses.sdf
+## Name gauss(o=0,_w=0.5,_c=8) gauss(o=3,_w=2,_c=8) repulsion(o=0,_c=8) hydrophobic(g=0.5,_b=1.5,_c=8) non_dir_h_bond(g=-0.7,_b=0,_c=8) num_tors_div
+Affinity: -9.51523 (kcal/mol)
+CNNscore: 0.91022
+CNNaffinity: 7.35090
+CNNvariance: 0.07345
+Intramolecular energy: -0.31998
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose01 107.42754 1530.79529 4.02037 32.23276 2.92236 0.00000
+Affinity: -8.40700 (kcal/mol)
+CNNscore: 0.08633
+CNNaffinity: 4.80306
+CNNvariance: 0.99026
+Intramolecular energy: -0.40180
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose02 64.61606 1303.28638 1.59867 25.22694 2.24925 0.00000
+Affinity: -8.27628 (kcal/mol)
+CNNscore: 0.04490
+CNNaffinity: 5.20003
+CNNvariance: 0.33565
+Intramolecular energy: -0.41644
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose03 60.78543 1401.78430 1.21813 24.69336 0.84272 0.00000
+Affinity: -8.28363 (kcal/mol)
+CNNscore: 0.08677
+CNNaffinity: 5.61174
+CNNvariance: 0.19118
+Intramolecular energy: -0.33268
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose04 68.23532 1466.13086 2.36993 39.25722 0.61948 0.00000
+Affinity: -8.93763 (kcal/mol)
+CNNscore: 0.26622
+CNNaffinity: 5.59534
+CNNvariance: 0.52648
+Intramolecular energy: 0.55408
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose05 63.00427 1359.76440 1.16588 31.17638 1.93866 0.00000
+Affinity: -7.97671 (kcal/mol)
+CNNscore: 0.02278
+CNNaffinity: 4.44514
+CNNvariance: 0.72132
+Intramolecular energy: -0.35508
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose06 51.00767 1284.84753 0.76886 23.84821 1.26973 0.00000
+Affinity: -8.83503 (kcal/mol)
+CNNscore: 0.14378
+CNNaffinity: 5.42073
+CNNvariance: 0.47013
+Intramolecular energy: 0.72295
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose07 81.44627 1295.25085 1.11402 22.23325 1.64234 0.00000
+Affinity: -7.78541 (kcal/mol)
+CNNscore: 0.08961
+CNNaffinity: 4.85061
+CNNvariance: 0.74750
+Intramolecular energy: -0.39892
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose08 71.80620 1312.12476 2.51166 22.62191 1.95387 0.00000
+Affinity: -8.72958 (kcal/mol)
+CNNscore: 0.05835
+CNNaffinity: 5.09371
+CNNvariance: 0.56390
+Intramolecular energy: 0.80112
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose09 73.36596 1371.99109 2.12606 30.46018 2.20363 0.00000
+Affinity: -7.70453 (kcal/mol)
+CNNscore: 0.05718
+CNNaffinity: 5.20729
+CNNvariance: 0.28974
+Intramolecular energy: -0.34004
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose10 72.66090 1268.56592 1.76762 24.74770 0.93147 0.00000
+Affinity: -7.56790 (kcal/mol)
+CNNscore: 0.02471
+CNNaffinity: 4.62279
+CNNvariance: 0.54701
+Intramolecular energy: -0.41232
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose11 50.96447 1308.77563 0.69371 26.14093 0.00000 0.00000
+Affinity: -7.38235 (kcal/mol)
+CNNscore: 0.02494
+CNNaffinity: 4.26111
+CNNvariance: 0.79837
+Intramolecular energy: -0.39137
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose12 49.41763 1157.34009 0.75058 18.65015 1.58011 0.00000
+Affinity: -7.51079 (kcal/mol)
+CNNscore: 0.05827
+CNNaffinity: 4.87543
+CNNvariance: 0.86569
+Intramolecular energy: -0.23291
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose13 57.75257 1254.63806 2.13527 27.69019 1.91915 0.00000
+Affinity: -7.57321 (kcal/mol)
+CNNscore: 0.02046
+CNNaffinity: 3.74712
+CNNvariance: 1.73017
+Intramolecular energy: -0.07316
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose14 61.95205 1224.61438 0.83787 5.56178 1.51858 0.00000
+Affinity: -7.88443 (kcal/mol)
+CNNscore: 0.33466
+CNNaffinity: 5.31117
+CNNvariance: 0.19657
+Intramolecular energy: 0.31434
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose15 65.15224 1141.24121 0.79258 26.02147 1.39305 0.00000
+Affinity: -7.91149 (kcal/mol)
+CNNscore: 0.15168
+CNNaffinity: 5.94490
+CNNvariance: 0.04714
+Intramolecular energy: 0.42280
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose16 64.96114 1323.07764 1.14928 32.26905 0.00000 0.00000
+Affinity: -7.39628 (kcal/mol)
+CNNscore: 0.54222
+CNNaffinity: 6.22566
+CNNvariance: 0.13953
+Intramolecular energy: -0.10574
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose17 68.86549 1168.30676 2.10510 25.98845 1.83320 0.00000
+Affinity: -7.59884 (kcal/mol)
+CNNscore: 0.02895
+CNNaffinity: 4.01236
+CNNvariance: 1.13774
+Intramolecular energy: 0.14677
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose18 72.15865 1210.09009 1.83281 12.89329 2.06460 0.00000
+Affinity: -7.38977 (kcal/mol)
+CNNscore: 0.06542
+CNNaffinity: 4.72518
+CNNvariance: 0.55876
+Intramolecular energy: -0.09229
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose19 63.53224 1132.50220 0.69811 26.14658 0.43552 0.00000
+Affinity: -7.81759 (kcal/mol)
+CNNscore: 0.08397
+CNNaffinity: 5.48680
+CNNvariance: 0.10875
+Intramolecular energy: 0.43286
+Term values, before weighting:
+## BACE1_verubecestat__canonical_obabel_seed1103_ex32__pose20 60.46999 1235.94849 0.96876 25.41242 1.00000 0.00000

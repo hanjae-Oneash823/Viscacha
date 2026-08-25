@@ -1,0 +1,133 @@
+{
+  "status": "complete",
+  "group": "FYN canonical",
+  "system": "FYN_saracatinib",
+  "seed": 2207,
+  "source_run": "vina_seed2207_ex32",
+  "source_result": "outputs/docking_campaign/systems/FYN_saracatinib/runs/vina_seed2207_ex32/result.json",
+  "source_poses": "outputs/docking_campaign/systems/FYN_saracatinib/runs/vina_seed2207_ex32/docked_poses.pdbqt",
+  "receptor": "outputs/docking_campaign/systems/FYN_saracatinib/prepared/fyn_chain_A.pdbqt",
+  "input_poses_sdf": "outputs/docking_campaign/systems/FYN_saracatinib/gnina_rescoring/vina_seed2207_ex32/input_poses.sdf",
+  "scored_poses_sdf": "outputs/docking_campaign/systems/FYN_saracatinib/gnina_rescoring/vina_seed2207_ex32/scored_poses.sdf",
+  "log": "outputs/docking_campaign/systems/FYN_saracatinib/gnina_rescoring/vina_seed2207_ex32/gnina.log",
+  "started_utc": "2026-08-25T06:43:53.833747+00:00",
+  "ended_utc": "2026-08-25T06:43:57.090546+00:00",
+  "elapsed_seconds": 3.257,
+  "protocol": {
+    "gnina_mode": "score_only",
+    "cnn_scoring": "rescore",
+    "cnn_model": "built-in default ensemble (implicit; no --cnn override)",
+    "coordinate_optimization": false,
+    "cpu": 16,
+    "cpuset": "0-15",
+    "host_gpu_device": 0
+  },
+  "qc": {
+    "input_pose_count": 10,
+    "scored_pose_count": 10,
+    "heavy_atom_coordinate_mismatches_at_0.001_angstrom": 0,
+    "coordinates_preserved": true
+  },
+  "poses": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -9.142,
+      "vina_rmsd_to_crystal_angstrom": 1.7568,
+      "gnina_score_only_vina_kcal_mol": -9.14291,
+      "cnn_score": 0.6420514584,
+      "cnn_affinity": 7.6017417908,
+      "cnn_affinity_variance": 0.1408491582,
+      "cnn_vs": 4.8807091713
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -9.114,
+      "vina_rmsd_to_crystal_angstrom": 2.7553,
+      "gnina_score_only_vina_kcal_mol": -8.98772,
+      "cnn_score": 0.7481104136,
+      "cnn_affinity": 7.719455719,
+      "cnn_affinity_variance": 0.1424234658,
+      "cnn_vs": 5.7750053406
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -9.0,
+      "vina_rmsd_to_crystal_angstrom": 3.1341,
+      "gnina_score_only_vina_kcal_mol": -8.70825,
+      "cnn_score": 0.4665874541,
+      "cnn_affinity": 7.4633407593,
+      "cnn_affinity_variance": 0.1373235434,
+      "cnn_vs": 3.4823012352
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -8.93,
+      "vina_rmsd_to_crystal_angstrom": 2.7592,
+      "gnina_score_only_vina_kcal_mol": -8.79279,
+      "cnn_score": 0.282828182,
+      "cnn_affinity": 7.2455573082,
+      "cnn_affinity_variance": 0.1905025691,
+      "cnn_vs": 2.0492477417
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -8.893,
+      "vina_rmsd_to_crystal_angstrom": 4.5353,
+      "gnina_score_only_vina_kcal_mol": -8.58599,
+      "cnn_score": 0.7423145175,
+      "cnn_affinity": 7.8132033348,
+      "cnn_affinity_variance": 0.356254667,
+      "cnn_vs": 5.7998542786
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -8.879,
+      "vina_rmsd_to_crystal_angstrom": 3.4822,
+      "gnina_score_only_vina_kcal_mol": -8.4437,
+      "cnn_score": 0.510166347,
+      "cnn_affinity": 7.3690543175,
+      "cnn_affinity_variance": 0.3800702393,
+      "cnn_vs": 3.7594435215
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -8.85,
+      "vina_rmsd_to_crystal_angstrom": 2.1752,
+      "gnina_score_only_vina_kcal_mol": -8.93072,
+      "cnn_score": 0.5906072259,
+      "cnn_affinity": 7.3557491302,
+      "cnn_affinity_variance": 0.1795975566,
+      "cnn_vs": 4.3443584442
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -8.766,
+      "vina_rmsd_to_crystal_angstrom": 2.9368,
+      "gnina_score_only_vina_kcal_mol": -8.85653,
+      "cnn_score": 0.7945404649,
+      "cnn_affinity": 7.9286923409,
+      "cnn_affinity_variance": 0.2101259232,
+      "cnn_vs": 6.2996668816
+    },
+    {
+      "pose_rank": 9,
+      "vina_affinity_kcal_mol": -8.707,
+      "vina_rmsd_to_crystal_angstrom": 2.5281,
+      "gnina_score_only_vina_kcal_mol": -8.75234,
+      "cnn_score": 0.2266144902,
+      "cnn_affinity": 7.0856060982,
+      "cnn_affinity_variance": 0.1749472171,
+      "cnn_vs": 1.6057009697
+    },
+    {
+      "pose_rank": 10,
+      "vina_affinity_kcal_mol": -8.482,
+      "vina_rmsd_to_crystal_angstrom": 9.4308,
+      "gnina_score_only_vina_kcal_mol": -8.62741,
+      "cnn_score": 0.0877591595,
+      "cnn_affinity": 6.0554714203,
+      "cnn_affinity_variance": 1.2014979124,
+      "cnn_vs": 0.5314230919
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# AutoDock Vina all-candidate campaign: detailed technical analysis process
+# Protein–drug docking campaign: detailed AutoDock Vina and GNINA analysis process
 
 **Analysis period:** 24–25 August 2026
 **Primary docking engine:** AutoDock Vina 1.2.7
@@ -50,8 +50,9 @@ The central validation criterion was a top-ranked heavy-atom pose RMSD below 2.0
 | Matplotlib | 3.10.9 | Quantitative figures |
 | ColabFold | 1.6.2 | BACE1 deletion-isoform structure prediction |
 | PyMOL open source | project `docking_viz` environment | Ray-traced structural figures |
+| GNINA | 1.3.3, commit `6fe1ce2` | CNN rescoring of retained Vina pose ensembles |
 
-GNINA was staged as a possible orthogonal CNN-based rescoring method. The available CUDA executable required `libcudnn.so.9`, which was not installed. No GNINA value was included in any table or conclusion; all reported numerical docking results are AutoDock Vina results.
+The initial GNINA executable could not load `libcudnn.so.9` on the host. This was resolved without altering the host CUDA stack by using the checksum-verified GNINA 1.3.3 CUDA 12.8 executable inside the NVIDIA CUDA 12.8.1/cuDNN runtime container. AutoDock Vina remained the conformational-search engine; GNINA was subsequently used in `--score_only` mode as an orthogonal CNN-based pose rescoring method.
 
 ## 4. Input provenance and structural triage
 
@@ -254,20 +255,59 @@ PyMOL rendered molecular views from the actual prepared proteins and stored dock
 - `02_SURVEYOR/master_surveyor/run_vina_redock.py`
 - `02_SURVEYOR/master_surveyor/run_expanded_docking_replicates.py`
 - `02_SURVEYOR/master_surveyor/analyze_expanded_docking_campaign.py`
+- `02_SURVEYOR/master_surveyor/run_gnina_pose_rescoring.py`
+- `02_SURVEYOR/master_surveyor/analyze_gnina_pose_rescoring.py`
 - `02_SURVEYOR/master_surveyor/render_expanded_docking_3d.pml`
 
-## 15. Methodological limitations
+## 15. Orthogonal GNINA pose rescoring
+
+### 15.1 Scope and rationale
+
+GNINA was applied only to the three systems with successful exact canonical redocking and a meaningful comparison endpoint: FYN, BACE1, and CHRNA7/CHRFAM7A. The retained Vina output comprised 45 independently seeded run ensembles and 738 poses: nine FYN runs and six runs for each of the three BACE1 and three CHRNA7/CHRFAM7A receptor groups. KIT, GABRA2, CACNA1D, and PDE9A were not included because CNN rescoring cannot repair an invalid modeled pocket, create an absent receptor, introduce an isoform difference into identical coordinates, restore omitted catalytic metals, or define an unspecified alternate sequence.
+
+This stage was designed as pose-preserving rescoring rather than independent redocking. Its purpose was to ask whether a CNN trained on three-dimensional protein–ligand environments supported the Vina-selected poses and within-system alternate trends. It did not ask GNINA to generate a new conformational ensemble.
+
+### 15.2 Runtime provenance and resource controls
+
+The official `gnina.cuda12.8.static` release for GNINA 1.3.3 was downloaded outside the Git repository. Its SHA-256 digest, `3340c1f49cd3c7c84d8699182a1c6af13c7fa2a22448d1204640446106f72172`, matched the digest published with release v1.3.3. The executable ran inside `nvidia/cuda:12.8.1-cudnn-runtime-ubuntu22.04` at repository digest `sha256:17e2934e1fa96152b14f78078bfbafd0f00f391df995dc6c641a720fce1202bb`. GPU calculations used host GPU 0, an RTX 4090.
+
+Pose conversion and orchestration used Python 3.10.20 from `/home/welcome3/anaconda3/envs/pocket_dock/bin/python`, with Meeko 0.7.1 and RDKit 2025.09.5. Each container was restricted with `--cpus 16` and `--cpuset-cpus 0-15`; GNINA additionally received `--cpu 16`, and `OMP_NUM_THREADS=16`. `OPENBLAS_NUM_THREADS` and `MKL_NUM_THREADS` were set to 1. Runs were executed serially. Complete runtime metadata are stored in `../analysis/gnina/runtime_metadata.json`.
+
+### 15.3 Pose conversion and coordinate-preservation gate
+
+Vina writes one multi-model PDBQT per run, whereas GNINA robustly accepts multiple ligands/poses as individual SDF records. Meeko reconstructed one RDKit molecule with one conformer per Vina model using the stored `REMARK SMILES`, `SMILES IDX`, and hydrogen-parent mappings. Each conformer was written as an SDF record with the source system, group, run, seed, Vina pose rank, Vina affinity, and fixed-frame RMSD retained as properties.
+
+GNINA was then called with the exact receptor PDBQT used by the source Vina run, the multi-record SDF, `--score_only`, `--cnn_scoring rescore`, and the built-in default CNN ensemble. No minimization or CNN-guided coordinate refinement was requested. GNINA returned `CNNscore`, `CNNaffinity`, `CNNaffinity_variance`, `CNN_VS`, and its empirical score field for every record.
+
+Because SDF writing and GNINA output can reorder atoms or remove hydrogens, coordinate preservation was tested with an order-independent heavy-atom signature: element identity and Cartesian coordinates rounded to 0.001 Å. All 738 input/output pose pairs matched exactly. Any mismatch would have stopped the workflow before aggregation.
+
+### 15.4 Primary and secondary comparisons
+
+Two complementary endpoints were kept separate:
+
+1. **Primary matched-pose rescoring:** GNINA values were read from the Vina rank-1 pose for each seed. Paired alternate-minus-canonical deltas were calculated on these pose-matched observations. This avoids bias from unequal numbers of retained poses among groups.
+2. **Secondary CNN reranking:** within each Vina ensemble, the pose with the highest `CNNscore` was selected. Its original Vina rank and precomputed fixed-frame RMSD were used to test whether GNINA preserved cognate pose recovery or preferred a displaced geometry.
+
+Within-run Spearman correlations compared Vina pose quality (`−Vina affinity`, so higher is better) with `CNNscore` and `CNNaffinity`. These correlations measure ranking agreement, not experimental accuracy. `CNNscore` was interpreted as pose confidence, whereas `CNNaffinity` was treated as an ML model output for within-system comparison. CNNaffinity was never subtracted from a Vina kcal/mol score.
+
+Primary outputs are `../analysis/gnina/pose_scores.csv`, `../analysis/gnina/run_summary.csv`, and `../analysis/gnina/summary.json`. Per-run input SDFs, scored SDFs, logs, QC, and JSON results are stored under each selected system's `gnina_rescoring/` directory.
+
+## 16. Methodological limitations
 
 Vina uses a simplified empirical scoring function and a rigid receptor. It omits explicit bulk-solvent thermodynamics, long-timescale conformational changes, membrane dynamics, protonation-state ensembles, induced fit, and cellular context. Membrane proteins were docked without an explicit lipid bilayer, and the protein-only PDE9A receptor omitted catalytic-site metals. Score differences of approximately 1 kcal/mol are therefore hypotheses, not measured free-energy changes.
 
 The BACE1 alternates are AlphaFold-derived single models without relaxation or ensemble sampling. The CHRFAM7A calculations depend on assumed subunit topology. The GABRA2 and PDE9A calculations are cross-docking rather than cognate validation. The CaV1.3 protocol did not rank its near-native amiodarone pose first. KIT-223 lacks an experimentally anchored local structure. Finally, transcript detection does not by itself prove translation, stability, assembly, localization, or pharmacological relevance of the alternate protein.
 
+GNINA rescoring is not fully independent validation because it evaluates conformations generated by Vina and GNINA itself inherits a Vina-derived empirical framework. Its CNN models may also have target-class or training-set biases. The canonical FYN disagreement demonstrates why CNN output was not treated as ground truth. The repeated seeds measure stability of the underlying Vina search; score-only GNINA evaluation is deterministic for a given receptor–pose pair and does not create additional biological replicates.
+
 These limitations define the appropriate use of the campaign: prioritization of structural hypotheses and presentation of one or more validated canonical docking examples, followed by targeted experimental validation.
 
-## 16. Method references
+## 17. Method references
 
 - Trott O, Olson AJ. AutoDock Vina: improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading. *Journal of Computational Chemistry* (2010). DOI: 10.1002/jcc.21334.
 - Eberhardt J, Santos-Martins D, Tillack AF, Forli S. AutoDock Vina 1.2.0: new docking methods, expanded force field, and Python bindings. *Journal of Chemical Information and Modeling* (2021). DOI: 10.1021/acs.jcim.1c00203.
 - Forli S et al. Computational protein–ligand docking and virtual drug screening with the AutoDock suite. *Nature Protocols* (2016). DOI: 10.1038/nprot.2016.051.
 - Jumper J et al. Highly accurate protein structure prediction with AlphaFold. *Nature* (2021). DOI: 10.1038/s41586-021-03819-2.
 - Mirdita M et al. ColabFold: making protein folding accessible to all. *Nature Methods* (2022). DOI: 10.1038/s41592-022-01488-1.
+- McNutt AT et al. GNINA 1.0: molecular docking with deep learning. *Journal of Cheminformatics* (2021). DOI: 10.1186/s13321-021-00522-2.
+- GNINA 1.3: the next increment in molecular docking with deep learning. *Journal of Cheminformatics* (2025). DOI: 10.1186/s13321-025-00973-x.

@@ -1,0 +1,163 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.8.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+              _
+             (_)
+   __ _ _ __  _ _ __   __ _
+  / _` | '_ \| | '_ \ / _` |
+ | (_| | | | | | | | | (_| |
+  \__, |_| |_|_|_| |_|\__,_|
+   __/ |
+  |___/
+
+gnina v1.3.3 master:6fe1ce2   Built Jun 30 2026.
+gnina is based on smina and AutoDock Vina.
+Please cite appropriately.
+
+Commandline: /opt/gnina --receptor /work/outputs/docking_campaign/systems/CHRNA7_encenicline/prepared/chrna7_chrFam7a_fusion_at_B_face_obabel.pdbqt --ligand /out/input_poses.sdf --score_only --cnn_scoring rescore --cpu 16 --device 0 --out /out/scored_poses.sdf
+## Name gauss(o=0,_w=0.5,_c=8) gauss(o=3,_w=2,_c=8) repulsion(o=0,_c=8) hydrophobic(g=0.5,_b=1.5,_c=8) non_dir_h_bond(g=-0.7,_b=0,_c=8) num_tors_div
+Affinity: -6.92557 (kcal/mol)
+CNNscore: 0.06739
+CNNaffinity: 4.01213
+CNNvariance: 1.96574
+Intramolecular energy: -0.08751
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose01 74.41814 1079.20386 2.92486 39.99635 0.98424 0.00000
+Affinity: -5.81565 (kcal/mol)
+CNNscore: 0.05650
+CNNaffinity: 3.62984
+CNNvariance: 1.24980
+Intramolecular energy: -0.31391
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose02 53.12249 761.25366 1.16301 30.12275 1.02375 0.00000
+Affinity: -5.68861 (kcal/mol)
+CNNscore: 0.07240
+CNNaffinity: 3.69039
+CNNvariance: 0.89551
+Intramolecular energy: -0.30479
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose03 49.95252 769.55426 1.39016 28.57644 1.31855 0.00000
+Affinity: -5.64786 (kcal/mol)
+CNNscore: 0.14964
+CNNaffinity: 4.34844
+CNNvariance: 1.58635
+Intramolecular energy: -0.29670
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose04 84.89043 1249.24170 5.34272 38.09431 0.00000 0.00000
+Affinity: -5.60897 (kcal/mol)
+CNNscore: 0.07077
+CNNaffinity: 3.53177
+CNNvariance: 1.62954
+Intramolecular energy: -0.31579
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose05 50.40638 791.70087 1.13046 28.07086 0.60397 0.00000
+Affinity: -5.52980 (kcal/mol)
+CNNscore: 0.07575
+CNNaffinity: 3.92601
+CNNvariance: 1.15636
+Intramolecular energy: -0.32893
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose06 66.10203 913.82159 2.50025 21.14877 0.80336 0.00000
+Affinity: -5.54386 (kcal/mol)
+CNNscore: 0.06611
+CNNaffinity: 3.44472
+CNNvariance: 1.35717
+Intramolecular energy: -0.31652
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose07 44.68816 767.60791 1.15212 29.55707 0.98023 0.00000
+Affinity: -5.54436 (kcal/mol)
+CNNscore: 0.17634
+CNNaffinity: 4.44004
+CNNvariance: 0.38857
+Intramolecular energy: -0.28468
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose08 70.57891 993.47925 3.30398 29.26544 0.52588 0.00000
+Affinity: -5.49220 (kcal/mol)
+CNNscore: 0.07700
+CNNaffinity: 3.30242
+CNNvariance: 1.41919
+Intramolecular energy: -0.27972
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose09 45.97168 754.59015 1.29000 26.83904 1.27800 0.00000
+Affinity: -5.46683 (kcal/mol)
+CNNscore: 0.07118
+CNNaffinity: 3.63694
+CNNvariance: 1.17662
+Intramolecular energy: -0.28268
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose10 50.09623 775.57758 1.24563 25.78982 0.79492 0.00000
+Affinity: -5.38464 (kcal/mol)
+CNNscore: 0.06161
+CNNaffinity: 3.88664
+CNNvariance: 1.12573
+Intramolecular energy: -0.27543
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose11 66.71278 927.99341 2.80908 18.21452 0.98287 0.00000
+Affinity: -5.28501 (kcal/mol)
+CNNscore: 0.25661
+CNNaffinity: 5.04410
+CNNvariance: 0.27307
+Intramolecular energy: -0.32138
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose12 73.63433 896.05530 3.57858 33.04586 0.86986 0.00000
+Affinity: -5.33220 (kcal/mol)
+CNNscore: 0.10060
+CNNaffinity: 4.18796
+CNNvariance: 1.13342
+Intramolecular energy: -0.23609
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose13 48.39987 862.14197 1.27668 10.23830 0.85472 0.00000
+Affinity: -5.20520 (kcal/mol)
+CNNscore: 0.05317
+CNNaffinity: 3.37405
+CNNvariance: 1.39184
+Intramolecular energy: -0.28258
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose14 57.08392 774.99524 1.64619 23.15289 0.60973 0.00000
+Affinity: -5.12223 (kcal/mol)
+CNNscore: 0.11601
+CNNaffinity: 4.85601
+CNNvariance: 1.14025
+Intramolecular energy: -0.32905
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose15 77.73805 1277.77002 5.67412 32.35391 0.00000 0.00000
+Affinity: -5.13115 (kcal/mol)
+CNNscore: 0.11720
+CNNaffinity: 4.93614
+CNNvariance: 0.48791
+Intramolecular energy: -0.30610
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose16 69.77537 778.21851 2.14560 12.72734 1.00865 0.00000
+Affinity: -5.09850 (kcal/mol)
+CNNscore: 0.11462
+CNNaffinity: 3.65927
+CNNvariance: 0.88065
+Intramolecular energy: -0.32547
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose17 54.44272 745.87061 1.68626 14.89728 1.37262 0.00000
+Affinity: -5.09465 (kcal/mol)
+CNNscore: 0.08553
+CNNaffinity: 4.08201
+CNNvariance: 0.76688
+Intramolecular energy: -0.29511
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose18 42.86510 836.23102 1.07054 10.55056 0.65221 0.00000
+Affinity: -4.73003 (kcal/mol)
+CNNscore: 0.08130
+CNNaffinity: 3.99437
+CNNvariance: 0.52304
+Intramolecular energy: -0.30926
+Term values, before weighting:
+## CHRNA7_encenicline__hybrid_B_face_seed3301_ex32__pose19 36.73976 765.83521 0.43035 5.85878 0.31220 0.00000

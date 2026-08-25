@@ -1,0 +1,223 @@
+{
+  "status": "complete",
+  "group": "CHRFAM7A at B face",
+  "system": "CHRNA7_encenicline",
+  "seed": 4409,
+  "source_run": "hybrid_B_face_seed4409_ex32",
+  "source_result": "outputs/docking_campaign/systems/CHRNA7_encenicline/runs/hybrid_B_face_seed4409_ex32/result.json",
+  "source_poses": "outputs/docking_campaign/systems/CHRNA7_encenicline/runs/hybrid_B_face_seed4409_ex32/docked_poses.pdbqt",
+  "receptor": "outputs/docking_campaign/systems/CHRNA7_encenicline/prepared/chrna7_chrFam7a_fusion_at_B_face_obabel.pdbqt",
+  "input_poses_sdf": "outputs/docking_campaign/systems/CHRNA7_encenicline/gnina_rescoring/hybrid_B_face_seed4409_ex32/input_poses.sdf",
+  "scored_poses_sdf": "outputs/docking_campaign/systems/CHRNA7_encenicline/gnina_rescoring/hybrid_B_face_seed4409_ex32/scored_poses.sdf",
+  "log": "outputs/docking_campaign/systems/CHRNA7_encenicline/gnina_rescoring/hybrid_B_face_seed4409_ex32/gnina.log",
+  "started_utc": "2026-08-25T06:43:19.650786+00:00",
+  "ended_utc": "2026-08-25T06:43:23.222609+00:00",
+  "elapsed_seconds": 3.572,
+  "protocol": {
+    "gnina_mode": "score_only",
+    "cnn_scoring": "rescore",
+    "cnn_model": "built-in default ensemble (implicit; no --cnn override)",
+    "coordinate_optimization": false,
+    "cpu": 16,
+    "cpuset": "0-15",
+    "host_gpu_device": 0
+  },
+  "qc": {
+    "input_pose_count": 19,
+    "scored_pose_count": 19,
+    "heavy_atom_coordinate_mismatches_at_0.001_angstrom": 0,
+    "coordinates_preserved": true
+  },
+  "poses": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -6.927,
+      "vina_rmsd_to_crystal_angstrom": 8.3847,
+      "gnina_score_only_vina_kcal_mol": -6.92899,
+      "cnn_score": 0.0657066926,
+      "cnn_affinity": 4.0312728882,
+      "cnn_affinity_variance": 1.927200675,
+      "cnn_vs": 0.2648816109
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -6.586,
+      "vina_rmsd_to_crystal_angstrom": 8.6567,
+      "gnina_score_only_vina_kcal_mol": -6.37995,
+      "cnn_score": 0.161181286,
+      "cnn_affinity": 4.670311451,
+      "cnn_affinity_variance": 1.2619305849,
+      "cnn_vs": 0.752766788
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -6.047,
+      "vina_rmsd_to_crystal_angstrom": 9.9244,
+      "gnina_score_only_vina_kcal_mol": -5.8097,
+      "cnn_score": 0.0565980375,
+      "cnn_affinity": 3.6260020733,
+      "cnn_affinity_variance": 1.1980255842,
+      "cnn_vs": 0.2052246034
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -5.919,
+      "vina_rmsd_to_crystal_angstrom": 7.3046,
+      "gnina_score_only_vina_kcal_mol": -5.67621,
+      "cnn_score": 0.1435479373,
+      "cnn_affinity": 4.3505949974,
+      "cnn_affinity_variance": 1.5300983191,
+      "cnn_vs": 0.6245189309
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -5.898,
+      "vina_rmsd_to_crystal_angstrom": 9.8596,
+      "gnina_score_only_vina_kcal_mol": -5.65466,
+      "cnn_score": 0.0723700821,
+      "cnn_affinity": 3.6172201633,
+      "cnn_affinity_variance": 0.9627344012,
+      "cnn_vs": 0.2617785335
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -5.853,
+      "vina_rmsd_to_crystal_angstrom": 9.3704,
+      "gnina_score_only_vina_kcal_mol": -5.6097,
+      "cnn_score": 0.0721567124,
+      "cnn_affinity": 3.5325763226,
+      "cnn_affinity_variance": 1.6166840792,
+      "cnn_vs": 0.2548990846
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -5.796,
+      "vina_rmsd_to_crystal_angstrom": 6.4503,
+      "gnina_score_only_vina_kcal_mol": -5.54357,
+      "cnn_score": 0.0778808817,
+      "cnn_affinity": 3.9510643482,
+      "cnn_affinity_variance": 1.1354640722,
+      "cnn_vs": 0.3077123761
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -5.792,
+      "vina_rmsd_to_crystal_angstrom": 9.8876,
+      "gnina_score_only_vina_kcal_mol": -5.54301,
+      "cnn_score": 0.0631825253,
+      "cnn_affinity": 3.4390480518,
+      "cnn_affinity_variance": 1.3039144278,
+      "cnn_vs": 0.2172877342
+    },
+    {
+      "pose_rank": 9,
+      "vina_affinity_kcal_mol": -5.754,
+      "vina_rmsd_to_crystal_angstrom": 8.579,
+      "gnina_score_only_vina_kcal_mol": -5.55266,
+      "cnn_score": 0.1889009178,
+      "cnn_affinity": 4.4649882317,
+      "cnn_affinity_variance": 0.342389673,
+      "cnn_vs": 0.8434403539
+    },
+    {
+      "pose_rank": 10,
+      "vina_affinity_kcal_mol": -5.725,
+      "vina_rmsd_to_crystal_angstrom": 10.0027,
+      "gnina_score_only_vina_kcal_mol": -5.5004,
+      "cnn_score": 0.0745255277,
+      "cnn_affinity": 3.2892582417,
+      "cnn_affinity_variance": 1.4594830275,
+      "cnn_vs": 0.2451337129
+    },
+    {
+      "pose_rank": 11,
+      "vina_affinity_kcal_mol": -5.677,
+      "vina_rmsd_to_crystal_angstrom": 9.4411,
+      "gnina_score_only_vina_kcal_mol": -5.46588,
+      "cnn_score": 0.0708043873,
+      "cnn_affinity": 3.6343991756,
+      "cnn_affinity_variance": 1.180872798,
+      "cnn_vs": 0.2573314011
+    },
+    {
+      "pose_rank": 12,
+      "vina_affinity_kcal_mol": -5.546,
+      "vina_rmsd_to_crystal_angstrom": 8.5673,
+      "gnina_score_only_vina_kcal_mol": -5.29567,
+      "cnn_score": 0.2553706169,
+      "cnn_affinity": 5.0425887108,
+      "cnn_affinity_variance": 0.2746387422,
+      "cnn_vs": 1.2877290249
+    },
+    {
+      "pose_rank": 13,
+      "vina_affinity_kcal_mol": -5.512,
+      "vina_rmsd_to_crystal_angstrom": 8.8289,
+      "gnina_score_only_vina_kcal_mol": -5.33891,
+      "cnn_score": 0.1020514145,
+      "cnn_affinity": 4.2227244377,
+      "cnn_affinity_variance": 1.1207863092,
+      "cnn_vs": 0.4309349954
+    },
+    {
+      "pose_rank": 14,
+      "vina_affinity_kcal_mol": -5.382,
+      "vina_rmsd_to_crystal_angstrom": 5.1573,
+      "gnina_score_only_vina_kcal_mol": -5.1187,
+      "cnn_score": 0.1181757078,
+      "cnn_affinity": 4.8733096123,
+      "cnn_affinity_variance": 1.084851861,
+      "cnn_vs": 0.5759068131
+    },
+    {
+      "pose_rank": 15,
+      "vina_affinity_kcal_mol": -5.254,
+      "vina_rmsd_to_crystal_angstrom": 9.0349,
+      "gnina_score_only_vina_kcal_mol": -5.01306,
+      "cnn_score": 0.3660620451,
+      "cnn_affinity": 4.5522542,
+      "cnn_affinity_variance": 0.5435931683,
+      "cnn_vs": 1.6664074659
+    },
+    {
+      "pose_rank": 16,
+      "vina_affinity_kcal_mol": -5.252,
+      "vina_rmsd_to_crystal_angstrom": 10.5254,
+      "gnina_score_only_vina_kcal_mol": -5.04637,
+      "cnn_score": 0.1166238561,
+      "cnn_affinity": 3.6467514038,
+      "cnn_affinity_variance": 0.7440125346,
+      "cnn_vs": 0.425298214
+    },
+    {
+      "pose_rank": 17,
+      "vina_affinity_kcal_mol": -5.165,
+      "vina_rmsd_to_crystal_angstrom": 8.8918,
+      "gnina_score_only_vina_kcal_mol": -4.91735,
+      "cnn_score": 0.0896082446,
+      "cnn_affinity": 4.0349617004,
+      "cnn_affinity_variance": 0.7688755989,
+      "cnn_vs": 0.3615658283
+    },
+    {
+      "pose_rank": 18,
+      "vina_affinity_kcal_mol": -5.105,
+      "vina_rmsd_to_crystal_angstrom": 8.4148,
+      "gnina_score_only_vina_kcal_mol": -4.87902,
+      "cnn_score": 0.4086878598,
+      "cnn_affinity": 5.0587368011,
+      "cnn_affinity_variance": 0.1635263711,
+      "cnn_vs": 2.0674443245
+    },
+    {
+      "pose_rank": 19,
+      "vina_affinity_kcal_mol": -4.878,
+      "vina_rmsd_to_crystal_angstrom": 9.2757,
+      "gnina_score_only_vina_kcal_mol": -4.63398,
+      "cnn_score": 0.0758039653,
+      "cnn_affinity": 3.9051952362,
+      "cnn_affinity_variance": 0.6707323194,
+      "cnn_vs": 0.2960292697
+    }
+  ]
+}

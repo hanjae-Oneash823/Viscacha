@@ -1,0 +1,100 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.8.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+              _
+             (_)
+   __ _ _ __  _ _ __   __ _
+  / _` | '_ \| | '_ \ / _` |
+ | (_| | | | | | | | | (_| |
+  \__, |_| |_|_|_| |_|\__,_|
+   __/ |
+  |___/
+
+gnina v1.3.3 master:6fe1ce2   Built Jun 30 2026.
+gnina is based on smina and AutoDock Vina.
+Please cite appropriately.
+
+Commandline: /opt/gnina --receptor /work/outputs/docking_campaign/systems/FYN_saracatinib/prepared/fyn_chain_A.pdbqt --ligand /out/input_poses.sdf --score_only --cnn_scoring rescore --cpu 16 --device 0 --out /out/scored_poses.sdf
+## Name gauss(o=0,_w=0.5,_c=8) gauss(o=3,_w=2,_c=8) repulsion(o=0,_c=8) hydrophobic(g=0.5,_b=1.5,_c=8) non_dir_h_bond(g=-0.7,_b=0,_c=8) num_tors_div
+Affinity: -9.15745 (kcal/mol)
+CNNscore: 0.60204
+CNNaffinity: 7.60989
+CNNvariance: 0.11631
+Intramolecular energy: -1.72276
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose01 94.05285 1978.05066 1.38263 25.36515 0.28478 0.00000
+Affinity: -8.97444 (kcal/mol)
+CNNscore: 0.78859
+CNNaffinity: 7.75548
+CNNvariance: 0.12452
+Intramolecular energy: -1.92937
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose02 93.75774 1922.06042 1.65185 26.09522 0.67832 0.00000
+Affinity: -8.71450 (kcal/mol)
+CNNscore: 0.40447
+CNNaffinity: 7.36769
+CNNvariance: 0.20262
+Intramolecular energy: -2.11172
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose03 89.44289 1928.05261 1.53408 27.25415 0.00000 0.00000
+Affinity: -8.80810 (kcal/mol)
+CNNscore: 0.28308
+CNNaffinity: 7.21534
+CNNvariance: 0.21425
+Intramolecular energy: -1.92696
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose04 83.45557 1896.59119 1.49463 18.45880 1.34126 0.00000
+Affinity: -8.47873 (kcal/mol)
+CNNscore: 0.57757
+CNNaffinity: 7.40273
+CNNvariance: 0.39142
+Intramolecular energy: -2.23873
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose05 87.64497 1839.61096 1.77860 26.24376 0.70617 0.00000
+Affinity: -8.62550 (kcal/mol)
+CNNscore: 0.71686
+CNNaffinity: 7.81997
+CNNvariance: 0.31909
+Intramolecular energy: -1.99166
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose06 102.39825 2071.18896 4.17646 39.62716 0.77737 0.00000
+Affinity: -8.72505 (kcal/mol)
+CNNscore: 0.84882
+CNNaffinity: 7.81062
+CNNvariance: 0.31072
+Intramolecular energy: -1.75329
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose07 83.23824 1845.71045 1.51477 25.12046 1.22462 0.00000
+Affinity: -8.84637 (kcal/mol)
+CNNscore: 0.76135
+CNNaffinity: 7.62153
+CNNvariance: 0.08550
+Intramolecular energy: -1.55714
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose08 85.10818 1899.59351 1.31950 25.09511 0.66377 0.00000
+Affinity: -8.25749 (kcal/mol)
+CNNscore: 0.39635
+CNNaffinity: 7.34816
+CNNvariance: 0.09710
+Intramolecular energy: -2.22878
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose09 75.09142 1826.07117 1.59011 19.11279 1.18865 0.00000
+Affinity: -8.58639 (kcal/mol)
+CNNscore: 0.12687
+CNNaffinity: 5.86328
+CNNvariance: 1.58461
+Intramolecular energy: -1.67663
+Term values, before weighting:
+## FYN_saracatinib__vina_seed1103_ex32__pose10 86.83017 1799.19324 1.39469 15.98831 1.44235 0.00000

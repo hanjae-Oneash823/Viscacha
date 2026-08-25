@@ -6,7 +6,9 @@ This directory contains the complete AutoDock Vina candidate campaign. All CPU-b
 
 - Scientific conclusions: [`docs/KEY_FINDINGS.md`](docs/KEY_FINDINGS.md)
 - Detailed workflow: [`docs/ANALYSIS_PROCESS.md`](docs/ANALYSIS_PROCESS.md)
+- GNINA comparison: [`docs/GNINA_COMPARISON.md`](docs/GNINA_COMPARISON.md)
 - Aggregate results: [`analysis/aggregate/expanded_summary.json`](analysis/aggregate/expanded_summary.json)
+- GNINA aggregate: [`analysis/gnina/summary.json`](analysis/gnina/summary.json)
 - Candidate disposition table: [`analysis/aggregate/candidate_status.csv`](analysis/aggregate/candidate_status.csv)
 - Presentation figures: [`figures/expanded_campaign/README.md`](figures/expanded_campaign/README.md)
 
@@ -18,12 +20,15 @@ docking_campaign/
 ├── docs/
 │   ├── KEY_FINDINGS.md       current scientific interpretation
 │   ├── ANALYSIS_PROCESS.md   current detailed workflow
+│   ├── GNINA_COMPARISON.md   CNN rescoring methods and findings
 │   └── archive/              superseded preliminary reports
 ├── analysis/
 │   ├── aggregate/            campaign-level CSV and JSON summaries
+│   ├── gnina/                GNINA pose-level and run-level comparisons
 │   └── metadata/             shared input and interface provenance
 ├── figures/
 │   ├── expanded_campaign/    current presentation-ready plots and 3D renders
+│   ├── gnina_comparison/     Vina/GNINA consensus and disagreement figures
 │   ├── preliminary/          earlier standalone figures
 │   └── presentation/         presentation-layout assets and exports
 ├── systems/                    one self-contained directory per protein–drug system
@@ -38,6 +43,7 @@ Each directory under `systems/` retains the original audit structure where appli
 - `models/`: predicted alternate structures and model-quality outputs;
 - `prepared/`: docking-ready receptors, ligands, and staging metadata;
 - `runs/`: raw docked poses plus one `result.json` per run;
+- `gnina_rescoring/`: pose-preserving CNN rescoring inputs, outputs, logs, and QC;
 - `logs/`: execution logs;
 - `analysis/` and `figures/`: system-specific summaries and legacy figures.
 
