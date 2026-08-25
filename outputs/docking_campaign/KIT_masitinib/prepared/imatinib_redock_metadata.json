@@ -1,0 +1,15 @@
+{
+  "pdb_id": "1T46",
+  "experimental_ligand": "STI (imatinib)",
+  "center_A": [
+    26.181,
+    26.061,
+    40.364
+  ],
+  "box_size_A": [
+    20.0,
+    17.56,
+    27.226
+  ],
+  "heavy_atom_count": 37
+}

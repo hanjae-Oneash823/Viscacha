@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="744.48pt" height="254.837344pt" viewBox="0 0 744.48 254.837344" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-25T00:23:16.706804</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 254.837344 
+L 744.48 254.837344 
+L 744.48 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 149.16 123.818267 
+L 710.24 123.818267 
+L 710.24 80.314267 
+L 149.16 80.314267 
+z
+" clip-path="url(#pc01e75436e)" style="fill: #edf1f4"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 217.097695 125.156851 
+L 300.639064 125.156851 
+Q 300.672864 125.156851 300.672864 120.973775 
+L 300.672864 83.158759 
+Q 300.672864 78.975682 300.639064 78.975682 
+L 217.097695 78.975682 
+Q 217.063895 78.975682 217.063895 83.158759 
+L 217.063895 120.973775 
+Q 217.063895 125.156851 217.097695 125.156851 
+z
+" clip-path="url(#pc01e75436e)" style="fill: #9bd8d0; stroke: #ffffff; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 305.909241 125.156851 
+L 415.571653 125.156851 
+Q 415.605453 125.156851 415.605453 120.973775 
+L 415.605453 83.158759 
+Q 415.605453 78.975682 415.571653 78.975682 
+L 305.909241 78.975682 
+Q 305.875441 78.975682 305.875441 83.158759 
+L 305.875441 120.973775 
+Q 305.875441 125.156851 305.909241 125.156851 
+z
+" clip-path="url(#pc01e75436e)" style="fill: #abc9df; stroke: #ffffff; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 431.290247 125.156851 
+L 692.454707 125.156851 
+Q 692.488507 125.156851 692.488507 120.973775 
+L 692.488507 83.158759 
+Q 692.488507 78.975682 692.454707 78.975682 
+L 431.290247 78.975682 
+Q 431.256447 78.975682 431.256447 83.158759 
+L 431.256447 120.973775 
+Q 431.256447 125.156851 431.290247 125.156851 
+z
+" clip-path="url(#pc01e75436e)" style="fill: #f3c69d; stroke: #ffffff; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 149.182984 210.491621 
+L 269.293813 210.491621 
+Q 269.327613 210.491621 269.327613 206.308544 
+L 269.327613 168.493528 
+Q 269.327613 164.310451 269.293813 164.310451 
+L 149.182984 164.310451 
+Q 149.149184 164.310451 149.149184 168.493528 
+L 149.149184 206.308544 
+Q 149.149184 210.491621 149.182984 210.491621 
+z
+" clip-path="url(#pc01e75436e)" style="fill: #e0524d; opacity: 0.88"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 269.316797 199.782944 
+L 269.316797 143.227744 
+" clip-path="url(#pc01e75436e)" style="fill: none; stroke: #e0524d; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 11.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #637485" x="7.2" y="105.239548" transform="rotate(-0 7.2 105.239548)">Canonical FYN</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #637485" x="7.2" y="190.574317" transform="rotate(-0 7.2 190.574317)">Alternate product</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="258.86838" y="105.101579" transform="rotate(-0 258.86838 105.101579)">SH3</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="360.740447" y="105.101579" transform="rotate(-0 360.740447 105.101579)">SH2</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="561.872477" y="105.101579" transform="rotate(-0 561.872477 105.101579)">kinase</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e0524d" x="282.836797" y="190.712286" transform="rotate(-0 282.836797 190.712286)">ends at residue 115</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #637485" x="149.16" y="235.924728" transform="rotate(-0 149.16 235.924728)">No complete SH3, SH2, or kinase domain is retained.</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #637485" x="710.24" y="138.877344" transform="rotate(-0 710.24 138.877344)">537 aa</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #17212b" x="7.2" y="20.117344" transform="rotate(-0 7.2 20.117344)">Predicted alternate FYN product lacks the validated kinase pocket</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc01e75436e">
+   <rect x="7.2" y="30.117344" width="730.08" height="217.52"/>
+  </clipPath>
+ </defs>
+</svg>

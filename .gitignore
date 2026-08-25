@@ -7,6 +7,9 @@ outputs/junior_surveyor/ref/
 outputs/master_surveyor/cache/
 outputs/00_PreAggregation_QC/filtered_adata/
 
+# Downloaded GNINA executable (external binary; exceeds GitHub's file limit)
+outputs/docking_campaign/bin/gnina.cuda12.8.static
+
 # Python
 __pycache__/
 *.pyc

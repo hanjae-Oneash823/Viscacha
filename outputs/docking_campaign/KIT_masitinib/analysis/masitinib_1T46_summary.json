@@ -1,0 +1,14 @@
+{
+  "pocket_template": "experimental c-KIT kinase domain PDB 1T46 (imatinib-bound)",
+  "ligand": "masitinib",
+  "n_independent_vina_runs": 9,
+  "score_mean_kcal_mol": -12.817,
+  "score_median_kcal_mol": -12.814,
+  "score_sd_kcal_mol": 0.032,
+  "score_range_kcal_mol": [
+    -12.872,
+    -12.759
+  ],
+  "scope": "Canonical c-KIT only; this is not a canonical-versus-KIT-223 affinity comparison.",
+  "important_limitation": "The KIT-223 deletion site (canonical residue 715) lies in a kinase-insert segment unresolved in PDB 1T46. A comparative result requires a separately rebuilt and validated loop model."
+}

@@ -1,0 +1,22 @@
+{
+  "pdb_id": "8E59",
+  "protein_chain": "A",
+  "experimental_ligand": "amiodarone (3PE)",
+  "ligand_residue": 2203,
+  "modelled_cacna1d_residue_range": [
+    121,
+    1589
+  ],
+  "CACNA1D_214_length": 1625,
+  "interpretation": "The entire experimental ligand template lies before the CACNA1D-214 truncation; therefore the template supports a shared-pocket control, not a differential docking claim.",
+  "center": [
+    137.086,
+    151.02,
+    168.491
+  ],
+  "box_size": [
+    16.624,
+    18.859,
+    28.006
+  ]
+}\n

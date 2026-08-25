@@ -1,0 +1,26 @@
+{
+  "template_pdb": "1T46",
+  "template_ligand": "STI (imatinib)",
+  "masitinib_smiles": "Cc1ccc(cc1Nc2nc(cs2)c3cccnc3)NC(=O)c4ccc(cc4)CN5CCN(CC5)C",
+  "common_grid_center_A": [
+    26.181,
+    26.061,
+    40.364
+  ],
+  "common_grid_size_A": [
+    20.0,
+    17.56,
+    27.226
+  ],
+  "canonical": {
+    "matched_ca": 297,
+    "alignment_rmsd_A": 1.728,
+    "mean_model_plddt": 78.52
+  },
+  "kit_223": {
+    "matched_ca": 297,
+    "alignment_rmsd_A": 1.332,
+    "mean_model_plddt": 76.7
+  },
+  "interpretation": "KIT-223 differs by one residue at canonical position 715. Comparative docking is exploratory and requires model-quality/pose inspection; it does not alone demonstrate an affinity difference."
+}

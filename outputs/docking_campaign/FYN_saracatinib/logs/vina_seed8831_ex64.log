@@ -1,0 +1,91 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 8831) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/FYN_saracatinib/prepared/fyn_chain_A.pdbqt",
+  "ligand": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/FYN_saracatinib/prepared/saracatinib_H8H_A601.pdbqt",
+  "center": [
+    -11.255,
+    14.853,
+    -9.445
+  ],
+  "box_size": [
+    20.0,
+    20.0,
+    26.0
+  ],
+  "seed": 8831,
+  "cpu": 16,
+  "exhaustiveness": 64,
+  "n_poses_requested": 10,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -9.2,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 1.9778
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -9.044,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 2.7602
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -8.914,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 3.3902
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -8.875,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 2.8183
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -8.855,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 4.6186
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -8.836,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 2.1572
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -8.744,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 2.9365
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -8.692,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 2.1752
+    },
+    {
+      "pose_rank": 9,
+      "vina_affinity_kcal_mol": -8.59,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.5819
+    },
+    {
+      "pose_rank": 10,
+      "vina_affinity_kcal_mol": -8.483,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.8328
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1         -9.2          0          0
+   2       -9.044      1.553       2.02
+   3       -8.914      1.642      2.576
+   4       -8.875      1.754      2.567
+   5       -8.855      2.887      4.101
+   6       -8.836      2.256       2.96
+   7       -8.744      2.692      3.641
+   8       -8.692       1.92      2.577
+   9        -8.59      2.659      9.415
+  10       -8.483      4.509      7.814
+

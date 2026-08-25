@@ -1,0 +1,71 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 20260824) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "outputs/docking_campaign/KIT_masitinib/prepared/kit_1T46_chain_A.pdbqt",
+  "ligand": "outputs/docking_campaign/KIT_masitinib/prepared/masitinib.pdbqt",
+  "center": [
+    26.181,
+    26.061,
+    40.364
+  ],
+  "box_size": [
+    22.0,
+    20.0,
+    28.0
+  ],
+  "seed": 20260824,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 10,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -12.803,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 54.6626
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -11.9,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 58.536
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -10.311,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 52.4728
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -10.196,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 58.4122
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -10.167,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 62.8793
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -10.061,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 52.0863
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1        -12.8          0          0
+   2        -11.9      2.846      12.73
+   3       -10.31      3.663      11.93
+   4        -10.2      2.767      13.21
+   5       -10.17      6.055      13.18
+   6       -10.06      3.858      12.49
+   7       -9.754      3.549      14.05
+   8       -9.604      3.538      13.08
+   9        -9.45      1.984      2.848
+  10       -9.247      3.859      6.749
+

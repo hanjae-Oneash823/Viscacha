@@ -1,0 +1,26 @@
+{
+  "pdb_id": "10DJ",
+  "protein_chain": "A",
+  "experimental_ligand": {
+    "resname": "H8H",
+    "chain": "A",
+    "resseq": 601
+  },
+  "heavy_atom_count": 38,
+  "crystal_ligand_center_angstrom": [
+    -11.255,
+    14.853,
+    -9.445
+  ],
+  "crystal_ligand_extent_angstrom": [
+    8.155,
+    8.711,
+    14.715
+  ],
+  "recommended_vina_box_size_angstrom": [
+    18.155,
+    18.711,
+    24.715
+  ],
+  "note": "Box is ligand extent plus 10 A total padding; validate and enlarge only if poses are clipped."
+}

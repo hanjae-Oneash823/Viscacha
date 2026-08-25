@@ -1,0 +1,10 @@
+run,seed,exhaustiveness,vina_affinity_kcal_mol
+masitinib_1T46_seed1103_ex32,1103,32,-12.808
+masitinib_1T46_seed20260824_ex32,20260824,32,-12.803
+masitinib_1T46_seed2207_ex32,2207,32,-12.793
+masitinib_1T46_seed3301_ex32,3301,32,-12.759
+masitinib_1T46_seed4409_ex32,4409,32,-12.831
+masitinib_1T46_seed5519_ex64,5519,64,-12.872
+masitinib_1T46_seed6619_ex64,6619,64,-12.83
+masitinib_1T46_seed7723_ex64,7723,64,-12.814
+masitinib_1T46_seed8831_ex64,8831,64,-12.84

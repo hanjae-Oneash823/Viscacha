@@ -1,0 +1,81 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 8831) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/KIT_masitinib/prepared/kit_1T46_chain_A.pdbqt",
+  "ligand": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/KIT_masitinib/prepared/masitinib.pdbqt",
+  "center": [
+    26.181,
+    26.061,
+    40.364
+  ],
+  "box_size": [
+    22.0,
+    20.0,
+    28.0
+  ],
+  "seed": 8831,
+  "cpu": 16,
+  "exhaustiveness": 64,
+  "n_poses_requested": 10,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -12.84,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 54.6585
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -12.121,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 54.9032
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -11.946,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 58.5265
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -10.58,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 61.5896
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -10.302,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 52.5098
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -10.119,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 52.2611
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -9.981,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 58.1258
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -9.925,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 63.0786
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -12.84          0          0
+   2       -12.12     0.7972      1.314
+   3       -11.95      2.852      12.76
+   4       -10.58          5       10.3
+   5        -10.3      3.659      11.93
+   6       -10.12      3.776      12.44
+   7       -9.981       2.73      12.89
+   8       -9.925      6.232      13.32
+   9       -9.683      3.629      14.13
+  10       -9.614      3.681      13.87
+
