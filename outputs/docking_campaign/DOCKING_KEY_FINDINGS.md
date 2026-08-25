@@ -3,13 +3,15 @@
 **Status:** Preliminary computational results  
 **Primary result:** successful canonical FYN–saracatinib pose-recovery validation
 
+> **Update:** The expanded all-candidate campaign is reported in `EXPANDED_DOCKING_KEY_FINDINGS.md`. The original CaV1.3 control below used the wrong 8E59 residue (`3PE`, a lipid) because of a ligand-code error. The corrected amiodarone ligand is `BBI A2201`; the corrected results in this document supersede the original CaV1.3 values.
+
 ## Executive summary
 
 The strongest result is the FYN–saracatinib redocking experiment. AutoDock Vina repeatedly recovered saracatinib in the experimentally observed FYN binding pocket: all 9 independent runs produced a top-ranked pose below the standard 2 Å RMSD threshold.
 
 The KIT–masitinib calculation was also numerically stable across repeated runs, but it is only a canonical c-KIT baseline. A KIT-223 comparison cannot yet be supported because the altered residue is located in a region missing from the experimental structure.
 
-The CACNA1D/CaV1.3 control did not recover its crystallographic ligand pose and was excluded from interpretation.
+The corrected CACNA1D/CaV1.3 control recovered a near-native pose only at rank 7, not as the top-ranked pose, and was therefore retained only as an exploratory control.
 
 ## 1. FYN–saracatinib is the successful validation example
 
@@ -89,16 +91,14 @@ The correct presentation statement is:
 
 > Canonical c-KIT docking was reproducible, but an isoform comparison was not performed because the altered residue is unresolved in the experimental template.
 
-## 5. CACNA1D/CaV1.3 control failed pose recovery
+## 5. CACNA1D/CaV1.3 corrected control
 
-The CaV1.3/amiodarone control used PDB 8E59 and one Vina run at exhaustiveness 32. Its top pose had:
+The initial run mistakenly extracted `3PE`, a phosphatidylethanolamine lipid, instead of amiodarone. PDB 8E59 identifies amiodarone as `BBI A2201`. After correcting the input, the cognate control produced:
 
-- Vina score: −0.649 kcal/mol
-- fixed-frame heavy-atom RMSD: 10.89 Å
+- top-ranked pose: −1.041 kcal/mol and 14.95 Å RMSD;
+- best near-native pose: rank 7, 1.56 Å RMSD.
 
-An RMSD of 10.89 Å is far above the 2 Å validation threshold. The protocol did not recover the experimental ligand position, so no CACNA1D drug score or isoform conclusion was carried forward.
-
-This is a useful negative result: it shows that the workflow did not label every completed calculation as a success.
+Because Vina did not rank the near-native pose first, this is not a successful top-pose validation. Isradipine was therefore retained only as an exploratory shared-pocket control. The resolved CaV1.3 coordinates end before the CACNA1D-214 truncation, so canonical and alternate pocket coordinates are identical in this template.
 
 ## 6. Overall conclusions
 
@@ -108,7 +108,7 @@ This is a useful negative result: it shows that the workflow did not label every
 2. **The predicted short FYN product lacks the validated kinase pocket.** This is a structural pocket-loss result, not a numerical affinity comparison.
 3. **Canonical KIT–masitinib docking is numerically reproducible.** The nine top scores have a standard deviation of only 0.032 kcal/mol.
 4. **KIT-223 remains unresolved.** A locally validated kinase-insert loop model is required before an isoform score can be defended.
-5. **CACNA1D was a failed control and was excluded.** It should not be presented as supporting evidence.
+5. **CACNA1D is an exploratory shared-pocket control.** The corrected near-native amiodarone pose was rank 7 rather than rank 1, so it should not be presented as a validated affinity result.
 
 ### Unsupported conclusions to avoid
 
@@ -143,4 +143,3 @@ For the overall interpretation:
 3. Repeat KIT-223 docking only after the altered pocket model passes structural quality checks.
 4. Add orthogonal rescoring or interaction-fingerprint analysis after the GNINA CUDA dependency is repaired.
 5. Test prioritized predictions experimentally using biochemical or cellular assays.
-

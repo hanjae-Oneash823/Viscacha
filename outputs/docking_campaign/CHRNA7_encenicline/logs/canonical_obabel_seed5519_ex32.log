@@ -1,0 +1,90 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 5519) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/chrna7_7EKP_pentamer.pdbqt",
+  "ligand": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/encenicline_I33_A601.pdbqt",
+  "center": [
+    142.818,
+    138.419,
+    90.348
+  ],
+  "box_size": [
+    22.027,
+    19.752,
+    16.264
+  ],
+  "seed": 5519,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 20,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -9.867,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 0.2917
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -9.116,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 1.8455
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -7.98,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 2.2806
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -7.624,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.9884
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -7.485,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.1218
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -7.379,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.8247
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -7.289,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 2.7322
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -7.004,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.3418
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -9.867          0          0
+   2       -9.116      1.324      1.872
+   3        -7.98      1.779      2.265
+   4       -7.624      3.913      7.996
+   5       -7.485      3.887      8.125
+   6       -7.379      3.445      7.813
+   7       -7.289      1.965      2.723
+   8       -7.004      5.005      9.382
+   9       -6.704      5.365      9.102
+  10       -6.589      5.342      7.775
+  11       -6.562      5.345      9.592
+  12       -6.487      5.562      8.353
+  13       -6.285      5.331      9.066
+  14       -6.226      5.952      8.864
+  15       -6.136      5.876      8.907
+  16       -6.057       4.83      8.381
+  17       -5.996      5.059      7.292
+  18       -5.945      4.364      6.274
+  19        -5.89        6.7      8.914
+  20       -5.807      5.439      7.348

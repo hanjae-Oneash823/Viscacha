@@ -1,0 +1,121 @@
+{
+  "receptor": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/chrna7_chrFam7a_fusion_at_B_face_obabel.pdbqt",
+  "ligand": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/encenicline_I33_A601.pdbqt",
+  "center": [
+    142.818,
+    138.419,
+    90.348
+  ],
+  "box_size": [
+    22.027,
+    19.752,
+    16.264
+  ],
+  "seed": 1103,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 20,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -6.404,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.3041
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -6.141,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.6295
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -5.826,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.8984
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -5.675,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.2944
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -5.672,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.8343
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -5.627,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.3455
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -5.545,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 6.401
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -5.448,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.4315
+    },
+    {
+      "pose_rank": 9,
+      "vina_affinity_kcal_mol": -5.304,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.5684
+    },
+    {
+      "pose_rank": 10,
+      "vina_affinity_kcal_mol": -5.269,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.8292
+    },
+    {
+      "pose_rank": 11,
+      "vina_affinity_kcal_mol": -5.207,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 10.0873
+    },
+    {
+      "pose_rank": 12,
+      "vina_affinity_kcal_mol": -5.189,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 10.0969
+    },
+    {
+      "pose_rank": 13,
+      "vina_affinity_kcal_mol": -5.154,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.554
+    },
+    {
+      "pose_rank": 14,
+      "vina_affinity_kcal_mol": -5.139,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 5.1658
+    },
+    {
+      "pose_rank": 15,
+      "vina_affinity_kcal_mol": -5.121,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 10.6108
+    },
+    {
+      "pose_rank": 16,
+      "vina_affinity_kcal_mol": -5.038,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.0408
+    },
+    {
+      "pose_rank": 17,
+      "vina_affinity_kcal_mol": -4.965,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 6.8363
+    },
+    {
+      "pose_rank": 18,
+      "vina_affinity_kcal_mol": -4.896,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.9426
+    },
+    {
+      "pose_rank": 19,
+      "vina_affinity_kcal_mol": -4.869,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.0646
+    },
+    {
+      "pose_rank": 20,
+      "vina_affinity_kcal_mol": -4.783,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.8711
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}

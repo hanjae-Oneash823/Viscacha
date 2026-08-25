@@ -1,0 +1,29 @@
+{
+  "candidate": "CHRNA7_encenicline",
+  "pdb_id": "7EKP",
+  "protein_chains": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "experimental_ligand": {
+    "chain": "A",
+    "resname": "I33",
+    "resseq": 601,
+    "heavy_atoms": 21
+  },
+  "center_A": [
+    142.818,
+    138.419,
+    90.348
+  ],
+  "box_size_A": [
+    22.027,
+    19.752,
+    16.264
+  ],
+  "receptor_pdb": "outputs/docking_campaign/CHRNA7_encenicline/prepared/chrna7_7EKP_pentamer_protein.pdb",
+  "ligand_crystal_pdb": "outputs/docking_campaign/CHRNA7_encenicline/prepared/encenicline_I33_A601_crystal.pdb"
+}

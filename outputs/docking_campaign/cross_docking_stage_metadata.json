@@ -1,0 +1,51 @@
+[
+  {
+    "candidate": "GABRA2_AZD7325",
+    "drug": "AZD7325",
+    "smiles": "CCCNC(=O)C1=NN=C2C(=C1N)C=CC=C2C3=C(C=CC=C3F)OC",
+    "conformer_seed": 20260825,
+    "optimization": "MMFF94",
+    "sdf": "outputs/docking_campaign/GABRA2_AZD7325/prepared/AZD7325.sdf"
+  },
+  {
+    "candidate": "CACNA1D_isradipine",
+    "drug": "isradipine",
+    "smiles": "CC1=C(C(C(=C(N1)C)C(=O)OC(C)C)C2=CC=CC3=NON=C32)C(=O)OC",
+    "conformer_seed": 20260825,
+    "optimization": "MMFF94",
+    "sdf": "outputs/docking_campaign/CACNA1D_isradipine/prepared/isradipine.sdf"
+  },
+  {
+    "candidate": "PDE9A_BI409306",
+    "drug": "BI409306",
+    "smiles": "C1COCCC1N2C3=C(C=N2)C(=O)NC(=N3)CC4=CC=CC=N4",
+    "conformer_seed": 20260825,
+    "optimization": "MMFF94",
+    "sdf": "outputs/docking_campaign/PDE9A_BI409306/prepared/BI409306.sdf"
+  },
+  {
+    "candidate": "GABRA2_AZD7325",
+    "canonical_template": "9CSB",
+    "assembly": "beta3-alpha1-beta2-alpha2-gamma2",
+    "alpha2_chain": "D",
+    "gamma2_chain": "E",
+    "receptor_pdb": "outputs/docking_campaign/GABRA2_AZD7325/prepared/gabra_9CSB_native_pentamer.pdb"
+  },
+  {
+    "candidate": "PDE9A_BI409306",
+    "canonical_template": "4GH6",
+    "protein_chain": "A",
+    "template_ligand": "LUO A601",
+    "center_A": [
+      77.26,
+      51.202,
+      39.87
+    ],
+    "box_size_A": [
+      19.79,
+      18.581,
+      23.684
+    ],
+    "receptor_pdb": "outputs/docking_campaign/PDE9A_BI409306/prepared/pde9a_4GH6_chain_A_protein.pdb"
+  }
+]

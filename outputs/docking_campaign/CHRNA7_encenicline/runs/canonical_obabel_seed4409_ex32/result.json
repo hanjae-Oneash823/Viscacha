@@ -1,0 +1,71 @@
+{
+  "receptor": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/chrna7_7EKP_pentamer.pdbqt",
+  "ligand": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/encenicline_I33_A601.pdbqt",
+  "center": [
+    142.818,
+    138.419,
+    90.348
+  ],
+  "box_size": [
+    22.027,
+    19.752,
+    16.264
+  ],
+  "seed": 4409,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 20,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -9.876,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 0.2792
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -9.131,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 1.8457
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -7.985,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 2.3376
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -7.653,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.9942
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -7.506,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.1453
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -7.391,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.8253
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -7.233,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.9027
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -7.205,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 2.7558
+    },
+    {
+      "pose_rank": 9,
+      "vina_affinity_kcal_mol": -6.992,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.6414
+    },
+    {
+      "pose_rank": 10,
+      "vina_affinity_kcal_mol": -6.964,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 9.2453
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}

@@ -1,0 +1,13 @@
+2026-08-25 13:56:45,175 Running colabfold 1.6.2 (c7d1772352cc9619df25c6d36cb0f218c0c6610e)
+2026-08-25 13:56:45,771 Running on GPU
+2026-08-25 13:56:46,223 Found 5 citations for tools or databases
+2026-08-25 13:56:46,224 Query 1/1: sp_P56817-3_BACE1_HUMAN_Isoform_C_of_Beta-secretase_1_OS_Homo_sapiens_OX_9606_GN_BACE1 (length 457)
+2026-08-25 13:56:49,770 Setting max_seq=512, max_extra_seq=3689
+2026-08-25 13:57:38,233 alphafold2_ptm_model_1_seed_20260825 recycle=0 pLDDT=77.1 pTM=0.733
+2026-08-25 13:57:41,976 alphafold2_ptm_model_1_seed_20260825 recycle=1 pLDDT=76.7 pTM=0.733 tol=4.01
+2026-08-25 13:57:45,714 alphafold2_ptm_model_1_seed_20260825 recycle=2 pLDDT=77.8 pTM=0.741 tol=5.75
+2026-08-25 13:57:49,465 alphafold2_ptm_model_1_seed_20260825 recycle=3 pLDDT=78.7 pTM=0.75 tol=2.76
+2026-08-25 13:57:49,466 alphafold2_ptm_model_1_seed_20260825 took 51.4s (3 recycles)
+2026-08-25 13:57:49,536 reranking models by 'plddt' metric
+2026-08-25 13:57:49,537 rank_001_alphafold2_ptm_model_1_seed_20260825 pLDDT=78.7 pTM=0.75
+2026-08-25 13:57:49,978 Done

@@ -51,6 +51,11 @@ def main() -> None:
     p.add_argument("--cpu", type=int, default=8)
     p.add_argument("--exhaustiveness", type=int, default=16)
     p.add_argument("--n-poses", type=int, default=10)
+    p.add_argument(
+        "--skip-rmsd",
+        action="store_true",
+        help="Do not calculate fixed-frame RMSD (required for cross-docking a ligand generated outside the experimental frame).",
+    )
     args = p.parse_args()
     args.outdir.mkdir(parents=True, exist_ok=True)
 
@@ -62,11 +67,11 @@ def main() -> None:
     pose_path = args.outdir / "docked_poses.pdbqt"
     vina.write_poses(str(pose_path), n_poses=args.n_poses, overwrite=True)
 
-    reference = pdbqt_heavy_models(args.ligand)[0]
+    reference = None if args.skip_rmsd else pdbqt_heavy_models(args.ligand)[0]
     poses = pdbqt_heavy_models(pose_path)
     rmsds: list[float | None] = []
     for pose in poses:
-        if pose.shape != reference.shape:
+        if reference is None or pose.shape != reference.shape:
             rmsds.append(None)
         else:
             rmsds.append(round(float(np.sqrt(np.mean(np.sum((pose - reference) ** 2, axis=1)))), 4))
@@ -83,7 +88,11 @@ def main() -> None:
         "center": args.center, "box_size": args.box_size, "seed": args.seed,
         "cpu": args.cpu, "exhaustiveness": args.exhaustiveness,
         "n_poses_requested": args.n_poses, "results": rows,
-        "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected.",
+        "rmsd_note": (
+            "Not calculated: cross-docked ligand input did not begin in the experimental receptor frame."
+            if args.skip_rmsd
+            else "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+        ),
     }
     (args.outdir / "result.json").write_text(json.dumps(output, indent=2) + "\n")
     print(json.dumps(output, indent=2))

@@ -1,0 +1,121 @@
+{
+  "receptor": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CACNA1D_isradipine/prepared/cacna1d_8E59_chain_A.pdbqt",
+  "ligand": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CACNA1D_isradipine/prepared/isradipine.pdbqt",
+  "center": [
+    151.334,
+    167.442,
+    149.793
+  ],
+  "box_size": [
+    18.851,
+    27.189,
+    19.189
+  ],
+  "seed": 20260825,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 20,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -6.707,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -6.669,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -6.622,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -6.619,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -6.619,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -6.595,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -6.581,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -6.547,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 9,
+      "vina_affinity_kcal_mol": -6.523,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 10,
+      "vina_affinity_kcal_mol": -6.52,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 11,
+      "vina_affinity_kcal_mol": -6.476,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 12,
+      "vina_affinity_kcal_mol": -6.424,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 13,
+      "vina_affinity_kcal_mol": -6.41,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 14,
+      "vina_affinity_kcal_mol": -6.343,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 15,
+      "vina_affinity_kcal_mol": -6.309,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 16,
+      "vina_affinity_kcal_mol": -6.289,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 17,
+      "vina_affinity_kcal_mol": -6.272,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 18,
+      "vina_affinity_kcal_mol": -6.245,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 19,
+      "vina_affinity_kcal_mol": -6.238,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 20,
+      "vina_affinity_kcal_mol": -6.189,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    }
+  ],
+  "rmsd_note": "Not calculated: cross-docked ligand input did not begin in the experimental receptor frame."
+}

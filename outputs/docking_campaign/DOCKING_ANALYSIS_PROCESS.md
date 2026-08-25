@@ -5,6 +5,8 @@
 **Status:** Preliminary, presentation-ready computational analysis  
 **Main validated example:** canonical FYN–saracatinib redocking
 
+> **Update:** This historical preliminary report is superseded by `EXPANDED_DOCKING_PROCESS.md` for the all-candidate campaign. Its CaV1.3 section has been corrected because the original staging used `3PE`, a lipid, rather than amiodarone (`BBI`).
+
 ## 1. Purpose and analysis strategy
 
 The immediate objective was to obtain at least one scientifically defensible protein–drug docking example while BIOVIA Discovery Studio was unavailable. The candidate list contained several canonical-versus-alternate-protein comparisons, but not every pair was suitable for numerical docking. The workflow therefore began with structural triage rather than automatically assigning a docking score to every candidate.
@@ -31,7 +33,7 @@ The starting list was `outputs/DS_docking_candidate_pairs.md`. Candidates were e
 | Alternate FYN product | Do not calculate a pocket score | The predicted product ends at residue 115 and lacks complete SH3, SH2, and kinase domains. The validated kinase pocket is therefore absent. |
 | KIT–masitinib | Retain as a canonical-pocket baseline | PDB 1T46 provides an experimental c-KIT ATP-pocket template, although its ligand is imatinib rather than masitinib. |
 | KIT-223 | Do not report a comparative score | The deletion is at canonical residue 715, inside a kinase-insert segment unresolved in PDB 1T46 (residues 690–761). |
-| CACNA1D control | Attempt a crystallographic-ligand control, then exclude | The CaV1.3/amiodarone control did not recover the experimental pose with Vina. |
+| CACNA1D control | Attempt a crystallographic-ligand control, then treat as exploratory | Corrected amiodarone docking recovered a near-native pose only at rank 7, not as the top-ranked pose. |
 | GABRA2, BACE1, CHRNA7/CHRFAM7A, PDE9A | Not advanced in this handoff | The required alternate transcript, genotype, expression evidence, or structurally appropriate model was not available in the current analysis inputs. |
 
 ## 3. Software environment
@@ -195,20 +197,20 @@ Early exploratory models of canonical KIT and KIT-223 were aligned to 1T46. The 
 
 The decisive problem is that PDB 1T46 does not resolve residues 690–761. The KIT-223 deletion at residue 715 is located inside this missing segment. A comparison would therefore be determined by an unvalidated computationally rebuilt loop rather than experimental coordinates. Exploratory predicted-model docking outputs were excluded from the final quantitative interpretation, and no KIT-223 score is reported.
 
-## 8. CACNA1D/CaV1.3 control
+## 8. CACNA1D/CaV1.3 control — corrected
 
-The human CaV1.3 structure PDB **8E59** contains amiodarone in chain A. This experimentally observed ligand was used as a pose-recovery control because the proposed CACNA1D-214 truncation occurs after the structurally resolved ligand-binding region.
+The human CaV1.3 structure PDB **8E59** contains amiodarone as residue **BBI A2201**. The original staging mistakenly extracted `3PE`, which is a phosphatidylethanolamine lipid. The staging script and control were corrected; the old `3PE` calculation remains only as provenance.
 
-Configuration:
+Corrected configuration:
 
 ```text
-center = (137.086, 151.020, 168.491) Å
-box    = (20, 22, 30) Å
-seed   = 20260824
+center = (151.334, 167.442, 149.793) Å
+box    = (18.851, 27.189, 19.189) Å
+seed   = 20260825
 exhaustiveness = 32
 ```
 
-The top pose had a Vina score of −0.649 kcal/mol and a fixed-frame RMSD of 10.89 Å. This failed the 2 Å pose-recovery criterion by a wide margin. The CACNA1D control was therefore not used for quantitative biological interpretation. It is retained as a documented failed control, which is more informative than silently discarding it.
+The corrected top pose scored −1.041 kcal/mol with 14.95 Å RMSD. A near-native pose was found at rank 7 with 1.56 Å RMSD. Because the near-native pose was not ranked first, this is not a successful top-pose validation. CaV1.3/isradipine results were retained only as exploratory shared-pocket controls and not as validated affinity predictions.
 
 ## 9. Quantitative interpretation rules
 
@@ -257,4 +259,3 @@ Each run directory contains the docked PDBQT poses and a JSON record of the rece
 
 - Eberhardt J. et al. AutoDock Vina 1.2.0: New Docking Methods, Expanded Force Field, and Python Bindings. *Journal of Chemical Information and Modeling* (2021). DOI: 10.1021/acs.jcim.1c00203.
 - Forli S. et al. Computational protein–ligand docking and virtual drug screening with the AutoDock suite. *Nature Protocols* (2016). DOI: 10.1038/nprot.2016.051.
-

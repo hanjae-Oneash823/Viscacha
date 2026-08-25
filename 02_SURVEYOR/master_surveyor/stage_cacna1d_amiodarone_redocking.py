@@ -35,18 +35,20 @@ def main() -> None:
     io = PDBIO(); io.set_structure(structure)
     io.save(str(prepared / "cacna1d_8E59_chain_A_protein.pdb"), ProteinA())
 
-    ligand = structure[0]["A"][("H_3PE", 2203, " ")]
+    # In 8E59, BBI is amiodarone. 3PE is a phosphatidylethanolamine lipid and
+    # must not be used as the drug reference.
+    ligand = structure[0]["A"][("H_BBI", 2201, " ")]
     lines, coords = [], []
     for serial, atom in enumerate(ligand.get_atoms(), 1):
         element = (atom.element or atom.get_name()[0]).strip().upper()
         x, y, z = atom.coord
-        lines.append(f"HETATM{serial:5d} {atom.get_name():>4s} 3PE A2203    {x:8.3f}{y:8.3f}{z:8.3f}{1.00:6.2f}{atom.bfactor:6.2f}          {element:>2s}\\n")
+        lines.append(f"HETATM{serial:5d} {atom.get_name():>4s} BBI A2201    {x:8.3f}{y:8.3f}{z:8.3f}{1.00:6.2f}{atom.bfactor:6.2f}          {element:>2s}\\n")
         if element != "H": coords.append([float(x), float(y), float(z)])
-    (prepared / "amiodarone_3PE_A2203_crystal.pdb").write_text("".join(lines) + "END\\n")
+    (prepared / "amiodarone_BBI_A2201_crystal.pdb").write_text("".join(lines) + "END\\n")
     c = np.asarray(coords)
     metadata = {
-        "pdb_id": "8E59", "protein_chain": "A", "experimental_ligand": "amiodarone (3PE)",
-        "ligand_residue": 2203, "modelled_cacna1d_residue_range": [121, 1589],
+        "pdb_id": "8E59", "protein_chain": "A", "experimental_ligand": "amiodarone (BBI)",
+        "ligand_residue": 2201, "modelled_cacna1d_residue_range": [121, 1589],
         "CACNA1D_214_length": 1625,
         "interpretation": "The entire experimental ligand template lies before the CACNA1D-214 truncation; therefore the template supports a shared-pocket control, not a differential docking claim.",
         "center": [round(float(v), 3) for v in c.mean(axis=0)],

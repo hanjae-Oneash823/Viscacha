@@ -1,0 +1,20 @@
+[
+  {
+    "label": "canonical",
+    "input": "kit_canonical_kinase_aligned.pdb",
+    "output": "outputs/docking_campaign/KIT_masitinib/prepared/kit_canonical_pocket_refit.pdb",
+    "matched_local_CA": 66,
+    "local_CA_RMSD_A": 0.692,
+    "mean_local_plddt": 86.31,
+    "minimum_local_plddt": 43.62
+  },
+  {
+    "label": "223",
+    "input": "kit_223_kinase_aligned.pdb",
+    "output": "outputs/docking_campaign/KIT_masitinib/prepared/kit_223_pocket_refit.pdb",
+    "matched_local_CA": 67,
+    "local_CA_RMSD_A": 0.69,
+    "mean_local_plddt": 85.34,
+    "minimum_local_plddt": 41.41
+  }
+]

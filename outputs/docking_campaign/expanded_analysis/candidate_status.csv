@@ -1,0 +1,9 @@
+priority,gene,drug,status,numeric,confidence,reason
+1,FYN,saracatinib,validated + pocket absent,canonical only,high,Canonical redocking validated; 115-aa alternate lacks the kinase domain.
+2,KIT,masitinib,attempted; alternate unresolved,canonical baseline,limited,Ser715 lies in the unresolved 1T46 segment; predicted-model docking showed clashes and was rejected.
+3,GABRA2,AZD7325,canonical cross-dock + pocket absent,canonical only,exploratory,9CSB alpha2/gamma2 pocket passed transfer checks; 73-aa alternate cannot form the receptor.
+4,CACNA1D,isradipine,shared-pocket control,identical coordinates,exploratory,The deposited human pocket ends before the alternate C-terminal truncation.
+5,BACE1-476,verubecestat,modeled comparative docking,canonical vs alternate,moderate,Canonical cognate redocking validated; alternate pocket has high local pLDDT.
+6,BACE1-457,verubecestat,modeled comparative docking,canonical vs alternate,moderate,Deletion removes 5 of 28 experimental pocket-contact residues; model passed local quality checks.
+7,CHRNA7/CHRFAM7A,encenicline,two topology hypotheses,canonical vs two hybrids,hypothesis only,"Canonical redocking validated, but sample stoichiometry/genotype support is absent."
+8,PDE9A,BI 409306,canonical cross-dock only,alternate undefined,incomplete pair,The candidate file does not name the coding-altered PDE9A transcript.

@@ -1,0 +1,224 @@
+{
+  "cpu_policy": "All new CPU-bound jobs ran serially with Vina cpu=16; AlphaFold jobs were taskset-affined to CPUs 0-15.",
+  "groups": {
+    "BACE1 canonical": {
+      "n": 6,
+      "mean_score": -9.51,
+      "sd_score": 0.021,
+      "min_score": -9.536,
+      "max_score": -9.488,
+      "mean_top_pose_rmsd": 0.955,
+      "sd_top_pose_rmsd": 0.006,
+      "top_pose_success_lt2A": 6
+    },
+    "BACE1-476": {
+      "n": 6,
+      "mean_score": -9.171,
+      "sd_score": 0.013,
+      "min_score": -9.184,
+      "max_score": -9.149,
+      "mean_top_pose_rmsd": 7.122,
+      "sd_top_pose_rmsd": 0.01,
+      "top_pose_success_lt2A": 0
+    },
+    "BACE1-457": {
+      "n": 6,
+      "mean_score": -8.285,
+      "sd_score": 0.016,
+      "min_score": -8.305,
+      "max_score": -8.265,
+      "mean_top_pose_rmsd": 7.013,
+      "sd_top_pose_rmsd": 0.016,
+      "top_pose_success_lt2A": 0
+    },
+    "CHRNA7 canonical": {
+      "n": 6,
+      "mean_score": -9.864,
+      "sd_score": 0.009,
+      "min_score": -9.876,
+      "max_score": -9.852,
+      "mean_top_pose_rmsd": 0.297,
+      "sd_top_pose_rmsd": 0.012,
+      "top_pose_success_lt2A": 6
+    },
+    "CHRFAM7A at A face": {
+      "n": 6,
+      "mean_score": -7.537,
+      "sd_score": 0.013,
+      "min_score": -7.552,
+      "max_score": -7.514,
+      "mean_top_pose_rmsd": 2.43,
+      "sd_top_pose_rmsd": 1.003,
+      "top_pose_success_lt2A": 1
+    },
+    "CHRFAM7A at B face": {
+      "n": 6,
+      "mean_score": -6.599,
+      "sd_score": 0.348,
+      "min_score": -6.927,
+      "max_score": -6.217,
+      "mean_top_pose_rmsd": 8.45,
+      "sd_top_pose_rmsd": 0.152,
+      "top_pose_success_lt2A": 0
+    },
+    "GABRA2 canonical": {
+      "n": 6,
+      "mean_score": -7.375,
+      "sd_score": 0.009,
+      "min_score": -7.389,
+      "max_score": -7.363,
+      "mean_top_pose_rmsd": null,
+      "sd_top_pose_rmsd": null,
+      "top_pose_success_lt2A": null
+    },
+    "CACNA1D shared pocket": {
+      "n": 6,
+      "mean_score": -6.547,
+      "sd_score": 0.185,
+      "min_score": -6.727,
+      "max_score": -6.365,
+      "mean_top_pose_rmsd": null,
+      "sd_top_pose_rmsd": null,
+      "top_pose_success_lt2A": null
+    },
+    "PDE9A canonical": {
+      "n": 6,
+      "mean_score": -8.082,
+      "sd_score": 0.033,
+      "min_score": -8.137,
+      "max_score": -8.045,
+      "mean_top_pose_rmsd": null,
+      "sd_top_pose_rmsd": null,
+      "top_pose_success_lt2A": null
+    }
+  },
+  "paired_deltas": {
+    "BACE1-476": {
+      "alternate_minus_canonical_kcal_mol": 0.339,
+      "sd": 0.03,
+      "paired_seeds": [
+        1103,
+        2207,
+        3301,
+        4409,
+        5519,
+        20260825
+      ],
+      "interpretation": "Positive means a less favorable Vina score for the alternate under the matched protocol."
+    },
+    "BACE1-457": {
+      "alternate_minus_canonical_kcal_mol": 1.225,
+      "sd": 0.023,
+      "paired_seeds": [
+        1103,
+        2207,
+        3301,
+        4409,
+        5519,
+        20260825
+      ],
+      "interpretation": "Positive means a less favorable Vina score for the alternate under the matched protocol."
+    },
+    "CHRFAM7A at A face": {
+      "alternate_minus_canonical_kcal_mol": 2.327,
+      "sd": 0.018,
+      "paired_seeds": [
+        1103,
+        2207,
+        3301,
+        4409,
+        5519,
+        20260825
+      ],
+      "interpretation": "Positive means a less favorable Vina score for the alternate under the matched protocol."
+    },
+    "CHRFAM7A at B face": {
+      "alternate_minus_canonical_kcal_mol": 3.264,
+      "sd": 0.344,
+      "paired_seeds": [
+        1103,
+        2207,
+        3301,
+        4409,
+        5519,
+        20260825
+      ],
+      "interpretation": "Positive means a less favorable Vina score for the alternate under the matched protocol."
+    }
+  },
+  "candidate_status": [
+    {
+      "priority": 1,
+      "gene": "FYN",
+      "drug": "saracatinib",
+      "status": "validated + pocket absent",
+      "numeric": "canonical only",
+      "confidence": "high",
+      "reason": "Canonical redocking validated; 115-aa alternate lacks the kinase domain."
+    },
+    {
+      "priority": 2,
+      "gene": "KIT",
+      "drug": "masitinib",
+      "status": "attempted; alternate unresolved",
+      "numeric": "canonical baseline",
+      "confidence": "limited",
+      "reason": "Ser715 lies in the unresolved 1T46 segment; predicted-model docking showed clashes and was rejected."
+    },
+    {
+      "priority": 3,
+      "gene": "GABRA2",
+      "drug": "AZD7325",
+      "status": "canonical cross-dock + pocket absent",
+      "numeric": "canonical only",
+      "confidence": "exploratory",
+      "reason": "9CSB alpha2/gamma2 pocket passed transfer checks; 73-aa alternate cannot form the receptor."
+    },
+    {
+      "priority": 4,
+      "gene": "CACNA1D",
+      "drug": "isradipine",
+      "status": "shared-pocket control",
+      "numeric": "identical coordinates",
+      "confidence": "exploratory",
+      "reason": "The deposited human pocket ends before the alternate C-terminal truncation."
+    },
+    {
+      "priority": 5,
+      "gene": "BACE1-476",
+      "drug": "verubecestat",
+      "status": "modeled comparative docking",
+      "numeric": "canonical vs alternate",
+      "confidence": "moderate",
+      "reason": "Canonical cognate redocking validated; alternate pocket has high local pLDDT."
+    },
+    {
+      "priority": 6,
+      "gene": "BACE1-457",
+      "drug": "verubecestat",
+      "status": "modeled comparative docking",
+      "numeric": "canonical vs alternate",
+      "confidence": "moderate",
+      "reason": "Deletion removes 5 of 28 experimental pocket-contact residues; model passed local quality checks."
+    },
+    {
+      "priority": 7,
+      "gene": "CHRNA7/CHRFAM7A",
+      "drug": "encenicline",
+      "status": "two topology hypotheses",
+      "numeric": "canonical vs two hybrids",
+      "confidence": "hypothesis only",
+      "reason": "Canonical redocking validated, but sample stoichiometry/genotype support is absent."
+    },
+    {
+      "priority": 8,
+      "gene": "PDE9A",
+      "drug": "BI 409306",
+      "status": "canonical cross-dock only",
+      "numeric": "alternate undefined",
+      "confidence": "incomplete pair",
+      "reason": "The candidate file does not name the coding-altered PDE9A transcript."
+    }
+  ],
+  "noncomparability_warning": "Absolute Vina scores must not be compared across different proteins or drugs."
+}

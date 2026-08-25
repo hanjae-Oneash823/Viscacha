@@ -1,5 +1,7 @@
 # Wednesday preliminary docking handoff
 
+> **Historical handoff:** This report is superseded by `EXPANDED_DOCKING_KEY_FINDINGS.md` and `EXPANDED_DOCKING_PROCESS.md`, which cover all eight candidate rows. The CaV1.3 text below has been corrected after identifying a ligand-code error in the original control.
+
 ## Take-home result
 
 The AutoDock Vina workflow has one successful, reproducible crystal-ligand re-docking example: **saracatinib in the canonical FYN kinase domain**. Across 9 independently seeded runs, the top pose was within 2.0 Å of the crystal pose in 9/9 runs (median fixed-frame heavy-atom RMSD 1.90 Å; best 1.75 Å; best Vina score -9.182 kcal/mol). This validates the *canonical FYN* receptor/ligand/grid protocol, not cellular activity or an isoform effect.
@@ -23,7 +25,7 @@ The current AD-enriched coding-isoform data support three candidates from the or
 - **CHRNA7/CHRFAM7A:** no CHRFAM7A transcript/genotype evidence is available here; a mixed-pentamer calculation would be unanchored.
 - **PDE9A:** the candidate list does not specify an AD-enriched coding-altered transcript; no such alternate is available to model.
 
-**CACNA1D-214** is AD-enriched and encodes a C-terminally truncated protein (1,625 aa versus canonical 2,161 aa). The experimental human CaV1.3 template 8E59 contains the amiodarone-bound channel through residue 1,589, entirely before the truncation. This supports a shared-pocket/pocket-retention interpretation, rather than an isoform-specific affinity claim. A single 16-core amiodarone re-docking attempt did not validate the template with Vina (top score -0.649 kcal/mol; top fixed-frame RMSD 10.89 Å), so no CACNA1D drug score is carried forward.
+**CACNA1D-214** is AD-enriched and encodes a C-terminally truncated protein (1,625 aa versus canonical 2,161 aa). The experimental human CaV1.3 template 8E59 ends before the truncation, supporting a shared-pocket/pocket-retention interpretation rather than an isoform-specific affinity claim. The original control mistakenly used the `3PE` lipid. The corrected amiodarone ligand (`BBI A2201`) produced a top pose of -1.041 kcal/mol at 14.95 Å RMSD and a near-native rank-7 pose at 1.56 Å. Because the near-native pose was not top ranked, isradipine results remain exploratory.
 
 ## Methods to state on Wednesday
 
@@ -31,7 +33,7 @@ The current AD-enriched coding-isoform data support three candidates from the or
 - FYN validation used human FYN–saracatinib crystal structure PDB 10DJ, chain A; grid center (-11.255, 14.853, -9.445) Å and box 20 × 20 × 26 Å; exhaustiveness 32.
 - FYN RMSD is fixed-frame heavy-atom, based on preserved PDBQT atom order and not symmetry-corrected.
 - c-KIT results are a canonical-pocket feasibility/baseline result, not a validated protein-isoform affinity comparison.
-- The CaV1.3 8E59/amiodarone re-docking control failed Vina pose recovery and is explicitly excluded from quantitative interpretation.
+- The corrected CaV1.3 8E59/amiodarone control found a near-native pose only at rank 7; isradipine is therefore an exploratory shared-pocket control.
 - GNINA was staged but cannot currently run because its CUDA binary requires `libcudnn.so.9`; Vina is the reported engine for this preliminary handoff.
 
 ## Files
@@ -40,7 +42,7 @@ The current AD-enriched coding-isoform data support three candidates from the or
 - FYN figure (PNG/PDF): `FYN_saracatinib/figures/fyn_saracatinib_preliminary.*`
 - c-KIT machine-readable summary: `KIT_masitinib/analysis/masitinib_1T46_summary.json`
 - c-KIT figure (PNG/PDF): `KIT_masitinib/figures/kit_masitinib_preliminary.*`
-- CaV1.3 staging and failed control: `CACNA1D_isradipine/prepared/stage_metadata.json` and `CACNA1D_isradipine/runs/vina_amiodarone_seed20260824_ex32/result.json`
+- CaV1.3 corrected staging and control: `CACNA1D_isradipine/prepared/stage_metadata.json` and `CACNA1D_isradipine/runs/amiodarone_corrected_seed20260825_ex32/result.json`
 
 ## Next defensible analysis
 

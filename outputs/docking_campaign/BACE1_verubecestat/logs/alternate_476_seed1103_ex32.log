@@ -1,0 +1,144 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 1103) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/BACE1_verubecestat/prepared/bace1_476_alphafold_aligned_to_5HU1_obabel.pdbqt",
+  "ligand": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/BACE1_verubecestat/prepared/verubecestat_66F_A501.pdbqt",
+  "center": [
+    24.887,
+    10.422,
+    21.858
+  ],
+  "box_size": [
+    23.129,
+    16.37,
+    18.46
+  ],
+  "seed": 1103,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 20,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -9.149,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.136
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -8.553,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.5345
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -8.542,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.4946
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -8.54,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.5514
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -8.338,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 6.8402
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -8.253,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 6.8256
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -8.131,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.2048
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -7.988,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.2872
+    },
+    {
+      "pose_rank": 9,
+      "vina_affinity_kcal_mol": -7.521,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.9452
+    },
+    {
+      "pose_rank": 10,
+      "vina_affinity_kcal_mol": -7.433,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.5251
+    },
+    {
+      "pose_rank": 11,
+      "vina_affinity_kcal_mol": -7.275,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.3609
+    },
+    {
+      "pose_rank": 12,
+      "vina_affinity_kcal_mol": -7.103,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.3552
+    },
+    {
+      "pose_rank": 13,
+      "vina_affinity_kcal_mol": -7.036,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.6594
+    },
+    {
+      "pose_rank": 14,
+      "vina_affinity_kcal_mol": -7.004,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 6.9516
+    },
+    {
+      "pose_rank": 15,
+      "vina_affinity_kcal_mol": -6.958,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 6.399
+    },
+    {
+      "pose_rank": 16,
+      "vina_affinity_kcal_mol": -6.858,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.7631
+    },
+    {
+      "pose_rank": 17,
+      "vina_affinity_kcal_mol": -6.725,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 11.4148
+    },
+    {
+      "pose_rank": 18,
+      "vina_affinity_kcal_mol": -6.616,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 6.6693
+    },
+    {
+      "pose_rank": 19,
+      "vina_affinity_kcal_mol": -6.552,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 8.4198
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -9.149          0          0
+   2       -8.553      2.408      3.794
+   3       -8.542      1.352      1.617
+   4        -8.54      1.104      1.204
+   5       -8.338      3.562      8.526
+   6       -8.253      3.475      8.432
+   7       -8.131      2.602      3.106
+   8       -7.988      1.874      2.461
+   9       -7.521      2.618       3.98
+  10       -7.433      2.451      3.497
+  11       -7.275      2.849      3.917
+  12       -7.103      3.018      4.332
+  13       -7.036      4.726      9.175
+  14       -7.004      4.665      8.772
+  15       -6.958      3.844      8.291
+  16       -6.858      5.419       9.67
+  17       -6.725      5.164      7.957
+  18       -6.616      3.322      5.555
+  19       -6.552      2.991      4.093
