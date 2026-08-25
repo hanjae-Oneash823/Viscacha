@@ -18,7 +18,7 @@ from Bio.PDB.Polypeptide import is_aa, protein_letters_3to1
 
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = ROOT / "outputs" / "docking_campaign" / "KIT_masitinib"
+BASE = ROOT / "outputs" / "docking_campaign" / "systems" / "KIT_masitinib"
 
 
 def residues_seq(chain):

@@ -5,7 +5,7 @@ set -euo pipefail
 
 project_dir=${1:?usage: launch_kit_masitinib_template_replicates.sh PROJECT_DIR}
 runner="$project_dir/02_SURVEYOR/master_surveyor/run_vina_redock.py"
-campaign="$project_dir/outputs/docking_campaign/KIT_masitinib"
+campaign="$project_dir/outputs/docking_campaign/systems/KIT_masitinib"
 receptor="$campaign/prepared/kit_1T46_chain_A.pdbqt"
 ligand="$campaign/prepared/masitinib.pdbqt"
 

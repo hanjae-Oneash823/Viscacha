@@ -19,9 +19,9 @@ set transparency_mode, 1
 bg_color white
 
 # FYN: whole kinase-domain context with crystallographic and docked saracatinib.
-load outputs/docking_campaign/FYN_saracatinib/prepared/fyn_chain_A_protein.pdb, fyn
-load outputs/docking_campaign/FYN_saracatinib/prepared/saracatinib_H8H_A601_crystal.sdf, crystal
-load outputs/docking_campaign/presentation_v2/assets/fyn_saracatinib_pose1.sdf, docked
+load outputs/docking_campaign/systems/FYN_saracatinib/prepared/fyn_chain_A_protein.pdb, fyn
+load outputs/docking_campaign/systems/FYN_saracatinib/prepared/saracatinib_H8H_A601_crystal.sdf, crystal
+load outputs/docking_campaign/figures/presentation/assets/fyn_saracatinib_pose1.sdf, docked
 remove solvent
 hide everything
 show cartoon, fyn
@@ -42,7 +42,7 @@ turn x, 10
 turn y, -25
 zoom fyn, 2.5
 ray 3000, 2400
-png outputs/docking_campaign/standalone_figures/3D/FYN_overview_crystal_vs_docked.png, dpi=300
+png outputs/docking_campaign/figures/preliminary/3D/FYN_overview_crystal_vs_docked.png, dpi=300
 
 # FYN: unobstructed binding-pocket overlay.
 hide everything
@@ -63,7 +63,7 @@ zoom (crystal or docked or fyn_pocket), 4.0
 turn x, 7
 turn y, 18
 ray 3000, 2400
-png outputs/docking_campaign/standalone_figures/3D/FYN_pocket_pose_overlay.png, dpi=300
+png outputs/docking_campaign/figures/preliminary/3D/FYN_pocket_pose_overlay.png, dpi=300
 
 # FYN: translucent local pocket surface.
 hide everything
@@ -86,12 +86,12 @@ util.cnc crystal
 util.cnc docked
 zoom (crystal or docked or fyn_pocket), 4.5
 ray 3000, 2400
-png outputs/docking_campaign/standalone_figures/3D/FYN_pocket_surface_overlay.png, dpi=300
+png outputs/docking_campaign/figures/preliminary/3D/FYN_pocket_surface_overlay.png, dpi=300
 
 # KIT: canonical kinase-domain context with docked masitinib.
 delete all
-load outputs/docking_campaign/KIT_masitinib/prepared/kit_1T46_chain_A_protein.pdb, kit
-load outputs/docking_campaign/presentation_v2/assets/kit_masitinib_pose1.sdf, masitinib
+load outputs/docking_campaign/systems/KIT_masitinib/prepared/kit_1T46_chain_A_protein.pdb, kit
+load outputs/docking_campaign/figures/presentation/assets/kit_masitinib_pose1.sdf, masitinib
 hide everything
 show cartoon, kit
 color 0x8EA6B8, kit
@@ -109,7 +109,7 @@ turn x, 12
 turn y, -22
 zoom kit, 2.5
 ray 3000, 2400
-png outputs/docking_campaign/standalone_figures/3D/KIT_overview_docked_masitinib.png, dpi=300
+png outputs/docking_campaign/figures/preliminary/3D/KIT_overview_docked_masitinib.png, dpi=300
 
 # KIT: tight, unobstructed canonical-pocket view.
 hide everything
@@ -128,5 +128,5 @@ zoom (masitinib or kit_pocket), 4.2
 turn x, 8
 turn y, 18
 ray 3000, 2400
-png outputs/docking_campaign/standalone_figures/3D/KIT_pocket_docked_masitinib.png, dpi=300
+png outputs/docking_campaign/figures/preliminary/3D/KIT_pocket_docked_masitinib.png, dpi=300
 quit

@@ -13,7 +13,7 @@ from Bio.PDB.Polypeptide import is_aa, protein_letters_3to1
 
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = ROOT / "outputs" / "docking_campaign" / "BACE1_verubecestat"
+BASE = ROOT / "outputs" / "docking_campaign" / "systems" / "BACE1_verubecestat"
 
 
 def residues_and_sequence(chain):

@@ -5,7 +5,7 @@ set -euo pipefail
 
 project_dir=${1:?usage: launch_fyn_vina_replicates.sh PROJECT_DIR}
 runner="$project_dir/02_SURVEYOR/master_surveyor/run_vina_redock.py"
-campaign="$project_dir/outputs/docking_campaign/FYN_saracatinib"
+campaign="$project_dir/outputs/docking_campaign/systems/FYN_saracatinib"
 receptor="$campaign/prepared/fyn_chain_A.pdbqt"
 ligand="$campaign/prepared/saracatinib_H8H_A601.pdbqt"
 

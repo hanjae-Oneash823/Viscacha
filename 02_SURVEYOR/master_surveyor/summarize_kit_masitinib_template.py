@@ -10,7 +10,7 @@ from statistics import mean, median, stdev
 
 
 def main() -> None:
-    campaign = Path("outputs/docking_campaign/KIT_masitinib")
+    campaign = Path("outputs/docking_campaign/systems/KIT_masitinib")
     rows = []
     for path in sorted((campaign / "runs").glob("masitinib_1T46_*/result.json")):
         result = json.loads(path.read_text())

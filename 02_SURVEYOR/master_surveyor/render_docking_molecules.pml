@@ -18,9 +18,9 @@ set orthoscopic, 1
 bg_color white
 
 # FYN overview
-load outputs/docking_campaign/FYN_saracatinib/prepared/fyn_chain_A_protein.pdb, fyn
-load outputs/docking_campaign/FYN_saracatinib/prepared/saracatinib_H8H_A601_crystal.sdf, crystal
-load outputs/docking_campaign/presentation_v2/assets/fyn_saracatinib_pose1.sdf, docked
+load outputs/docking_campaign/systems/FYN_saracatinib/prepared/fyn_chain_A_protein.pdb, fyn
+load outputs/docking_campaign/systems/FYN_saracatinib/prepared/saracatinib_H8H_A601_crystal.sdf, crystal
+load outputs/docking_campaign/figures/presentation/assets/fyn_saracatinib_pose1.sdf, docked
 frame 1
 remove solvent
 hide everything
@@ -41,7 +41,7 @@ turn x, 10
 turn y, -25
 zoom fyn, 3
 ray 2200, 1700
-png outputs/docking_campaign/presentation_v2/assets/fyn_overview_ray.png, dpi=300
+png outputs/docking_campaign/figures/presentation/assets/fyn_overview_ray.png, dpi=300
 
 # FYN pocket close-up with local surface
 hide everything
@@ -63,12 +63,12 @@ zoom (crystal or docked), 7
 turn x, 7
 turn y, 18
 ray 2200, 1700
-png outputs/docking_campaign/presentation_v2/assets/fyn_pocket_ray.png, dpi=300
+png outputs/docking_campaign/figures/presentation/assets/fyn_pocket_ray.png, dpi=300
 
 # KIT canonical docking overview
 delete all
-load outputs/docking_campaign/KIT_masitinib/prepared/kit_1T46_chain_A_protein.pdb, kit
-load outputs/docking_campaign/presentation_v2/assets/kit_masitinib_pose1.sdf, masitinib
+load outputs/docking_campaign/systems/KIT_masitinib/prepared/kit_1T46_chain_A_protein.pdb, kit
+load outputs/docking_campaign/figures/presentation/assets/kit_masitinib_pose1.sdf, masitinib
 frame 1
 hide everything
 show cartoon, kit
@@ -85,7 +85,7 @@ turn x, 12
 turn y, -22
 zoom kit, 3
 ray 2200, 1700
-png outputs/docking_campaign/presentation_v2/assets/kit_overview_ray.png, dpi=300
+png outputs/docking_campaign/figures/presentation/assets/kit_overview_ray.png, dpi=300
 
 # KIT local pocket surface
 hide everything
@@ -102,5 +102,5 @@ zoom masitinib, 7
 turn x, 8
 turn y, 18
 ray 2200, 1700
-png outputs/docking_campaign/presentation_v2/assets/kit_pocket_ray.png, dpi=300
+png outputs/docking_campaign/figures/presentation/assets/kit_pocket_ray.png, dpi=300
 quit

@@ -18,13 +18,13 @@ bg_color white
 set ray_opaque_background, on
 set antialias, 2
 set ray_trace_mode, 1
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/BACE1_verubecestat/prepared/bace1_5HU1_chain_A_protein.pdb, bace_can
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/BACE1_verubecestat/prepared/bace1_476_alphafold_aligned_to_5HU1.pdb, bace476
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/BACE1_verubecestat/prepared/bace1_457_alphafold_aligned_to_5HU1.pdb, bace457
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/BACE1_verubecestat/prepared/verubecestat_66F_A501_crystal.pdb, veru_xtal
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/BACE1_verubecestat/runs/canonical_obabel_seed1103_ex32/docked_poses.pdbqt, veru_can
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/BACE1_verubecestat/runs/alternate_476_seed1103_ex32/docked_poses.pdbqt, veru476
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/BACE1_verubecestat/runs/alternate_457_seed1103_ex32/docked_poses.pdbqt, veru457
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/BACE1_verubecestat/prepared/bace1_5HU1_chain_A_protein.pdb, bace_can
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/BACE1_verubecestat/prepared/bace1_476_alphafold_aligned_to_5HU1.pdb, bace476
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/BACE1_verubecestat/prepared/bace1_457_alphafold_aligned_to_5HU1.pdb, bace457
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/BACE1_verubecestat/prepared/verubecestat_66F_A501_crystal.pdb, veru_xtal
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/BACE1_verubecestat/runs/canonical_obabel_seed1103_ex32/docked_poses.pdbqt, veru_can
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/BACE1_verubecestat/runs/alternate_476_seed1103_ex32/docked_poses.pdbqt, veru476
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/BACE1_verubecestat/runs/alternate_457_seed1103_ex32/docked_poses.pdbqt, veru457
 frame 1
 hide everything
 select pocket_can, byres (bace_can within 8 of veru_xtal)
@@ -53,7 +53,7 @@ zoom veru_xtal, 11
 turn x, -12
 turn y, 18
 ray 2400, 1800
-png /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/standalone_figures/expanded_campaign/3D_BACE1_variant_pocket_overlay.png, dpi=300
+png /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/figures/expanded_campaign/3D_BACE1_variant_pocket_overlay.png, dpi=300
 
 # ---------------------------------------------------------------------------
 # Canonical alpha7 encenicline site.
@@ -62,9 +62,9 @@ bg_color white
 set ray_opaque_background, on
 set antialias, 2
 set ray_trace_mode, 1
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/chrna7_7EKP_pentamer_protein.pdb, alpha7
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/encenicline_I33_A601_crystal.pdb, ence_xtal
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/runs/canonical_obabel_seed1103_ex32/docked_poses.pdbqt, ence_can
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/prepared/chrna7_7EKP_pentamer_protein.pdb, alpha7
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/prepared/encenicline_I33_A601_crystal.pdb, ence_xtal
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/runs/canonical_obabel_seed1103_ex32/docked_poses.pdbqt, ence_can
 frame 1
 hide everything
 show cartoon, alpha7
@@ -83,7 +83,7 @@ turn x, -8
 turn y, 14
 zoom alpha7, 0
 ray 2400, 1800
-png /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/standalone_figures/expanded_campaign/3D_CHRNA7_canonical_encenicline.png, dpi=300
+png /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/figures/expanded_campaign/3D_CHRNA7_canonical_encenicline.png, dpi=300
 
 # ---------------------------------------------------------------------------
 # Mixed-receptor B-face hypothesis at the same site.
@@ -92,9 +92,9 @@ bg_color white
 set ray_opaque_background, on
 set antialias, 2
 set ray_trace_mode, 1
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/chrna7_chrFam7a_fusion_at_B_face.pdb, hybridB
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/encenicline_I33_A601_crystal.pdb, ence_xtal
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/runs/hybrid_B_face_seed1103_ex32/docked_poses.pdbqt, ence_hybB
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/prepared/chrna7_chrFam7a_fusion_at_B_face.pdb, hybridB
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/prepared/encenicline_I33_A601_crystal.pdb, ence_xtal
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/runs/hybrid_B_face_seed1103_ex32/docked_poses.pdbqt, ence_hybB
 frame 1
 hide everything
 show cartoon, hybridB
@@ -113,7 +113,7 @@ turn x, -8
 turn y, 14
 zoom hybridB, 0
 ray 2400, 1800
-png /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/standalone_figures/expanded_campaign/3D_CHRFAM7A_B_face_encenicline.png, dpi=300
+png /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/figures/expanded_campaign/3D_CHRFAM7A_B_face_encenicline.png, dpi=300
 
 # ---------------------------------------------------------------------------
 # Direct site overlay for the canonical and B-face hypothesis.
@@ -122,11 +122,11 @@ bg_color white
 set ray_opaque_background, on
 set antialias, 2
 set ray_trace_mode, 1
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/chrna7_7EKP_pentamer_protein.pdb, alpha7
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/chrna7_chrFam7a_fusion_at_B_face.pdb, hybridB
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/prepared/encenicline_I33_A601_crystal.pdb, ence_xtal
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/runs/canonical_obabel_seed1103_ex32/docked_poses.pdbqt, ence_can
-load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/CHRNA7_encenicline/runs/hybrid_B_face_seed1103_ex32/docked_poses.pdbqt, ence_hybB
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/prepared/chrna7_7EKP_pentamer_protein.pdb, alpha7
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/prepared/chrna7_chrFam7a_fusion_at_B_face.pdb, hybridB
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/prepared/encenicline_I33_A601_crystal.pdb, ence_xtal
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/runs/canonical_obabel_seed1103_ex32/docked_poses.pdbqt, ence_can
+load /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/CHRNA7_encenicline/runs/hybrid_B_face_seed1103_ex32/docked_poses.pdbqt, ence_hybB
 frame 1
 hide everything
 select site_can, byres (alpha7 within 9 of ence_xtal)
@@ -146,6 +146,6 @@ zoom ence_xtal, 13
 turn x, -10
 turn y, 22
 ray 2400, 1800
-png /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/standalone_figures/expanded_campaign/3D_CHRNA7_topology_site_overlay.png, dpi=300
+png /home/welcome3/Viscacha_pipeline/outputs/docking_campaign/figures/expanded_campaign/3D_CHRNA7_topology_site_overlay.png, dpi=300
 
 quit

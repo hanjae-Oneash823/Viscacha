@@ -21,6 +21,7 @@ from Bio.PDB.Polypeptide import is_aa
 
 ROOT = Path(__file__).resolve().parents[2]
 CAMPAIGN = ROOT / "outputs" / "docking_campaign"
+SYSTEMS = CAMPAIGN / "systems"
 
 
 class ProteinChains(Select):
@@ -63,7 +64,7 @@ def stage(
     receptor_name: str,
     ligand_name: str,
 ) -> dict[str, object]:
-    base = CAMPAIGN / candidate
+    base = SYSTEMS / candidate
     prepared = base / "prepared"
     prepared.mkdir(parents=True, exist_ok=True)
     structure = PDBParser(QUIET=True).get_structure(pdb_id, base / "inputs" / f"{pdb_id}.pdb")
@@ -106,7 +107,7 @@ def main() -> None:
         ),
     ]
     for record in records:
-        base = CAMPAIGN / str(record["candidate"]) / "prepared"
+        base = SYSTEMS / str(record["candidate"]) / "prepared"
         (base / "stage_metadata.json").write_text(json.dumps(record, indent=2) + "\n")
     print(json.dumps(records, indent=2))
 

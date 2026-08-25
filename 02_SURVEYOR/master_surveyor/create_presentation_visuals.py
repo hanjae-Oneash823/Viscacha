@@ -15,6 +15,7 @@ from mpl_toolkits.mplot3d import proj3d
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "outputs" / "docking_campaign"
+SYSTEMS = OUT / "systems"
 NAVY = "#071A33"
 BLUE = "#20A4F3"
 TEAL = "#29D3B6"
@@ -57,7 +58,7 @@ def card(ax, x, y, w, h, title, value, subtitle, color=BLUE):
 
 
 def fyn_slide() -> None:
-    campaign = OUT / "FYN_saracatinib"
+    campaign = SYSTEMS / "FYN_saracatinib"
     figures = campaign / "figures" / "presentation"
     figures.mkdir(parents=True, exist_ok=True)
     summary = json.loads((campaign / "analysis" / "summary.json").read_text())
@@ -104,7 +105,7 @@ def fyn_slide() -> None:
 
 def fyn_3d_diagram() -> None:
     """Render standalone protein overview + ligand-pocket close-up for slides."""
-    campaign = OUT / "FYN_saracatinib"
+    campaign = SYSTEMS / "FYN_saracatinib"
     figures = campaign / "figures" / "presentation"
     backbone, resnums = pdb_ca(campaign / "prepared" / "fyn_chain_A_protein.pdb")
     crystal, _ = pdb_xyz(campaign / "prepared" / "saracatinib_H8H_A601_crystal.pdb")
@@ -142,7 +143,7 @@ def fyn_3d_diagram() -> None:
 
 
 def kit_slide() -> None:
-    campaign = OUT / "KIT_masitinib"
+    campaign = SYSTEMS / "KIT_masitinib"
     figures = campaign / "figures" / "presentation"
     figures.mkdir(parents=True, exist_ok=True)
     with (campaign / "analysis" / "masitinib_1T46_replicates.csv").open() as h:

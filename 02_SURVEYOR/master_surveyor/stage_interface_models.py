@@ -25,6 +25,7 @@ from Bio.PDB.Model import Model
 
 ROOT = Path(__file__).resolve().parents[2]
 CAMPAIGN = ROOT / "outputs" / "docking_campaign"
+SYSTEMS = CAMPAIGN / "systems"
 
 
 def residues_and_sequence(chain):
@@ -117,7 +118,7 @@ def main() -> None:
     records: dict[str, object] = {}
 
     # GABRA2 alpha2/gamma2 interface grid transfer.
-    gabra_base = CAMPAIGN / "GABRA2_AZD7325"
+    gabra_base = SYSTEMS / "GABRA2_AZD7325"
     target = MMCIFParser(QUIET=True).get_structure("9CSB", gabra_base / "inputs" / "9CSB.cif")
     mobile = PDBParser(QUIET=True).get_structure("6X3X", gabra_base / "inputs" / "6X3X.pdb")
     alpha_metrics = align_chain(target[0]["D"], mobile[0]["D"], mobile.get_atoms())
@@ -142,7 +143,7 @@ def main() -> None:
     }
 
     # CHRNA7/CHRFAM7A one-fusion-subunit hypotheses at each face of site A/B.
-    chr_base = CAMPAIGN / "CHRNA7_encenicline"
+    chr_base = SYSTEMS / "CHRNA7_encenicline"
     chr_target = PDBParser(QUIET=True).get_structure("7EKP", chr_base / "inputs" / "7EKP.pdb")
     fusion = MMCIFParser(QUIET=True).get_structure("9QTO", chr_base / "inputs" / "9QTO.cif")
     hybrids = []
@@ -155,7 +156,8 @@ def main() -> None:
         "interpretation": "Two one-fusion-subunit topology hypotheses bracket which face of the A/B site is altered. They do not establish in-sample stoichiometry.",
     }
 
-    output = CAMPAIGN / "interface_model_metadata.json"
+    output = CAMPAIGN / "analysis" / "metadata" / "interface_model_metadata.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(records, indent=2) + "\n")
     print(json.dumps(records, indent=2))
 

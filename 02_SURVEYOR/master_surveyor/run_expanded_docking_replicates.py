@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 CAMPAIGN = ROOT / "outputs" / "docking_campaign"
+SYSTEMS = CAMPAIGN / "systems"
 PYTHON = Path("/home/welcome3/anaconda3/envs/pocket_dock/bin/python")
 RUNNER = ROOT / "02_SURVEYOR" / "master_surveyor" / "run_vina_redock.py"
 SEEDS = [1103, 2207, 3301, 4409, 5519]
@@ -73,7 +74,7 @@ def main() -> None:
     })
     print(f"CPU affinity: {allowed}; jobs are serial; Vina cpu=16", flush=True)
     for config in CONFIGS:
-        base = CAMPAIGN / config["candidate"]
+        base = SYSTEMS / config["candidate"]
         for seed in SEEDS:
             outdir = base / "runs" / f"{config['label']}_seed{seed}_ex32"
             command = [

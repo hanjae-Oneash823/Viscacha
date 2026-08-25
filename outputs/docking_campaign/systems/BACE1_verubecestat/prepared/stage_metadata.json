@@ -1,0 +1,25 @@
+{
+  "candidate": "BACE1_verubecestat",
+  "pdb_id": "5HU1",
+  "protein_chains": [
+    "A"
+  ],
+  "experimental_ligand": {
+    "chain": "A",
+    "resname": "66F",
+    "resseq": 501,
+    "heavy_atoms": 28
+  },
+  "center_A": [
+    24.887,
+    10.422,
+    21.858
+  ],
+  "box_size_A": [
+    23.129,
+    16.37,
+    18.46
+  ],
+  "receptor_pdb": "outputs/docking_campaign/systems/BACE1_verubecestat/prepared/bace1_5HU1_chain_A_protein.pdb",
+  "ligand_crystal_pdb": "outputs/docking_campaign/systems/BACE1_verubecestat/prepared/verubecestat_66F_A501_crystal.pdb"
+}

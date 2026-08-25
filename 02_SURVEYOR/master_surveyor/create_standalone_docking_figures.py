@@ -15,7 +15,8 @@ from matplotlib.patches import FancyBboxPatch, Rectangle
 
 ROOT = Path(__file__).resolve().parents[2]
 CAMPAIGN = ROOT / "outputs" / "docking_campaign"
-OUT = CAMPAIGN / "standalone_figures"
+SYSTEMS = CAMPAIGN / "systems"
+OUT = CAMPAIGN / "figures" / "preliminary"
 
 INK = "#17212B"
 SLATE = "#637485"
@@ -66,7 +67,7 @@ def strip_spines(ax: plt.Axes) -> None:
 
 
 def fyn_rmsd() -> None:
-    fyn = CAMPAIGN / "FYN_saracatinib"
+    fyn = SYSTEMS / "FYN_saracatinib"
     summary = json.loads((fyn / "analysis" / "summary.json").read_text())
     rows = list(csv.DictReader((fyn / "analysis" / "all_poses.csv").open()))
     top = [r for r in rows if int(r["pose_rank"]) == 1]
@@ -124,7 +125,7 @@ def fyn_domain_architecture() -> None:
 
 
 def kit_scores() -> None:
-    kit = CAMPAIGN / "KIT_masitinib"
+    kit = SYSTEMS / "KIT_masitinib"
     values = np.asarray([float(r["vina_affinity_kcal_mol"]) for r in csv.DictReader((kit / "analysis" / "masitinib_1T46_replicates.csv").open())])
     values = np.sort(values)
     rng = np.random.default_rng(715)

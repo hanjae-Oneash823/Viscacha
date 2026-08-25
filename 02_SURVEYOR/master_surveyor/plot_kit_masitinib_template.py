@@ -12,7 +12,7 @@ import numpy as np
 
 
 def main() -> None:
-    campaign = Path("outputs/docking_campaign/KIT_masitinib")
+    campaign = Path("outputs/docking_campaign/systems/KIT_masitinib")
     analysis = campaign / "analysis"
     summary = json.loads((analysis / "masitinib_1T46_summary.json").read_text())
     with (analysis / "masitinib_1T46_replicates.csv").open() as handle:

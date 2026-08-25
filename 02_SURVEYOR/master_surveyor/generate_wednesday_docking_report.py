@@ -9,12 +9,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "outputs" / "docking_campaign"
+SYSTEMS = OUT / "systems"
 
 
 def main() -> None:
-    fyn = json.loads((OUT / "FYN_saracatinib" / "analysis" / "summary.json").read_text())
-    kit = json.loads((OUT / "KIT_masitinib" / "analysis" / "masitinib_1T46_summary.json").read_text())
-    cac_result = json.loads((OUT / "CACNA1D_isradipine" / "runs" / "vina_amiodarone_seed20260824_ex32" / "result.json").read_text())
+    fyn = json.loads((SYSTEMS / "FYN_saracatinib" / "analysis" / "summary.json").read_text())
+    kit = json.loads((SYSTEMS / "KIT_masitinib" / "analysis" / "masitinib_1T46_summary.json").read_text())
+    cac_result = json.loads((SYSTEMS / "CACNA1D_isradipine" / "runs" / "amiodarone_corrected_seed20260825_ex32" / "result.json").read_text())
     cac_top = cac_result["results"][0]
     best = fyn["best_top_pose"]
 
@@ -24,7 +25,7 @@ def main() -> None:
 
 The AutoDock Vina workflow has one successful, reproducible crystal-ligand re-docking example: **saracatinib in the canonical FYN kinase domain**. Across {fyn['completed_runs']} independently seeded runs, the top pose was within 2.0 Å of the crystal pose in {fyn['top_pose_recovered_under_2A']}/{fyn['completed_runs']} runs (median fixed-frame heavy-atom RMSD {fyn['top_pose_rmsd_median_A']:.2f} Å; best {best['rmsd_to_crystal_heavy_atom_uncorrected_angstrom']:.2f} Å; best Vina score {best['vina_affinity_kcal_mol']:.3f} kcal/mol). This validates the *canonical FYN* receptor/ligand/grid protocol, not cellular activity or an isoform effect.
 
-![FYN preliminary result](FYN_saracatinib/figures/fyn_saracatinib_preliminary.png)
+![FYN preliminary result](../../systems/FYN_saracatinib/figures/fyn_saracatinib_preliminary.png)
 
 ## Canonical c-KIT–masitinib baseline
 
@@ -32,7 +33,7 @@ Using the experimental imatinib-bound c-KIT kinase-domain pocket (PDB 1T46), mas
 
 No KIT-223 comparison score is reported. The KIT-223 single-residue deletion is at canonical residue 715, while the relevant kinase-insert segment (residues 690–761) is unresolved in 1T46. A meaningful comparison requires a rebuilt, locally validated loop model; the initial predicted-model pocket runs were therefore excluded rather than over-interpreted.
 
-![KIT preliminary result](KIT_masitinib/figures/kit_masitinib_preliminary.png)
+![KIT preliminary result](../../systems/KIT_masitinib/figures/kit_masitinib_preliminary.png)
 
 ## Full candidate triage and CACNA1D control
 
@@ -56,11 +57,11 @@ The current AD-enriched coding-isoform data support three candidates from the or
 
 ## Files
 
-- FYN machine-readable summary: `FYN_saracatinib/analysis/summary.json`
-- FYN figure (PNG/PDF): `FYN_saracatinib/figures/fyn_saracatinib_preliminary.*`
-- c-KIT machine-readable summary: `KIT_masitinib/analysis/masitinib_1T46_summary.json`
-- c-KIT figure (PNG/PDF): `KIT_masitinib/figures/kit_masitinib_preliminary.*`
-- CaV1.3 staging and failed control: `CACNA1D_isradipine/prepared/stage_metadata.json` and `CACNA1D_isradipine/runs/vina_amiodarone_seed20260824_ex32/result.json`
+- FYN machine-readable summary: `../../systems/FYN_saracatinib/analysis/summary.json`
+- FYN figure (PNG/PDF): `../../systems/FYN_saracatinib/figures/fyn_saracatinib_preliminary.*`
+- c-KIT machine-readable summary: `../../systems/KIT_masitinib/analysis/masitinib_1T46_summary.json`
+- c-KIT figure (PNG/PDF): `../../systems/KIT_masitinib/figures/kit_masitinib_preliminary.*`
+- CaV1.3 corrected staging and control: `../../systems/CACNA1D_isradipine/prepared/stage_metadata.json` and `../../systems/CACNA1D_isradipine/runs/amiodarone_corrected_seed20260825_ex32/result.json`
 
 ## Next defensible analysis
 
@@ -69,7 +70,7 @@ The current AD-enriched coding-isoform data support three candidates from the or
 3. Add BACE1, CHRFAM7A, GABRA2-206, or PDE9A only after their required alternate transcript/genotype evidence is supplied.
 4. If the CUDA/cuDNN environment is repaired, rescore retained Vina poses with GNINA CNNscore/CNNaffinity as an orthogonal ranking, while retaining Vina redocking as the pose-validation benchmark.
 """
-    destination = OUT / "WEDNESDAY_PRELIMINARY_DOCKING_REPORT.md"
+    destination = OUT / "docs" / "archive" / "WEDNESDAY_PRELIMINARY_DOCKING_REPORT.md"
     destination.write_text(report)
     print(destination)
 

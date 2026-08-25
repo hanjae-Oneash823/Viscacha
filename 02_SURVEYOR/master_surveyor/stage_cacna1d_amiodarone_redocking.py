@@ -27,7 +27,7 @@ class ProteinA(Select):
 
 def main() -> None:
     root = Path(__file__).resolve().parents[2]
-    campaign = root / "outputs" / "docking_campaign" / "CACNA1D_isradipine"
+    campaign = root / "outputs" / "docking_campaign" / "systems" / "CACNA1D_isradipine"
     pdb = campaign / "inputs" / "8E59.pdb"
     prepared = campaign / "prepared"
     prepared.mkdir(parents=True, exist_ok=True)

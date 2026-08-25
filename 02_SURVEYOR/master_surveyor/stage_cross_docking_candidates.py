@@ -15,6 +15,7 @@ from rdkit.Chem import AllChem
 
 ROOT = Path(__file__).resolve().parents[2]
 CAMPAIGN = ROOT / "outputs" / "docking_campaign"
+SYSTEMS = CAMPAIGN / "systems"
 
 DRUGS = {
     "GABRA2_AZD7325": (
@@ -44,7 +45,7 @@ class ProteinChains(Select):
 
 
 def generate_ligand(candidate: str, name: str, smiles: str) -> dict[str, object]:
-    prepared = CAMPAIGN / candidate / "prepared"
+    prepared = SYSTEMS / candidate / "prepared"
     prepared.mkdir(parents=True, exist_ok=True)
     mol = Chem.AddHs(Chem.MolFromSmiles(smiles))
     params = AllChem.ETKDGv3()
@@ -83,7 +84,7 @@ def extract_protein(structure, chains: set[str], destination: Path) -> None:
 def main() -> None:
     records = [generate_ligand(candidate, *drug) for candidate, drug in DRUGS.items()]
 
-    gabra_base = CAMPAIGN / "GABRA2_AZD7325"
+    gabra_base = SYSTEMS / "GABRA2_AZD7325"
     gabra = MMCIFParser(QUIET=True).get_structure("9CSB", gabra_base / "inputs" / "9CSB.cif")
     gabra_receptor = gabra_base / "prepared" / "gabra_9CSB_native_pentamer.pdb"
     extract_protein(gabra, {"A", "B", "C", "D", "E"}, gabra_receptor)
@@ -96,7 +97,7 @@ def main() -> None:
         "receptor_pdb": str(gabra_receptor.relative_to(ROOT)),
     })
 
-    pde_base = CAMPAIGN / "PDE9A_BI409306"
+    pde_base = SYSTEMS / "PDE9A_BI409306"
     pde = PDBParser(QUIET=True).get_structure("4GH6", pde_base / "inputs" / "4GH6.pdb")
     pde_receptor = pde_base / "prepared" / "pde9a_4GH6_chain_A_protein.pdb"
     extract_protein(pde, {"A"}, pde_receptor)
@@ -112,7 +113,8 @@ def main() -> None:
         "receptor_pdb": str(pde_receptor.relative_to(ROOT)),
     })
 
-    output = CAMPAIGN / "cross_docking_stage_metadata.json"
+    output = CAMPAIGN / "analysis" / "metadata" / "cross_docking_stage_metadata.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(records, indent=2) + "\n")
     print(json.dumps(records, indent=2))
 

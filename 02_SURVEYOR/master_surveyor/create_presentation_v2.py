@@ -15,8 +15,9 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 CAMPAIGN = ROOT / "outputs" / "docking_campaign"
-ASSETS = CAMPAIGN / "presentation_v2" / "assets"
-FINAL = CAMPAIGN / "presentation_v2" / "final"
+SYSTEMS = CAMPAIGN / "systems"
+ASSETS = CAMPAIGN / "figures" / "presentation" / "assets"
+FINAL = CAMPAIGN / "figures" / "presentation" / "final"
 
 BG = "#F7F8FA"
 WHITE = "#FFFFFF"
@@ -68,7 +69,7 @@ def save(fig: plt.Figure, stem: str) -> None:
 
 
 def fyn_result_slide() -> None:
-    fyn = CAMPAIGN / "FYN_saracatinib"
+    fyn = SYSTEMS / "FYN_saracatinib"
     summary = json.loads((fyn / "analysis" / "summary.json").read_text())
     rows = list(csv.DictReader((fyn / "analysis" / "all_poses.csv").open()))
     top = [r for r in rows if int(r["pose_rank"]) == 1]
@@ -144,7 +145,7 @@ def fyn_pocket_slide() -> None:
 
 
 def kit_slide() -> None:
-    kit = CAMPAIGN / "KIT_masitinib"
+    kit = SYSTEMS / "KIT_masitinib"
     values = np.asarray([float(r["vina_affinity_kcal_mol"]) for r in csv.DictReader((kit / "analysis" / "masitinib_1T46_replicates.csv").open())])
     fig = base_figure()
     title(fig, "KIT–masitinib provides a canonical baseline—not an isoform comparison", "Experimental c-KIT template PDB 1T46 • nine independently seeded canonical-pocket runs")

@@ -17,6 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 CAMPAIGN = ROOT / "outputs" / "docking_campaign"
+SYSTEMS = CAMPAIGN / "systems"
 
 STRUCTURES = {
     "BACE1_verubecestat": {
@@ -71,12 +72,12 @@ def main() -> None:
     records: list[dict[str, object]] = []
     for candidate, files in STRUCTURES.items():
         for filename, url in files.items():
-            record = download(url, CAMPAIGN / candidate / "inputs" / filename)
+            record = download(url, SYSTEMS / candidate / "inputs" / filename)
             record.update({"candidate": candidate, "kind": "experimental_structure"})
             records.append(record)
     for candidate, files in SEQUENCES.items():
         for filename, url in files.items():
-            record = download(url, CAMPAIGN / candidate / "inputs" / filename)
+            record = download(url, SYSTEMS / candidate / "inputs" / filename)
             record.update({"candidate": candidate, "kind": "reviewed_sequence"})
             records.append(record)
 
@@ -84,7 +85,8 @@ def main() -> None:
         "purpose": "Public experimental templates and reviewed protein sequences for all-candidate docking triage",
         "records": records,
     }
-    output = CAMPAIGN / "expanded_inputs_manifest.json"
+    output = CAMPAIGN / "analysis" / "metadata" / "expanded_inputs_manifest.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(manifest, indent=2) + "\n")
     print(json.dumps(manifest, indent=2))
 

@@ -16,8 +16,9 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
 CAMPAIGN = ROOT / "outputs" / "docking_campaign"
-ANALYSIS = CAMPAIGN / "expanded_analysis"
-FIGURES = CAMPAIGN / "standalone_figures" / "expanded_campaign"
+SYSTEMS = CAMPAIGN / "systems"
+ANALYSIS = CAMPAIGN / "analysis" / "aggregate"
+FIGURES = CAMPAIGN / "figures" / "expanded_campaign"
 ANALYSIS.mkdir(parents=True, exist_ok=True)
 FIGURES.mkdir(parents=True, exist_ok=True)
 
@@ -41,7 +42,7 @@ def read_results(paths: list[Path]) -> list[dict[str, object]]:
 
 
 def group(candidate: str, exact: list[str], globs: list[str]) -> list[dict[str, object]]:
-    base = CAMPAIGN / candidate / "runs"
+    base = SYSTEMS / candidate / "runs"
     paths = [base / p / "result.json" for p in exact]
     for pattern in globs:
         paths.extend(base.glob(f"{pattern}/result.json"))

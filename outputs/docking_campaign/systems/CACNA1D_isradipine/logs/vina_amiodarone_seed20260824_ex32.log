@@ -1,0 +1,85 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 20260824) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "outputs/docking_campaign/systems/CACNA1D_isradipine/prepared/cacna1d_8E59_chain_A.pdbqt",
+  "ligand": "outputs/docking_campaign/systems/CACNA1D_isradipine/prepared/amiodarone_3PE_A2203.pdbqt",
+  "center": [
+    137.086,
+    151.02,
+    168.491
+  ],
+  "box_size": [
+    20.0,
+    22.0,
+    30.0
+  ],
+  "seed": 20260824,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 10,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -0.649,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 10.8878
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -0.554,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 13.1362
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -0.542,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 7.2286
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -0.534,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 17.1547
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -0.486,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 11.0626
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -0.479,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 10.9003
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -0.475,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 14.4751
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -0.473,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 17.5532
+    },
+    {
+      "pose_rank": 9,
+      "vina_affinity_kcal_mol": -0.444,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 3.267
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1      -0.6486          0          0
+   2      -0.5541      3.145      3.145
+   3       -0.542      3.703      3.703
+   4      -0.5339      8.332      8.332
+   5      -0.4856      15.51      15.51
+   6      -0.4795      11.57      11.57
+   7      -0.4746      4.836      4.836
+   8      -0.4728      11.37      11.37
+   9      -0.4443      7.775      7.775
+

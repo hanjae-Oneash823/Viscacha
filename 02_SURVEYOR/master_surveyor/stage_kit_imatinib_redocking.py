@@ -20,7 +20,7 @@ class ProteinA(Select):
 
 
 def main() -> None:
-    root = Path("outputs/docking_campaign/KIT_masitinib")
+    root = Path("outputs/docking_campaign/systems/KIT_masitinib")
     prepared = root / "prepared"
     prepared.mkdir(parents=True, exist_ok=True)
     structure = PDBParser(QUIET=True).get_structure("1T46", root / "inputs" / "1T46.pdb")

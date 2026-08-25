@@ -1,0 +1,86 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 7723) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/KIT_masitinib/prepared/kit_1T46_chain_A.pdbqt",
+  "ligand": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/KIT_masitinib/prepared/masitinib.pdbqt",
+  "center": [
+    26.181,
+    26.061,
+    40.364
+  ],
+  "box_size": [
+    22.0,
+    20.0,
+    28.0
+  ],
+  "seed": 7723,
+  "cpu": 16,
+  "exhaustiveness": 64,
+  "n_poses_requested": 10,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -12.814,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 54.6604
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -11.912,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 58.5196
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -11.71,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 54.8479
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -10.548,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 61.5876
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -10.276,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 62.8874
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -10.27,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 52.4974
+    },
+    {
+      "pose_rank": 7,
+      "vina_affinity_kcal_mol": -10.14,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 52.2422
+    },
+    {
+      "pose_rank": 8,
+      "vina_affinity_kcal_mol": -9.986,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 52.3538
+    },
+    {
+      "pose_rank": 9,
+      "vina_affinity_kcal_mol": -9.912,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 61.6912
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -12.81          0          0
+   2       -11.91       2.83      12.78
+   3       -11.71     0.9409       1.65
+   4       -10.55       4.88      10.25
+   5       -10.28       5.94      13.21
+   6       -10.27      3.651       11.9
+   7       -10.14       3.78      12.42
+   8       -9.986       3.78      12.15
+   9       -9.912      5.875      10.29
+  10       -9.673      3.654      13.87
+

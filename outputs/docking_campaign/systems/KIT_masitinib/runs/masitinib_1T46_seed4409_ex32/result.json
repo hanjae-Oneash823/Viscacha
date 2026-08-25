@@ -1,0 +1,46 @@
+{
+  "receptor": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/KIT_masitinib/prepared/kit_1T46_chain_A.pdbqt",
+  "ligand": "/home/welcome3/Viscacha_pipeline/outputs/docking_campaign/systems/KIT_masitinib/prepared/masitinib.pdbqt",
+  "center": [
+    26.181,
+    26.061,
+    40.364
+  ],
+  "box_size": [
+    22.0,
+    20.0,
+    28.0
+  ],
+  "seed": 4409,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 10,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -12.831,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 54.6856
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -11.951,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 58.5402
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -10.444,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 61.4767
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -10.303,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 52.4596
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -10.146,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": 52.2234
+    }
+  ],
+  "rmsd_note": "Fixed-frame heavy-atom RMSD; atom-order based and not symmetry corrected."
+}
