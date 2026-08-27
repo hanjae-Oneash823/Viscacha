@@ -1,0 +1,80 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 5519) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "outputs/docking_campaign/systems/RARB_tamibarotene/prepared/rarb_alt.pdbqt",
+  "ligand": "outputs/docking_campaign/systems/RARB_tamibarotene/prepared/tamibarotene.pdbqt",
+  "center": [
+    43.075,
+    22.009,
+    100.13
+  ],
+  "box_size": [
+    24.022,
+    20.79,
+    20.287
+  ],
+  "seed": 5519,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 20,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -13.445,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -13.125,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -12.485,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 4,
+      "vina_affinity_kcal_mol": -12.459,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 5,
+      "vina_affinity_kcal_mol": -12.405,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 6,
+      "vina_affinity_kcal_mol": -12.142,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    }
+  ],
+  "rmsd_note": "Not calculated: cross-docked ligand input did not begin in the experimental receptor frame."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -13.45          0          0
+   2       -13.13     0.2084     0.6587
+   3       -12.49      1.265      2.773
+   4       -12.46      1.747      2.993
+   5        -12.4     0.4838     0.7875
+   6       -12.14      1.043      2.581
+   7        -4.21      2.926      9.231
+   8       -3.137      2.572       9.31
+   9       -3.001      2.602      9.161
+  10       -2.393      2.487      9.298
+  11        -1.17      2.639       9.31
+  12      0.06634      4.154      9.191
+  13        2.063      2.877       9.18
+  14        3.784      5.087       7.03
+  15        4.072      3.887      8.941
+  16        4.549      4.225      8.913
+  17        5.242      3.474      8.802
+  18        5.399       4.21      6.939
+  19        6.441       3.98      9.056
+  20        6.999      5.171      9.075

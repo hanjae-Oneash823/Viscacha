@@ -1,0 +1,23 @@
+{
+  "gene_name": "ALDH1L1",
+  "cell_type": "OPC",
+  "transcript": "ALDH1L1-203",
+  "hit_ENST_ID": "ENST00000393434",
+  "master_group": "trial_failure_candidate",
+  "protein_change_type": "identical",
+  "affected_domain": "none",
+  "delta_usage": -0.3680481122898938,
+  "chi_padj": 2.8916435772422704e-10,
+  "uniprot_acc": "O75891",
+  "chembl_target_id": null,
+  "canonical_structure_source": "afdb",
+  "structure_confidence": {
+    "error": "no alt-local span mapped from canonical coordinates"
+  },
+  "ligands": [],
+  "binding_pockets": {},
+  "thresholds_used": {
+    "tf_min_abs_delta_usage": 0,
+    "dr_min_chembl_or_ot_phase": 0
+  }
+}

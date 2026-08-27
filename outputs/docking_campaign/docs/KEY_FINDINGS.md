@@ -1,5 +1,7 @@
 # Protein–drug docking campaign: detailed AutoDock Vina and GNINA findings
 
+> **Biological qualification added 2026-08-26:** the BACE1-476 and BACE1-457 calculations below are structural method-development comparisons; those exact isoforms were not confirmed as the AD-increased transcript in the available DTU table. For presentation candidate selection, use [BC_CANDIDATE_ASSESSMENT.md](BC_CANDIDATE_ASSESSMENT.md), which analyzes the observed 401-aa BACE1-202 isoform and the statistically supported CACNA1D-214 candidate.
+
 **Scope:** all eight candidate rows
 **Accepted expanded replicate records:** 54
 **GNINA rescored run ensembles / poses:** 45 / 738

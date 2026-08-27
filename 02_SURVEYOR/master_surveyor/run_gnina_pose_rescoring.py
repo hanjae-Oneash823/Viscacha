@@ -72,6 +72,11 @@ GROUP_CONFIGS = (
         run_patterns=("alternate_457_seed*_ex32",),
     ),
     GroupConfig(
+        "BACE1-401 observed AD isoform",
+        "BACE1_verubecestat_401",
+        run_patterns=("alternate_401_seed*_ex32",),
+    ),
+    GroupConfig(
         "CHRNA7 canonical",
         "CHRNA7_encenicline",
         exact_runs=("canonical_obabel_redock_seed20260825_ex32",),
@@ -112,7 +117,7 @@ def relative_to_root(path_string: str) -> Path:
         raise ValueError(f"Input is outside repository root: {path}") from error
 
 
-def discover_jobs(pilot: bool) -> list[dict[str, Any]]:
+def discover_jobs(pilot: bool, group_filter: str | None = None) -> list[dict[str, Any]]:
     jobs: list[dict[str, Any]] = []
     seen: set[Path] = set()
     for config in GROUP_CONFIGS:
@@ -146,6 +151,8 @@ def discover_jobs(pilot: bool) -> list[dict[str, Any]]:
             for job in jobs
             if job["group"] == "BACE1 canonical" and job["seed"] == 1103
         ]
+    if group_filter:
+        jobs = [job for job in jobs if job["group"] == group_filter]
     return jobs
 
 
@@ -356,6 +363,7 @@ def collect_runtime_metadata(binary: Path, image: str, device: int) -> dict[str,
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pilot", action="store_true", help="Run only BACE1 canonical seed 1103")
+    parser.add_argument("--group", help="Run only jobs whose group label exactly matches this value")
     parser.add_argument("--overwrite", action="store_true", help="Recompute jobs with existing successful result.json")
     parser.add_argument("--device", type=int, default=0, help="Host GPU index (default: 0)")
     parser.add_argument("--binary", type=Path, default=DEFAULT_BINARY)
@@ -383,16 +391,19 @@ def main() -> None:
     )
     RDLogger.DisableLog("rdApp.warning")
 
-    jobs = discover_jobs(args.pilot)
-    expected = 1 if args.pilot else 45
-    if len(jobs) != expected:
-        raise RuntimeError(f"Expected {expected} GNINA jobs, discovered {len(jobs)}")
+    jobs = discover_jobs(args.pilot, args.group)
+    if not jobs:
+        raise RuntimeError("No GNINA jobs matched the requested filters")
 
     ANALYSIS.mkdir(parents=True, exist_ok=True)
     runtime_metadata = collect_runtime_metadata(args.binary, args.image, args.device)
     runtime_metadata["job_count"] = len(jobs)
     runtime_metadata["pilot"] = args.pilot
-    (ANALYSIS / "runtime_metadata.json").write_text(json.dumps(runtime_metadata, indent=2) + "\n")
+    metadata_name = "runtime_metadata.json"
+    if args.group:
+        safe_group = re.sub(r"[^A-Za-z0-9]+", "_", args.group).strip("_").lower()
+        metadata_name = f"runtime_metadata_{safe_group}.json"
+    (ANALYSIS / metadata_name).write_text(json.dumps(runtime_metadata, indent=2) + "\n")
 
     print(
         f"GNINA jobs={len(jobs)}; host affinity={allowed}; Docker cpuset={CPUSET}; "

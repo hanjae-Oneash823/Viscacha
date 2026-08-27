@@ -1,0 +1,36 @@
+{
+  "job_id": "de02697ed5ea",
+  "type": "export",
+  "status": "done",
+  "created_at": 1787717363.4481761,
+  "thresholds_used": {
+    "tf_min_abs_delta_usage": 0,
+    "dr_min_chembl_or_ot_phase": 0
+  },
+  "items": [
+    {
+      "gene": "ADGRL3",
+      "cell_type": "Inhibitory_neuron",
+      "hit_enst": "ENST00000512091",
+      "stage": "done",
+      "item_status": "done",
+      "result": {
+        "folder": "/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/docking/ADGRL3_Inhibitory_neuron_ADGRL3-215",
+        "structure_confidence": "low"
+      }
+    },
+    {
+      "gene": "ALDH1L1",
+      "cell_type": "OPC",
+      "hit_enst": "ENST00000393434",
+      "stage": "done",
+      "item_status": "done",
+      "result": {
+        "folder": "/home/welcome3/Viscacha_pipeline/outputs/master_surveyor/docking/ALDH1L1_OPC_ALDH1L1-203",
+        "structure_confidence": "unknown"
+      }
+    }
+  ],
+  "updated_at": 1787720828.4432008,
+  "finished_at": 1787720828.4469347
+}

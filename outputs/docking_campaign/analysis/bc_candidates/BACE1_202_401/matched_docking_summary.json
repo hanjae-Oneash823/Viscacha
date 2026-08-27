@@ -1,0 +1,66 @@
+{
+  "Canonical BACE1": {
+    "vina_affinity_kcal_mol": {
+      "mean": -9.5046,
+      "sd": 0.0185,
+      "min": -9.531,
+      "max": -9.488
+    },
+    "top_pose_rmsd_A": {
+      "mean": 0.9567,
+      "sd": 0.0051,
+      "min": 0.9528,
+      "max": 0.9653
+    },
+    "best_of_20_rmsd_A": {
+      "mean": 0.9567,
+      "sd": 0.0051,
+      "min": 0.9528,
+      "max": 0.9653
+    },
+    "gnina_cnn_score": {
+      "mean": 0.9196,
+      "sd": 0.0077,
+      "min": 0.9102,
+      "max": 0.9276
+    },
+    "gnina_cnn_affinity": {
+      "mean": 7.3667,
+      "sd": 0.0135,
+      "min": 7.3509,
+      "max": 7.3814
+    }
+  },
+  "BACE1-202 (401 aa)": {
+    "vina_affinity_kcal_mol": {
+      "mean": -9.3736,
+      "sd": 0.3925,
+      "min": -9.605,
+      "max": -8.674
+    },
+    "top_pose_rmsd_A": {
+      "mean": 10.6065,
+      "sd": 0.63,
+      "min": 9.4808,
+      "max": 10.9239
+    },
+    "best_of_20_rmsd_A": {
+      "mean": 5.2452,
+      "sd": 0.0374,
+      "min": 5.1936,
+      "max": 5.2793
+    },
+    "gnina_cnn_score": {
+      "mean": 0.2248,
+      "sd": 0.2203,
+      "min": 0.1242,
+      "max": 0.6188
+    },
+    "gnina_cnn_affinity": {
+      "mean": 5.5169,
+      "sd": 0.194,
+      "min": 5.3885,
+      "max": 5.861
+    }
+  }
+}

@@ -1,3 +1,16 @@
 {
-  "items": []
+  "items": [
+    {
+      "gene": "ADGRL3",
+      "cell_type": "Inhibitory_neuron",
+      "hit_enst": "ENST00000512091",
+      "selected_drugs": []
+    },
+    {
+      "gene": "ALDH1L1",
+      "cell_type": "OPC",
+      "hit_enst": "ENST00000393434",
+      "selected_drugs": []
+    }
+  ]
 }

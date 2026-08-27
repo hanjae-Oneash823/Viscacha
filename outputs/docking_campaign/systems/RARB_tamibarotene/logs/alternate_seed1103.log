@@ -1,0 +1,64 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 1103) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "outputs/docking_campaign/systems/RARB_tamibarotene/prepared/rarb_alt.pdbqt",
+  "ligand": "outputs/docking_campaign/systems/RARB_tamibarotene/prepared/tamibarotene.pdbqt",
+  "center": [
+    43.075,
+    22.009,
+    100.13
+  ],
+  "box_size": [
+    24.022,
+    20.79,
+    20.287
+  ],
+  "seed": 1103,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 20,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -13.422,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -12.488,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 3,
+      "vina_affinity_kcal_mol": -12.426,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    }
+  ],
+  "rmsd_note": "Not calculated: cross-docked ligand input did not begin in the experimental receptor frame."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -13.42          0          0
+   2       -12.49      1.265      2.927
+   3       -12.43      1.752      3.052
+   4       -8.023      1.578      2.257
+   5       -7.636      1.434      2.101
+   6       -6.425      1.363      2.969
+   7       -6.157      1.544      3.204
+   8       -4.183      2.921      9.264
+   9       -3.112      2.592       9.33
+  10       -2.352      2.428      9.304
+  11       -2.335      2.419      9.109
+  12       0.2055      4.118      9.187
+  13        1.405      3.501      9.181
+  14        3.595      4.176      8.989
+  15        4.661      4.432      6.653
+  16        5.539      4.242      6.974
+  17        5.638      5.355      8.749
+  18        7.474      2.923      8.964
+  19        8.171      6.931      10.67

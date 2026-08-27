@@ -1,0 +1,502 @@
+{
+  "GFRA1_209": {
+    "metrics": {
+      "canonical_length": {
+        "mean": 465.0,
+        "min": 465.0,
+        "max": 465.0
+      },
+      "alternate_length": {
+        "mean": 460.0,
+        "min": 460.0,
+        "max": 460.0
+      },
+      "alignment_score": {
+        "mean": 910.0,
+        "min": 910.0,
+        "max": 910.0
+      },
+      "domain_anchor_ca_rmsd_A": {
+        "mean": 0.519871779446392,
+        "min": 0.47514448336694076,
+        "max": 0.574916834105071
+      },
+      "n_interface_residues": {
+        "mean": 22.0,
+        "min": 22.0,
+        "max": 22.0
+      },
+      "interface_ca_displacement_mean_A": {
+        "mean": 0.26145286346737084,
+        "min": 0.2465840744331013,
+        "max": 0.2701851785099485
+      },
+      "interface_ca_displacement_max_A": {
+        "mean": 0.7377044273116138,
+        "min": 0.6790105408979716,
+        "max": 0.7951622090293585
+      },
+      "interface_mean_plddt": {
+        "mean": 94.4720909090909,
+        "min": 94.41772727272725,
+        "max": 94.5
+      },
+      "deletion_neighbor_mean_plddt": {
+        "mean": 50.97175,
+        "min": 49.81125,
+        "max": 51.56
+      }
+    },
+    "experimental_mapping": {
+      "complex": "outputs/docking_campaign/systems/GFRA1_liatermin/inputs/3FUB.pdb",
+      "complex_gfra_chain": "A",
+      "complex_gdnf_chain": "B",
+      "contact_cutoff_A": 5.0,
+      "experimental_interface_human_positions": [
+        155,
+        158,
+        159,
+        162,
+        163,
+        165,
+        168,
+        169,
+        171,
+        172,
+        174,
+        175,
+        176,
+        179,
+        181,
+        220,
+        223,
+        224,
+        227,
+        228,
+        229,
+        230
+      ],
+      "experimental_interface_position_count": 22,
+      "deleted_human_positions": [
+        140,
+        141,
+        142,
+        143,
+        144
+      ],
+      "deleted_residues_resolved_in_complex": [],
+      "first_human_position_mapped_to_complex": 150
+    }
+  },
+  "CACNA1D_214": {
+    "metrics": {
+      "canonical_length": {
+        "mean": 2161.0,
+        "min": 2161.0,
+        "max": 2161.0
+      },
+      "alternate_length": {
+        "mean": 1625.0,
+        "min": 1625.0,
+        "max": 1625.0
+      },
+      "alignment_score": {
+        "mean": 2832.0,
+        "min": 2832.0,
+        "max": 2832.0
+      },
+      "mapped_seed_residues": {
+        "mean": 14.0,
+        "min": 14.0,
+        "max": 14.0
+      },
+      "local_ca_count": {
+        "mean": 59.0,
+        "min": 59.0,
+        "max": 59.0
+      },
+      "local_ca_rmsd_A": {
+        "mean": 1.4860998826255272,
+        "min": 1.4370760310401538,
+        "max": 1.5220307566121327
+      },
+      "local_shared_heavy_atom_rmsd_A": {
+        "mean": 1.619702007056341,
+        "min": 1.5802950262895152,
+        "max": 1.6538724278467356
+      },
+      "pocket_mean_plddt": {
+        "mean": 83.96071428571426,
+        "min": 83.81214285714285,
+        "max": 84.02285714285713
+      },
+      "pocket_min_plddt": {
+        "mean": 72.326,
+        "min": 71.88,
+        "max": 72.69
+      }
+    },
+    "pocket_seed_positions": [
+      1078,
+      1081,
+      1082,
+      1085,
+      1154,
+      1156,
+      1194,
+      1198,
+      1205,
+      1209,
+      1212,
+      1489,
+      1492,
+      1493
+    ]
+  },
+  "SORT1_209": {
+    "metrics": {
+      "canonical_length": {
+        "mean": 831.0,
+        "min": 831.0,
+        "max": 831.0
+      },
+      "alternate_length": {
+        "mean": 694.0,
+        "min": 694.0,
+        "max": 694.0
+      },
+      "alignment_score": {
+        "mean": 1301.5,
+        "min": 1301.5,
+        "max": 1301.5
+      },
+      "mapped_seed_residues": {
+        "mean": 25.0,
+        "min": 25.0,
+        "max": 25.0
+      },
+      "local_ca_count": {
+        "mean": 29.0,
+        "min": 29.0,
+        "max": 29.0
+      },
+      "local_ca_rmsd_A": {
+        "mean": 0.3517020729262045,
+        "min": 0.3402570798524461,
+        "max": 0.360930503540721
+      },
+      "local_shared_heavy_atom_rmsd_A": {
+        "mean": 0.6689117222519786,
+        "min": 0.6652257966398886,
+        "max": 0.6754569226839282
+      },
+      "pocket_mean_plddt": {
+        "mean": 94.12031999999999,
+        "min": 93.96960000000001,
+        "max": 94.3016
+      },
+      "pocket_min_plddt": {
+        "mean": 87.966,
+        "min": 87.44,
+        "max": 88.44
+      }
+    },
+    "experimental_mapping": {
+      "experimental_structure": "outputs/docking_campaign/systems/SORT1_latozinemab/inputs/4PO7.pdb",
+      "experimental_chain": "A",
+      "canonical_deleted_positions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137
+      ],
+      "mature_beta_propeller_deleted_positions": [
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137
+      ],
+      "deleted_positions_resolved_in_experiment": [
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137
+      ],
+      "patent_epitope_interval": [
+        207,
+        231
+      ],
+      "patent_epitope_callouts": [
+        218,
+        222,
+        223,
+        227
+      ],
+      "alternate_epitope_mapping": {
+        "alt_5c0b1b2b37b5e647_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_004.pdb": {
+          "mapped_epitope_positions": 25,
+          "mapped_callout_positions": 4,
+          "epitope_sequence_identical": true
+        },
+        "alt_5c0b1b2b37b5e647_unrelaxed_rank_002_alphafold2_ptm_model_1_seed_002.pdb": {
+          "mapped_epitope_positions": 25,
+          "mapped_callout_positions": 4,
+          "epitope_sequence_identical": true
+        },
+        "alt_5c0b1b2b37b5e647_unrelaxed_rank_003_alphafold2_ptm_model_1_seed_000.pdb": {
+          "mapped_epitope_positions": 25,
+          "mapped_callout_positions": 4,
+          "epitope_sequence_identical": true
+        },
+        "alt_5c0b1b2b37b5e647_unrelaxed_rank_004_alphafold2_ptm_model_1_seed_003.pdb": {
+          "mapped_epitope_positions": 25,
+          "mapped_callout_positions": 4,
+          "epitope_sequence_identical": true
+        },
+        "alt_5c0b1b2b37b5e647_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_001.pdb": {
+          "mapped_epitope_positions": 25,
+          "mapped_callout_positions": 4,
+          "epitope_sequence_identical": true
+        }
+      },
+      "interpretation": "The direct latozinemab epitope is retained in sequence. The 1-137 deletion is outside that epitope but removes the signal peptide and the first 60 residues of the mature beta-propeller; SORT1-209 is therefore a C/trafficking hypothesis, not B."
+    }
+  }
+}

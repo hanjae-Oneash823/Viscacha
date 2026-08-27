@@ -1,5 +1,7 @@
 # Protein–drug docking campaign: detailed AutoDock Vina and GNINA analysis process
 
+> **Scope note added 2026-08-26:** the original expanded campaign included BACE1-476 and BACE1-457 as structural method-development comparators. The evidence-qualified follow-up for the transcript actually observed in the available AD table (BACE1-202, 401 aa), including five-seed Vina/GNINA results, is documented in [BC_CANDIDATE_ASSESSMENT.md](BC_CANDIDATE_ASSESSMENT.md).
+
 **Analysis period:** 24–25 August 2026
 **Primary docking engine:** AutoDock Vina 1.2.7
 **Scope:** all eight rows in `outputs/DS_docking_candidate_pairs.md`

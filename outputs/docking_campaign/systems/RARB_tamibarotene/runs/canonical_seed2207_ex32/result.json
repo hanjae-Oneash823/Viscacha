@@ -1,0 +1,31 @@
+{
+  "receptor": "outputs/docking_campaign/systems/RARB_tamibarotene/prepared/rarb_canonical.pdbqt",
+  "ligand": "outputs/docking_campaign/systems/RARB_tamibarotene/prepared/tamibarotene.pdbqt",
+  "center": [
+    43.075,
+    22.009,
+    100.13
+  ],
+  "box_size": [
+    24.022,
+    20.79,
+    20.287
+  ],
+  "seed": 2207,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 20,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -13.416,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -12.482,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    }
+  ],
+  "rmsd_note": "Not calculated: cross-docked ligand input did not begin in the experimental receptor frame."
+}

@@ -1,0 +1,45 @@
+{
+  "gene_name": "ADGRL3",
+  "cell_type": "Inhibitory_neuron",
+  "transcript": "ADGRL3-215",
+  "hit_ENST_ID": "ENST00000512091",
+  "master_group": "drug_repurposing_candidate",
+  "protein_change_type": "C_truncation",
+  "affected_domain": "Latrophilin, OLF, 7tm_2, GPS, GAIN, SUEL_Lectin, HRM",
+  "delta_usage": null,
+  "chi_padj": 2.666343543120333e-23,
+  "uniprot_acc": "Q9HAR2",
+  "chembl_target_id": null,
+  "canonical_structure_source": "afdb",
+  "structure_confidence": {
+    "verdict": "low",
+    "region_confidence": {
+      "region_mean_plddt": 74.81,
+      "whole_protein_mean_plddt": 74.38,
+      "region_length": 1222,
+      "region_vs_rest_mean_pae": 27.03
+    },
+    "ensemble_spread_rmsd": 25.985,
+    "n_ensemble_models": 5,
+    "colabfold_vs_esmfold_rmsd": 29.821,
+    "esmfold_error": null,
+    "superposition": {
+      "n_anchor_residues": 1226,
+      "anchor_fit_rmsd": 43.252,
+      "changed_region_mean_local_dist": 37.95,
+      "changed_region_max_local_dist": 102.73,
+      "outside_span_mean_local_dist": 63.88,
+      "outside_span_max_local_dist": 71.59
+    },
+    "alt_local_span": [
+      19,
+      1240
+    ]
+  },
+  "ligands": [],
+  "binding_pockets": {},
+  "thresholds_used": {
+    "tf_min_abs_delta_usage": 0,
+    "dr_min_chembl_or_ot_phase": 0
+  }
+}

@@ -1,0 +1,59 @@
+Computing Vina grid ... done.
+Performing docking (random seed: 2207) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+{
+  "receptor": "outputs/docking_campaign/systems/RARB_tamibarotene/prepared/rarb_alt.pdbqt",
+  "ligand": "outputs/docking_campaign/systems/RARB_tamibarotene/prepared/tamibarotene.pdbqt",
+  "center": [
+    43.075,
+    22.009,
+    100.13
+  ],
+  "box_size": [
+    24.022,
+    20.79,
+    20.287
+  ],
+  "seed": 2207,
+  "cpu": 16,
+  "exhaustiveness": 32,
+  "n_poses_requested": 20,
+  "results": [
+    {
+      "pose_rank": 1,
+      "vina_affinity_kcal_mol": -13.416,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    },
+    {
+      "pose_rank": 2,
+      "vina_affinity_kcal_mol": -12.482,
+      "rmsd_to_crystal_heavy_atom_uncorrected_angstrom": null
+    }
+  ],
+  "rmsd_note": "Not calculated: cross-docked ligand input did not begin in the experimental receptor frame."
+}
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -13.42          0          0
+   2       -12.48      1.261      2.767
+   3        -7.77      1.417      2.065
+   4       -4.247      3.005      9.226
+   5       -3.113      2.594      9.319
+   6        -3.08      2.614      9.207
+   7       -2.326       2.44      9.341
+   8      -0.8578      2.583      9.342
+   9       0.1788      4.136      9.185
+  10        2.366      4.147      11.29
+  11        3.186      4.365      9.023
+  12        3.814        5.1      7.015
+  13        3.984      4.745      8.754
+  14        4.557      4.235      8.937
+  15         4.62      3.362      8.961
+  16        5.213      4.519      8.607
+  17        5.464      4.226      6.931
+  18        5.532      3.091      9.094
+  19        6.652      3.984      9.057
